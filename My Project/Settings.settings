@@ -1,0 +1,93 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="BookChapterBold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BookChapterItalic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BookChapterUnderline" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BookChapterStrikethrough" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BookChapterForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">0, 0, 64</Value>
+    </Setting>
+    <Setting Name="BookChapterBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BookChapterFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BookChapterVAlign" Type="System.String" Scope="User">
+      <Value Profile="(Default)">baseline</Value>
+    </Setting>
+    <Setting Name="VerseNumberFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Times New Roman, 8.25pt</Value>
+    </Setting>
+    <Setting Name="VerseTextFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Times New Roman, 9.75pt</Value>
+    </Setting>
+    <Setting Name="VerseNumberBold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseNumberItalic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseNumberUnderline" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseNumberStrikethrough" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseNumberForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="VerseNumberBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VerseNumberVAlign" Type="System.String" Scope="User">
+      <Value Profile="(Default)">super</Value>
+    </Setting>
+    <Setting Name="VerseTextBold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseTextItalic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseTextUnderline" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseTextStrikethrough" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseTextForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="VerseTextBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="VerseTextVAlign" Type="System.String" Scope="User">
+      <Value Profile="(Default)">baseline</Value>
+    </Setting>
+    <Setting Name="ParagraphAlignment" Type="System.String" Scope="User">
+      <Value Profile="(Default)">justify</Value>
+    </Setting>
+    <Setting Name="Indent" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Linespacing" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">1.5</Value>
+    </Setting>
+    <Setting Name="PreferredVersions" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CEI2008,NABRE</Value>
+    </Setting>
+    <Setting Name="NOVERSIONFORMATTING" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
