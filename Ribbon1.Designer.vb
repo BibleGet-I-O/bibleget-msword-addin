@@ -43,18 +43,18 @@
     Private Sub InitializeComponent()
         Me.BibleGetTab = Me.Factory.CreateRibbonTab
         Me.BibleGetTabGroup1 = Me.Factory.CreateRibbonGroup
-        Me.Separator2 = Me.Factory.CreateRibbonSeparator
-        Me.Separator1 = Me.Factory.CreateRibbonSeparator
-        Me.Separator3 = Me.Factory.CreateRibbonSeparator
-        Me.BibleGetTabGroup2 = Me.Factory.CreateRibbonGroup
-        Me.BibleGetTabGroup3 = Me.Factory.CreateRibbonGroup
         Me.InsertBibleQuoteFromDialogBtn = Me.Factory.CreateRibbonButton
+        Me.Separator2 = Me.Factory.CreateRibbonSeparator
         Me.InsertBibleQuoteFromTextSelectionBtn = Me.Factory.CreateRibbonButton
+        Me.BibleGetTabGroup2 = Me.Factory.CreateRibbonGroup
         Me.PreferencesBtn = Me.Factory.CreateRibbonButton
+        Me.Separator3 = Me.Factory.CreateRibbonSeparator
         Me.HelpBtn = Me.Factory.CreateRibbonButton
+        Me.BibleGetTabGroup3 = Me.Factory.CreateRibbonGroup
         Me.SendFeedbackBtn = Me.Factory.CreateRibbonButton
         Me.MakeContributionBtn = Me.Factory.CreateRibbonButton
         Me.AboutBtn = Me.Factory.CreateRibbonButton
+        Me.Separator1 = Me.Factory.CreateRibbonSeparator
         Me.StatusBtn = Me.Factory.CreateRibbonButton
         Me.BibleGetTab.SuspendLayout()
         Me.BibleGetTabGroup1.SuspendLayout()
@@ -79,36 +79,6 @@
         Me.BibleGetTabGroup1.Label = "Insert Bible Quote"
         Me.BibleGetTabGroup1.Name = "BibleGetTabGroup1"
         '
-        'Separator2
-        '
-        Me.Separator2.Name = "Separator2"
-        '
-        'Separator1
-        '
-        Me.Separator1.Name = "Separator1"
-        '
-        'Separator3
-        '
-        Me.Separator3.Name = "Separator3"
-        '
-        'BibleGetTabGroup2
-        '
-        Me.BibleGetTabGroup2.Items.Add(Me.PreferencesBtn)
-        Me.BibleGetTabGroup2.Items.Add(Me.Separator3)
-        Me.BibleGetTabGroup2.Items.Add(Me.HelpBtn)
-        Me.BibleGetTabGroup2.Label = "Settings"
-        Me.BibleGetTabGroup2.Name = "BibleGetTabGroup2"
-        '
-        'BibleGetTabGroup3
-        '
-        Me.BibleGetTabGroup3.Items.Add(Me.SendFeedbackBtn)
-        Me.BibleGetTabGroup3.Items.Add(Me.MakeContributionBtn)
-        Me.BibleGetTabGroup3.Items.Add(Me.AboutBtn)
-        Me.BibleGetTabGroup3.Items.Add(Me.Separator1)
-        Me.BibleGetTabGroup3.Items.Add(Me.StatusBtn)
-        Me.BibleGetTabGroup3.Label = "About"
-        Me.BibleGetTabGroup3.Name = "BibleGetTabGroup3"
-        '
         'InsertBibleQuoteFromDialogBtn
         '
         Me.InsertBibleQuoteFromDialogBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
@@ -117,6 +87,10 @@
         Me.InsertBibleQuoteFromDialogBtn.Label = "Insert Bible Quote from Dialog"
         Me.InsertBibleQuoteFromDialogBtn.Name = "InsertBibleQuoteFromDialogBtn"
         Me.InsertBibleQuoteFromDialogBtn.ShowImage = True
+        '
+        'Separator2
+        '
+        Me.Separator2.Name = "Separator2"
         '
         'InsertBibleQuoteFromTextSelectionBtn
         '
@@ -127,6 +101,14 @@
         Me.InsertBibleQuoteFromTextSelectionBtn.Name = "InsertBibleQuoteFromTextSelectionBtn"
         Me.InsertBibleQuoteFromTextSelectionBtn.ShowImage = True
         '
+        'BibleGetTabGroup2
+        '
+        Me.BibleGetTabGroup2.Items.Add(Me.PreferencesBtn)
+        Me.BibleGetTabGroup2.Items.Add(Me.Separator3)
+        Me.BibleGetTabGroup2.Items.Add(Me.HelpBtn)
+        Me.BibleGetTabGroup2.Label = "Settings"
+        Me.BibleGetTabGroup2.Name = "BibleGetTabGroup2"
+        '
         'PreferencesBtn
         '
         Me.PreferencesBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
@@ -136,6 +118,10 @@
         Me.PreferencesBtn.Name = "PreferencesBtn"
         Me.PreferencesBtn.ShowImage = True
         '
+        'Separator3
+        '
+        Me.Separator3.Name = "Separator3"
+        '
         'HelpBtn
         '
         Me.HelpBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
@@ -144,6 +130,16 @@
         Me.HelpBtn.Label = "Help"
         Me.HelpBtn.Name = "HelpBtn"
         Me.HelpBtn.ShowImage = True
+        '
+        'BibleGetTabGroup3
+        '
+        Me.BibleGetTabGroup3.Items.Add(Me.SendFeedbackBtn)
+        Me.BibleGetTabGroup3.Items.Add(Me.MakeContributionBtn)
+        Me.BibleGetTabGroup3.Items.Add(Me.AboutBtn)
+        Me.BibleGetTabGroup3.Items.Add(Me.Separator1)
+        Me.BibleGetTabGroup3.Items.Add(Me.StatusBtn)
+        Me.BibleGetTabGroup3.Label = "About"
+        Me.BibleGetTabGroup3.Name = "BibleGetTabGroup3"
         '
         'SendFeedbackBtn
         '
@@ -168,6 +164,10 @@
         Me.AboutBtn.Label = "About"
         Me.AboutBtn.Name = "AboutBtn"
         Me.AboutBtn.ShowImage = True
+        '
+        'Separator1
+        '
+        Me.Separator1.Name = "Separator1"
         '
         'StatusBtn
         '

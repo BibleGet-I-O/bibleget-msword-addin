@@ -2,6 +2,10 @@
 Imports System.Globalization
 Imports System.Diagnostics
 Imports System.Windows.Forms
+Imports System.ComponentModel
+Imports System.Net
+Imports System.IO
+Imports System.Timers
 
 Public Class Ribbon1
 
@@ -15,6 +19,7 @@ Public Class Ribbon1
     End Function
 
     Private Sub Ribbon1_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
+
         InsertBibleQuoteFromDialogBtn.Label = __("Insert quote from input window")
         InsertBibleQuoteFromTextSelectionBtn.Label = __("Insert quote from text selection")
         PreferencesBtn.Label = __("User Preferences")
@@ -59,4 +64,11 @@ Public Class Ribbon1
         oForm.Show()
         'oForm.ShowDialog()
     End Sub
+
+
+    Private Sub InsertBibleQuoteFromTextSelectionBtn_Click(sender As Object, e As RibbonControlEventArgs) Handles InsertBibleQuoteFromTextSelectionBtn.Click
+        Dim progressBar As New ProgressBar
+        progressBar.Show()
+    End Sub
+
 End Class

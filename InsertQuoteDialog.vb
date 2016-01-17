@@ -48,7 +48,7 @@ Public Class InsertQuoteDialog
             Label2.Text = "ELABORATING REQUEST..."
             Dim queryString As String = TextBox2.Text
             'Diagnostics.Debug.WriteLine("dirty queryString = " + queryString)
-            queryString = New String(queryString.Where(Function(x) (Char.IsWhiteSpace(x) Or Char.IsLetterOrDigit(x) Or x = "," Or x = "." Or x = ":" Or x = "-")).ToArray())
+            queryString = New String(queryString.Where(Function(x) (Char.IsWhiteSpace(x) Or Char.IsLetterOrDigit(x) Or x = "," Or x = "." Or x = ":" Or x = "-" Or x = ";")).ToArray())
             'Diagnostics.Debug.WriteLine("clean queryString = " + queryString)
             'First we perform some verifications to make sure we are dealing with a good query
             Dim integrityResult As Boolean = helperFunctions.integrityCheck(queryString, PreferredVersions.ToArray)
@@ -110,7 +110,7 @@ Public Class InsertQuoteDialog
         ElseIf x.Command = "ELABORATEWEBRESPONSE" Then
             worker.ReportProgress(20)
             Dim responseFromServer As String = x.QueryString
-            Dim honeyBee As BibleGetDocInject = New BibleGetDocInject(worker)
+            Dim honeyBee As BibleGetDocInject = New BibleGetDocInject(worker, e)
             Dim finalString As String = honeyBee.InsertTextAtCurrentSelection(responseFromServer)
             worker.ReportProgress(100)
             result = New BibleGetWorker("WEBRESPONSEELABORATED", finalString)

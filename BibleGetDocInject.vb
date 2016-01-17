@@ -8,9 +8,11 @@ Public Class BibleGetDocInject
 
     Private Application As Word.Application = Globals.ThisAddIn.Application
     Private worker As BackgroundWorker
+    Private e As System.ComponentModel.DoWorkEventArgs
 
-    Public Sub New(ByRef worker As BackgroundWorker)
+    Public Sub New(ByRef worker As BackgroundWorker, ByRef e As System.ComponentModel.DoWorkEventArgs)
         Me.worker = worker
+        Me.e = e
     End Sub
 
     Public Function InsertTextAtCurrentSelection(ByVal myString As String) As String
@@ -56,7 +58,10 @@ Public Class BibleGetDocInject
 
         Dim workerProgress As Integer = 20
         For Each currentJson As JToken In jRRArray
-
+            If worker.CancellationPending Then
+                e.Cancel = True
+                Return "Work was cancelled"
+            End If
             worker.ReportProgress(workerProgress)
             currentbook = currentJson.SelectToken("book").Value(Of String)()
             currentchapter = currentJson.SelectToken("chapter").Value(Of Integer)()

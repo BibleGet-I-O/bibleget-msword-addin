@@ -47,3 +47,4 @@ C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\o
 C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\obj\Debug\BibleGetIO.dll
 C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\obj\Debug\BibleGetIO.xml
 C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\obj\Debug\BibleGetIO.pdb
+C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\obj\Debug\BibleGetIO.ProgressBar.resources
