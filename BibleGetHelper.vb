@@ -86,7 +86,7 @@ Public Class BibleGetHelper
                 Dim m As Match = Regex.Match(querie, pattern)
                 If m.Success Then
                     tempBook = m.Groups(1).Value
-                    Diagnostics.Debug.WriteLine("Captured the book as <" & tempBook & ">")
+                    'Diagnostics.Debug.WriteLine("Captured the book as <" & tempBook & ">")
                     bBooksContains = isValidBook(tempBook)
                     myidx = bBooksContains + 1
                     '//if(bBooksContains == -1 && bBooksAbbrevsContains == false){
@@ -112,7 +112,7 @@ Public Class BibleGetHelper
                 For Each match2 As Match In Regex.Matches(querie, pattern2)
                     count2 += 1
                 Next
-                Diagnostics.Debug.WriteLine("count1 = " & count1.ToString & " | count2 = " & count2.ToString)
+                'Diagnostics.Debug.WriteLine("count1 = " & count1.ToString & " | count2 = " & count2.ToString)
                 If Not Regex.IsMatch(querie, "^[1-3]{0,1}((\p{L}\p{M}*)+)[1-9][0-9]{0,2}(.*)") Or count1 <> count2 Then
                     errorMessages.Add(__("You must have a valid chapter following the book indicator!"))
                     finFlag = False

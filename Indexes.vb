@@ -41,7 +41,7 @@ Public Class Indexes
 
     Public Function isValidChapter(ByVal chapter As Integer, ByVal book As Integer, ByVal selectedVersions As List(Of String)) As Boolean
         Dim flag As Boolean = True
-        Diagnostics.Debug.WriteLine(String.Join(",", selectedVersions))
+        'Diagnostics.Debug.WriteLine(String.Join(",", selectedVersions))
         For Each version As String In selectedVersions
             Dim idx As Integer = VersionIndexes(version).book_num().IndexOf(book)
             If VersionIndexes(version).chapter_limit()(idx) < chapter Then flag = False

@@ -25,7 +25,7 @@ Public Class HTTPCaller
             Dim responseFromServer As String = reader.ReadToEnd()
             Return responseFromServer
         Else
-            Diagnostics.Debug.WriteLine("Error contacting server. HTTP Status Code: " & CType(response, HttpWebResponse).StatusDescription)
+            'Diagnostics.Debug.WriteLine("Error contacting server. HTTP Status Code: " & CType(response, HttpWebResponse).StatusDescription)
         End If
         Return Nothing
     End Function

@@ -109,7 +109,7 @@ Public NotInheritable Class AboutBibleGet
                     End Using
                 End Using
             Else
-                Diagnostics.Debug.WriteLine("we seem to have a null connection... arghhh!")
+                'Diagnostics.Debug.WriteLine("we seem to have a null connection... arghhh!")
             End If
         End If
 

@@ -641,7 +641,7 @@ Public Class Preferences
                 Case 2
                     My.Settings.Linespacing = 2.0
             End Select
-            Diagnostics.Debug.WriteLine("linespacing has been set to " + My.Settings.Linespacing.ToString)
+            'Diagnostics.Debug.WriteLine("linespacing has been set to " + My.Settings.Linespacing.ToString)
             My.Settings.Save()
             setPreviewDocument()
         End If

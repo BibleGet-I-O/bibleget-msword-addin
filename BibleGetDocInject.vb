@@ -144,7 +144,7 @@ Public Class BibleGetDocInject
             Dim remainingText As String = currentText
 
             If Regex.IsMatch(currentText, ".*<[/]{0,1}(?:speaker|sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1}>.*", RegexOptions.Singleline) Then '//[/]{0,1}(?:sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1}>
-                Diagnostics.Debug.WriteLine("We have detected a text string with special formatting: " + currentText)
+                'Diagnostics.Debug.WriteLine("We have detected a text string with special formatting: " + currentText)
                 Dim pattern1 As String = "(.*?)<((speaker|sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1})>(.*?)</\2>"
                 'Matcher matcher1 = pattern1.matcher(currentText);
                 Dim iteration As Integer = 0
@@ -157,7 +157,7 @@ Public Class BibleGetDocInject
                     '//                    System.out.println("group3:"+matcher1.group(3));
                     '//                    System.out.println("group4:"+matcher1.group(4));
                     If match.Groups(1).Value IsNot Nothing And match.Groups(1).Value IsNot String.Empty Then
-                        Diagnostics.Debug.WriteLine("We seem to have some normal text preceding our special formatting text: " + match.Groups(1).Value)
+                        'Diagnostics.Debug.WriteLine("We seem to have some normal text preceding our special formatting text: " + match.Groups(1).Value)
                         normalText = True
                         TypeText(currentSelection, match.Groups(1).Value)
                         Dim regex As Regex = New Regex(match.Groups(1).Value)
@@ -358,7 +358,7 @@ Public Class BibleGetDocInject
                 '//                System.out.println("And after elaborating our matches, this is what we have left: "+remainingText);
                 '//                System.out.println();
                 If remainingText IsNot String.Empty Then
-                    Diagnostics.Debug.WriteLine("We have a fragment of text left over after all this: " + remainingText)
+                    'Diagnostics.Debug.WriteLine("We have a fragment of text left over after all this: " + remainingText)
                     TypeText(currentSelection, remainingText)
                 End If
                 '/*
@@ -458,16 +458,16 @@ Public Class BibleGetDocInject
 
         currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent)
         'currentSelection.Range.ParagraphFormat.FirstLineIndent = My.Settings.Indent
-        Diagnostics.Debug.WriteLine("current linespacing = " + My.Settings.Linespacing.ToString)
+        'Diagnostics.Debug.WriteLine("current linespacing = " + My.Settings.Linespacing.ToString)
         Select Case My.Settings.Linespacing
             Case 1.0
-                Diagnostics.Debug.WriteLine("current linespacing has been detected as Single")
+                'Diagnostics.Debug.WriteLine("current linespacing has been detected as Single")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpaceSingle
             Case 1.5
-                Diagnostics.Debug.WriteLine("current linespacing has been detected as one and a half")
+                'Diagnostics.Debug.WriteLine("current linespacing has been detected as one and a half")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpace1pt5
             Case 2.0
-                Diagnostics.Debug.WriteLine("current linespacing has been detected as Double")
+                'Diagnostics.Debug.WriteLine("current linespacing has been detected as Double")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpaceDouble
         End Select
     End Sub
