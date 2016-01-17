@@ -9,6 +9,8 @@ Public Class BibleGetHelper
     Private Function __(ByVal myStr As String) As String
         Dim myTranslation As String = ThisAddIn.RM.GetString(myStr, ThisAddIn.locale)
         If Not String.IsNullOrEmpty(myTranslation) Then
+            Dim rgx As New Regex("''")
+            myTranslation = rgx.Replace(myTranslation, "'")
             Return myTranslation
         Else
             Return myStr

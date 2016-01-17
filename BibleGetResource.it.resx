@@ -151,7 +151,7 @@ double up any single quotes or apostrophes.</comment>
     <value>Informazione attuale dal Server di BibleGet:</value>
   </data>
   <data name="The BibleGet database currently supports {0} versions of the Bible in {1} different languages:" xml:space="preserve">
-    <value>Il database del progetto BibleGeta attualmente supporta {0} versioni della Bibbia in {1} lingue diverse:</value>
+    <value>Il database del progetto BibleGet attualmente supporta {0} versioni della Bibbia in {1} lingue diverse:</value>
     <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
 translations
 double up any single quotes or apostrophes.</comment>

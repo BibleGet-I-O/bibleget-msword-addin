@@ -9,6 +9,7 @@ Imports Newtonsoft.Json.Linq
 Imports System.Collections
 Imports System.Globalization
 Imports System.Timers
+Imports System.Text.RegularExpressions
 
 
 Public Class InsertQuoteDialog
@@ -46,7 +47,9 @@ Public Class InsertQuoteDialog
             Button1.Text = __("Cancel")
             Label2.Text = "ELABORATING REQUEST..."
             Dim queryString As String = TextBox2.Text
-
+            'Diagnostics.Debug.WriteLine("dirty queryString = " + queryString)
+            queryString = New String(queryString.Where(Function(x) (Char.IsWhiteSpace(x) Or Char.IsLetterOrDigit(x) Or x = "," Or x = "." Or x = ":" Or x = "-")).ToArray())
+            'Diagnostics.Debug.WriteLine("clean queryString = " + queryString)
             'First we perform some verifications to make sure we are dealing with a good query
             Dim integrityResult As Boolean = helperFunctions.integrityCheck(queryString, PreferredVersions.ToArray)
 

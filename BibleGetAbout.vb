@@ -187,6 +187,8 @@ Public NotInheritable Class AboutBibleGet
         Dim versionCount As Integer
         Dim versionLangs As Integer
         Dim booksLangs As Integer
+        Dim langsLocalized As List(Of String) = New List(Of String)
+
         Dim bibleGetDB As New BibleGetDatabase
         Dim conn As SQLiteConnection
         If bibleGetDB.INITIALIZED Then
@@ -246,11 +248,10 @@ Public NotInheritable Class AboutBibleGet
 
                         Dim langsObj As JArray = JArray.Parse(langsSupported)
                         booksLangs = langsObj.Count
-                        Dim langsLocalized As List(Of String) = New List(Of String)
                         For Each jsonValue As JValue In langsObj
                             langsLocalized.Add(localizeLanguage(jsonValue.ToString))
                         Next
-                        Diagnostics.Debug.WriteLine(String.Join(",", langsLocalized))
+                        'Diagnostics.Debug.WriteLine(String.Join(",", langsLocalized))
                     End Using
                 End Using
             Else
@@ -258,9 +259,9 @@ Public NotInheritable Class AboutBibleGet
             End If
         End If
 
-
         CurrentInfo.Text = String.Format(__("The BibleGet database currently supports {0} versions of the Bible in {1} different languages:"), versionCount, versionLangs)
-        ServerDataLangs.Text = String.Format(__("The BibleGet engine currently understands the names of the books of the Bible in {0} different languages:"), booksLangs)
+        ServerDataLangsCount.Text = String.Format(__("The BibleGet engine currently understands the names of the books of the Bible in {0} different languages:"), booksLangs)
+        ServerDataLangs.Text = String.Join(", ", langsLocalized)
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click
