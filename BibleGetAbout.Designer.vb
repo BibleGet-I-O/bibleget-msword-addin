@@ -38,11 +38,12 @@ Partial Class AboutBibleGet
         Me.LabelCopyright = New System.Windows.Forms.Label()
         Me.LabelCompanyName = New System.Windows.Forms.Label()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.OKButton = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.CurrentInfo = New System.Windows.Forms.Label()
         Me.ServerData = New System.Windows.Forms.Label()
+        Me.ServerDataLangs = New System.Windows.Forms.Label()
+        Me.OKButton = New System.Windows.Forms.Button()
         Me.TableLayoutPanel.SuspendLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -59,18 +60,20 @@ Partial Class AboutBibleGet
         Me.TableLayoutPanel.Controls.Add(Me.LabelCopyright, 1, 2)
         Me.TableLayoutPanel.Controls.Add(Me.LabelCompanyName, 1, 3)
         Me.TableLayoutPanel.Controls.Add(Me.WebBrowser1, 1, 4)
-        Me.TableLayoutPanel.Controls.Add(Me.OKButton, 1, 6)
         Me.TableLayoutPanel.Controls.Add(Me.Panel1, 0, 5)
+        Me.TableLayoutPanel.Controls.Add(Me.ServerDataLangs, 0, 6)
+        Me.TableLayoutPanel.Controls.Add(Me.OKButton, 1, 7)
         Me.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel.Location = New System.Drawing.Point(9, 9)
         Me.TableLayoutPanel.Name = "TableLayoutPanel"
-        Me.TableLayoutPanel.RowCount = 7
+        Me.TableLayoutPanel.RowCount = 8
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
         Me.TableLayoutPanel.Size = New System.Drawing.Size(614, 590)
         Me.TableLayoutPanel.TabIndex = 0
@@ -83,7 +86,7 @@ Partial Class AboutBibleGet
         Me.LogoPictureBox.Location = New System.Drawing.Point(3, 3)
         Me.LogoPictureBox.Name = "LogoPictureBox"
         Me.TableLayoutPanel.SetRowSpan(Me.LogoPictureBox, 5)
-        Me.LogoPictureBox.Size = New System.Drawing.Size(147, 292)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(147, 267)
         Me.LogoPictureBox.TabIndex = 0
         Me.LogoPictureBox.TabStop = False
         '
@@ -104,7 +107,7 @@ Partial Class AboutBibleGet
         '
         Me.LabelVersion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LabelVersion.Location = New System.Drawing.Point(159, 23)
+        Me.LabelVersion.Location = New System.Drawing.Point(159, 21)
         Me.LabelVersion.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelVersion.MaximumSize = New System.Drawing.Size(0, 17)
         Me.LabelVersion.Name = "LabelVersion"
@@ -117,7 +120,7 @@ Partial Class AboutBibleGet
         '
         Me.LabelCopyright.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LabelCopyright.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LabelCopyright.Location = New System.Drawing.Point(159, 46)
+        Me.LabelCopyright.Location = New System.Drawing.Point(159, 42)
         Me.LabelCopyright.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelCopyright.MaximumSize = New System.Drawing.Size(0, 17)
         Me.LabelCopyright.Name = "LabelCopyright"
@@ -130,7 +133,7 @@ Partial Class AboutBibleGet
         '
         Me.LabelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LabelCompanyName.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LabelCompanyName.Location = New System.Drawing.Point(159, 69)
+        Me.LabelCompanyName.Location = New System.Drawing.Point(159, 63)
         Me.LabelCompanyName.Margin = New System.Windows.Forms.Padding(6, 0, 3, 0)
         Me.LabelCompanyName.MaximumSize = New System.Drawing.Size(0, 17)
         Me.LabelCompanyName.Name = "LabelCompanyName"
@@ -144,23 +147,12 @@ Partial Class AboutBibleGet
         Me.WebBrowser1.AllowNavigation = False
         Me.WebBrowser1.AllowWebBrowserDrop = False
         Me.WebBrowser1.IsWebBrowserContextMenuEnabled = False
-        Me.WebBrowser1.Location = New System.Drawing.Point(156, 95)
+        Me.WebBrowser1.Location = New System.Drawing.Point(156, 87)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(455, 200)
+        Me.WebBrowser1.Size = New System.Drawing.Size(455, 183)
         Me.WebBrowser1.TabIndex = 1
         Me.WebBrowser1.WebBrowserShortcutsEnabled = False
-        '
-        'OKButton
-        '
-        Me.OKButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.OKButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.OKButton.Location = New System.Drawing.Point(536, 560)
-        Me.OKButton.Name = "OKButton"
-        Me.OKButton.Size = New System.Drawing.Size(75, 27)
-        Me.OKButton.TabIndex = 0
-        Me.OKButton.Text = "&OK"
         '
         'Panel1
         '
@@ -168,9 +160,9 @@ Partial Class AboutBibleGet
         Me.Panel1.Controls.Add(Me.ListView1)
         Me.Panel1.Controls.Add(Me.CurrentInfo)
         Me.Panel1.Controls.Add(Me.ServerData)
-        Me.Panel1.Location = New System.Drawing.Point(3, 301)
+        Me.Panel1.Location = New System.Drawing.Point(3, 276)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(608, 253)
+        Me.Panel1.Size = New System.Drawing.Size(608, 231)
         Me.Panel1.TabIndex = 3
         '
         'ListView1
@@ -202,6 +194,26 @@ Partial Class AboutBibleGet
         Me.ServerData.TabIndex = 2
         Me.ServerData.Text = "UserCode"
         '
+        'ServerDataLangs
+        '
+        Me.ServerDataLangs.AutoSize = True
+        Me.ServerDataLangs.Location = New System.Drawing.Point(3, 510)
+        Me.ServerDataLangs.Name = "ServerDataLangs"
+        Me.ServerDataLangs.Size = New System.Drawing.Size(90, 13)
+        Me.ServerDataLangs.TabIndex = 4
+        Me.ServerDataLangs.Text = "ServerDataLangs"
+        '
+        'OKButton
+        '
+        Me.OKButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.OKButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.OKButton.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.OKButton.Location = New System.Drawing.Point(536, 563)
+        Me.OKButton.Name = "OKButton"
+        Me.OKButton.Size = New System.Drawing.Size(75, 24)
+        Me.OKButton.TabIndex = 0
+        Me.OKButton.Text = "&OK"
+        '
         'AboutBibleGet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -219,6 +231,7 @@ Partial Class AboutBibleGet
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About BibleGet I/O"
         Me.TableLayoutPanel.ResumeLayout(False)
+        Me.TableLayoutPanel.PerformLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -230,5 +243,6 @@ Partial Class AboutBibleGet
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents CurrentInfo As System.Windows.Forms.Label
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents ServerDataLangs As System.Windows.Forms.Label
 
 End Class
