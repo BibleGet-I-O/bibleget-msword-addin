@@ -173,7 +173,7 @@ Public Class InsertQuoteDialog
                 'TextBox1.Text = x.QueryString
                 TextBox1.Text = String.Empty
                 Dim tmr As New System.Timers.Timer()
-                tmr.Interval = 2000
+                tmr.Interval = 1000
                 tmr.Enabled = True
                 tmr.Start()
                 AddHandler tmr.Elapsed, AddressOf OnTimedEvent

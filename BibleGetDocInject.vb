@@ -340,13 +340,13 @@ Public Class BibleGetDocInject
                                 currentSelection.Font.Bold = True
                                 '//xPropertySet.setPropertyValue("CharBackTransparent", false);
                                 'xPropertySet.setPropertyValue("CharBackColor", Color.LIGHT_GRAY.getRGB() & ~0xFF000000);
-                                currentSelection.Font.ColorIndex = Word.WdColorIndex.wdGray25
+                                currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorGray30
                                 TypeText(currentSelection, match.Groups(4).Value)
                                 If Not My.Settings.VerseTextFont.Bold Then
                                     currentSelection.Font.Bold = False
                                 End If
                                 'xPropertySet.setPropertyValue("CharBackColor", bgColorVerseText.getRGB() & ~0xFF000000);
-                                currentSelection.Font.ColorIndex = Word.WdColorIndex.wdWhite
+                                currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Microsoft.Office.Interop.Word.WdColor)
                         End Select
 
                         Dim nonmereggaepiu As Regex = New Regex("<" + match.Groups(2).Value + ">" + match.Groups(4).Value + "</" + match.Groups(2).Value + ">")
@@ -503,7 +503,11 @@ Public Class BibleGetDocInject
         currentSelection.Font.Underline = bookChapterFont.Underline
         currentSelection.Font.StrikeThrough = bookChapterFont.StrikeThrough
         currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.BookChapterForeColor), Microsoft.Office.Interop.Word.WdColor)
-        currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Microsoft.Office.Interop.Word.WdColor)
+        If My.Settings.BookChapterBackColor = Nothing Then
+            currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorAutomatic
+        Else
+            currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Microsoft.Office.Interop.Word.WdColor)
+        End If
         Select Case My.Settings.BookChapterVAlign
             Case "sub"
                 currentSelection.Font.Subscript = True
@@ -537,7 +541,11 @@ Public Class BibleGetDocInject
         currentSelection.Font.Underline = verseNumberFont.Underline
         currentSelection.Font.StrikeThrough = verseNumberFont.StrikeThrough
         currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.VerseNumberForeColor), Microsoft.Office.Interop.Word.WdColor)
-        currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseNumberBackColor), Microsoft.Office.Interop.Word.WdColor)
+        If My.Settings.VerseNumberBackColor = Nothing Then
+            currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorAutomatic
+        Else
+            currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseNumberBackColor), Microsoft.Office.Interop.Word.WdColor)
+        End If
         Select Case My.Settings.VerseNumberVAlign
             Case "sub"
                 currentSelection.Font.Subscript = True
@@ -557,7 +565,11 @@ Public Class BibleGetDocInject
         currentSelection.Font.Underline = verseTextFont.Underline
         currentSelection.Font.StrikeThrough = verseTextFont.StrikeThrough
         currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.VerseTextForeColor), Microsoft.Office.Interop.Word.WdColor)
-        currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Microsoft.Office.Interop.Word.WdColor)
+        If My.Settings.VerseTextBackColor = Nothing Then
+            currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorAutomatic
+        Else
+            currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Microsoft.Office.Interop.Word.WdColor)
+        End If
         Select Case My.Settings.VerseTextVAlign
             Case "sub"
                 currentSelection.Font.Subscript = True
@@ -578,7 +590,7 @@ Public Class BibleGetDocInject
         currentSelection.Font.Bold = True
 
         'xPropertySet.setPropertyValue("CharBackColor", Color.LIGHT_GRAY.getRGB() & ~0xFF000000);
-        'currentSelection.Font.ColorIndex = RGB()
+        currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorGray30
 
         TypeText(currentSelection, " " + speakerTagContents + " ")
 
@@ -586,7 +598,7 @@ Public Class BibleGetDocInject
             currentSelection.Font.Bold = False
         End If
         'xPropertySet.setPropertyValue("CharBackColor", bgColorVerseText.getRGB() & ~0xFF000000);
-        'currentSelection.Font.ColorIndex = RGB()
+        currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Microsoft.Office.Interop.Word.WdColor)
         TypeText(currentSelection, speakerTagAfter)
     End Sub
 
