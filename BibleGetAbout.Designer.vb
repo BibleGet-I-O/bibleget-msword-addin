@@ -42,10 +42,10 @@ Partial Class AboutBibleGet
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.CurrentInfo = New System.Windows.Forms.Label()
         Me.ServerData = New System.Windows.Forms.Label()
-        Me.ServerDataLangsCount = New System.Windows.Forms.Label()
         Me.OKButton = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ServerDataLangs = New System.Windows.Forms.TextBox()
+        Me.ServerDataLangsCount = New System.Windows.Forms.Label()
         Me.TableLayoutPanel.SuspendLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -198,15 +198,6 @@ Partial Class AboutBibleGet
         Me.ServerData.TabIndex = 2
         Me.ServerData.Text = "UserCode"
         '
-        'ServerDataLangsCount
-        '
-        Me.ServerDataLangsCount.AutoSize = True
-        Me.ServerDataLangsCount.Location = New System.Drawing.Point(4, 0)
-        Me.ServerDataLangsCount.Name = "ServerDataLangsCount"
-        Me.ServerDataLangsCount.Size = New System.Drawing.Size(118, 13)
-        Me.ServerDataLangsCount.TabIndex = 4
-        Me.ServerDataLangsCount.Text = "ServerDataLangsCount"
-        '
         'OKButton
         '
         Me.OKButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -237,6 +228,15 @@ Partial Class AboutBibleGet
         Me.ServerDataLangs.Size = New System.Drawing.Size(602, 50)
         Me.ServerDataLangs.TabIndex = 5
         Me.ServerDataLangs.TabStop = False
+        '
+        'ServerDataLangsCount
+        '
+        Me.ServerDataLangsCount.AutoSize = True
+        Me.ServerDataLangsCount.Location = New System.Drawing.Point(4, 0)
+        Me.ServerDataLangsCount.Name = "ServerDataLangsCount"
+        Me.ServerDataLangsCount.Size = New System.Drawing.Size(118, 13)
+        Me.ServerDataLangsCount.TabIndex = 4
+        Me.ServerDataLangsCount.Text = "ServerDataLangsCount"
         '
         'AboutBibleGet
         '

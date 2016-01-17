@@ -1,11 +1,6 @@
 ﻿Imports Microsoft.Office.Tools.Ribbon
 Imports System.Globalization
 Imports System.Diagnostics
-Imports System.Windows.Forms
-Imports System.ComponentModel
-Imports System.Net
-Imports System.IO
-Imports System.Timers
 
 Public Class Ribbon1
 
@@ -56,7 +51,8 @@ Public Class Ribbon1
     End Sub
 
     Private Sub StatusBtn_Click(sender As Object, e As RibbonControlEventArgs) Handles StatusBtn.Click
-
+        Dim curTime As Date = TimeOfDay
+        MsgBox("It is " & curTime.ToShortTimeString & " and all is well! And yes, the Database is correctly initialized and you may proceed to utilize this plugin.")
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As RibbonControlEventArgs) Handles HelpBtn.Click
