@@ -140,25 +140,24 @@ Public Class BibleGetDocInject
 
             setVerseTextStyles(currentSelection, verseTextFont)
             Dim currentText As String = currentJson.SelectToken("text").Value(Of String)()
-            currentText = currentText.Replace("\n", "").Replace("\r", "")
+            currentText = currentText.Replace(vbCr, String.Empty).Replace(vbLf, String.Empty)
             Dim remainingText As String = currentText
 
-
             If Regex.IsMatch(currentText, ".*<[/]{0,1}(?:speaker|sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1}>.*", RegexOptions.Singleline) Then '//[/]{0,1}(?:sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1}>
-
+                Diagnostics.Debug.WriteLine("We have detected a text string with special formatting: " + currentText)
                 Dim pattern1 As String = "(.*?)<((speaker|sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1})>(.*?)</\2>"
                 'Matcher matcher1 = pattern1.matcher(currentText);
                 Dim iteration As Integer = 0
-
-                For Each match As Match In Regex.Matches(currentText, pattern1)
+                Dim currentSpaceAfter As Single = currentSelection.Range.ParagraphFormat.SpaceAfter
+                For Each match As Match In Regex.Matches(currentText, pattern1, RegexOptions.Singleline)
                     '//                    System.out.print("Iteration ");
                     '//                    System.out.println(++iteration);
                     '//                    System.out.println("group1:"+matcher1.group(1));
                     '//                    System.out.println("group2:"+matcher1.group(2));
                     '//                    System.out.println("group3:"+matcher1.group(3));
                     '//                    System.out.println("group4:"+matcher1.group(4));
-                    If match.Groups(1).Value <> Nothing And match.Groups(1).Value IsNot String.Empty Then
-
+                    If match.Groups(1).Value IsNot Nothing And match.Groups(1).Value IsNot String.Empty Then
+                        Diagnostics.Debug.WriteLine("We seem to have some normal text preceding our special formatting text: " + match.Groups(1).Value)
                         normalText = True
                         TypeText(currentSelection, match.Groups(1).Value)
                         Dim regex As Regex = New Regex(match.Groups(1).Value)
@@ -179,7 +178,7 @@ Public Class BibleGetDocInject
 
                         If Regex.IsMatch(formattingTagContents, ".*<[/]{0,1}speaker>.*", RegexOptions.Singleline) Then
                             nestedTag = True
-
+                            'Diagnostics.Debug.WriteLine("We have a nested tag in this special formatting text: " + formattingTagContents)
                             Dim remainingText2 As String = formattingTagContents
 
                             'Matcher matcher2 = pattern1.matcher(formattingTagContents);
@@ -204,9 +203,9 @@ Public Class BibleGetDocInject
                             Case "pof"
                                 If Not noVersionFormatting Then
                                     If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
-                                    'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2 + 4
-                                    currentSelection.Range.ParagraphFormat.FirstLineIndent = My.Settings.Indent * 2 + 4
+                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent + 0.5)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
                                 If nestedTag Then
                                     insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
@@ -215,13 +214,16 @@ Public Class BibleGetDocInject
                                 End If
                                 If Not noVersionFormatting Then
                                     TypeText(currentSelection, "NEWLINE")
+                                    setVerseTextStyles(currentSelection, verseTextFont)
                                 End If
                                 normalText = False
                             Case "pos"
                                 If Not noVersionFormatting Then
                                     If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2 + 4
+                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent + 0.5)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
                                 If nestedTag Then
                                     insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
@@ -230,13 +232,16 @@ Public Class BibleGetDocInject
                                 End If
                                 If Not noVersionFormatting Then
                                     TypeText(currentSelection, "NEWLINE")
+                                    setVerseTextStyles(currentSelection, verseTextFont)
                                 End If
                                 normalText = False
                             Case "poif"
                                 If Not noVersionFormatting Then
                                     If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2 + 4
+                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent + 0.5)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
                                 If nestedTag Then
                                     insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
@@ -245,13 +250,16 @@ Public Class BibleGetDocInject
                                 End If
                                 If Not noVersionFormatting Then
                                     TypeText(currentSelection, "NEWLINE")
+                                    setVerseTextStyles(currentSelection, verseTextFont)
                                 End If
                                 normalText = False
                             Case "po"
                                 If Not noVersionFormatting Then
                                     If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2 + 4
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent + 0.5)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
+                                    setVerseTextStyles(currentSelection, verseTextFont)
                                 End If
                                 If nestedTag Then
                                     insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
@@ -260,13 +268,16 @@ Public Class BibleGetDocInject
                                 End If
                                 If Not noVersionFormatting Then
                                     TypeText(currentSelection, "NEWLINE")
+                                    setVerseTextStyles(currentSelection, verseTextFont)
                                 End If
                                 normalText = False
                             Case "poi"
                                 If Not noVersionFormatting Then
                                     If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2 + 6
+                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent + 1)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
                                 If nestedTag Then
                                     insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
@@ -275,13 +286,16 @@ Public Class BibleGetDocInject
                                 End If
                                 If Not noVersionFormatting Then
                                     TypeText(currentSelection, "NEWLINE")
+                                    setVerseTextStyles(currentSelection, verseTextFont)
                                 End If
                                 normalText = False
                             Case "pol"
                                 If Not noVersionFormatting Then
                                     If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2 + 4
+                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent + 0.5)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                                 End If
                                 If nestedTag Then
                                     insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
@@ -291,14 +305,17 @@ Public Class BibleGetDocInject
                                 If Not noVersionFormatting Then
                                     TypeText(currentSelection, "NEWLINE")
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2 + 6
+                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent + 1)
                                 End If
                                 normalText = False
                             Case "poil"
                                 If Not noVersionFormatting Then
                                     If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2 + 6
+                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent + 1)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                                 End If
                                 If nestedTag Then
                                     insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
@@ -308,7 +325,8 @@ Public Class BibleGetDocInject
                                 If Not noVersionFormatting Then
                                     TypeText(currentSelection, "NEWLINE")
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent * 2
+                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent)
                                 End If
                                 normalText = False
                             Case "sm"
@@ -335,10 +353,12 @@ Public Class BibleGetDocInject
                         remainingText = nonmereggaepiu.Replace(remainingText, String.Empty, 1)
                     End If
                 Next
+                currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                 '//                System.out.println("We have a match for special formatting: "+currentText);
                 '//                System.out.println("And after elaborating our matches, this is what we have left: "+remainingText);
                 '//                System.out.println();
-                If Not remainingText Is String.Empty Then
+                If remainingText IsNot String.Empty Then
+                    Diagnostics.Debug.WriteLine("We have a fragment of text left over after all this: " + remainingText)
                     TypeText(currentSelection, remainingText)
                 End If
                 '/*
@@ -364,7 +384,6 @@ Public Class BibleGetDocInject
             End If
 
             If firstVerse Then firstVerse = False
-
 
             workerProgress += 1
         Next
@@ -406,12 +425,26 @@ Public Class BibleGetDocInject
 
     Private Function wdFontConverter(ByVal myFont As Drawing.Font) As Word.Font
         Dim returnFont As Word.Font = New Word.Font
-        returnFont.Name = myFont.Name
-        returnFont.Bold = myFont.Bold
-        returnFont.Italic = myFont.Italic
-        returnFont.Underline = myFont.Underline
-        returnFont.StrikeThrough = myFont.Strikeout
-        returnFont.Size = myFont.Size
+        If myFont IsNot Nothing Then
+            returnFont.Name = myFont.Name
+            returnFont.Bold = myFont.Bold
+            returnFont.Italic = myFont.Italic
+            If myFont.Underline Then
+                returnFont.Underline = Word.WdUnderline.wdUnderlineSingle
+            Else
+                returnFont.Underline = Word.WdUnderline.wdUnderlineNone
+            End If            
+            returnFont.StrikeThrough = myFont.Strikeout
+            returnFont.Size = myFont.Size
+        Else
+            returnFont.Name = "Times New Roman"
+            returnFont.Bold = False
+            returnFont.Italic = False
+            returnFont.Underline = Word.WdUnderline.wdUnderlineNone
+            returnFont.StrikeThrough = False
+            returnFont.Size = 12
+        End If
+
         Return returnFont
     End Function
 
@@ -423,14 +456,18 @@ Public Class BibleGetDocInject
         'currentSelection.Font.Underline = paragraphFont.Underline
         'currentSelection.Font.StrikeThrough = paragraphFont.StrikeThrough
 
-        currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.Indent
-        currentSelection.Range.ParagraphFormat.FirstLineIndent = My.Settings.Indent
+        currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.Indent)
+        'currentSelection.Range.ParagraphFormat.FirstLineIndent = My.Settings.Indent
+        Diagnostics.Debug.WriteLine("current linespacing = " + My.Settings.Linespacing.ToString)
         Select Case My.Settings.Linespacing
             Case 1.0
+                Diagnostics.Debug.WriteLine("current linespacing has been detected as Single")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpaceSingle
             Case 1.5
+                Diagnostics.Debug.WriteLine("current linespacing has been detected as one and a half")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpace1pt5
             Case 2.0
+                Diagnostics.Debug.WriteLine("current linespacing has been detected as Double")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpaceDouble
         End Select
     End Sub
@@ -443,8 +480,8 @@ Public Class BibleGetDocInject
         currentSelection.Font.Italic = paragraphFont.Italic
         currentSelection.Font.Underline = paragraphFont.Underline
         currentSelection.Font.StrikeThrough = paragraphFont.StrikeThrough
-        'currentSelection.Font.ColorIndex =
-        'currentSelection.Font.HighlightColor
+        'currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.BookChapterForeColor), Microsoft.Office.Interop.Word.WdColor)
+        'currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Microsoft.Office.Interop.Word.WdColor)
         Select Case My.Settings.BookChapterVAlign
             Case "sub"
                 currentSelection.Font.Subscript = True
@@ -465,8 +502,8 @@ Public Class BibleGetDocInject
         currentSelection.Font.Italic = bookChapterFont.Italic
         currentSelection.Font.Underline = bookChapterFont.Underline
         currentSelection.Font.StrikeThrough = bookChapterFont.StrikeThrough
-        'currentSelection.Font.ColorIndex =
-        'currentSelection.Font.HighlightColor
+        currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.BookChapterForeColor), Microsoft.Office.Interop.Word.WdColor)
+        currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Microsoft.Office.Interop.Word.WdColor)
         Select Case My.Settings.BookChapterVAlign
             Case "sub"
                 currentSelection.Font.Subscript = True
@@ -499,8 +536,8 @@ Public Class BibleGetDocInject
         currentSelection.Font.Italic = verseNumberFont.Italic
         currentSelection.Font.Underline = verseNumberFont.Underline
         currentSelection.Font.StrikeThrough = verseNumberFont.StrikeThrough
-        'currentSelection.Font.ColorIndex =
-        'currentSelection.Font.HighlightColor
+        currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.VerseNumberForeColor), Microsoft.Office.Interop.Word.WdColor)
+        currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseNumberBackColor), Microsoft.Office.Interop.Word.WdColor)
         Select Case My.Settings.VerseNumberVAlign
             Case "sub"
                 currentSelection.Font.Subscript = True
@@ -519,8 +556,8 @@ Public Class BibleGetDocInject
         currentSelection.Font.Italic = verseTextFont.Italic
         currentSelection.Font.Underline = verseTextFont.Underline
         currentSelection.Font.StrikeThrough = verseTextFont.StrikeThrough
-        'currentSelection.Font.ColorIndex =
-        'currentSelection.Font.HighlightColor
+        currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.VerseTextForeColor), Microsoft.Office.Interop.Word.WdColor)
+        currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Microsoft.Office.Interop.Word.WdColor)
         Select Case My.Settings.VerseTextVAlign
             Case "sub"
                 currentSelection.Font.Subscript = True

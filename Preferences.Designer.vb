@@ -25,6 +25,7 @@ Partial Class Preferences
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Preferences))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BookChapterFontBtnn = New System.Windows.Forms.Button()
         Me.BookChapterSubscriptBtn = New System.Windows.Forms.CheckBox()
         Me.BookChapterSuperscriptBtn = New System.Windows.Forms.CheckBox()
         Me.BookChapterStyleLbl = New System.Windows.Forms.Label()
@@ -32,11 +33,11 @@ Partial Class Preferences
         Me.BookChapterItalicBtn = New System.Windows.Forms.CheckBox()
         Me.BookChapterBoldBtn = New System.Windows.Forms.CheckBox()
         Me.BookChapterBGColorBtn = New System.Windows.Forms.Button()
-        Me.BookChapterFontBtn = New System.Windows.Forms.Label()
         Me.BookChapterColorBtn = New System.Windows.Forms.Button()
         Me.FontDlg = New System.Windows.Forms.FontDialog()
         Me.ColorDlg = New System.Windows.Forms.ColorDialog()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.VerseNumberFontBtnn = New System.Windows.Forms.Button()
         Me.VerseNumberSubscriptBtn = New System.Windows.Forms.CheckBox()
         Me.VerseNumberSuperscriptBtn = New System.Windows.Forms.CheckBox()
         Me.VerseNumberStyleLbl = New System.Windows.Forms.Label()
@@ -44,9 +45,9 @@ Partial Class Preferences
         Me.VerseNumberItalicBtn = New System.Windows.Forms.CheckBox()
         Me.VerseNumberBoldBtn = New System.Windows.Forms.CheckBox()
         Me.VerseNumberBGColorBtn = New System.Windows.Forms.Button()
-        Me.VerseNumberFontBtn = New System.Windows.Forms.Label()
         Me.VerseNumberColorBtn = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.VerseTextFontBtnn = New System.Windows.Forms.Button()
         Me.VerseTextSubscriptBtn = New System.Windows.Forms.CheckBox()
         Me.VerseTextSuperscriptBtn = New System.Windows.Forms.CheckBox()
         Me.VerseTextStyleLbl = New System.Windows.Forms.Label()
@@ -54,7 +55,6 @@ Partial Class Preferences
         Me.VerseTextItalicBtn = New System.Windows.Forms.CheckBox()
         Me.VerseTextBoldBtn = New System.Windows.Forms.CheckBox()
         Me.VerseTextBGColorBtn = New System.Windows.Forms.Button()
-        Me.VerseTextFontBtn = New System.Windows.Forms.Label()
         Me.VerseTextColorBtn = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
@@ -86,6 +86,7 @@ Partial Class Preferences
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.BookChapterFontBtnn)
         Me.GroupBox1.Controls.Add(Me.BookChapterSubscriptBtn)
         Me.GroupBox1.Controls.Add(Me.BookChapterSuperscriptBtn)
         Me.GroupBox1.Controls.Add(Me.BookChapterStyleLbl)
@@ -93,7 +94,6 @@ Partial Class Preferences
         Me.GroupBox1.Controls.Add(Me.BookChapterItalicBtn)
         Me.GroupBox1.Controls.Add(Me.BookChapterBoldBtn)
         Me.GroupBox1.Controls.Add(Me.BookChapterBGColorBtn)
-        Me.GroupBox1.Controls.Add(Me.BookChapterFontBtn)
         Me.GroupBox1.Controls.Add(Me.BookChapterColorBtn)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 126)
         Me.GroupBox1.Name = "GroupBox1"
@@ -101,6 +101,15 @@ Partial Class Preferences
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Book / Chapter Formatting"
+        '
+        'BookChapterFontBtnn
+        '
+        Me.BookChapterFontBtnn.Location = New System.Drawing.Point(6, 16)
+        Me.BookChapterFontBtnn.Name = "BookChapterFontBtnn"
+        Me.BookChapterFontBtnn.Size = New System.Drawing.Size(240, 35)
+        Me.BookChapterFontBtnn.TabIndex = 11
+        Me.BookChapterFontBtnn.Text = "Button3"
+        Me.BookChapterFontBtnn.UseVisualStyleBackColor = True
         '
         'BookChapterSubscriptBtn
         '
@@ -134,10 +143,10 @@ Partial Class Preferences
         Me.BookChapterStyleLbl.AutoSize = True
         Me.BookChapterStyleLbl.BackColor = System.Drawing.SystemColors.Control
         Me.BookChapterStyleLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.BookChapterStyleLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.BookChapterStyleLbl.Location = New System.Drawing.Point(6, 46)
+        Me.BookChapterStyleLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BookChapterStyleLbl.Location = New System.Drawing.Point(7, 54)
         Me.BookChapterStyleLbl.Name = "BookChapterStyleLbl"
-        Me.BookChapterStyleLbl.Size = New System.Drawing.Size(72, 18)
+        Me.BookChapterStyleLbl.Size = New System.Drawing.Size(60, 15)
         Me.BookChapterStyleLbl.TabIndex = 8
         Me.BookChapterStyleLbl.Text = "12pt   Bold"
         '
@@ -186,19 +195,6 @@ Partial Class Preferences
         Me.BookChapterBGColorBtn.TabIndex = 3
         Me.BookChapterBGColorBtn.UseVisualStyleBackColor = True
         '
-        'BookChapterFontBtn
-        '
-        Me.BookChapterFontBtn.BackColor = System.Drawing.Color.White
-        Me.BookChapterFontBtn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.BookChapterFontBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BookChapterFontBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BookChapterFontBtn.Location = New System.Drawing.Point(6, 16)
-        Me.BookChapterFontBtn.Name = "BookChapterFontBtn"
-        Me.BookChapterFontBtn.Size = New System.Drawing.Size(240, 24)
-        Me.BookChapterFontBtn.TabIndex = 1
-        Me.BookChapterFontBtn.Text = "Microsoft Sans Serif"
-        Me.BookChapterFontBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'BookChapterColorBtn
         '
         Me.BookChapterColorBtn.AutoSize = True
@@ -212,6 +208,7 @@ Partial Class Preferences
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.VerseNumberFontBtnn)
         Me.GroupBox2.Controls.Add(Me.VerseNumberSubscriptBtn)
         Me.GroupBox2.Controls.Add(Me.VerseNumberSuperscriptBtn)
         Me.GroupBox2.Controls.Add(Me.VerseNumberStyleLbl)
@@ -219,7 +216,6 @@ Partial Class Preferences
         Me.GroupBox2.Controls.Add(Me.VerseNumberItalicBtn)
         Me.GroupBox2.Controls.Add(Me.VerseNumberBoldBtn)
         Me.GroupBox2.Controls.Add(Me.VerseNumberBGColorBtn)
-        Me.GroupBox2.Controls.Add(Me.VerseNumberFontBtn)
         Me.GroupBox2.Controls.Add(Me.VerseNumberColorBtn)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 207)
         Me.GroupBox2.Name = "GroupBox2"
@@ -227,6 +223,15 @@ Partial Class Preferences
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Verse Number Formatting"
+        '
+        'VerseNumberFontBtnn
+        '
+        Me.VerseNumberFontBtnn.Location = New System.Drawing.Point(7, 16)
+        Me.VerseNumberFontBtnn.Name = "VerseNumberFontBtnn"
+        Me.VerseNumberFontBtnn.Size = New System.Drawing.Size(239, 35)
+        Me.VerseNumberFontBtnn.TabIndex = 11
+        Me.VerseNumberFontBtnn.Text = "Button3"
+        Me.VerseNumberFontBtnn.UseVisualStyleBackColor = True
         '
         'VerseNumberSubscriptBtn
         '
@@ -259,11 +264,11 @@ Partial Class Preferences
         Me.VerseNumberStyleLbl.AutoSize = True
         Me.VerseNumberStyleLbl.BackColor = System.Drawing.SystemColors.Control
         Me.VerseNumberStyleLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.VerseNumberStyleLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.VerseNumberStyleLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VerseNumberStyleLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.VerseNumberStyleLbl.Location = New System.Drawing.Point(6, 46)
+        Me.VerseNumberStyleLbl.Location = New System.Drawing.Point(7, 54)
         Me.VerseNumberStyleLbl.Name = "VerseNumberStyleLbl"
-        Me.VerseNumberStyleLbl.Size = New System.Drawing.Size(88, 18)
+        Me.VerseNumberStyleLbl.Size = New System.Drawing.Size(72, 15)
         Me.VerseNumberStyleLbl.TabIndex = 8
         Me.VerseNumberStyleLbl.Text = "12pt   Normal"
         '
@@ -312,19 +317,6 @@ Partial Class Preferences
         Me.VerseNumberBGColorBtn.TabIndex = 3
         Me.VerseNumberBGColorBtn.UseVisualStyleBackColor = True
         '
-        'VerseNumberFontBtn
-        '
-        Me.VerseNumberFontBtn.BackColor = System.Drawing.Color.White
-        Me.VerseNumberFontBtn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.VerseNumberFontBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.VerseNumberFontBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.VerseNumberFontBtn.Location = New System.Drawing.Point(6, 16)
-        Me.VerseNumberFontBtn.Name = "VerseNumberFontBtn"
-        Me.VerseNumberFontBtn.Size = New System.Drawing.Size(240, 24)
-        Me.VerseNumberFontBtn.TabIndex = 1
-        Me.VerseNumberFontBtn.Text = "Microsoft Sans Serif"
-        Me.VerseNumberFontBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'VerseNumberColorBtn
         '
         Me.VerseNumberColorBtn.AutoSize = True
@@ -339,6 +331,7 @@ Partial Class Preferences
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.VerseTextFontBtnn)
         Me.GroupBox3.Controls.Add(Me.VerseTextSubscriptBtn)
         Me.GroupBox3.Controls.Add(Me.VerseTextSuperscriptBtn)
         Me.GroupBox3.Controls.Add(Me.VerseTextStyleLbl)
@@ -346,7 +339,6 @@ Partial Class Preferences
         Me.GroupBox3.Controls.Add(Me.VerseTextItalicBtn)
         Me.GroupBox3.Controls.Add(Me.VerseTextBoldBtn)
         Me.GroupBox3.Controls.Add(Me.VerseTextBGColorBtn)
-        Me.GroupBox3.Controls.Add(Me.VerseTextFontBtn)
         Me.GroupBox3.Controls.Add(Me.VerseTextColorBtn)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 288)
         Me.GroupBox3.Name = "GroupBox3"
@@ -354,6 +346,15 @@ Partial Class Preferences
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Verse Text Formatting"
+        '
+        'VerseTextFontBtnn
+        '
+        Me.VerseTextFontBtnn.Location = New System.Drawing.Point(7, 16)
+        Me.VerseTextFontBtnn.Name = "VerseTextFontBtnn"
+        Me.VerseTextFontBtnn.Size = New System.Drawing.Size(239, 35)
+        Me.VerseTextFontBtnn.TabIndex = 11
+        Me.VerseTextFontBtnn.Text = "Button3"
+        Me.VerseTextFontBtnn.UseVisualStyleBackColor = True
         '
         'VerseTextSubscriptBtn
         '
@@ -386,11 +387,11 @@ Partial Class Preferences
         Me.VerseTextStyleLbl.AutoSize = True
         Me.VerseTextStyleLbl.BackColor = System.Drawing.SystemColors.Control
         Me.VerseTextStyleLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.VerseTextStyleLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.VerseTextStyleLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VerseTextStyleLbl.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.VerseTextStyleLbl.Location = New System.Drawing.Point(6, 46)
+        Me.VerseTextStyleLbl.Location = New System.Drawing.Point(7, 54)
         Me.VerseTextStyleLbl.Name = "VerseTextStyleLbl"
-        Me.VerseTextStyleLbl.Size = New System.Drawing.Size(88, 18)
+        Me.VerseTextStyleLbl.Size = New System.Drawing.Size(72, 15)
         Me.VerseTextStyleLbl.TabIndex = 8
         Me.VerseTextStyleLbl.Text = "12pt   Normal"
         '
@@ -436,19 +437,6 @@ Partial Class Preferences
         Me.VerseTextBGColorBtn.Size = New System.Drawing.Size(48, 48)
         Me.VerseTextBGColorBtn.TabIndex = 3
         Me.VerseTextBGColorBtn.UseVisualStyleBackColor = True
-        '
-        'VerseTextFontBtn
-        '
-        Me.VerseTextFontBtn.BackColor = System.Drawing.Color.White
-        Me.VerseTextFontBtn.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.VerseTextFontBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.VerseTextFontBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.VerseTextFontBtn.Location = New System.Drawing.Point(6, 16)
-        Me.VerseTextFontBtn.Name = "VerseTextFontBtn"
-        Me.VerseTextFontBtn.Size = New System.Drawing.Size(240, 24)
-        Me.VerseTextFontBtn.TabIndex = 1
-        Me.VerseTextFontBtn.Text = "Microsoft Sans Serif"
-        Me.VerseTextFontBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'VerseTextColorBtn
         '
@@ -526,7 +514,7 @@ Partial Class Preferences
         Me.CheckBox1.Appearance = System.Windows.Forms.Appearance.Button
         Me.CheckBox1.Font = New System.Drawing.Font("Gabriola", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBox1.ForeColor = System.Drawing.Color.DarkRed
-        Me.CheckBox1.Location = New System.Drawing.Point(6, 23)
+        Me.CheckBox1.Location = New System.Drawing.Point(6, 29)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(61, 44)
         Me.CheckBox1.TabIndex = 0
@@ -549,7 +537,7 @@ Partial Class Preferences
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"single", "1½", "double"})
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 19)
+        Me.ComboBox1.Location = New System.Drawing.Point(7, 20)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(91, 32)
         Me.ComboBox1.TabIndex = 0
@@ -689,7 +677,6 @@ Partial Class Preferences
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents BookChapterColorBtn As System.Windows.Forms.Button
     Friend WithEvents FontDlg As System.Windows.Forms.FontDialog
-    Friend WithEvents BookChapterFontBtn As System.Windows.Forms.Label
     Friend WithEvents ColorDlg As System.Windows.Forms.ColorDialog
     Friend WithEvents BookChapterBGColorBtn As System.Windows.Forms.Button
     Friend WithEvents BookChapterUnderlineBtn As System.Windows.Forms.CheckBox
@@ -706,7 +693,6 @@ Partial Class Preferences
     Friend WithEvents VerseNumberItalicBtn As System.Windows.Forms.CheckBox
     Friend WithEvents VerseNumberBoldBtn As System.Windows.Forms.CheckBox
     Friend WithEvents VerseNumberBGColorBtn As System.Windows.Forms.Button
-    Friend WithEvents VerseNumberFontBtn As System.Windows.Forms.Label
     Friend WithEvents VerseNumberColorBtn As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents VerseTextSubscriptBtn As System.Windows.Forms.CheckBox
@@ -716,7 +702,6 @@ Partial Class Preferences
     Friend WithEvents VerseTextItalicBtn As System.Windows.Forms.CheckBox
     Friend WithEvents VerseTextBoldBtn As System.Windows.Forms.CheckBox
     Friend WithEvents VerseTextBGColorBtn As System.Windows.Forms.Button
-    Friend WithEvents VerseTextFontBtn As System.Windows.Forms.Label
     Friend WithEvents VerseTextColorBtn As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
@@ -735,4 +720,7 @@ Partial Class Preferences
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents BookChapterFontBtnn As System.Windows.Forms.Button
+    Friend WithEvents VerseNumberFontBtnn As System.Windows.Forms.Button
+    Friend WithEvents VerseTextFontBtnn As System.Windows.Forms.Button
 End Class

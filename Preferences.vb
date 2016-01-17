@@ -4,7 +4,6 @@ Imports System.Runtime.InteropServices
 
 Public Class Preferences
     Private initializing As Boolean = True
-    Private Settings As New MySettings
 
     'turn off the annoying clicking sound when the preview window refreshes (WebBrowser control)
     Const DS As Integer = 21
@@ -32,7 +31,7 @@ Public Class Preferences
         styleStr &= If(myFont.Style And Drawing.FontStyle.Italic, " Italic", "")
         styleStr &= If(myFont.Style And Drawing.FontStyle.Underline, " Underscore", "")
         styleStr &= If(((myFont.Style And Drawing.FontStyle.Bold) = False) And ((myFont.Style And Drawing.FontStyle.Italic) = False) And ((myFont.Style And Drawing.FontStyle.Underline) = False), " Normal", "")
-        'styleStr &= If(Settings.VerseNumberFont.Style And Drawing.FontStyle.Regular, " Normal", "")
+        'styleStr &= If(My.Settings.VerseNumberFont.Style And Drawing.FontStyle.Regular, " Normal", "")
 
         Select Case myCase
             Case "BookChapter"
@@ -53,20 +52,20 @@ Public Class Preferences
     Private Sub setFontBtn(ByVal myCase As String)
         Select Case myCase
             Case "BookChapter"
-                BookChapterFontBtn.Font = New Drawing.Font(Settings.BookChapterFont.Name, 12, Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
-                BookChapterFontBtn.Text = Settings.BookChapterFont.Name
-                BookChapterFontBtn.ForeColor = Settings.BookChapterForeColor
-                BookChapterFontBtn.BackColor = Settings.BookChapterBackColor
+                BookChapterFontBtnn.Font = New Drawing.Font(My.Settings.BookChapterFont.Name, 12, My.Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
+                BookChapterFontBtnn.Text = My.Settings.BookChapterFont.Name
+                BookChapterFontBtnn.ForeColor = My.Settings.BookChapterForeColor
+                BookChapterFontBtnn.BackColor = My.Settings.BookChapterBackColor
             Case "VerseNumber"
-                VerseNumberFontBtn.Font = New Drawing.Font(Settings.VerseNumberFont.Name, 12, Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
-                VerseNumberFontBtn.Text = Settings.VerseNumberFont.Name
-                VerseNumberFontBtn.ForeColor = Settings.VerseNumberForeColor
-                VerseNumberFontBtn.BackColor = Settings.VerseNumberBackColor
+                VerseNumberFontBtnn.Font = New Drawing.Font(My.Settings.VerseNumberFont.Name, 12, My.Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
+                VerseNumberFontBtnn.Text = My.Settings.VerseNumberFont.Name
+                VerseNumberFontBtnn.ForeColor = My.Settings.VerseNumberForeColor
+                VerseNumberFontBtnn.BackColor = My.Settings.VerseNumberBackColor
             Case "VerseText"
-                VerseTextFontBtn.Font = New Drawing.Font(Settings.VerseTextFont.Name, 12, Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
-                VerseTextFontBtn.Text = Settings.VerseTextFont.Name
-                VerseTextFontBtn.ForeColor = Settings.VerseTextForeColor
-                VerseTextFontBtn.BackColor = Settings.VerseTextBackColor
+                VerseTextFontBtnn.Font = New Drawing.Font(My.Settings.VerseTextFont.Name, 12, My.Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
+                VerseTextFontBtnn.Text = My.Settings.VerseTextFont.Name
+                VerseTextFontBtnn.ForeColor = My.Settings.VerseTextForeColor
+                VerseTextFontBtnn.BackColor = My.Settings.VerseTextBackColor
         End Select
 
     End Sub
@@ -74,23 +73,23 @@ Public Class Preferences
     Private Sub setCheckBtns(ByVal myCase As String)
         Select Case myCase
             Case "BookChapter"
-                BookChapterBoldBtn.Checked = (Settings.BookChapterFont.Style And Drawing.FontStyle.Bold)
-                BookChapterItalicBtn.Checked = (Settings.BookChapterFont.Style And Drawing.FontStyle.Italic)
-                BookChapterUnderlineBtn.Checked = (Settings.BookChapterFont.Style And Drawing.FontStyle.Underline)
-                BookChapterSuperscriptBtn.Checked = (Settings.BookChapterVAlign = "super")
-                BookChapterSubscriptBtn.Checked = (Settings.BookChapterVAlign = "sub")
+                BookChapterBoldBtn.Checked = (My.Settings.BookChapterFont.Style And Drawing.FontStyle.Bold)
+                BookChapterItalicBtn.Checked = (My.Settings.BookChapterFont.Style And Drawing.FontStyle.Italic)
+                BookChapterUnderlineBtn.Checked = (My.Settings.BookChapterFont.Style And Drawing.FontStyle.Underline)
+                BookChapterSuperscriptBtn.Checked = (My.Settings.BookChapterVAlign = "super")
+                BookChapterSubscriptBtn.Checked = (My.Settings.BookChapterVAlign = "sub")
             Case "VerseNumber"
-                VerseNumberBoldBtn.Checked = (Settings.VerseNumberFont.Style And Drawing.FontStyle.Bold)
-                VerseNumberItalicBtn.Checked = (Settings.VerseNumberFont.Style And Drawing.FontStyle.Italic)
-                VerseNumberUnderlineBtn.Checked = (Settings.VerseNumberFont.Style And Drawing.FontStyle.Underline)
-                VerseNumberSuperscriptBtn.Checked = (Settings.VerseNumberVAlign = "super")
-                VerseNumberSubscriptBtn.Checked = (Settings.VerseNumberVAlign = "sub")
+                VerseNumberBoldBtn.Checked = (My.Settings.VerseNumberFont.Style And Drawing.FontStyle.Bold)
+                VerseNumberItalicBtn.Checked = (My.Settings.VerseNumberFont.Style And Drawing.FontStyle.Italic)
+                VerseNumberUnderlineBtn.Checked = (My.Settings.VerseNumberFont.Style And Drawing.FontStyle.Underline)
+                VerseNumberSuperscriptBtn.Checked = (My.Settings.VerseNumberVAlign = "super")
+                VerseNumberSubscriptBtn.Checked = (My.Settings.VerseNumberVAlign = "sub")
             Case "VerseText"
-                VerseTextBoldBtn.Checked = (Settings.VerseTextFont.Style And Drawing.FontStyle.Bold)
-                VerseTextItalicBtn.Checked = (Settings.VerseTextFont.Style And Drawing.FontStyle.Italic)
-                VerseTextUnderlineBtn.Checked = (Settings.VerseTextFont.Style And Drawing.FontStyle.Underline)
-                VerseTextSuperscriptBtn.Checked = (Settings.VerseTextVAlign = "super")
-                VerseTextSubscriptBtn.Checked = (Settings.VerseTextVAlign = "sub")
+                VerseTextBoldBtn.Checked = (My.Settings.VerseTextFont.Style And Drawing.FontStyle.Bold)
+                VerseTextItalicBtn.Checked = (My.Settings.VerseTextFont.Style And Drawing.FontStyle.Italic)
+                VerseTextUnderlineBtn.Checked = (My.Settings.VerseTextFont.Style And Drawing.FontStyle.Underline)
+                VerseTextSuperscriptBtn.Checked = (My.Settings.VerseTextVAlign = "super")
+                VerseTextSubscriptBtn.Checked = (My.Settings.VerseTextVAlign = "sub")
         End Select
     End Sub
 
@@ -100,121 +99,121 @@ Public Class Preferences
                 Select Case myCase
                     Case "BookChapter"
                         If BookChapterBoldBtn.Checked Then
-                            Settings.BookChapterFont = New Drawing.Font(Settings.BookChapterFont.Name, Settings.BookChapterFont.Size, Settings.BookChapterFont.Style Or Drawing.FontStyle.Bold)
-                            BookChapterFontBtn.Font = New Drawing.Font(Settings.BookChapterFont.Name, 12, Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.BookChapterFont = New Drawing.Font(My.Settings.BookChapterFont.Name, My.Settings.BookChapterFont.Size, My.Settings.BookChapterFont.Style Or Drawing.FontStyle.Bold)
+                            BookChapterFontBtnn.Font = New Drawing.Font(My.Settings.BookChapterFont.Name, 12, My.Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.BookChapterFont = New Drawing.Font(Settings.BookChapterFont.Name, Settings.BookChapterFont.Size, Settings.BookChapterFont.Style And Not Drawing.FontStyle.Bold)
-                            BookChapterFontBtn.Font = New Drawing.Font(Settings.BookChapterFont.Name, 12, Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.BookChapterFont = New Drawing.Font(My.Settings.BookChapterFont.Name, My.Settings.BookChapterFont.Size, My.Settings.BookChapterFont.Style And Not Drawing.FontStyle.Bold)
+                            BookChapterFontBtnn.Font = New Drawing.Font(My.Settings.BookChapterFont.Name, 12, My.Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                     Case "VerseNumber"
                         If VerseNumberBoldBtn.Checked Then
-                            Settings.VerseNumberFont = New Drawing.Font(Settings.VerseNumberFont.Name, Settings.VerseNumberFont.Size, Settings.VerseNumberFont.Style Or Drawing.FontStyle.Bold)
-                            VerseNumberFontBtn.Font = New Drawing.Font(Settings.VerseNumberFont.Name, 12, Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseNumberFont = New Drawing.Font(My.Settings.VerseNumberFont.Name, My.Settings.VerseNumberFont.Size, My.Settings.VerseNumberFont.Style Or Drawing.FontStyle.Bold)
+                            VerseNumberFontBtnn.Font = New Drawing.Font(My.Settings.VerseNumberFont.Name, 12, My.Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.VerseNumberFont = New Drawing.Font(Settings.VerseNumberFont.Name, Settings.VerseNumberFont.Size, Settings.VerseNumberFont.Style And Not Drawing.FontStyle.Bold)
-                            VerseNumberFontBtn.Font = New Drawing.Font(Settings.VerseNumberFont.Name, 12, Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseNumberFont = New Drawing.Font(My.Settings.VerseNumberFont.Name, My.Settings.VerseNumberFont.Size, My.Settings.VerseNumberFont.Style And Not Drawing.FontStyle.Bold)
+                            VerseNumberFontBtnn.Font = New Drawing.Font(My.Settings.VerseNumberFont.Name, 12, My.Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                     Case "VerseText"
                         If VerseTextBoldBtn.Checked Then
-                            Settings.VerseTextFont = New Drawing.Font(Settings.VerseTextFont.Name, Settings.VerseTextFont.Size, Settings.VerseTextFont.Style Or Drawing.FontStyle.Bold)
-                            VerseTextFontBtn.Font = New Drawing.Font(Settings.VerseTextFont.Name, 12, Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseTextFont = New Drawing.Font(My.Settings.VerseTextFont.Name, My.Settings.VerseTextFont.Size, My.Settings.VerseTextFont.Style Or Drawing.FontStyle.Bold)
+                            VerseTextFontBtnn.Font = New Drawing.Font(My.Settings.VerseTextFont.Name, 12, My.Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.VerseTextFont = New Drawing.Font(Settings.VerseTextFont.Name, Settings.VerseTextFont.Size, Settings.VerseTextFont.Style And Not Drawing.FontStyle.Bold)
-                            VerseTextFontBtn.Font = New Drawing.Font(Settings.VerseTextFont.Name, 12, Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseTextFont = New Drawing.Font(My.Settings.VerseTextFont.Name, My.Settings.VerseTextFont.Size, My.Settings.VerseTextFont.Style And Not Drawing.FontStyle.Bold)
+                            VerseTextFontBtnn.Font = New Drawing.Font(My.Settings.VerseTextFont.Name, 12, My.Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                 End Select
             Case "Italic"
                 Select Case myCase
                     Case "BookChapter"
                         If BookChapterItalicBtn.Checked Then
-                            Settings.BookChapterFont = New Drawing.Font(Settings.BookChapterFont.Name, Settings.BookChapterFont.Size, Settings.BookChapterFont.Style Or Drawing.FontStyle.Italic)
-                            BookChapterFontBtn.Font = New Drawing.Font(Settings.BookChapterFont.Name, 12, Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.BookChapterFont = New Drawing.Font(My.Settings.BookChapterFont.Name, My.Settings.BookChapterFont.Size, My.Settings.BookChapterFont.Style Or Drawing.FontStyle.Italic)
+                            BookChapterFontBtnn.Font = New Drawing.Font(My.Settings.BookChapterFont.Name, 12, My.Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.BookChapterFont = New Drawing.Font(Settings.BookChapterFont.Name, Settings.BookChapterFont.Size, Settings.BookChapterFont.Style And Not Drawing.FontStyle.Italic)
-                            BookChapterFontBtn.Font = New Drawing.Font(Settings.BookChapterFont.Name, 12, Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.BookChapterFont = New Drawing.Font(My.Settings.BookChapterFont.Name, My.Settings.BookChapterFont.Size, My.Settings.BookChapterFont.Style And Not Drawing.FontStyle.Italic)
+                            BookChapterFontBtnn.Font = New Drawing.Font(My.Settings.BookChapterFont.Name, 12, My.Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                     Case "VerseNumber"
                         If VerseNumberItalicBtn.Checked Then
-                            Settings.VerseNumberFont = New Drawing.Font(Settings.VerseNumberFont.Name, Settings.VerseNumberFont.Size, Settings.VerseNumberFont.Style Or Drawing.FontStyle.Italic)
-                            VerseNumberFontBtn.Font = New Drawing.Font(Settings.VerseNumberFont.Name, 12, Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseNumberFont = New Drawing.Font(My.Settings.VerseNumberFont.Name, My.Settings.VerseNumberFont.Size, My.Settings.VerseNumberFont.Style Or Drawing.FontStyle.Italic)
+                            VerseNumberFontBtnn.Font = New Drawing.Font(My.Settings.VerseNumberFont.Name, 12, My.Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.VerseNumberFont = New Drawing.Font(Settings.VerseNumberFont.Name, Settings.VerseNumberFont.Size, Settings.VerseNumberFont.Style And Not Drawing.FontStyle.Italic)
-                            VerseNumberFontBtn.Font = New Drawing.Font(Settings.VerseNumberFont.Name, 12, Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseNumberFont = New Drawing.Font(My.Settings.VerseNumberFont.Name, My.Settings.VerseNumberFont.Size, My.Settings.VerseNumberFont.Style And Not Drawing.FontStyle.Italic)
+                            VerseNumberFontBtnn.Font = New Drawing.Font(My.Settings.VerseNumberFont.Name, 12, My.Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                     Case "VerseText"
                         If VerseTextItalicBtn.Checked Then
-                            Settings.VerseTextFont = New Drawing.Font(Settings.VerseTextFont.Name, Settings.VerseTextFont.Size, Settings.VerseTextFont.Style Or Drawing.FontStyle.Italic)
-                            VerseTextFontBtn.Font = New Drawing.Font(Settings.VerseTextFont.Name, 12, Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseTextFont = New Drawing.Font(My.Settings.VerseTextFont.Name, My.Settings.VerseTextFont.Size, My.Settings.VerseTextFont.Style Or Drawing.FontStyle.Italic)
+                            VerseTextFontBtnn.Font = New Drawing.Font(My.Settings.VerseTextFont.Name, 12, My.Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.VerseTextFont = New Drawing.Font(Settings.VerseTextFont.Name, Settings.VerseTextFont.Size, Settings.VerseTextFont.Style And Not Drawing.FontStyle.Italic)
-                            VerseTextFontBtn.Font = New Drawing.Font(Settings.VerseTextFont.Name, 12, Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseTextFont = New Drawing.Font(My.Settings.VerseTextFont.Name, My.Settings.VerseTextFont.Size, My.Settings.VerseTextFont.Style And Not Drawing.FontStyle.Italic)
+                            VerseTextFontBtnn.Font = New Drawing.Font(My.Settings.VerseTextFont.Name, 12, My.Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                 End Select
             Case "Underline"
                 Select Case myCase
                     Case "BookChapter"
                         If BookChapterUnderlineBtn.Checked Then
-                            Settings.BookChapterFont = New Drawing.Font(Settings.BookChapterFont.Name, Settings.BookChapterFont.Size, Settings.BookChapterFont.Style Or Drawing.FontStyle.Underline)
-                            BookChapterFontBtn.Font = New Drawing.Font(Settings.BookChapterFont.Name, 12, Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.BookChapterFont = New Drawing.Font(My.Settings.BookChapterFont.Name, My.Settings.BookChapterFont.Size, My.Settings.BookChapterFont.Style Or Drawing.FontStyle.Underline)
+                            BookChapterFontBtnn.Font = New Drawing.Font(My.Settings.BookChapterFont.Name, 12, My.Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.BookChapterFont = New Drawing.Font(Settings.BookChapterFont.Name, Settings.BookChapterFont.Size, Settings.BookChapterFont.Style And Not Drawing.FontStyle.Underline)
-                            BookChapterFontBtn.Font = New Drawing.Font(Settings.BookChapterFont.Name, 12, Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.BookChapterFont = New Drawing.Font(My.Settings.BookChapterFont.Name, My.Settings.BookChapterFont.Size, My.Settings.BookChapterFont.Style And Not Drawing.FontStyle.Underline)
+                            BookChapterFontBtnn.Font = New Drawing.Font(My.Settings.BookChapterFont.Name, 12, My.Settings.BookChapterFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                     Case "VerseNumber"
                         If VerseNumberUnderlineBtn.Checked Then
-                            Settings.VerseNumberFont = New Drawing.Font(Settings.VerseNumberFont.Name, Settings.VerseNumberFont.Size, Settings.VerseNumberFont.Style Or Drawing.FontStyle.Underline)
-                            VerseNumberFontBtn.Font = New Drawing.Font(Settings.VerseNumberFont.Name, 12, Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseNumberFont = New Drawing.Font(My.Settings.VerseNumberFont.Name, My.Settings.VerseNumberFont.Size, My.Settings.VerseNumberFont.Style Or Drawing.FontStyle.Underline)
+                            VerseNumberFontBtnn.Font = New Drawing.Font(My.Settings.VerseNumberFont.Name, 12, My.Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.VerseNumberFont = New Drawing.Font(Settings.VerseNumberFont.Name, Settings.VerseNumberFont.Size, Settings.VerseNumberFont.Style And Not Drawing.FontStyle.Underline)
-                            VerseNumberFontBtn.Font = New Drawing.Font(Settings.VerseNumberFont.Name, 12, Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseNumberFont = New Drawing.Font(My.Settings.VerseNumberFont.Name, My.Settings.VerseNumberFont.Size, My.Settings.VerseNumberFont.Style And Not Drawing.FontStyle.Underline)
+                            VerseNumberFontBtnn.Font = New Drawing.Font(My.Settings.VerseNumberFont.Name, 12, My.Settings.VerseNumberFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                     Case "VerseText"
                         If VerseTextUnderlineBtn.Checked Then
-                            Settings.VerseTextFont = New Drawing.Font(Settings.VerseTextFont.Name, Settings.VerseTextFont.Size, Settings.VerseTextFont.Style Or Drawing.FontStyle.Underline)
-                            VerseTextFontBtn.Font = New Drawing.Font(Settings.VerseTextFont.Name, 12, Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseTextFont = New Drawing.Font(My.Settings.VerseTextFont.Name, My.Settings.VerseTextFont.Size, My.Settings.VerseTextFont.Style Or Drawing.FontStyle.Underline)
+                            VerseTextFontBtnn.Font = New Drawing.Font(My.Settings.VerseTextFont.Name, 12, My.Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
                         Else
-                            Settings.VerseTextFont = New Drawing.Font(Settings.VerseTextFont.Name, Settings.VerseTextFont.Size, Settings.VerseTextFont.Style And Not Drawing.FontStyle.Underline)
-                            VerseTextFontBtn.Font = New Drawing.Font(Settings.VerseTextFont.Name, 12, Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
+                            My.Settings.VerseTextFont = New Drawing.Font(My.Settings.VerseTextFont.Name, My.Settings.VerseTextFont.Size, My.Settings.VerseTextFont.Style And Not Drawing.FontStyle.Underline)
+                            VerseTextFontBtnn.Font = New Drawing.Font(My.Settings.VerseTextFont.Name, 12, My.Settings.VerseTextFont.Style, Drawing.GraphicsUnit.Point)
                         End If
                 End Select
         End Select
-        Settings.Save()
+        My.Settings.Save()
     End Sub
 
     Private Sub setPreviewDocument()
         Dim previewDocument As String
         Dim stylesheet As String
 
-        Dim paragraphAlignment As String = Settings.ParagraphAlignment
-        Dim paragraphLineSpacing As Decimal = Settings.Linespacing * 100
-        Dim leftIndent As Short = Settings.Indent * 5
+        Dim paragraphAlignment As String = My.Settings.ParagraphAlignment
+        Dim paragraphLineSpacing As Decimal = My.Settings.Linespacing * 100
+        Dim leftIndent As Short = My.Settings.Indent * 5
 
-        Dim fontFamilyBookChapter As String = Settings.BookChapterFont.Name
-        Dim fontSizeBookChapter As String = Math.Round(Settings.BookChapterFont.SizeInPoints).ToString
+        Dim fontFamilyBookChapter As String = My.Settings.BookChapterFont.Name
+        Dim fontSizeBookChapter As String = Math.Round(My.Settings.BookChapterFont.SizeInPoints).ToString
         Dim boldBookChapter As Boolean = BookChapterBoldBtn.Checked
         Dim italicBookChapter As Boolean = BookChapterItalicBtn.Checked
-        Dim textColorBookChapter As String = If(Not Settings.BookChapterForeColor.IsEmpty, Settings.BookChapterForeColor.ToArgb().ToString("X").Substring(2), "transparent")
-        Dim bgColorBookChapter As String = If(Not Settings.BookChapterBackColor.IsEmpty, Settings.BookChapterBackColor.ToArgb().ToString("X").Substring(2), "transparent")
-        Dim vAlignBookChapter As String = Settings.BookChapterVAlign
+        Dim textColorBookChapter As String = If(Not My.Settings.BookChapterForeColor.IsEmpty, My.Settings.BookChapterForeColor.ToArgb().ToString("X").Substring(2), "transparent")
+        Dim bgColorBookChapter As String = If(Not My.Settings.BookChapterBackColor.IsEmpty, My.Settings.BookChapterBackColor.ToArgb().ToString("X").Substring(2), "transparent")
+        Dim vAlignBookChapter As String = My.Settings.BookChapterVAlign
         'System.Diagnostics.Debug.WriteLine(vAlignBookChapter)
 
-        Dim fontFamilyVerseNumber As String = Settings.VerseNumberFont.Name
-        Dim fontSizeVerseNumber As String = Math.Round(Settings.VerseNumberFont.SizeInPoints).ToString
+        Dim fontFamilyVerseNumber As String = My.Settings.VerseNumberFont.Name
+        Dim fontSizeVerseNumber As String = Math.Round(My.Settings.VerseNumberFont.SizeInPoints).ToString
         Dim boldVerseNumber As Boolean = VerseNumberBoldBtn.Checked
         Dim italicVerseNumber As Boolean = VerseNumberItalicBtn.Checked
-        Dim textColorVerseNumber As String = If(Not Settings.VerseNumberForeColor.IsEmpty, Settings.VerseNumberForeColor.ToArgb().ToString("X").Substring(2), "transparent")
-        Dim bgColorVerseNumber As String = If(Not Settings.VerseNumberBackColor.IsEmpty, Settings.VerseNumberBackColor.ToArgb().ToString("X").Substring(2), "transparent")
+        Dim textColorVerseNumber As String = If(Not My.Settings.VerseNumberForeColor.IsEmpty, My.Settings.VerseNumberForeColor.ToArgb().ToString("X").Substring(2), "transparent")
+        Dim bgColorVerseNumber As String = If(Not My.Settings.VerseNumberBackColor.IsEmpty, My.Settings.VerseNumberBackColor.ToArgb().ToString("X").Substring(2), "transparent")
         'System.Diagnostics.Debug.WriteLine(bgColorVerseNumber)
-        Dim vAlignVerseNumber As String = Settings.VerseNumberVAlign
+        Dim vAlignVerseNumber As String = My.Settings.VerseNumberVAlign
         'System.Diagnostics.Debug.WriteLine(vAlignVerseNumber)
 
-        Dim fontFamilyVerseText As String = Settings.VerseTextFont.Name
-        Dim fontSizeVerseText As String = Math.Round(Settings.VerseTextFont.SizeInPoints).ToString
+        Dim fontFamilyVerseText As String = My.Settings.VerseTextFont.Name
+        Dim fontSizeVerseText As String = Math.Round(My.Settings.VerseTextFont.SizeInPoints).ToString
         Dim boldVerseText As Boolean = VerseTextBoldBtn.Checked
         Dim italicVerseText As Boolean = VerseTextItalicBtn.Checked
-        Dim textColorVerseText As String = If(Not Settings.VerseTextForeColor.IsEmpty, Settings.VerseTextForeColor.ToArgb().ToString("X").Substring(2), "transparent")
-        Dim bgColorVerseText As String = If(Not Settings.VerseTextBackColor.IsEmpty, Settings.VerseTextBackColor.ToArgb().ToString("X").Substring(2), "transparent")
-        Dim vAlignVerseText As String = Settings.VerseTextVAlign
+        Dim textColorVerseText As String = If(Not My.Settings.VerseTextForeColor.IsEmpty, My.Settings.VerseTextForeColor.ToArgb().ToString("X").Substring(2), "transparent")
+        Dim bgColorVerseText As String = If(Not My.Settings.VerseTextBackColor.IsEmpty, My.Settings.VerseTextBackColor.ToArgb().ToString("X").Substring(2), "transparent")
+        Dim vAlignVerseText As String = My.Settings.VerseTextVAlign
         'System.Diagnostics.Debug.WriteLine(vAlignVerseText)
 
         previewDocument = "<!DOCTYPE html>"
@@ -278,18 +277,18 @@ Public Class Preferences
         Me.Text = __("User Preferences")
 
         setFontBtn("BookChapter")
-        setStyleLable(Settings.BookChapterFont, "BookChapter")
+        setStyleLable(My.Settings.BookChapterFont, "BookChapter")
         setCheckBtns("BookChapter")
 
         setFontBtn("VerseNumber")
-        setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+        setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
         setCheckBtns("VerseNumber")
 
         setFontBtn("VerseText")
-        setStyleLable(Settings.VerseTextFont, "VerseText")
+        setStyleLable(My.Settings.VerseTextFont, "VerseText")
         setCheckBtns("VerseText")
 
-        Select Case Settings.Linespacing
+        Select Case My.Settings.Linespacing
             Case 1.0
                 ComboBox1.SelectedIndex = 0
             Case 1.5
@@ -308,7 +307,7 @@ Public Class Preferences
         GroupBox4.Text = __("Preview")
         ToolTip1.SetToolTip(Label1, __("Some Bible versions have their own formatting. This is left by default to keep the text as close as possible to the original.<br> If however you need to have consistent formatting in your document, you may override the Bible version's own formatting."))
 
-        Select Case Settings.ParagraphAlignment
+        Select Case My.Settings.ParagraphAlignment
             Case "left"
                 RadioButton1.Checked = True
             Case "center"
@@ -328,15 +327,15 @@ Public Class Preferences
         initializing = False
     End Sub
 
-    Private Sub BookChapterFontBtn_Click(sender As Object, e As EventArgs) Handles BookChapterFontBtn.Click
-        FontDlg.Font = Settings.BookChapterFont
+    Private Sub BookChapterFontBtn_Click(sender As Object, e As EventArgs) Handles BookChapterFontBtnn.Click
+        FontDlg.Font = My.Settings.BookChapterFont
         FontDlg.ShowDialog()
-        Settings.BookChapterFont = FontDlg.Font
-        Settings.Save()
+        My.Settings.BookChapterFont = FontDlg.Font
+        My.Settings.Save()
 
         setFontBtn("BookChapter")
 
-        setStyleLable(Settings.BookChapterFont, "BookChapter")
+        setStyleLable(My.Settings.BookChapterFont, "BookChapter")
 
         setCheckBtns("BookChapter")
         setPreviewDocument()
@@ -344,51 +343,51 @@ Public Class Preferences
 
     Private Sub CheckBoxBold_CheckedChanged(sender As Object, e As EventArgs) Handles BookChapterBoldBtn.CheckedChanged
         checkBoxChanged("BookChapter", "Bold")
-        setStyleLable(Settings.BookChapterFont, "BookChapter")
+        setStyleLable(My.Settings.BookChapterFont, "BookChapter")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub CheckBoxItalic_CheckedChanged(sender As Object, e As EventArgs) Handles BookChapterItalicBtn.CheckedChanged
         checkBoxChanged("BookChapter", "Italic")
-        setStyleLable(Settings.BookChapterFont, "BookChapter")
+        setStyleLable(My.Settings.BookChapterFont, "BookChapter")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub CheckBoxUnderline_CheckedChanged(sender As Object, e As EventArgs) Handles BookChapterUnderlineBtn.CheckedChanged
         checkBoxChanged("BookChapter", "Underline")
-        setStyleLable(Settings.BookChapterFont, "BookChapter")
+        setStyleLable(My.Settings.BookChapterFont, "BookChapter")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub BookChapterColorBtn_Click(sender As Object, e As EventArgs) Handles BookChapterColorBtn.Click
-        ColorDlg.Color = Settings.BookChapterForeColor
+        ColorDlg.Color = My.Settings.BookChapterForeColor
         ColorDlg.ShowDialog()
-        Settings.BookChapterForeColor = ColorDlg.Color
-        Settings.Save()
-        BookChapterFontBtn.ForeColor = Settings.BookChapterForeColor
+        My.Settings.BookChapterForeColor = ColorDlg.Color
+        My.Settings.Save()
+        BookChapterFontBtnn.ForeColor = My.Settings.BookChapterForeColor
         setPreviewDocument()
     End Sub
 
     Private Sub BookChapterBGColorBtn_Click(sender As Object, e As EventArgs) Handles BookChapterBGColorBtn.Click
-        ColorDlg.Color = Settings.BookChapterBackColor
+        ColorDlg.Color = My.Settings.BookChapterBackColor
         ColorDlg.ShowDialog()
-        Settings.BookChapterBackColor = ColorDlg.Color
-        Settings.Save()
-        BookChapterFontBtn.BackColor = Settings.BookChapterBackColor
+        My.Settings.BookChapterBackColor = ColorDlg.Color
+        My.Settings.Save()
+        BookChapterFontBtnn.BackColor = My.Settings.BookChapterBackColor
         setPreviewDocument()
     End Sub
 
     Private Sub BookChapterSuperscriptBtn_CheckedChanged(sender As Object, e As EventArgs) Handles BookChapterSuperscriptBtn.CheckedChanged
         If BookChapterSuperscriptBtn.Checked Then
             BookChapterSubscriptBtn.Checked = False
-            Settings.BookChapterVAlign = "super"
-            Settings.Save()
-            setStyleLable(Settings.BookChapterFont, "BookChapter")
+            My.Settings.BookChapterVAlign = "super"
+            My.Settings.Save()
+            setStyleLable(My.Settings.BookChapterFont, "BookChapter")
             If Not initializing Then setPreviewDocument()
         ElseIf BookChapterSuperscriptBtn.Checked = False And BookChapterSubscriptBtn.Checked = False Then
-            Settings.BookChapterVAlign = "baseline"
-            Settings.Save()
-            setStyleLable(Settings.BookChapterFont, "BookChapter")
+            My.Settings.BookChapterVAlign = "baseline"
+            My.Settings.Save()
+            setStyleLable(My.Settings.BookChapterFont, "BookChapter")
             setPreviewDocument()
         End If
     End Sub
@@ -396,27 +395,27 @@ Public Class Preferences
     Private Sub BookChapterSubscriptBtn_CheckedChanged(sender As Object, e As EventArgs) Handles BookChapterSubscriptBtn.CheckedChanged
         If BookChapterSubscriptBtn.Checked Then
             BookChapterSuperscriptBtn.Checked = False
-            Settings.BookChapterVAlign = "sub"
-            Settings.Save()
-            setStyleLable(Settings.BookChapterFont, "BookChapter")
+            My.Settings.BookChapterVAlign = "sub"
+            My.Settings.Save()
+            setStyleLable(My.Settings.BookChapterFont, "BookChapter")
             If Not initializing Then setPreviewDocument()
         ElseIf BookChapterSubscriptBtn.Checked = False And BookChapterSuperscriptBtn.Checked = False Then
-            Settings.BookChapterVAlign = "baseline"
-            Settings.Save()
-            setStyleLable(Settings.BookChapterFont, "BookChapter")
+            My.Settings.BookChapterVAlign = "baseline"
+            My.Settings.Save()
+            setStyleLable(My.Settings.BookChapterFont, "BookChapter")
             setPreviewDocument()
         End If
     End Sub
 
-    Private Sub VerseNumberFontBtn_Click(sender As Object, e As EventArgs) Handles VerseNumberFontBtn.Click
-        FontDlg.Font = Settings.VerseNumberFont
+    Private Sub VerseNumberFontBtn_Click(sender As Object, e As EventArgs) Handles VerseNumberFontBtnn.Click
+        FontDlg.Font = My.Settings.VerseNumberFont
         FontDlg.ShowDialog()
-        Settings.VerseNumberFont = FontDlg.Font
-        Settings.Save()
+        My.Settings.VerseNumberFont = FontDlg.Font
+        My.Settings.Save()
 
         setFontBtn("VerseNumber")
 
-        setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+        setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
 
         setCheckBtns("VerseNumber")
 
@@ -424,52 +423,52 @@ Public Class Preferences
     End Sub
 
     Private Sub VerseNumberColorBtn_Click(sender As Object, e As EventArgs) Handles VerseNumberColorBtn.Click
-        ColorDlg.Color = Settings.VerseNumberForeColor
+        ColorDlg.Color = My.Settings.VerseNumberForeColor
         ColorDlg.ShowDialog()
-        Settings.VerseNumberForeColor = ColorDlg.Color
-        Settings.Save()
-        VerseNumberFontBtn.ForeColor = Settings.VerseNumberForeColor
+        My.Settings.VerseNumberForeColor = ColorDlg.Color
+        My.Settings.Save()
+        VerseNumberFontBtnn.ForeColor = My.Settings.VerseNumberForeColor
         setPreviewDocument()
     End Sub
 
     Private Sub VerseNumberBGColorBtn_Click(sender As Object, e As EventArgs) Handles VerseNumberBGColorBtn.Click
-        ColorDlg.Color = Settings.VerseNumberBackColor
+        ColorDlg.Color = My.Settings.VerseNumberBackColor
         ColorDlg.ShowDialog()
-        Settings.VerseNumberBackColor = ColorDlg.Color
-        Settings.Save()
-        VerseNumberFontBtn.BackColor = Settings.VerseNumberBackColor
+        My.Settings.VerseNumberBackColor = ColorDlg.Color
+        My.Settings.Save()
+        VerseNumberFontBtnn.BackColor = My.Settings.VerseNumberBackColor
         setPreviewDocument()
     End Sub
 
     Private Sub VerseNumberBoldBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseNumberBoldBtn.CheckedChanged
         checkBoxChanged("VerseNumber", "Bold")
-        setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+        setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub VerseNumberItalicBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseNumberItalicBtn.CheckedChanged
         checkBoxChanged("VerseNumber", "Italic")
-        setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+        setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub VerseNumberUnderlineBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseNumberUnderlineBtn.CheckedChanged
         checkBoxChanged("VerseNumber", "Underline")
-        setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+        setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub VerseNumberSuperscriptBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseNumberSuperscriptBtn.CheckedChanged
         If VerseNumberSuperscriptBtn.Checked Then
             VerseNumberSubscriptBtn.Checked = False
-            Settings.VerseNumberVAlign = "super"
-            Settings.Save()
-            setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+            My.Settings.VerseNumberVAlign = "super"
+            My.Settings.Save()
+            setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
             If Not initializing Then setPreviewDocument()
         ElseIf VerseNumberSuperscriptBtn.Checked = False And VerseNumberSubscriptBtn.Checked = False Then
-            Settings.VerseNumberVAlign = "baseline"
-            Settings.Save()
-            setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+            My.Settings.VerseNumberVAlign = "baseline"
+            My.Settings.Save()
+            setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
             setPreviewDocument()
         End If
     End Sub
@@ -477,79 +476,79 @@ Public Class Preferences
     Private Sub VerseNumberSubscriptBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseNumberSubscriptBtn.CheckedChanged
         If VerseNumberSubscriptBtn.Checked Then
             VerseNumberSuperscriptBtn.Checked = False
-            Settings.VerseNumberVAlign = "sub"
-            Settings.Save()
-            setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+            My.Settings.VerseNumberVAlign = "sub"
+            My.Settings.Save()
+            setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
             If Not initializing Then setPreviewDocument()
         ElseIf VerseNumberSubscriptBtn.Checked = False And VerseNumberSuperscriptBtn.Checked = False Then
-            Settings.VerseNumberVAlign = "baseline"
-            Settings.Save()
-            setStyleLable(Settings.VerseNumberFont, "VerseNumber")
+            My.Settings.VerseNumberVAlign = "baseline"
+            My.Settings.Save()
+            setStyleLable(My.Settings.VerseNumberFont, "VerseNumber")
             setPreviewDocument()
         End If
     End Sub
 
-    Private Sub VerseTextFontBtn_Click(sender As Object, e As EventArgs) Handles VerseTextFontBtn.Click
-        FontDlg.Font = Settings.VerseTextFont
+    Private Sub VerseTextFontBtn_Click(sender As Object, e As EventArgs) Handles VerseTextFontBtnn.Click
+        FontDlg.Font = My.Settings.VerseTextFont
         FontDlg.ShowDialog()
-        Settings.VerseTextFont = FontDlg.Font
-        Settings.Save()
+        My.Settings.VerseTextFont = FontDlg.Font
+        My.Settings.Save()
 
         setFontBtn("VerseText")
 
-        setStyleLable(Settings.VerseTextFont, "VerseText")
+        setStyleLable(My.Settings.VerseTextFont, "VerseText")
 
         setCheckBtns("VerseText")
         setPreviewDocument()
     End Sub
 
     Private Sub VerseTextColorBtn_Click(sender As Object, e As EventArgs) Handles VerseTextColorBtn.Click
-        ColorDlg.Color = Settings.VerseTextForeColor
+        ColorDlg.Color = My.Settings.VerseTextForeColor
         ColorDlg.ShowDialog()
-        Settings.VerseTextForeColor = ColorDlg.Color
-        Settings.Save()
-        VerseTextFontBtn.ForeColor = Settings.VerseTextForeColor
+        My.Settings.VerseTextForeColor = ColorDlg.Color
+        My.Settings.Save()
+        VerseTextFontBtnn.ForeColor = My.Settings.VerseTextForeColor
         setPreviewDocument()
     End Sub
 
     Private Sub VerseTextBGColorBtn_Click(sender As Object, e As EventArgs) Handles VerseTextBGColorBtn.Click
-        ColorDlg.Color = Settings.VerseTextBackColor
+        ColorDlg.Color = My.Settings.VerseTextBackColor
         ColorDlg.ShowDialog()
-        Settings.VerseTextBackColor = ColorDlg.Color
-        Settings.Save()
-        VerseTextFontBtn.BackColor = Settings.VerseTextBackColor
+        My.Settings.VerseTextBackColor = ColorDlg.Color
+        My.Settings.Save()
+        VerseTextFontBtnn.BackColor = My.Settings.VerseTextBackColor
         setPreviewDocument()
     End Sub
 
     Private Sub VerseTextBoldBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseTextBoldBtn.CheckedChanged
         checkBoxChanged("VerseText", "Bold")
-        setStyleLable(Settings.VerseTextFont, "VerseText")
+        setStyleLable(My.Settings.VerseTextFont, "VerseText")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub VerseTextItalicBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseTextItalicBtn.CheckedChanged
         checkBoxChanged("VerseText", "Italic")
-        setStyleLable(Settings.VerseTextFont, "VerseText")
+        setStyleLable(My.Settings.VerseTextFont, "VerseText")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub VerseTextUnderlineBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseTextUnderlineBtn.CheckedChanged
         checkBoxChanged("VerseText", "Underline")
-        setStyleLable(Settings.VerseTextFont, "VerseText")
+        setStyleLable(My.Settings.VerseTextFont, "VerseText")
         If Not initializing Then setPreviewDocument()
     End Sub
 
     Private Sub VerseTextSuperscriptBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseTextSuperscriptBtn.CheckedChanged
         If VerseTextSuperscriptBtn.Checked Then
             VerseTextSubscriptBtn.Checked = False
-            Settings.VerseTextVAlign = "super"
-            Settings.Save()
-            setStyleLable(Settings.VerseTextFont, "VerseText")
+            My.Settings.VerseTextVAlign = "super"
+            My.Settings.Save()
+            setStyleLable(My.Settings.VerseTextFont, "VerseText")
             If Not initializing Then setPreviewDocument()
         ElseIf VerseTextSuperscriptBtn.Checked = False And VerseTextSubscriptBtn.Checked = False Then
-            Settings.VerseTextVAlign = "baseline"
-            Settings.Save()
-            setStyleLable(Settings.VerseTextFont, "VerseText")
+            My.Settings.VerseTextVAlign = "baseline"
+            My.Settings.Save()
+            setStyleLable(My.Settings.VerseTextFont, "VerseText")
             setPreviewDocument()
         End If
     End Sub
@@ -557,14 +556,14 @@ Public Class Preferences
     Private Sub VerseTextSubscriptBtn_CheckedChanged(sender As Object, e As EventArgs) Handles VerseTextSubscriptBtn.CheckedChanged
         If VerseTextSubscriptBtn.Checked Then
             VerseTextSuperscriptBtn.Checked = False
-            Settings.VerseTextVAlign = "sub"
-            Settings.Save()
-            setStyleLable(Settings.VerseTextFont, "VerseText")
+            My.Settings.VerseTextVAlign = "sub"
+            My.Settings.Save()
+            setStyleLable(My.Settings.VerseTextFont, "VerseText")
             If Not initializing Then setPreviewDocument()
         ElseIf VerseTextSubscriptBtn.Checked = False And VerseTextSuperscriptBtn.Checked = False Then
-            Settings.VerseTextVAlign = "baseline"
-            Settings.Save()
-            setStyleLable(Settings.VerseTextFont, "VerseText")
+            My.Settings.VerseTextVAlign = "baseline"
+            My.Settings.Save()
+            setStyleLable(My.Settings.VerseTextFont, "VerseText")
             setPreviewDocument()
         End If
     End Sub
@@ -579,55 +578,56 @@ Public Class Preferences
             My.Settings.NOVERSIONFORMATTING = False
             CheckBox1.ForeColor = Drawing.Color.DarkRed
         End If
+        My.Settings.Save()
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         If RadioButton1.Checked = True Then
-            Settings.ParagraphAlignment = "left"
-            Settings.Save()
+            My.Settings.ParagraphAlignment = "left"
+            My.Settings.Save()
             If Not initializing Then setPreviewDocument()
         End If
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
         If RadioButton2.Checked = True Then
-            Settings.ParagraphAlignment = "center"
-            Settings.Save()
+            My.Settings.ParagraphAlignment = "center"
+            My.Settings.Save()
             If Not initializing Then setPreviewDocument()
         End If
     End Sub
 
     Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
         If RadioButton3.Checked = True Then
-            Settings.ParagraphAlignment = "right"
-            Settings.Save()
+            My.Settings.ParagraphAlignment = "right"
+            My.Settings.Save()
             If Not initializing Then setPreviewDocument()
         End If
     End Sub
 
     Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
         If RadioButton4.Checked = True Then
-            Settings.ParagraphAlignment = "justify"
-            Settings.Save()
+            My.Settings.ParagraphAlignment = "justify"
+            My.Settings.Save()
             If Not initializing Then setPreviewDocument()
         End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim indent As Short = Settings.Indent
+        Dim indent As Short = My.Settings.Indent
         indent += 1
         If indent > 20 Then indent = 20
-        Settings.Indent = indent
-        Settings.Save()
+        My.Settings.Indent = indent
+        My.Settings.Save()
         setPreviewDocument()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim indent As Short = Settings.Indent
+        Dim indent As Short = My.Settings.Indent
         indent -= 1
         If indent < 0 Then indent = 0
-        Settings.Indent = indent
-        Settings.Save()
+        My.Settings.Indent = indent
+        My.Settings.Save()
         setPreviewDocument()
     End Sub
 
@@ -635,14 +635,16 @@ Public Class Preferences
         If Not initializing Then
             Select Case ComboBox1.SelectedIndex
                 Case 0
-                    Settings.Linespacing = 1.0
+                    My.Settings.Linespacing = 1.0
                 Case 1
-                    Settings.Linespacing = 1.5
+                    My.Settings.Linespacing = 1.5
                 Case 2
-                    Settings.Linespacing = 2.0
+                    My.Settings.Linespacing = 2.0
             End Select
-            Settings.Save()
+            Diagnostics.Debug.WriteLine("linespacing has been set to " + My.Settings.Linespacing.ToString)
+            My.Settings.Save()
             setPreviewDocument()
         End If
     End Sub
+
 End Class

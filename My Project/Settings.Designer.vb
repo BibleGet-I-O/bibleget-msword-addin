@@ -125,7 +125,8 @@ Partial Friend NotInheritable Class MySettings
     End Property
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Times New Roman, 12pt")>  _
     Public Property BookChapterFont() As Global.System.Drawing.Font
         Get
             Return CType(Me("BookChapterFont"),Global.System.Drawing.Font)

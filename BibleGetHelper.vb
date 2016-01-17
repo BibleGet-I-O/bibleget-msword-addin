@@ -235,13 +235,19 @@ Public Class BibleGetHelper
                         For Each matcher11 As Match In Regex.Matches(querie, pattern11)
                             highverses.Push(CInt(matcher11.Groups(1).Value))
                         Next
-                        highverse = highverses.Pop()
-                        If Not indexes.isValidVerse(highverse, CInt(parts(0)), myidx, selectedVersions.ToList) Then
+                        If highverses.Count Then
+                            highverse = highverses.Pop()
+                            If Not indexes.isValidVerse(highverse, CInt(parts(0)), myidx, selectedVersions.ToList) Then
+                                Dim verseLimit() As Integer = indexes.getVerseLimit(CInt(parts(0)), myidx, selectedVersions.ToList)
+                                errorMessages.Add(String.Format(__("A verse in the query is out of bounds: there is no verse <{0}> in the book <{1}> at chapter <{2}> in the requested version <{3}>, the last possible verse is <{4}>"), highverse, currBook, parts(0), String.Join(",", selectedVersions), String.Join(",", verseLimit)))
+                                finFlag = False
+                            End If
+                        Else
+                            highverse = Nothing
                             Dim verseLimit() As Integer = indexes.getVerseLimit(CInt(parts(0)), myidx, selectedVersions.ToList)
                             errorMessages.Add(String.Format(__("A verse in the query is out of bounds: there is no verse <{0}> in the book <{1}> at chapter <{2}> in the requested version <{3}>, the last possible verse is <{4}>"), highverse, currBook, parts(0), String.Join(",", selectedVersions), String.Join(",", verseLimit)))
                             finFlag = False
                         End If
-
                     Else
                         Dim pattern12 As String = ",([1-9][0-9]{0,2})"
                         'Matcher matcher12 = pattern12.matcher(querie);

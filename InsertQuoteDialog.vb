@@ -8,6 +8,7 @@ Imports System.Data
 Imports Newtonsoft.Json.Linq
 Imports System.Collections
 Imports System.Globalization
+Imports System.Timers
 
 
 Public Class InsertQuoteDialog
@@ -171,6 +172,11 @@ Public Class InsertQuoteDialog
                 Button1.Text = __("Send query")
                 'TextBox1.Text = x.QueryString
                 TextBox1.Text = String.Empty
+                Dim tmr As New System.Timers.Timer()
+                tmr.Interval = 2000
+                tmr.Enabled = True
+                tmr.Start()
+                AddHandler tmr.Elapsed, AddressOf OnTimedEvent
             ElseIf command = "WEBREQUESTFAILED" Then
                 Label2.Text = "INTERNET ERROR"
                 TextBox1.Text = x.QueryString
@@ -297,6 +303,19 @@ Public Class InsertQuoteDialog
         ElseIf TextBox2.Text <> String.Empty And ListView1.SelectedItems.Count > 0 Then
             Button1.Enabled = True
         End If
+    End Sub
+
+    Private Sub CloseForm()
+        If InvokeRequired Then
+            BeginInvoke(New System.Action(AddressOf CloseForm))
+        Else
+            Me.Close()
+        End If
+    End Sub
+
+
+    Private Sub OnTimedEvent(ByVal sender As Object, ByVal e As ElapsedEventArgs)
+        CloseForm()
     End Sub
 
 

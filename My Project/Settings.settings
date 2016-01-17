@@ -21,7 +21,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="BookChapterFont" Type="System.Drawing.Font" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Times New Roman, 12pt</Value>
     </Setting>
     <Setting Name="BookChapterVAlign" Type="System.String" Scope="User">
       <Value Profile="(Default)">baseline</Value>
