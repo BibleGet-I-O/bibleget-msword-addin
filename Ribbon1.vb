@@ -1,6 +1,7 @@
 ﻿Imports Microsoft.Office.Tools.Ribbon
 Imports System.Globalization
 Imports System.Diagnostics
+Imports System.Speech.Synthesis
 
 Public Class Ribbon1
 
@@ -51,8 +52,30 @@ Public Class Ribbon1
     End Sub
 
     Private Sub StatusBtn_Click(sender As Object, e As RibbonControlEventArgs) Handles StatusBtn.Click
-        Dim curTime As Date = TimeOfDay
-        MsgBox("It is " & curTime.ToShortTimeString & " and all is well! And yes, the Database is correctly initialized and you may proceed to utilize this plugin.")
+        Dim synth As SpeechSynthesizer = New SpeechSynthesizer()
+        synth.SetOutputToDefaultAudioDevice()
+        'Dim engLocale As New CultureInfo("en")
+        'synth.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 1, engLocale)
+
+        Dim curTime As Date = DateTime.Now
+        Dim ct As String = curTime.ToString("hh:mm:ss")
+        Dim dt As String = curTime.ToString("MM/dd/yyyy")
+        Dim msg As String = "Today is " + dt + ". It is " & ct & " and all is well! And yes, the Database is correctly initialized, and you may proceed to utilize this AddIn."
+
+        Dim speakStr As String = "<speak version=""1.0"""
+        speakStr += " xmlns=""http://www.w3.org/2001/10/synthesis"""
+        speakStr += " xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"""
+        speakStr += " xsi:schemaLocation=""http://www.w3.org/2001/10/synthesis"
+        speakStr += "           http://www.w3.org/TR/speech-synthesis/synthesis.xsd"""
+        speakStr += " xml:lang=""en-US"">"
+        speakStr += "Today is <say-as type=""date:mdy""> " + dt + " </say-as>"
+        speakStr += "It is <say-as type=""time:hms""> " + ct + " </say-as>, and all is well!"
+        speakStr += "And yes, the Database <prosody volume=""x-loud""> is </prosody> <break strength=""weak"" /> correctly initialized, and you may proceed to utilize this Add In!"
+        speakStr += "</speak>"
+        synth.SpeakSsmlAsync(speakStr)
+
+        'synth.SpeakAsync(msg)
+        MsgBox(msg)
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As RibbonControlEventArgs) Handles HelpBtn.Click

@@ -7,7 +7,7 @@ Public Class ThisAddIn
     Public Shared locale As CultureInfo = CultureInfo.CurrentCulture
     'Public Shared helpFile As String
 
-    Private Function __(ByVal myStr As String) As String
+    Public Shared Function __(ByVal myStr As String) As String
         Dim myTranslation As String = RM.GetString(myStr, locale)
         If Not String.IsNullOrEmpty(myTranslation) Then
             Return myTranslation

@@ -524,7 +524,7 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
-    '''  Cerca una stringa localizzata simile a Help for BibleGet (Open Office Writer).
+    '''  Cerca una stringa localizzata simile a Help for BibleGet (Microsoft Word 2007+).
     '''</summary>
     Friend Shared ReadOnly Property Help_for_BibleGet__Open_Office_Writer_() As String
         Get
@@ -1066,7 +1066,7 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
-    '''  Cerca una stringa localizzata simile a This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer..
+    '''  Cerca una stringa localizzata simile a This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Microsoft Word 2007+..
     '''</summary>
     Friend Shared ReadOnly Property This_Help_dialog_window_introduces_the_user_to_the_usage_of_the_BibleGet_I_O_plugin_for_Open_Office_Writer_() As String
         Get

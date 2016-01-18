@@ -190,10 +190,10 @@ double up any single quotes or apostrophes.</comment>
     <value>There was a problem communicating with the BibleGet server. Please try again.</value>
   </data>
   <data name="Help for BibleGet (Open Office Writer)" xml:space="preserve">
-    <value>Help for BibleGet (Open Office Writer)</value>
+    <value>Help for BibleGet (Microsoft Word 2007+)</value>
   </data>
   <data name="This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer." xml:space="preserve">
-    <value>This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer.</value>
+    <value>This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Microsoft Word 2007+.</value>
   </data>
   <data name="The Help is divided into three sections:" xml:space="preserve">
     <value>The Help is divided into three sections:</value>
