@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Loco xml export: Android string resources
+ Project: messages_en.properties conversion
+ Release: Working copy
+ Locale: en, English
+ Exported by: Unregistered user
+ Exported at: Fri, 01 Jan 2016 11:32:40 +0000
+-->
+<resources>
+    <string name="bibleget_i_o_plugin_for_open_office_writer">BibleGet I/O plugin for Open Office Writer</string>
+    <string name="Version">Version</string>
+    <string name="this_plugin_was_developed_by_john_r_dorazio_a_priest_in_the_diocese_of_rome_chaplain_at_roma_tre_uni">This plugin was developed by &lt;b&gt;John R. D\'Orazio&lt;/b&gt;, a priest in the diocese of Rome, chaplain at Roma Tre University.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="it_is_a_part_of_the_bibleget_project_at_0_6801e89252dbb74d54829ab97d1e4755">It is a part of the &lt;b&gt;BibleGet Project&lt;/b&gt; at {0}.</string>
+    <string name="the_author_would_like_to_thank_giovanni_gregori_and_simone_urbinati_for_their_code_contributions_d85">The author would like to thank &lt;b&gt;Giovanni Gregori&lt;/b&gt; and &lt;b&gt;Simone Urbinati&lt;/b&gt; for their code contributions.</string>
+    <string name="the_bibleget_project_is_an_independent_project_born_from_the_personal_initiative_of_john_r_dorazio_a">The &lt;b&gt;BibleGet Project&lt;/b&gt; is an independent project born from the personal initiative of John R. D\'Orazio, and is not funded by any kind of corporation.</string>
+    <string name="all_of_the_expenses_of_the_project_server_and_domain_which_amount_to_200_a_year_are_accounted_for_pe">All of the expenses of the project server and domain, which amount to €200 a year, are accounted for personally by the author. All code contributions and development are entirely volunteered.</string>
+    <string name="if_you_like_the_plugin_and_find_it_useful_please_consider_contributing_even_a_small_amount_to_help_k">If you like the plugin and find it useful, please consider contributing even a small amount to help keep this project running. Even just €1 can make a difference. You can contribute using the appropriate menu item in this plugin\'s menu.</string>
+    <string name="about_this_plugin">About this plugin</string>
+    <string name="current_information_from_the_bibleget_server">Current information from the BibleGet Server:</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="the_bibleget_database_currently_supports_0_versions_of_the_bible_in_1_different_languages">The BibleGet database currently supports {0} versions of the Bible in {1} different languages:</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="the_bibleget_engine_currently_understands_the_names_of_the_books_of_the_bible_in_0_different_languag">The BibleGet engine currently understands the names of the books of the Bible in {0} different languages:</string>
+    <string name="renew_server_data">RENEW SERVER DATA</string>
+    <string name="type_the_desired_bible_quote_using_standard_notation">Type the desired Bible Quote using standard notation:</string>
+    <string name="e_g_mt_1_1_10_12_15_5_3_4_jn_3_16">(e.g. Mt 1,1-10.12-15;5,3-4;Jn 3,16)</string>
+    <string name="choose_version_or_versions">Choose version (or versions)</string>
+    <string name="send_query">Send query</string>
+    <string name="sends_the_request_to_the_server_and_returns_the_results_to_the_document">Sends the request to the server and returns the results to the document.</string>
+    <string name="Cancel">Cancel</string>
+    <string name="you_must_select_at_least_one_version_in_order_to_make_a_request">You must select at least one version in order to make a request.</string>
+    <string name="there_was_a_problem_communicating_with_the_bibleget_server_please_try_again">There was a problem communicating with the BibleGet server. Please try again.</string>
+    <string name="help_for_bibleget_open_office_writer">Help for BibleGet (Open Office Writer)</string>
+    <string name="this_help_dialog_window_introduces_the_user_to_the_usage_of_the_bibleget_i_o_plugin_for_open_office_">This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer.</string>
+    <string name="the_help_is_divided_into_three_sections">The Help is divided into three sections:</string>
+    <string name="usage_of_the_plugin">Usage of the Plugin</string>
+    <string name="formulation_of_the_queries">Formulation of the Queries</string>
+    <string name="biblical_books_and_abbreviations">Biblical Books and Abbreviations</string>
+    <string name="AUTHOR">AUTHOR</string>
+    <string name="john_r_dorazio_chaplain_at_roma_tre_university">John R. D\'Orazio (chaplain at Roma Tre University)</string>
+    <string name="COLLABORATORS">COLLABORATORS</string>
+    <string name="giovanni_gregori_computing_and_simone_urbinati_mug_roma_tre">Giovanni Gregori (computing) and Simone Urbinati (MUG Roma Tre)</string>
+    <string name="project_website">PROJECT WEBSITE</string>
+    <string name="email_address_for_information_or_feedback_on_the_project">EMAIL ADDRESS FOR INFORMATION OR FEEDBACK ON THE PROJECT</string>
+    <string name="insert_quote_from_input_window">Insert quote from input window</string>
+    <string name="insert_quote_from_text_selection">Insert quote from text selection</string>
+    <string name="how_to_use_the_plugin">How to use the plugin</string>
+    <string name="description_of_the_menu_icons_and_their_functionality">Description of the menu icons and their functionality.</string>
+    <string name="once_the_extension_is_installed_a_new_menu_bibleget_i_o_will_appear_on_the_menu_bar_also_a_new_float">Once the extension is installed, a new menu \'BibleGet I/O\' will appear on the menu bar. Also a new floating toolbar will appear. The buttons on the floating toolbar correspond to the menu items in the new menu, as can be seen in this image:</string>
+    <string name="the_floating_toolbar_can_be_dragged_and_placed_anywhere_on_the_screen_it_can_also_be_docked_to_certa">The floating toolbar can be dragged and placed anywhere on the screen. It can also be docked to certain areas of the workspace, for example on the toolbar below the menu bar, like in this image:</string>
+    <string name="there_are_two_ways_of_inserting_a_bible_quote_into_a_document">There are two ways of inserting a bible quote into a document.</string>
+    <string name="the_first_way_is_by_using_the_input_window">The first way is by using the input window.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="if_you_click_on_the_menu_item_0_an_input_window_will_open_where_you_can_input_your_query_and_choose_">If you click on the menu item \'\'{0}\'\', an input window will open where you can input your query and choose the version or versions you would like to take the quote from.</string>
+    <string name="this_list_of_versions_is_updated_from_the_available_versions_on_the_bibleget_server_but_since_the_in">This list of versions is updated from the available versions on the BibleGet server, but since the information is stored locally it may be necessary to renew the server information when new versions are added to the BibleGet server database.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="in_order_to_renew_the_information_from_the_bibleget_server_click_on_the_0_menu_item_and_then_click_o">In order to renew the information from the BibleGet server, click on the \'\'{0}\'\' menu item, and then click on the button \'\'{1}\'\'.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="when_you_choose_a_version_or_multiple_versions_to_quote_from_this_choice_is_automatically_saved_as_a">When you choose a version or multiple versions to quote from, this choice is automatically saved as a preference, and will be pre-selected the next time you open the \'\'{0}\'\' menu item.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="the_second_way_is_by_writing_your_desired_quote_directly_in_the_document_and_then_selecting_it_and_c">The second way is by writing your desired quote directly in the document, and then selecting it and choosing the menu item \'\'{0}\'\'. The selected text will be substituted by the Bible Quote retrieved from the BibleGet server.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="the_versions_previously_selected_in_the_0_window_will_be_used_so_you_must_have_selected_your_preferr">The versions previously selected in the \'\'{0}\'\' window will be used, so you must have selected your preferred versions at least once from the \'\'{0}\'\' window.</string>
+    <string name="formatting_preferences_can_be_set_using_the_preferences_window_you_can_choose_the_desired_font_for_t">Formatting preferences can be set using the \'Preferences\' window. You can choose the desired font for the Bible quotes as well as the desired line-spacing, and you can choose separate formatting (font size, font color, font style) for the book / chapter, for the verse numbers, and for the verse text. Preferences are saved automatically.</string>
+    <string name="after_the_help_menu_item_that_opens_up_this_same_help_window_the_last_three_menu_items_are">After the \'Help\' menu item that opens up this same help window, the last three menu items are:</string>
+    <string name="send_feedback">Send feedback</string>
+    <string name="this_will_open_up_your_systems_default_email_application_with_the_bibleget_io_gmail_com_feedback_add">This will open up your system\'s default email application with the bibleget.io@gmail.com feedback address already filled in.</string>
+    <string name="Contribute">Contribute</string>
+    <string name="this_will_open_a_paypal_page_in_the_systems_default_browser_where_you_can_make_a_donation_to_contrib">This will open a Paypal page in the system\'s default browser where you can make a donation to contribute to the project. Even just €1 can help to cover the expenses of this project. Just the server costs €120 a year.</string>
+    <string name="information_on_the_bibleget_i_o_project">Information on the BibleGet I/O Project</string>
+    <string name="this_opens_a_dialog_window_with_some_information_on_the_project_and_its_plugins_on_the_author_and_co">This opens a dialog window with some information on the project and it\'s plugins, on the author and contributors, and on the current locally stored information about the versions and languages that the BibleGet server supports.</string>
+    <string name="how_to_formulate_a_bible_query">How to formulate a bible query</string>
+    <string name="the_queries_for_bible_quotes_must_be_formulated_using_standard_notation_for_bible_citation">The queries for bible quotes must be formulated using standard notation for bible citation.</string>
+    <!-- Fuzzy -->
+    <string name="this_can_be_either_the_english_notation_as_explained_here_https_en_wikipedia_org_wiki_bible_citation">This can be either the english notation (as explained here: https://en.wikipedia.org/wiki/Bible_citation), or the european notation as explained here below.</string>
+    <string name="a_basic_query_consists_of_at_least_two_elements_the_bible_book_and_the_chapter">A basic query consists of at least two elements: the bible book and the chapter.</string>
+    <string name="the_bible_book_can_be_written_out_in_full_or_in_an_abbreviated_form">The bible book can be written out in full, or in an abbreviated form.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="the_bibleget_engine_recognizes_the_names_of_the_books_of_the_bible_in_0_different_languages_1">The BibleGet engine recognizes the names of the books of the bible in {0} different languages: {1}</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="see_the_list_of_valid_books_and_abbreviations_in_the_section_0">See the list of valid books and abbreviations in the section {0}.</string>
+    <string name="for_example_the_query_matthew_1_means_the_book_of_matthew_or_better_the_gospel_according_to_matthew_">For example, the query \"Matthew 1\" means the book of Matthew (or better the gospel according to Matthew) at chapter 1.</string>
+    <string name="this_can_also_be_written_as_mt_1">This can also be written as \"Mt 1\".</string>
+    <string name="different_combinations_of_books_chapters_and_verses_can_be_formed_using_the_comma_delimiter_and_the_">Different combinations of books, chapters, and verses can be formed using the comma delimiter and the dot delimiter (in european notation, in english notation instead a colon is used instead of a comma and a comma is used instead of a dot):</string>
+    <string name="the_comma_is_the_chapter_verse_delimiter_matthew_1_5_means_the_book_gospel_of_matthew_chapter_1_vers">\",\": the comma is the chapter-verse delimiter. \"Matthew 1,5\" means the book (gospel) of Matthew, chapter 1, verse 5. (In English notation: \"Matthew 1:5\".)</string>
+    <string name="the_dot_is_a_delimiter_between_verses_matthew_1_5_7_means_the_book_gospel_of_matthew_chapter_1_verse">\".\": the dot is a delimiter between verses. \"Matthew 1,5.7\" means the book (gospel) of Matthew, chapter 1, verses 5 and 7. (In English notation: \"Matthew 1:5,7\".)</string>
+    <string name="the_dash_is_a_range_delimiter_which_can_be_used_in_a_variety_of_ways">\"-\": the dash is a range delimiter, which can be used in a variety of ways:</string>
+    <string name="for_a_range_of_chapters_matthew_1_2_means_the_gospel_according_to_matthew_from_chapter_1_to_chapter_">For a range of chapters: \"Matthew 1-2\" means the gospel according to Matthew, from chapter 1 to chapter 2.</string>
+    <string name="for_a_range_of_verses_within_the_same_chapter_matthew_1_1_5_means_the_gospel_according_to_matthew_ch">For a range of verses within the same chapter: \"Matthew 1,1-5\" means the gospel according to Matthew, chapter 1, from verse 1 to verse 5. (In English notation: \"Matthew 1:1-5\".)</string>
+    <string name="for_a_range_of_verses_that_span_over_different_chapters_matthew_1_5_2_13_means_the_gospel_according_">For a range of verses that span over different chapters: \"Matthew 1,5-2,13\" means the gospel according to Matthew, from chapter 1, verse 5 to chapter 2, verse 13. (In English notation: \"Matthew 1:5-2:13\".)</string>
+    <string name="different_combinations_of_these_delimiters_can_form_fairly_complex_queries_for_example_mt1_1_3_5_7_9">Different combinations of these delimiters can form fairly complex queries, for example \"Mt1,1-3.5.7-9\" means the gospel according to Matthew, chapter 1, verses 1 to 3, verse 5, and verses 7 to 9. (In English notation: \"Mt1:1-3,5,7-9\".)</string>
+    <string name="multiple_queries_can_be_combined_together_using_a_semi_colon">Multiple queries can be combined together using a semi-colon \";\".</string>
+    <string name="if_the_query_following_the_semi_colon_refers_to_the_same_book_as_the_preceding_query_it_is_not_neces">If the query following the semi-colon refers to the same book as the preceding query, it is not necessary to indicate the book a second time.</string>
+    <string name="for_example_matthew_1_1_2_13_means_the_gospel_according_to_matthew_chapter_1_verse_1_and_chapter_2_v">For example, \"Matthew 1,1;2,13\" means the gospel according to Matthew, chapter 1 verse 1 and chapter 2 verse 13. (In English notation: \"Matthew 1:1;2:13\".)</string>
+    <string name="here_is_an_example_of_multiple_complex_queries_combined_into_a_single_querystring_genesis_1_3_5_7_9_">Here is an example of multiple complex queries combined into a single querystring: \"Genesis 1,3-5.7.9-11.13;2,4-9.11-13;Apocalypse 3,10.12-14\". (In English notation: \"Genesis 1:3-5,7,9-11,13;2:4-9,11-13;Apocalypse 3:10,12-14\").</string>
+    <string name="it_doesnt_matter_whether_or_not_you_use_a_space_between_the_book_and_the_chapter_the_querystring_wil">It doesn\'t matter whether or not you use a space between the book and the chapter, the querystring will be interpreted just the same.</string>
+    <string name="it_is_also_indifferent_whether_you_use_uppercase_or_lowercase_letters_the_querystring_will_be_interp">It is also indifferent whether you use uppercase or lowercase letters, the querystring will be interpreted just the same.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="here_is_a_list_of_valid_books_and_their_corresponding_abbreviations_either_of_which_can_be_used_in_t">Here is a list of valid books and their corresponding abbreviations, either of which can be used in the querystrings.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="the_abbreviations_do_not_always_correspond_with_those_proposed_by_the_various_editions_of_the_bible_">The abbreviations do not always correspond with those proposed by the various editions of the Bible, because they would conflict with those proposed by other editions.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="for_example_some_english_editions_propose_gn_as_an_abbreviation_for_genesis_while_some_italian_editi">For example some english editions propose \"Gn\" as an abbreviation for \"Genesis\", while some italian editions propose \"Gn\" as an abbreviation for \"Giona\" (= \"Jonah\").</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="therefore_you_will_not_always_be_able_to_use_the_abbreviations_proposed_by_any_single_edition_of_the">Therefore you will not always be able to use the abbreviations proposed by any single edition of the Bible, you must use the abbreviations that are recognized by the BibleGet engine as listed in the following table:</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="BOOK">BOOK</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="ABBREVIATION">ABBREVIATION</string>
+    <string name="Instructions">Instructions</string>
+    <string name="Help">Help</string>
+    <string name="you_cannot_send_an_empty_query">You cannot send an empty query.</string>
+    <string name="mixed_notations_have_been_detected_please_use_either_english_notation_or_european_notation">Mixed notations have been detected. Please use either english notation or european notation.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="the_first_query_in_the_querystring_must_start_with_a_valid_book_indicator_b556f1f055a569859f76750fae">The first query &lt;{0}&gt; in the querystring &lt;{1}&gt; must start with a valid book indicator!</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="the_book_indicator_in_the_query_is_not_valid_please_check_the_documentation_for_a_list_of_valid_book">The book indicator &lt;{0}&gt; in the query &lt;{1}&gt; is not valid. Please check the documentation for a list of valid book indicators.</string>
+    <string name="you_must_have_a_valid_chapter_following_the_book_indicator">You must have a valid chapter following the book indicator!</string>
+    <string name="a_query_that_doesnt_start_with_a_book_indicator_must_however_start_with_a_valid_chapter_indicator">A query that doesn\'t start with a book indicator must however start with a valid chapter indicator!</string>
+    <string name="you_cannot_use_a_dot_without_first_using_a_comma_or_a_dash_a_dot_is_a_liason_between_verses_which_ar">You cannot use a dot without first using a comma or a dash. A dot is a liason between verses, which are separated from the chapter by a comma.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="verses_concatenated_by_a_dot_must_be_consecutive_instead_is_greater_than_or_equal_to_in_the_expressi">Verses concatenated by a dot must be consecutive, instead &lt;{0}&gt; is greater than or equal to &lt;{1}&gt; in the expression &lt;{2}&gt; in the query &lt;{3}&gt;</string>
+    <string name="a_dot_must_be_preceded_and_followed_by_1_to_3_digits_of_which_the_first_digit_cannot_be_zero">A dot must be preceded and followed by 1 to 3 digits of which the first digit cannot be zero.</string>
+    <string name="a_comma_must_be_preceded_and_followed_by_1_to_3_digits_of_which_the_first_digit_cannot_be_zero">A comma must be preceded and followed by 1 to 3 digits of which the first digit cannot be zero.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="a_chapter_in_the_query_is_out_of_bounds_there_is_no_chapter_in_the_book_in_the_requested_version_the">A chapter in the query is out of bounds: there is no chapter &lt;{0}&gt; in the book &lt;{1}&gt; in the requested version &lt;{2}&gt;, the last possible chapter is &lt;{3}&gt;</string>
+    <string name="you_cannot_have_more_than_one_comma_and_not_have_a_dash">You cannot have more than one comma and not have a dash!</string>
+    <string name="you_seem_to_have_a_malformed_querystring_there_should_be_only_one_dash">You seem to have a malformed querystring, there should be only one dash.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="a_verse_in_the_query_is_out_of_bounds_there_is_no_verse_in_the_book_at_chapter_in_the_requested_vers">A verse in the query is out of bounds: there is no verse &lt;{0}&gt; in the book &lt;{1}&gt; at chapter &lt;{2}&gt; in the requested version &lt;{3}&gt;, the last possible verse is &lt;{4}&gt;</string>
+    <string name="there_are_multiple_dashes_in_the_query_but_there_are_not_enough_dots_there_can_only_be_one_more_dash">There are multiple dashes in the query, but there are not enough dots. There can only be one more dash than dots.</string>
+    <string name="a_dash_must_be_preceded_and_followed_by_1_to_3_digits_of_which_the_first_digit_cannot_be_zero">A dash must be preceded and followed by 1 to 3 digits of which the first digit cannot be zero.</string>
+    <string name="if_there_is_a_chapter_verse_construct_following_a_dash_there_must_also_be_a_chapter_verse_construct_">If there is a chapter-verse construct following a dash, there must also be a chapter-verse construct preceding the same dash.</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="chapters_must_be_consecutive_instead_the_first_chapter_indicator_is_greater_than_or_equal_to_the_sec">Chapters must be consecutive. Instead the first chapter indicator &lt;{0}&gt; is greater than or equal to the second chapter indicator &lt;{1}&gt; in the expression &lt;{2}&gt;</string>
+    <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
+        translations
+        double up any single quotes or apostrophes. -->
+    <string name="verses_or_chapters_if_applicable_around_the_dash_operator_must_be_consecutive_instead_is_greater_tha">Verses (or chapters if applicable) around the dash operator must be consecutive. Instead &lt;{0}&gt; is greater than or equal to &lt;{1}&gt; in the expression &lt;{2}&gt;</string>
+    <string name="Genesi">Genesi</string>
+    <string name="in_the_beginning_when_god_created_the_heavens_and_the_earth">In the beginning, when God created the heavens and the earth—</string>
+    <string name="and_the_earth_was_without_form_or_shape_with_darkness_over_the_abyss_and_a_mighty_wind_sweeping_over">and the earth was without form or shape, with darkness over the abyss and a mighty wind sweeping over the waters—</string>
+    <string name="then_god_said_let_there_be_light_and_there_was_light">Then God said: Let there be light, and there was light.</string>
+    <string name="user_preferences">User Preferences</string>
+    <string name="Paragraph">Paragraph</string>
+    <string name="Alignment">Alignment</string>
+    <string name="Indent">Indent</string>
+    <string name="Line_spacing">Line-spacing</string>
+    <string name="Font">Font</string>
+    <string name="book_chapter">Book / Chapter</string>
+    <string name="verse_number">Verse Number</string>
+    <string name="verse_text">Verse Text</string>
+    <string name="Preview">Preview</string>
+    <string name="line_spacing_not_visible_in_the_preview">line-spacing not visible in the preview</string>
+    <string name="choose_book_chapter_font_color">Choose Book / Chapter Font Color</string>
+    <string name="choose_book_chapter_background_color">Choose Book / Chapter Background Color</string>
+    <string name="choose_verse_number_font_color">Choose Verse Number Font Color</string>
+    <string name="choose_verse_number_background_color">Choose Verse Number Background Color</string>
+    <string name="choose_verse_text_font_color">Choose Verse Text Font Color</string>
+    <string name="choose_verse_text_background_color">Choose Verse Text Background Color</string>
+    <string name="some_bible_versions_have_their_own_formatting_this_is_left_by_default_to_keep_the_text_as_close_as_p">Some Bible versions have their own formatting. This is left by default to keep the text as close as possible to the original.&lt;br&gt; If however you need to have consistent formatting in your document, you may override the Bible version\'s own formatting.</string>
+    <string name="override_bible_version_formatting">Override Bible Version Formatting</string>
+</resources>

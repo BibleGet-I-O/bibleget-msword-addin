@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BibleGet I/O plugin for Microsoft Word" xml:space="preserve">
+    <value>BibleGet I/O-Plugin für Microsoft Word</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="This plugin was developed by &lt;b&gt;John R. D'Orazio&lt;/b&gt;, a priest in the diocese of Rome, chaplain at Roma Tre University." xml:space="preserve">
+    <value>Dieses Plugin wurde von &lt;b&gt;John R. D'Orazio&lt;/b&gt;, ein Priester in der Diözese Rom, Kaplan an der Roma Tre-Universität entwickelt.</value>
+  </data>
+  <data name="It is a part of the &lt;b&gt;BibleGet Project&lt;/b&gt; at {0}." xml:space="preserve">
+    <value>Es ist ein Teil des &lt;b&gt;BibleGet-Projekts&lt;/b&gt; an der {0}.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="The author would like to thank &lt;b&gt;Giovanni Gregori&lt;/b&gt; and &lt;b&gt;Simone Urbinati&lt;/b&gt; for their code contributions." xml:space="preserve">
+    <value>Der Autor möchte &lt;b&gt;Giovanni Gregori&lt;/b&gt; und &lt;b&gt;Simone Urbinati&lt;/b&gt; für ihre Code-Beiträge danken.</value>
+  </data>
+  <data name="The &lt;b&gt;BibleGet Project&lt;/b&gt; is an independent project born from the personal initiative of John R. D'Orazio, and is not funded by any kind of corporation." xml:space="preserve">
+    <value>Das &lt;b&gt;BibleGet Projekt&lt;/b&gt; ist ein unabhängiges Projekt, das aus der persönlichen Initiative von John R. D'Orazio geboren und wird nicht von jeder Art der Corporation finanziert.</value>
+  </data>
+  <data name="All of the expenses of the project server and domain, which amount to €200 a year, are accounted for personally by the author. All code contributions and development are entirely volunteered." xml:space="preserve">
+    <value>Alle Ausgaben von der Projektserver und Domäne, die 200 € pro Jahr ausmachen, werden persönlich vom Autor bilanziert. Alle Code-Beiträge und Entwicklung sind völlig freiwillig.</value>
+  </data>
+  <data name="If you like the plugin and find it useful, please consider contributing even a small amount to help keep this project running. Even just €1 can make a difference. You can contribute using the appropriate menu item in this plugin's menu." xml:space="preserve">
+    <value>Wenn Sie mögen das Plugin und es hilfreich sein, beachten Sie bitte, trägt sogar eine kleine Menge um dieses Projekt am laufen zu halten. Auch nur €1 kann einen Unterschied machen. Sie können dazu beitragen, mit den entsprechenden Menüpunkt im dieses Plugin-Menü.</value>
+  </data>
+  <data name="About this plugin" xml:space="preserve">
+    <value>Über dieses plugin</value>
+  </data>
+  <data name="Current information from the BibleGet Server:" xml:space="preserve">
+    <value>Aktuelle Informationen aus dem BibleGet-Server:</value>
+  </data>
+  <data name="The BibleGet database currently supports {0} versions of the Bible in {1} different languages:" xml:space="preserve">
+    <value>Die BibleGet-Datenbank unterstützt derzeit {0} Versionen der Bibel in {1} verschiedenen Sprachen:</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="The BibleGet engine currently understands the names of the books of the Bible in {0} different languages:" xml:space="preserve">
+    <value>Die BibleGet-Engine versteht derzeit die Namen der Bücher der Bibel in {0} verschiedenen Sprachen:</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="RENEW SERVER DATA" xml:space="preserve">
+    <value>SERVERDATEN ZU ERNEUERN</value>
+  </data>
+  <data name="Type the desired Bible Quote using standard notation:" xml:space="preserve">
+    <value>Geben Sie die gewünschte Bibel zitieren mit standard-Notation:</value>
+  </data>
+  <data name="(e.g. Mt 1,1-10.12-15;5,3-4;Jn 3,16)" xml:space="preserve">
+    <value>(z.B. Mt 1,1-10.12.-15; 5,3-4; Joh 3,16)</value>
+  </data>
+  <data name="Choose version (or versions)" xml:space="preserve">
+    <value>Wählen Sie Version (oder Versionen)</value>
+  </data>
+  <data name="Send query" xml:space="preserve">
+    <value>Anfrage senden</value>
+  </data>
+  <data name="Sends the request to the server and returns the results to the document." xml:space="preserve">
+    <value>Sendet die Anforderung an den Server und gibt die Ergebnisse an das Dokument.</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="You must select at least one version in order to make a request." xml:space="preserve">
+    <value>Sie müssen mindestens eine Version auswählen, um einen Antrag zu stellen.</value>
+  </data>
+  <data name="There was a problem communicating with the BibleGet server. Please try again." xml:space="preserve">
+    <value>Es gab ein Problem mit dem BibleGet-Server kommunizieren. Bitte versuchen Sie es erneut.</value>
+  </data>
+  <data name="Help for BibleGet (Open Office Writer)" xml:space="preserve">
+    <value>Hilfe für BibleGet (Microsoft Word 2007+)</value>
+  </data>
+  <data name="This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer." xml:space="preserve">
+    <value>Dieses Hilfe-Dialog-Fenster führt den Benutzer auf die Verwendung von BibleGet I/O-Plugin für Microsoft Word 2007+.</value>
+  </data>
+  <data name="The Help is divided into three sections:" xml:space="preserve">
+    <value>Die Hilfe ist in drei Abschnitte unterteilt:</value>
+  </data>
+  <data name="Usage of the Plugin" xml:space="preserve">
+    <value>Nutzung des Plugins</value>
+  </data>
+  <data name="Formulation of the Queries" xml:space="preserve">
+    <value>Formulierung von Abfragen</value>
+  </data>
+  <data name="Biblical Books and Abbreviations" xml:space="preserve">
+    <value>Biblische Bücher und Abkürzungen</value>
+  </data>
+  <data name="AUTHOR" xml:space="preserve">
+    <value>AUTOR</value>
+  </data>
+  <data name="John R. D'Orazio (chaplain at Roma Tre University)" xml:space="preserve">
+    <value>John R. D'Orazio (Kaplan an Roma Tre-Universität)</value>
+  </data>
+  <data name="COLLABORATORS" xml:space="preserve">
+    <value>MITARBEITER</value>
+  </data>
+  <data name="Giovanni Gregori (computing) and Simone Urbinati (MUG Roma Tre)" xml:space="preserve">
+    <value>Giovanni Gregori (Datenverarbeitung) und Simone Urbinati (MUG Roma Tre)</value>
+  </data>
+  <data name="PROJECT WEBSITE" xml:space="preserve">
+    <value>WEBSITE DES PROJEKTS</value>
+  </data>
+  <data name="EMAIL ADDRESS FOR INFORMATION OR FEEDBACK ON THE PROJECT" xml:space="preserve">
+    <value>E-MAIL-ADRESSE FÜR INFORMATIONEN ODER ANREGUNGEN ZUM PROJEKT</value>
+  </data>
+  <data name="Insert quote from input window" xml:space="preserve">
+    <value>Zitat von Eingabefenster einfügen</value>
+  </data>
+  <data name="Insert quote from text selection" xml:space="preserve">
+    <value>Zitat von markierten Text einfügen</value>
+  </data>
+  <data name="How to use the plugin" xml:space="preserve">
+    <value>Gewusst wie: Verwenden Sie das plugin</value>
+  </data>
+  <data name="Description of the menu icons and their functionality." xml:space="preserve">
+    <value>Beschreibung der Menü-Icons und ihrer Funktionalität.</value>
+  </data>
+  <data name="Once the extension is installed, a new menu 'BibleGet I/O' will appear on the menu bar. Also a new floating toolbar will appear. The buttons on the floating toolbar correspond to the menu items in the new menu, as can be seen in this image:" xml:space="preserve">
+    <value>Sobald die Erweiterung installiert ist, erscheint ein neues Menü 'BibleGet I/O' in der Menüleiste. Auch wird eine neue unverankerte Symbolleiste angezeigt. Die Tasten auf der unverankerten Symbolleiste entsprechen die Menüpunkte im Menü "neu", wie in diesem Bild zu sehen ist:</value>
+  </data>
+  <data name="The floating toolbar can be dragged and placed anywhere on the screen. It can also be docked to certain areas of the workspace, for example on the toolbar below the menu bar, like in this image:" xml:space="preserve">
+    <value>Die unverankerte Symbolleiste kann gezogen und überall auf dem Bildschirm platziert werden. Es kann auch für bestimmte Bereiche des Arbeitsbereichs, zum Beispiel auf der Symbolleiste unterhalb der Menüleiste, wie in diesem Bild angedockt werden:</value>
+  </data>
+  <data name="There are two ways of inserting a bible quote into a document." xml:space="preserve">
+    <value>Es gibt zwei Möglichkeiten ein Bibel-Zitat in ein Dokument einzufügen.</value>
+  </data>
+  <data name="The first way is by using the input window." xml:space="preserve">
+    <value>Die erste Möglichkeit ist die Verwendung des Eingabefenster.</value>
+  </data>
+  <data name="If you click on the menu item ''{0}'', an input window will open where you can input your query and choose the version or versions you would like to take the quote from." xml:space="preserve">
+    <value>Wenn Sie auf den Menüpunkt ''{0}'' klicken, öffnet sich ein Eingabefenster können Sie Ihre Abfrage eingeben und wählen Sie die Version oder Versionen, die, denen Sie möchten, nehmen das Zitat aus.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="This list of versions is updated from the available versions on the BibleGet server, but since the information is stored locally it may be necessary to renew the server information when new versions are added to the BibleGet server database." xml:space="preserve">
+    <value>Diese Liste der Versionen von den verfügbaren Versionen auf dem BibleGet-Server aktualisiert, aber da die Informationen lokal gespeichert ist es möglicherweise erforderlich, die Serverinformationen zu erneuern, wenn neue Versionen der BibleGet-Datenbank hinzugefügt werden.</value>
+  </data>
+  <data name="In order to renew the information from the BibleGet server, click on the ''{0}'' menu item, and then click on the button ''{1}''." xml:space="preserve">
+    <value>Um die Informationen aus dem BibleGet-Server zu erneuern, klicken Sie auf den Menüpunkt ''{0}'', und klicken Sie dann auf die Schaltfläche ''{1}''.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="When you choose a version or multiple versions to quote from, this choice is automatically saved as a preference, and will be pre-selected the next time you open the ''{0}'' menu item." xml:space="preserve">
+    <value>Wenn Sie eine oder mehrere Versionen von zitieren auswählen, diese Wahl ist als Einstellung automatisch gespeichert und werden vorgewählte beim nächsten Öffnen der Menüpunkt ''{0}''.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="The second way is by writing your desired quote directly in the document, and then selecting it and choosing the menu item ''{0}''. The selected text will be substituted by the Bible Quote retrieved from the BibleGet server." xml:space="preserve">
+    <value>Die zweite Möglichkeit ist von Ihrem gewünschten Angebot direkt im Dokument, schreiben und dann auswählen und Auswahl des Menüpunktes ''{0}''. Der markierte Text wird ersetzt durch die Bibel zitieren aus dem BibleGet-Server abgerufen.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="The versions previously selected in the ''{0}'' window will be used, so you must have selected your preferred versions at least once from the ''{0}'' window." xml:space="preserve">
+    <value>Die Versionen zuvor ausgewählt im Fenster ''{0}'' werden verwendet, damit Sie Ihre bevorzugten Versionen mindestens einmal vom Fenster ''{0}'' ausgewählt haben müssen.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="Formatting preferences can be set using the 'Preferences' window. You can choose the desired font for the Bible quotes as well as the desired line-spacing, and you can choose separate formatting (font size, font color, font style) for the book / chapter, for the verse numbers, and for the verse text. Preferences are saved automatically." xml:space="preserve">
+    <value>Formateinstellungen einstellbar über das Fenster "Einstellungen". Sie können die gewünschte Schriftart für die Bibel-Zitate sowie den gewünschten Zeilenabstand, und Sie können separate Formatierung (Schriftfarbe, Schriftgröße, Schriftschnitt) für das Buch / Kapitel, Vers-Zahlen und den Vers Text. Einstellungen werden automatisch gespeichert.</value>
+  </data>
+  <data name="After the 'Help' menu item that opens up this same help window, the last three menu items are:" xml:space="preserve">
+    <value>Nach dem 'Hilfe'-Menüelement, das diese gleichen Hilfefenster eröffnet, sind die letzten drei Menüpunkte:</value>
+  </data>
+  <data name="Send feedback" xml:space="preserve">
+    <value>Senden Sie Ihr feedback</value>
+  </data>
+  <data name="This will open up your system's default email application with the bibleget.io@gmail.com feedback address already filled in." xml:space="preserve">
+    <value>Es öffnet sich Ihr System Standard e-Mail-Programm mit der bibleget.io@gmail.com Rückmeldungen-Adresse bereits ausgefüllt.</value>
+  </data>
+  <data name="Contribute" xml:space="preserve">
+    <value>Beitragen</value>
+  </data>
+  <data name="This will open a Paypal page in the system's default browser where you can make a donation to contribute to the project. Even just €1 can help to cover the expenses of this project. Just the server costs €120 a year." xml:space="preserve">
+    <value>Dies öffnet eine Paypal-Seite im Standardbrowser des Systems, wo man, eine Spende machen kann an das Projekt beizutragen. Auch nur €1 kann zur Deckung der Ausgaben des Projektes helfen. Nur der Server kostet €120 pro Jahr.</value>
+  </data>
+  <data name="Information on the BibleGet I/O Project" xml:space="preserve">
+    <value>Informationen zum BibleGet-I/O-Projekt</value>
+  </data>
+  <data name="This opens a dialog window with some information on the project and it's plugins, on the author and contributors, and on the current locally stored information about the versions and languages that the BibleGet server supports." xml:space="preserve">
+    <value>Dies öffnet ein Dialogfenster mit einigen Informationen über das Projekt und es ist Plugins auf den Autor und die Mitwirkenden, und auf dem aktuellen lokal gespeicherten Informationen über die Versionen und Sprachen, die der BibleGet-Server unterstützt.</value>
+  </data>
+  <data name="How to formulate a bible query" xml:space="preserve">
+    <value>Eine Bibel-Abfrage formulieren</value>
+  </data>
+  <data name="The queries for bible quotes must be formulated using standard notation for bible citation." xml:space="preserve">
+    <value>Abfragen für Bibel-Zitate müssen mit Standardnotation für Bibel-Zitat formuliert werden.</value>
+  </data>
+  <data name="This can be either the english notation (as explained here: https://en.wikipedia.org/wiki/Bible_citation), or the european notation as explained here below." xml:space="preserve">
+    <value>Dies kann entweder die englische Notation (wie hier beschrieben: https://en.wikipedia.org/wiki/Bible_citation), oder die Europäische Notation als hier unten erklärt.</value>
+  </data>
+  <data name="A basic query consists of at least two elements: the bible book and the chapter." xml:space="preserve">
+    <value>Eine einfache Abfrage besteht aus mindestens zwei Elementen: das Bibel-Buch und das Kapitel.</value>
+  </data>
+  <data name="The bible book can be written out in full, or in an abbreviated form." xml:space="preserve">
+    <value>Das Bibel-Buch kann vollständig oder in abgekürzter Form geschrieben werden.</value>
+  </data>
+  <data name="The BibleGet engine recognizes the names of the books of the bible in {0} different languages: {1}" xml:space="preserve">
+    <value>Die BibleGet-Engine erkennt die Namen der Bücher der Bibel in verschiedenen Sprachen {0}: {1}</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="See the list of valid books and abbreviations in the section {0}." xml:space="preserve">
+    <value>Siehe Liste der gültigen Bücher und Abkürzungen im Abschnitt {0}.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="For example, the query &quot;Matthew 1&quot; means the book of Matthew (or better the gospel according to Matthew) at chapter 1." xml:space="preserve">
+    <value>Z. B. die Abfrage "Matthew 1" heißt das Buch von Matthew (oder besser das Evangelium entsprechend Matthew) in Kapitel 1.</value>
+  </data>
+  <data name="This can also be written as &quot;Mt 1&quot;." xml:space="preserve">
+    <value>Dies kann auch geschrieben werden als "Mt 1".</value>
+  </data>
+  <data name="Different combinations of books, chapters, and verses can be formed using the comma delimiter and the dot delimiter (in european notation, in english notation instead a colon is used instead of a comma and a comma is used instead of a dot):" xml:space="preserve">
+    <value>Verschiedene Kombinationen von Bücher, Kapitel und Verse über das Kommatrennzeichen und das Trennzeichen Punkt gebildet werden können (in der Europäischen Schreibweise in englischer Schreibweise stattdessen ein Doppelpunkt ist anstelle eines Kommas und ein Komma verwendet anstelle des Punktes):</value>
+  </data>
+  <data name="&quot;,&quot;: the comma is the chapter-verse delimiter. &quot;Matthew 1,5&quot; means the book (gospel) of Matthew, chapter 1, verse 5. (In English notation: &quot;Matthew 1:5&quot;.)" xml:space="preserve">
+    <value>",": das Komma ist das Kapitel-Vers-Trennzeichen. "Matthew 1,5" heißt das Buch (Evangelium) von Matthew, Kapitel 1, Vers 5. (In englischer Schreibweise: "Matthew 1:5".)</value>
+  </data>
+  <data name="&quot;.&quot;: the dot is a delimiter between verses. &quot;Matthew 1,5.7&quot; means the book (gospel) of Matthew, chapter 1, verses 5 and 7. (In English notation: &quot;Matthew 1:5,7&quot;.)" xml:space="preserve">
+    <value>".": der Punkt ist ein Trennzeichen zwischen Versen. "Matthew 1,5.7" heißt das Buch (Evangelium) von Matthew, Kapitel 1, Vers 5 und 7. (In englischer Schreibweise: "Matthew 1:5, 7".)</value>
+  </data>
+  <data name="&quot;-&quot;: the dash is a range delimiter, which can be used in a variety of ways:" xml:space="preserve">
+    <value>"-": das Armaturenbrett ist ein Bereich Trennzeichen, die in verschiedenster Weise verwendet werden können:</value>
+  </data>
+  <data name="For a range of chapters: &quot;Matthew 1-2&quot; means the gospel according to Matthew, from chapter 1 to chapter 2." xml:space="preserve">
+    <value>Für eine Reihe von Kapiteln: "Matthew 1-2" bedeutet das Evangelium entsprechend Matthew, von Kapitel 1, Kapitel 2.</value>
+  </data>
+  <data name="For a range of verses within the same chapter: &quot;Matthew 1,1-5&quot; means the gospel according to Matthew, chapter 1, from verse 1 to verse 5. (In English notation: &quot;Matthew 1:1-5&quot;.)" xml:space="preserve">
+    <value>Für eine Reihe von Strophen innerhalb des gleichen Kapitels: "Matthew 1,1-5" bedeutet das Evangelium entsprechend Matthew, Kapitel 1, von Vers 1 bis Vers 5. (In englischer Schreibweise: "Matthew 1:1-5".)</value>
+  </data>
+  <data name="For a range of verses that span over different chapters: &quot;Matthew 1,5-2,13&quot; means the gospel according to Matthew, from chapter 1, verse 5 to chapter 2, verse 13. (In English notation: &quot;Matthew 1:5-2:13&quot;.)" xml:space="preserve">
+    <value>Für eine Reihe von Versen, die über verschiedene Kapitel umfassen: "Matthew 1,5-2,13" bedeutet das Evangelium entsprechend Matthew, von Kapitel 1, Vers 5 zu Kapitel 2, Vers 13. (In englischer Schreibweise: "Matthew 1:5-2:13".)</value>
+  </data>
+  <data name="Different combinations of these delimiters can form fairly complex queries, for example &quot;Mt1,1-3.5.7-9&quot; means the gospel according to Matthew, chapter 1, verses 1 to 3, verse 5, and verses 7 to 9. (In English notation: &quot;Mt1:1-3,5,7-9&quot;.)" xml:space="preserve">
+    <value>Verschiedene Kombinationen von diesen Trennzeichen ziemlich komplexe Abfragen bilden können zum Beispiel "Mt1, 3.5.7-1-9" bedeutet das Evangelium entsprechend Matthew, Kapitel 1, Verse 1 bis 3, Vers 5, und Verse 08:53. (In englischer Schreibweise: "Mt1:1-3,5,7-9".)</value>
+  </data>
+  <data name="Multiple queries can be combined together using a semi-colon &quot;;&quot;." xml:space="preserve">
+    <value>Mehrere Abfragen können kombiniert werden, zusammen mit einem Semikolon ";".</value>
+  </data>
+  <data name="If the query following the semi-colon refers to the same book as the preceding query, it is not necessary to indicate the book a second time." xml:space="preserve">
+    <value>Wenn die Abfrage nach dem Semikolon auf das gleiche Buch wie die vorhergehenden Abfrage verweist, ist es nicht notwendig, das Buch ein zweites Mal geben.</value>
+  </data>
+  <data name="For example, &quot;Matthew 1,1;2,13&quot; means the gospel according to Matthew, chapter 1 verse 1 and chapter 2 verse 13. (In English notation: &quot;Matthew 1:1;2:13&quot;.)" xml:space="preserve">
+    <value>Z. B. "Matthew 1,1; 2,13" bedeutet das Evangelium entsprechend Matthew, Kapitel 1 Vers 1 und Kapitel 2 Vers 13. (In englischer Schreibweise: "Matthew 1,1; 02:13".)</value>
+  </data>
+  <data name="Here is an example of multiple complex queries combined into a single querystring: &quot;Genesis 1,3-5.7.9-11.13;2,4-9.11-13;Apocalypse 3,10.12-14&quot;. (In English notation: &quot;Genesis 1:3-5,7,9-11,13;2:4-9,11-13;Apocalypse 3:10,12-14&quot;)." xml:space="preserve">
+    <value>Hier ist ein Beispiel für mehrere komplexe Abfragen in einer einzigen Querystring zusammengefasst: "Genesis 1,3-5.7.9-11.13; 2,4-9,11-13; Apokalypse 3,10.12-14 ". (In englischer Schreibweise: "Genesis 1:3-5,7,9-11,13; 2:4-9,11-13; Apokalypse 3:10, 12-14").</value>
+  </data>
+  <data name="It doesn't matter whether or not you use a space between the book and the chapter, the querystring will be interpreted just the same." xml:space="preserve">
+    <value>Es spielt keine Rolle, ob Sie ein Leerzeichen zwischen das Buch und das Kapitel verwenden, Querystring genauso interpretiert werden.</value>
+  </data>
+  <data name="It is also indifferent whether you use uppercase or lowercase letters, the querystring will be interpreted just the same." xml:space="preserve">
+    <value>Es ist auch gleichgültig, ob Sie Großbuchstaben verwenden oder Kleinbuchstaben, Querystring genauso interpretiert werden.</value>
+  </data>
+  <data name="Here is a list of valid books and their corresponding abbreviations, either of which can be used in the querystrings." xml:space="preserve">
+    <value>Hier ist eine Liste der gültigen Bücher und ihre entsprechenden Abkürzungen, die in die Formularwerte verwendet werden können.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="The abbreviations do not always correspond with those proposed by the various editions of the Bible, because they would conflict with those proposed by other editions." xml:space="preserve">
+    <value>Die Abkürzungen entsprechen nicht immer mit von der unterschiedlichen Versionen der Bibel, da sie mit denen von anderen Editionen vorgeschlagenen Konflikt stehen würde.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="For example some english editions propose &quot;Gn&quot; as an abbreviation for &quot;Genesis&quot;, while some italian editions propose &quot;Gn&quot; as an abbreviation for &quot;Giona&quot; (= &quot;Jonah&quot;)." xml:space="preserve">
+    <value>Zum Beispiel schlagen einige englischen Ausgaben "Gn" als Abkürzung für "Genesis", während einige italienischen Ausgaben vorschlagen "Gn" als Abkürzung für "Giona" (= "Jonah").</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="Therefore you will not always be able to use the abbreviations proposed by any single edition of the Bible, you must use the abbreviations that are recognized by the BibleGet engine as listed in the following table:" xml:space="preserve">
+    <value>Daher Sie werden nicht immer die Abkürzungen vorgeschlagen durch jede einzelne Ausgabe der Bibel zu nutzen, müssen Sie verwenden die Abkürzungen, die von der BibleGet-Engine erkannt werden, wie in der folgenden Tabelle aufgeführt:</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="BOOK" xml:space="preserve">
+    <value>BUCH</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="ABBREVIATION" xml:space="preserve">
+    <value>ABKÜRZUNG</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>Anweisungen</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
+  <data name="You cannot send an empty query." xml:space="preserve">
+    <value>Eine leere Abfrage können nicht gesendet werden.</value>
+  </data>
+  <data name="Mixed notations have been detected. Please use either english notation or european notation." xml:space="preserve">
+    <value>Gemischte Notationen sind ermittelt worden. Bitte verwenden Sie englische Schreibweise oder europäische Schreibweise.</value>
+  </data>
+  <data name="The first query &lt;{0}&gt; in the querystring &lt;{1}&gt; must start with a valid book indicator!" xml:space="preserve">
+    <value>Die erste Abfrage &lt;{0}&gt; im Querystring &lt;{1}&gt; muss mit einem gültigen Buch-Indikator beginnen!</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="The book indicator &lt;{0}&gt; in the query &lt;{1}&gt; is not valid. Please check the documentation for a list of valid book indicators." xml:space="preserve">
+    <value>Die Buch-Anzeige &lt;{0}&gt; in der Abfrage &lt;{1}&gt; ist nicht gültig. Bitte überprüfen Sie die Dokumentation eine Liste der gültigen Buch Indikatoren.</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="You must have a valid chapter following the book indicator!" xml:space="preserve">
+    <value>Sie müssen eine gültige Kapitel nach der Buch-Indikator!</value>
+  </data>
+  <data name="A query that doesn't start with a book indicator must however start with a valid chapter indicator!" xml:space="preserve">
+    <value>Eine Abfrage, die nicht mit einem Buch-Indikator startet muss jedoch mit einem gültigen Kapitel Indikator beginnen!</value>
+  </data>
+  <data name="You cannot use a dot without first using a comma or a dash. A dot is a liason between verses, which are separated from the chapter by a comma." xml:space="preserve">
+    <value>Sie können einen Punkt nicht verwenden, muss zunächst einmal mit einem Komma oder einem Bindestrich. Ein Punkt ist eine Liason zwischen Versen, die aus dem Kapitel durch ein Komma getrennt sind.</value>
+  </data>
+  <data name="Verses concatenated by a dot must be consecutive, instead &lt;{0}&gt; is greater than or equal to &lt;{1}&gt; in the expression &lt;{2}&gt; in the query &lt;{3}&gt;" xml:space="preserve">
+    <value>Verse, die durch einen Punkt verkettet müssen in Folge, stattdessen &lt;{0}&gt; ist größer als oder gleich &lt;{1}&gt; im Ausdruck &lt;{2}&gt; in der Abfrage &lt;{3}&gt;</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="A dot must be preceded and followed by 1 to 3 digits of which the first digit cannot be zero." xml:space="preserve">
+    <value>Ein Punkt muss vorausgehen und Folgen von 1 bis 3 Ziffern, von denen die erste Ziffer Null sein kann.</value>
+  </data>
+  <data name="A comma must be preceded and followed by 1 to 3 digits of which the first digit cannot be zero." xml:space="preserve">
+    <value>Ein Komma muss vorausgehen und Folgen von 1 bis 3 Ziffern, von denen die erste Ziffer Null sein kann.</value>
+  </data>
+  <data name="A chapter in the query is out of bounds: there is no chapter &lt;{0}&gt; in the book &lt;{1}&gt; in the requested version &lt;{2}&gt;, the last possible chapter is &lt;{3}&gt;" xml:space="preserve">
+    <value>Ein Kapitel in der Abfrage ist out of Bounds: Es gibt kein Kapitel &lt;{0}&gt; im Buch &lt;{1}&gt; der gewünschten Ausführung &lt;{2}&gt;, das letzte mögliche Kapitel ist &lt;{3}&gt;</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="You cannot have more than one comma and not have a dash!" xml:space="preserve">
+    <value>Sie können nicht mehr als ein Komma und keinen Bindestrich!</value>
+  </data>
+  <data name="You seem to have a malformed querystring, there should be only one dash." xml:space="preserve">
+    <value>Sie scheinen eine fehlerhafte Querystring haben, es sollte nur ein Strich.</value>
+  </data>
+  <data name="A verse in the query is out of bounds: there is no verse &lt;{0}&gt; in the book &lt;{1}&gt; at chapter &lt;{2}&gt; in the requested version &lt;{3}&gt;, the last possible verse is &lt;{4}&gt;" xml:space="preserve">
+    <value>Ein Vers in der Abfrage ist außerhalb der Grenzen: gibt es derzeit kein Vers &lt;{0}&gt; im Buch &lt;{1}&gt; Kapitel &lt;{2}&gt; der gewünschten Ausführung &lt;{3}&gt;, der letzte mögliche Vers ist &lt;{4}&gt;</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="There are multiple dashes in the query, but there are not enough dots. There can only be one more dash than dots." xml:space="preserve">
+    <value>Es gibt mehrere Bindestriche in der Abfrage, aber es gibt nicht genügend Punkte. Es darf nur eine weitere Bindestrich als Punkte.</value>
+  </data>
+  <data name="A dash must be preceded and followed by 1 to 3 digits of which the first digit cannot be zero." xml:space="preserve">
+    <value>Ein Bindestrich muss vorausgehen und Folgen von 1 bis 3 Ziffern, von denen die erste Ziffer Null sein kann.</value>
+  </data>
+  <data name="If there is a chapter-verse construct following a dash, there must also be a chapter-verse construct preceding the same dash." xml:space="preserve">
+    <value>Wenn es ein Kapitel-Vers-Konstrukt, das nach einem Bindestrich gibt, auch darf ein Kapitel-Vers-Konstrukt, das gleiche Armaturenbrett vor.</value>
+  </data>
+  <data name="Chapters must be consecutive. Instead the first chapter indicator &lt;{0}&gt; is greater than or equal to the second chapter indicator &lt;{1}&gt; in the expression &lt;{2}&gt;" xml:space="preserve">
+    <value>Kapitel müssen lückenlos sein. Stattdessen ist das erste Kapitel Kennzeichen &lt;{0}&gt; größer oder gleich der zweiten Kapitel Indikator &lt;{1}&gt; im Ausdruck &lt;{2}&gt;</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="Verses (or chapters if applicable) around the dash operator must be consecutive. Instead &lt;{0}&gt; is greater than or equal to &lt;{1}&gt; in the expression &lt;{2}&gt;" xml:space="preserve">
+    <value>Verse (oder Kapitel falls zutreffend) rund um die Dash-Operator muss in Folge sein. Stattdessen &lt;{0}&gt; ist größer als oder gleich &lt;{1}&gt; im Ausdruck &lt;{2}&gt;</value>
+    <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
+translations
+double up any single quotes or apostrophes.</comment>
+  </data>
+  <data name="Genesis" xml:space="preserve">
+    <value>Genesis</value>
+  </data>
+  <data name="In the beginning, when God created the heavens and the earth" xml:space="preserve">
+    <value>Am Anfang schuf Gott Himmel und Erde.</value>
+  </data>
+  <data name="and the earth was without form or shape, with darkness over the abyss and a mighty wind sweeping over the waters" xml:space="preserve">
+    <value>Und die Erde war wüst und leer, und es war finster auf der Tiefe; und der Geist Gottes schwebte auf dem Wasser.</value>
+  </data>
+  <data name="Then God said: Let there be light, and there was light." xml:space="preserve">
+    <value>Und Gott sprach: Es werde Licht! und es ward Licht.</value>
+  </data>
+  <data name="User Preferences" xml:space="preserve">
+    <value>Benutzereinstellungen</value>
+  </data>
+  <data name="Paragraph" xml:space="preserve">
+    <value>Absatz</value>
+  </data>
+  <data name="Alignment" xml:space="preserve">
+    <value>Ausrichtung</value>
+  </data>
+  <data name="Indent" xml:space="preserve">
+    <value>Gedankenstrich</value>
+  </data>
+  <data name="Line-spacing" xml:space="preserve">
+    <value>Zeilenabstand</value>
+  </data>
+  <data name="Font" xml:space="preserve">
+    <value>Schriften</value>
+  </data>
+  <data name="Book / Chapter" xml:space="preserve">
+    <value>Buch / Kapitel</value>
+  </data>
+  <data name="Verse Number" xml:space="preserve">
+    <value>Vers-Anzahl</value>
+  </data>
+  <data name="Verse Text" xml:space="preserve">
+    <value>Vers Text</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Vorschau</value>
+  </data>
+  <data name="line-spacing not visible in the preview" xml:space="preserve">
+    <value>Zeilenabstand in der Vorschau nicht sichtbar</value>
+  </data>
+  <data name="Choose Book / Chapter Font Color" xml:space="preserve">
+    <value>Wählen Sie Buch / Kapitel Font Color</value>
+  </data>
+  <data name="Choose Book / Chapter Background Color" xml:space="preserve">
+    <value>Wählen Sie Buch / Kapitel Hintergrund Farbe</value>
+  </data>
+  <data name="Choose Verse Number Font Color" xml:space="preserve">
+    <value>Wählen Sie Vers Nummer Schriftfarbe</value>
+  </data>
+  <data name="Choose Verse Number Background Color" xml:space="preserve">
+    <value>Wählen Sie Vers Nummer Hintergrundfarbe</value>
+  </data>
+  <data name="Choose Verse Text Font Color" xml:space="preserve">
+    <value>Wählen Sie Vers Text Schriftfarbe</value>
+  </data>
+  <data name="Choose Verse Text Background Color" xml:space="preserve">
+    <value>Wählen Sie Vers Texthintergrundfarbe</value>
+  </data>
+  <data name="Some Bible versions have their own formatting. This is left by default to keep the text as close as possible to the original.&lt;br&gt; If however you need to have consistent formatting in your document, you may override the Bible version's own formatting." xml:space="preserve">
+    <value>Einige Bibelübersetzungen haben ihre eigene Formatierung. 
+Dies ist standardmäßig aktiviert , um nach links , 
+um den Text so nahe wie möglich am Original zu halten. 
+Aber wenn Sie benötigen, um konsistente Formatierung in Ihrem Dokument haben, 
+können Sie die Formatierung der Bibel -Version ignorieren.</value>
+  </data>
+  <data name="Override Bible Version Formatting" xml:space="preserve">
+    <value>Überschreiben Sie Bibel Version Formatierung</value>
+  </data>
+</root>
