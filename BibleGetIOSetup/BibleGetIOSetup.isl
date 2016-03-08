@@ -63,7 +63,7 @@
 		<createdtm>06/21/1999 14:00</createdtm>
 		<lastsavedtm>07/14/2000 17:50</lastsavedtm>
 		<pagecount>200</pagecount>
-		<wordcount>8</wordcount>
+		<wordcount>0</wordcount>
 		<charcount/>
 		<appname>InstallShield Express</appname>
 		<security>1</security>
@@ -253,7 +253,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<row><td>ISExpHlp.dll</td><td/><td>&lt;ISRedistPlatformDependentFolder&gt;\ISExpHlp.dll</td></row>
 		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISRedistPlatformDependentFolder&gt;\isregsvr.dll</td></row>
-		<row><td>NewBinary1</td><td/><td>C:\Users\Lwangaman\Pictures\BibleGet\Microsoft Word\banner.jpg</td></row>
+		<row><td>NewBinary1</td><td/><td>D:\Users\johnrdorazio\Pictures\BibleGet\Microsoft Word\banner.jpg</td></row>
 		<row><td>NewBinary10</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\CompleteSetupIco.ibd</td></row>
 		<row><td>NewBinary11</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\CustomSetupIco.ibd</td></row>
 		<row><td>NewBinary12</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\DestIcon.ibd</td></row>
@@ -263,15 +263,17 @@
 		<row><td>NewBinary16</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallFirstUse.ico</td></row>
 		<row><td>NewBinary17</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallPartial.ico</td></row>
 		<row><td>NewBinary18</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\InstallStateMenu.ico</td></row>
-		<row><td>NewBinary19</td><td/><td>C:\Users\Lwangaman\Documents\cer_as_exe\bibleget-cert.exe</td></row>
+		<row><td>NewBinary19</td><td/><td>D:\Users\johnrdorazio\Documents\cer_as_exe\bibleget-cert.exe</td></row>
 		<row><td>NewBinary2</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\New.ibd</td></row>
-		<row><td>NewBinary20</td><td/><td>C:\Users\Lwangaman\Pictures\BibleGet\Microsoft Word\welcome.jpg</td></row>
-		<row><td>NewBinary21</td><td/><td>C:\Users\Lwangaman\Pictures\BibleGet\Microsoft Word\banner.jpg</td></row>
-		<row><td>NewBinary22</td><td/><td>C:\Users\Lwangaman\Pictures\BibleGet\Microsoft Word\splash.jpg</td></row>
-		<row><td>NewBinary23</td><td/><td>C:\Users\Lwangaman\Documents\Visual Studio 2013\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRMRegistryKeys\bin\Release\BibleGetMSWordRMRegistryKeys.exe</td></row>
+		<row><td>NewBinary20</td><td/><td>D:\Users\johnrdorazio\Pictures\BibleGet\Microsoft Word\welcome.jpg</td></row>
+		<row><td>NewBinary21</td><td/><td>D:\Users\johnrdorazio\Pictures\BibleGet\Microsoft Word\banner.jpg</td></row>
+		<row><td>NewBinary22</td><td/><td>D:\Users\johnrdorazio\Pictures\BibleGet\Microsoft Word\splash.jpg</td></row>
+		<row><td>NewBinary23</td><td/><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRMRegistryKeys\bin\Release\BibleGetMSWordRMRegistryKeys.exe</td></row>
+		<row><td>NewBinary24</td><td/><td>D:\Users\johnrdorazio\Pictures\BibleGet\Microsoft Word\welcome.jpg</td></row>
+		<row><td>NewBinary25</td><td/><td>D:\Users\johnrdorazio\Pictures\BibleGet\Microsoft Word\banner.jpg</td></row>
 		<row><td>NewBinary3</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\Up.ibd</td></row>
 		<row><td>NewBinary4</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\WarningIcon.ibd</td></row>
-		<row><td>NewBinary5</td><td/><td>C:\Users\Lwangaman\Pictures\BibleGet\Microsoft Word\welcome.jpg</td></row>
+		<row><td>NewBinary5</td><td/><td>D:\Users\johnrdorazio\Pictures\BibleGet\Microsoft Word\welcome.jpg</td></row>
 		<row><td>NewBinary6</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\CustomSetupIco.ibd</td></row>
 		<row><td>NewBinary7</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\ReinstIco.ibd</td></row>
 		<row><td>NewBinary8</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\RemoveIco.ibd</td></row>
@@ -350,27 +352,39 @@
 		<row><td>BibleGetIO.Output_primario2</td><td>{C57562C7-D7DF-43DC-B874-7F72107B186E}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Risorse_localizzate</td><td>{817B3133-2BD1-4F79-97B1-78817347A1CB}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Risorse_localizzate1</td><td>{03E19BE7-A98B-4541-A9AE-BD7203D1279F}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>BibleGetIO.Risorse_localizzate2</td><td>{D82FAAAF-2E00-4405-9B6C-E2F0B0EA66EC}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>BibleGetMSWordRegistryKeys.exe</td><td>{4F3B9293-D7E2-44AD-BA46-6F2B7FA03A83}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetmswordregistrykeys.e</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll</td><td>{9C77ABE4-ECAE-4D0A-A31D-6CF945DFAF8B}</td><td>IT</td><td>2</td><td/><td>biblegetmswordregistrykeys.r</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll1</td><td>{3B409CAE-5BE8-4112-AAA1-2B9CD3371A97}</td><td>DE</td><td>2</td><td/><td>biblegetmswordregistrykeys.r1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td>{59A55DCC-5656-4DA7-A24D-8A601CF6E812}</td><td>EN</td><td>2</td><td/><td>biblegetmswordregistrykeys.r2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td>{679E4288-606E-42B1-B476-AA81C7C9F428}</td><td>ES</td><td>2</td><td/><td>biblegetmswordregistrykeys.r3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td>{43200320-374E-4D0B-8732-0624CC159031}</td><td>FR</td><td>2</td><td/><td>biblegetmswordregistrykeys.r4</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.Risorse_localizzate2</td><td>{EB03664B-FA95-442E-8EBB-6E39D9E37AA4}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.resources.dll</td><td>{476984BE-A313-48AE-868E-942288DA16A8}</td><td>DE</td><td>2</td><td/><td>biblegetio.resources.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.resources.dll1</td><td>{F98CFB8F-8379-4C0A-A7D7-D3D0E2B33591}</td><td>EN</td><td>2</td><td/><td>biblegetio.resources.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.resources.dll2</td><td>{9A481026-3556-4782-9AC8-300528966C6D}</td><td>ES</td><td>2</td><td/><td>biblegetio.resources.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.resources.dll3</td><td>{3B81308A-E08E-4781-AF7E-3CB69C936433}</td><td>FR</td><td>2</td><td/><td>biblegetio.resources.dll3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.resources.dll4</td><td>{ABB254E9-6E67-42E5-9823-9598F2C35FF2}</td><td>IT</td><td>2</td><td/><td>biblegetio.resources.dll4</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.resources.dll5</td><td>{1F218B75-30E9-4F6C-A6D0-6ABFE73713A7}</td><td>EL</td><td>2</td><td/><td>biblegetio.resources.dll5</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.resources.dll6</td><td>{408F38AB-9BED-470E-A12B-89E4CABF6D17}</td><td>PL</td><td>2</td><td/><td>biblegetio.resources.dll6</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.resources.dll7</td><td>{AE0C0AFE-70A0-49CB-A8F2-943F15CE324B}</td><td>SR</td><td>2</td><td/><td>biblegetio.resources.dll7</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.exe</td><td>{62EB02C9-84AF-4361-B999-11CE7E3FFA5F}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetmswordregistrykeys.e</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll</td><td>{9EA7BDA8-A060-4151-BFF1-6701637698DF}</td><td>DE</td><td>2</td><td/><td>biblegetmswordregistrykeys.r</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll1</td><td>{7BCE8A4F-A8D7-4846-A611-71D00896AD58}</td><td>EN</td><td>2</td><td/><td>biblegetmswordregistrykeys.r1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td>{D44F5738-3D6A-416F-8D8D-0A6B84610D41}</td><td>ES</td><td>2</td><td/><td>biblegetmswordregistrykeys.r2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td>{6D92BA36-B1B2-49DB-BF12-D987AB3BFCBF}</td><td>FR</td><td>2</td><td/><td>biblegetmswordregistrykeys.r3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td>{E0FE7449-1F3E-4F21-96C9-42814449DACC}</td><td>IT</td><td>2</td><td/><td>biblegetmswordregistrykeys.r4</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{18F3C0F0-5040-46B9-8B75-1968664C4B3B}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{AA489B2F-2F85-49E4-8226-0E071A9BD789}</td><td>X64</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT10</td><td>{28BB9C54-C0D2-4246-B3B8-087E0B1172C2}</td><td>SR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{A30CD045-C08A-4678-9D89-9516ABBF1BCB}</td><td>X86</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td>{1B1B0F0E-FCBD-48F4-958F-5AA3E2E1E4CA}</td><td>IT</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT4</td><td>{FCC5F255-4922-4752-B428-2A83AA5DCF82}</td><td>DE</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT5</td><td>{EA0C28CF-DBF6-48EE-9A54-2D6A4CED4B97}</td><td>EN</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT6</td><td>{5D326ED3-63A1-4120-B7EE-E869099F1A8F}</td><td>ES</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT7</td><td>{ED8B8C34-515F-4FDD-AB35-4F1DB72ED3A4}</td><td>FR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT8</td><td>{916FB7D6-32B6-4FB6-8BE9-5A0C2B07362E}</td><td>EL</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT9</td><td>{008CCBF2-6B20-4EAA-B2F1-2A33F2722BB3}</td><td>PL</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td>{B35945BD-3BF9-4CD6-A4D7-DD4B7AB61214}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>{47764D07-2892-4E2A-AD4C-7B8D802E0FFB}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.tools.commo1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Newtonsoft.Json.dll</td><td>{FEFE9BCB-DD09-4235-A2B1-55D9F0759CFA}</td><td>INSTALLDIR</td><td>2</td><td/><td>newtonsoft.json.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>SQLite.Interop.dll</td><td>{4BCFEDD1-3B2C-47E8-B62E-AC24D8DCF06C}</td><td>X64</td><td>2</td><td/><td>sqlite.interop.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>SQLite.Interop.dll1</td><td>{3FF2BC88-8121-44F1-A22B-1DEFEF9C1EC2}</td><td>X86</td><td>2</td><td/><td>sqlite.interop.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>System.Data.SQLite.dll</td><td>{B297D549-023D-4ED7-B29D-A60FDEA05C2D}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlite.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>{9418902D-509E-4831-908B-35339A54B3DC}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.tools.commo1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>{1CBB025A-0A89-48F2-BB3C-A114EA61DC2A}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.visualstudio.tools</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Newtonsoft.Json.dll</td><td>{08DA2501-BCF0-4FD3-BA7B-32D036EF1C34}</td><td>INSTALLDIR</td><td>2</td><td/><td>newtonsoft.json.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SQLite.Interop.dll</td><td>{64BD8647-6B29-48BD-B5E4-B93D65241E31}</td><td>X64</td><td>2</td><td/><td>sqlite.interop.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>SQLite.Interop.dll1</td><td>{821B086A-756C-4F74-991E-49293A5875C6}</td><td>X86</td><td>2</td><td/><td>sqlite.interop.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>System.Data.SQLite.dll</td><td>{8D180330-1FBC-4794-93CE-E89FBC48D1DA}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlite.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -396,7 +410,7 @@
 		<col def="I4">ISControlId</col>
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="S72">Binary_</col>
-		<row><td>AdminChangeFolder</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>AdminChangeFolder</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>AdminChangeFolder</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminChangeFolder</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminChangeFolder</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -413,7 +427,7 @@
 		<row><td>AdminChangeFolder</td><td>TailText</td><td>Text</td><td>21</td><td>193</td><td>99</td><td>13</td><td>3</td><td/><td>##IDS__IsAdminInstallBrowse_FolderName##</td><td>Tail</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminChangeFolder</td><td>Up</td><td>PushButton</td><td>310</td><td>66</td><td>19</td><td>19</td><td>3670019</td><td/><td/><td>NewFolder</td><td>##IDS__IsAdminInstallBrowse_UpOneLevel##</td><td>0</td><td/><td/><td>NewBinary3</td></row>
 		<row><td>AdminNetworkLocation</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>InstallNow</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>AdminNetworkLocation</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>AdminNetworkLocation</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>AdminNetworkLocation</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminNetworkLocation</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminNetworkLocation</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -429,7 +443,7 @@
 		<row><td>AdminWelcome</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>1</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminWelcome</td><td>Cancel</td><td>PushButton</td><td>301</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_CANCEL##</td><td>Back</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminWelcome</td><td>DlgLine</td><td>Line</td><td>0</td><td>234</td><td>326</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>AdminWelcome</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary20</td></row>
+		<row><td>AdminWelcome</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary24</td></row>
 		<row><td>AdminWelcome</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminWelcome</td><td>TextLine1</td><td>Text</td><td>135</td><td>8</td><td>225</td><td>45</td><td>196611</td><td/><td>##IDS__IsAdminInstallPointWelcome_Wizard##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>AdminWelcome</td><td>TextLine2</td><td>Text</td><td>135</td><td>55</td><td>228</td><td>45</td><td>196611</td><td/><td>##IDS__IsAdminInstallPointWelcome_ServerImage##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -438,7 +452,7 @@
 		<row><td>CancelSetup</td><td>Text</td><td>Text</td><td>48</td><td>15</td><td>194</td><td>30</td><td>131075</td><td/><td>##IDS__IsCancelDlg_ConfirmCancel##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CancelSetup</td><td>Yes</td><td>PushButton</td><td>62</td><td>57</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS__IsCancelDlg_Yes##</td><td>No</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomSetup</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>CustomSetup</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>CustomSetup</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>CustomSetup</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomSetup</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomSetup</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -457,7 +471,7 @@
 		<row><td>CustomSetup</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomSetup</td><td>Size</td><td>Text</td><td>241</td><td>133</td><td>120</td><td>50</td><td>3</td><td/><td>##IDS__IsCustomSelectionDlg_FeatureSize##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomSetup</td><td>Tree</td><td>SelectionTree</td><td>8</td><td>70</td><td>220</td><td>118</td><td>7</td><td>_BrowseProperty</td><td/><td>ChangeFolder</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>CustomSetupTips</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>CustomSetupTips</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>CustomSetupTips</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomSetupTips</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomSetupTips</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -479,7 +493,7 @@
 		<row><td>CustomSetupTips</td><td>OK</td><td>PushButton</td><td>301</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_SetupTips_OK##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomSetupTips</td><td>PartialText</td><td>Text</td><td>60</td><td>130</td><td>300</td><td>20</td><td>3</td><td/><td>##IDS_SetupTips_SubFeaturesInstalledLocal##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomerInformation</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>CustomerInformation</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>CustomerInformation</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>CustomerInformation</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomerInformation</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomerInformation</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -497,7 +511,7 @@
 		<row><td>CustomerInformation</td><td>SerialLabel</td><td>Text</td><td>21</td><td>127</td><td>109</td><td>10</td><td>2</td><td/><td>##IDS__IsRegisterUserDlg_SerialNumber##</td><td>SerialNumber</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>CustomerInformation</td><td>SerialNumber</td><td>MaskedEdit</td><td>21</td><td>138</td><td>237</td><td>17</td><td>2</td><td>ISX_SERIALNUM</td><td/><td>RadioGroup</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DatabaseFolder</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>DatabaseFolder</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>DatabaseFolder</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>DatabaseFolder</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DatabaseFolder</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DatabaseFolder</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -511,7 +525,7 @@
 		<row><td>DatabaseFolder</td><td>Location</td><td>Text</td><td>57</td><td>65</td><td>240</td><td>40</td><td>3</td><td>_BrowseProperty</td><td>##IDS__DatabaseFolder_DatabaseDir##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DatabaseFolder</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DestinationFolder</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>DestinationFolder</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>DestinationFolder</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>DestinationFolder</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DestinationFolder</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DestinationFolder</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -524,7 +538,7 @@
 		<row><td>DestinationFolder</td><td>LocLabel</td><td>Text</td><td>57</td><td>52</td><td>290</td><td>10</td><td>131075</td><td/><td>##IDS__DestinationFolder_InstallTo##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DestinationFolder</td><td>Location</td><td>Text</td><td>57</td><td>65</td><td>240</td><td>40</td><td>3</td><td>_BrowseProperty</td><td>##IDS_INSTALLDIR##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DestinationFolder</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>DiskSpaceRequirements</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>DiskSpaceRequirements</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>DiskSpaceRequirements</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DiskSpaceRequirements</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DiskSpaceRequirements</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -534,7 +548,7 @@
 		<row><td>DiskSpaceRequirements</td><td>DlgTitle</td><td>Text</td><td>9</td><td>6</td><td>292</td><td>25</td><td>65539</td><td/><td>##IDS__IsFeatureDetailsDlg_DiskSpaceRequirements##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DiskSpaceRequirements</td><td>List</td><td>VolumeCostList</td><td>8</td><td>55</td><td>358</td><td>125</td><td>393223</td><td/><td>##IDS__IsFeatureDetailsDlg_Numbers##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>DiskSpaceRequirements</td><td>OK</td><td>PushButton</td><td>301</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS__IsFeatureDetailsDlg_OK##</td><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>FilesInUse</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>FilesInUse</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>FilesInUse</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>FilesInUse</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>FilesInUse</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -546,7 +560,7 @@
 		<row><td>FilesInUse</td><td>Ignore</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS__IsFilesInUse_Ignore##</td><td>Exit</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>FilesInUse</td><td>List</td><td>ListBox</td><td>21</td><td>87</td><td>331</td><td>135</td><td>7</td><td>FileInUseProcess</td><td/><td>Retry</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>FilesInUse</td><td>Retry</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS__IsFilesInUse_Retry##</td><td>Ignore</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>InstallChangeFolder</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>InstallChangeFolder</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>InstallChangeFolder</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>InstallChangeFolder</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>InstallChangeFolder</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -566,13 +580,13 @@
 		<row><td>InstallWelcome</td><td>Cancel</td><td>PushButton</td><td>301</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_CANCEL##</td><td>Back</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>InstallWelcome</td><td>Copyright</td><td>Text</td><td>135</td><td>144</td><td>228</td><td>73</td><td>65539</td><td/><td>##IDS__IsWelcomeDlg_WarningCopyright##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>InstallWelcome</td><td>DlgLine</td><td>Line</td><td>0</td><td>234</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>InstallWelcome</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary20</td></row>
+		<row><td>InstallWelcome</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary24</td></row>
 		<row><td>InstallWelcome</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>InstallWelcome</td><td>TextLine1</td><td>Text</td><td>135</td><td>8</td><td>225</td><td>45</td><td>196611</td><td/><td>##IDS__IsWelcomeDlg_WelcomeProductName##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>InstallWelcome</td><td>TextLine2</td><td>Text</td><td>135</td><td>55</td><td>228</td><td>45</td><td>196611</td><td/><td>##IDS__IsWelcomeDlg_InstallProductName##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>Agree</td><td>RadioButtonGroup</td><td>8</td><td>190</td><td>291</td><td>40</td><td>3</td><td>AgreeToLicense</td><td/><td>Back</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>LicenseAgreement</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>LicenseAgreement</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>LicenseAgreement</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>LicenseAgreement</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -584,7 +598,7 @@
 		<row><td>LicenseAgreement</td><td>Memo</td><td>ScrollableText</td><td>8</td><td>55</td><td>358</td><td>130</td><td>7</td><td/><td/><td/><td/><td>0</td><td/><td>&lt;ISProductFolder&gt;\Redist\0409\Eula.rtf</td><td/></row>
 		<row><td>LicenseAgreement</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>MaintenanceType</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>MaintenanceType</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>MaintenanceType</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceType</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -603,11 +617,11 @@
 		<row><td>MaintenanceWelcome</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>1</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceWelcome</td><td>Cancel</td><td>PushButton</td><td>301</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_CANCEL##</td><td>Back</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceWelcome</td><td>DlgLine</td><td>Line</td><td>0</td><td>234</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>MaintenanceWelcome</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary20</td></row>
+		<row><td>MaintenanceWelcome</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary24</td></row>
 		<row><td>MaintenanceWelcome</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceWelcome</td><td>TextLine1</td><td>Text</td><td>135</td><td>8</td><td>225</td><td>45</td><td>196611</td><td/><td>##IDS__IsMaintenanceWelcome_WizardWelcome##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MaintenanceWelcome</td><td>TextLine2</td><td>Text</td><td>135</td><td>55</td><td>228</td><td>50</td><td>196611</td><td/><td>##IDS__IsMaintenanceWelcome_MaintenanceOptionsDescription##</td><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>MsiRMFilesInUse</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>MsiRMFilesInUse</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>MsiRMFilesInUse</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MsiRMFilesInUse</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MsiRMFilesInUse</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -619,7 +633,7 @@
 		<row><td>MsiRMFilesInUse</td><td>List</td><td>ListBox</td><td>21</td><td>66</td><td>331</td><td>130</td><td>3</td><td>FileInUseProcess</td><td/><td>OK</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MsiRMFilesInUse</td><td>OK</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_OK##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>MsiRMFilesInUse</td><td>Restart</td><td>RadioButtonGroup</td><td>19</td><td>187</td><td>343</td><td>40</td><td>3</td><td>RestartManagerOption</td><td/><td>List</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>OutOfSpace</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>OutOfSpace</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>OutOfSpace</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>OutOfSpace</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>OutOfSpace</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -637,7 +651,7 @@
 		<row><td>PatchWelcome</td><td>TextLine1</td><td>Text</td><td>135</td><td>8</td><td>225</td><td>45</td><td>196611</td><td/><td>##IDS__IsPatchDlg_WelcomePatchWizard##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>PatchWelcome</td><td>TextLine2</td><td>Text</td><td>135</td><td>54</td><td>228</td><td>45</td><td>196611</td><td/><td>##IDS__IsPatchDlg_PatchClickUpdate##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>ReadmeInformation</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>1048579</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>ReadmeInformation</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>3</td><td/><td/><td>DlgTitle</td><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>ReadmeInformation</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>3</td><td/><td/><td>DlgTitle</td><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>ReadmeInformation</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td>0</td><td/><td/></row>
 		<row><td>ReadmeInformation</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td>0</td><td/><td/></row>
 		<row><td>ReadmeInformation</td><td>Cancel</td><td>PushButton</td><td>301</td><td>243</td><td>66</td><td>17</td><td>1048579</td><td/><td>##IDS__IsReadmeDlg_Cancel##</td><td>Readme</td><td/><td>0</td><td/><td/><td/></row>
@@ -647,7 +661,7 @@
 		<row><td>ReadmeInformation</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>1048579</td><td/><td>##IDS_NEXT##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>ReadmeInformation</td><td>Readme</td><td>ScrollableText</td><td>10</td><td>55</td><td>353</td><td>166</td><td>3</td><td/><td/><td>Banner</td><td/><td>0</td><td/><td>&lt;ISProductFolder&gt;\Redist\0409\Readme.rtf</td><td/></row>
 		<row><td>ReadyToInstall</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_BACK##</td><td>GroupBox1</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>ReadyToInstall</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>ReadyToInstall</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>ReadyToInstall</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>ReadyToInstall</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>ReadyToInstall</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -692,7 +706,7 @@
 		<row><td>SetupCompleteError</td><td>Finish</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS__IsFatalError_Finish##</td><td>Image</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupCompleteError</td><td>FinishText1</td><td>Text</td><td>135</td><td>80</td><td>228</td><td>50</td><td>65539</td><td/><td>##IDS__IsFatalError_NotModified##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupCompleteError</td><td>FinishText2</td><td>Text</td><td>135</td><td>135</td><td>228</td><td>25</td><td>65539</td><td/><td>##IDS__IsFatalError_ClickFinish##</td><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>SetupCompleteError</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td>CheckShowMsiLog</td><td/><td>0</td><td/><td/><td>NewBinary20</td></row>
+		<row><td>SetupCompleteError</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td>CheckShowMsiLog</td><td/><td>0</td><td/><td/><td>NewBinary24</td></row>
 		<row><td>SetupCompleteError</td><td>RestContText1</td><td>Text</td><td>135</td><td>80</td><td>228</td><td>50</td><td>65539</td><td/><td>##IDS__IsFatalError_KeepOrRestore##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupCompleteError</td><td>RestContText2</td><td>Text</td><td>135</td><td>135</td><td>228</td><td>25</td><td>65539</td><td/><td>##IDS__IsFatalError_RestoreOrContinueLater##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupCompleteError</td><td>ShowMsiLogText</td><td>Text</td><td>164</td><td>172</td><td>198</td><td>10</td><td>65538</td><td/><td>##IDS__IsSetupComplete_ShowMsiLog##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -706,7 +720,7 @@
 		<row><td>SetupCompleteSuccess</td><td>CheckLaunchReadme</td><td>CheckBox</td><td>151</td><td>148</td><td>10</td><td>9</td><td>2</td><td>LAUNCHREADME</td><td/><td>CheckBoxUpdates</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupCompleteSuccess</td><td>CheckShowMsiLog</td><td>CheckBox</td><td>151</td><td>182</td><td>10</td><td>9</td><td>2</td><td>ISSHOWMSILOG</td><td/><td>Back</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupCompleteSuccess</td><td>DlgLine</td><td>Line</td><td>0</td><td>234</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>SetupCompleteSuccess</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td>CheckLaunchProgram</td><td/><td>0</td><td/><td/><td>NewBinary20</td></row>
+		<row><td>SetupCompleteSuccess</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td>CheckLaunchProgram</td><td/><td>0</td><td/><td/><td>NewBinary24</td></row>
 		<row><td>SetupCompleteSuccess</td><td>LaunchProgramText</td><td>Text</td><td>164</td><td>112</td><td>98</td><td>15</td><td>65538</td><td/><td>##IDS__IsExitDialog_LaunchProgram##</td><td/><td/><td>0</td><td>0</td><td/><td/></row>
 		<row><td>SetupCompleteSuccess</td><td>LaunchReadmeText</td><td>Text</td><td>164</td><td>148</td><td>120</td><td>13</td><td>65538</td><td/><td>##IDS__IsExitDialog_ShowReadMe##</td><td/><td/><td>0</td><td>0</td><td/><td/></row>
 		<row><td>SetupCompleteSuccess</td><td>OK</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS__IsExitDialog_Finish##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
@@ -731,7 +745,7 @@
 		<row><td>SetupInitialization</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>1</td><td/><td>##IDS_BACK##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupInitialization</td><td>Cancel</td><td>PushButton</td><td>301</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS_CANCEL##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupInitialization</td><td>DlgLine</td><td>Line</td><td>0</td><td>234</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>SetupInitialization</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary20</td></row>
+		<row><td>SetupInitialization</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary24</td></row>
 		<row><td>SetupInitialization</td><td>Next</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>1</td><td/><td>##IDS_NEXT##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupInitialization</td><td>TextLine1</td><td>Text</td><td>135</td><td>8</td><td>225</td><td>45</td><td>196611</td><td/><td>##IDS__IsInitDlg_WelcomeWizard##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupInitialization</td><td>TextLine2</td><td>Text</td><td>135</td><td>55</td><td>228</td><td>30</td><td>196611</td><td/><td>##IDS__IsInitDlg_PreparingWizard##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -742,7 +756,7 @@
 		<row><td>SetupInterrupted</td><td>Finish</td><td>PushButton</td><td>230</td><td>243</td><td>66</td><td>17</td><td>3</td><td/><td>##IDS__IsUserExit_Finish##</td><td>Cancel</td><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupInterrupted</td><td>FinishText1</td><td>Text</td><td>135</td><td>80</td><td>228</td><td>50</td><td>65539</td><td/><td>##IDS__IsUserExit_NotModified##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupInterrupted</td><td>FinishText2</td><td>Text</td><td>135</td><td>135</td><td>228</td><td>25</td><td>65539</td><td/><td>##IDS__IsUserExit_ClickFinish##</td><td/><td/><td>0</td><td/><td/><td/></row>
-		<row><td>SetupInterrupted</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td>CheckShowMsiLog</td><td/><td>0</td><td/><td/><td>NewBinary20</td></row>
+		<row><td>SetupInterrupted</td><td>Image</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>234</td><td>1</td><td/><td/><td>CheckShowMsiLog</td><td/><td>0</td><td/><td/><td>NewBinary24</td></row>
 		<row><td>SetupInterrupted</td><td>RestContText1</td><td>Text</td><td>135</td><td>80</td><td>228</td><td>50</td><td>65539</td><td/><td>##IDS__IsUserExit_KeepOrRestore##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupInterrupted</td><td>RestContText2</td><td>Text</td><td>135</td><td>135</td><td>228</td><td>25</td><td>65539</td><td/><td>##IDS__IsUserExit_RestoreOrContinue##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupInterrupted</td><td>ShowMsiLogText</td><td>Text</td><td>164</td><td>172</td><td>198</td><td>10</td><td>65538</td><td/><td>##IDS__IsSetupComplete_ShowMsiLog##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -751,7 +765,7 @@
 		<row><td>SetupProgress</td><td>ActionProgress95</td><td>ProgressBar</td><td>59</td><td>113</td><td>275</td><td>12</td><td>65537</td><td/><td>##IDS__IsProgressDlg_ProgressDone##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupProgress</td><td>ActionText</td><td>Text</td><td>59</td><td>100</td><td>275</td><td>12</td><td>3</td><td/><td>##IDS__IsProgressDlg_2##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupProgress</td><td>Back</td><td>PushButton</td><td>164</td><td>243</td><td>66</td><td>17</td><td>1</td><td/><td>##IDS_BACK##</td><td>Next</td><td/><td>0</td><td/><td/><td/></row>
-		<row><td>SetupProgress</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary21</td></row>
+		<row><td>SetupProgress</td><td>Banner</td><td>Bitmap</td><td>0</td><td>0</td><td>374</td><td>44</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td>NewBinary25</td></row>
 		<row><td>SetupProgress</td><td>BannerLine</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>0</td><td>1</td><td/><td/><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupProgress</td><td>Branding1</td><td>Text</td><td>4</td><td>229</td><td>50</td><td>13</td><td>3</td><td/><td>##IDS_INSTALLSHIELD_FORMATTED##</td><td/><td/><td>0</td><td/><td/><td/></row>
 		<row><td>SetupProgress</td><td>Branding2</td><td>Text</td><td>3</td><td>228</td><td>50</td><td>13</td><td>65537</td><td/><td>##IDS_INSTALLSHIELD##</td><td/><td/><td>0</td><td/><td/><td/></row>
@@ -1079,13 +1093,19 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
-		<row><td>DE</td><td>BibleGetMSWordRegistryKeys.resources.dll1</td></row>
+		<row><td>DE</td><td>BibleGetIO.resources.dll</td></row>
+		<row><td>DE</td><td>BibleGetMSWordRegistryKeys.resources.dll</td></row>
 		<row><td>DE</td><td>ISX_DEFAULTCOMPONENT4</td></row>
-		<row><td>EN</td><td>BibleGetMSWordRegistryKeys.resources.dll2</td></row>
+		<row><td>EL</td><td>BibleGetIO.resources.dll5</td></row>
+		<row><td>EL</td><td>ISX_DEFAULTCOMPONENT8</td></row>
+		<row><td>EN</td><td>BibleGetIO.resources.dll1</td></row>
+		<row><td>EN</td><td>BibleGetMSWordRegistryKeys.resources.dll1</td></row>
 		<row><td>EN</td><td>ISX_DEFAULTCOMPONENT5</td></row>
-		<row><td>ES</td><td>BibleGetMSWordRegistryKeys.resources.dll3</td></row>
+		<row><td>ES</td><td>BibleGetIO.resources.dll2</td></row>
+		<row><td>ES</td><td>BibleGetMSWordRegistryKeys.resources.dll2</td></row>
 		<row><td>ES</td><td>ISX_DEFAULTCOMPONENT6</td></row>
-		<row><td>FR</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td></row>
+		<row><td>FR</td><td>BibleGetIO.resources.dll3</td></row>
+		<row><td>FR</td><td>BibleGetMSWordRegistryKeys.resources.dll3</td></row>
 		<row><td>FR</td><td>ISX_DEFAULTCOMPONENT7</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario1</td></row>
@@ -1093,6 +1113,14 @@
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate1</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate2</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll1</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll2</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll3</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll4</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll5</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll6</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll7</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.exe</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll1</td></row>
@@ -1101,20 +1129,29 @@
 		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT10</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT3</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT4</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT5</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT6</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT7</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT8</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT9</td></row>
 		<row><td>INSTALLDIR</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>INSTALLDIR</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td></row>
+		<row><td>INSTALLDIR</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td></row>
 		<row><td>INSTALLDIR</td><td>Newtonsoft.Json.dll</td></row>
 		<row><td>INSTALLDIR</td><td>SQLite.Interop.dll</td></row>
 		<row><td>INSTALLDIR</td><td>SQLite.Interop.dll1</td></row>
 		<row><td>INSTALLDIR</td><td>System.Data.SQLite.dll</td></row>
-		<row><td>IT</td><td>BibleGetMSWordRegistryKeys.resources.dll</td></row>
+		<row><td>IT</td><td>BibleGetIO.resources.dll4</td></row>
+		<row><td>IT</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td></row>
 		<row><td>IT</td><td>ISX_DEFAULTCOMPONENT3</td></row>
+		<row><td>PL</td><td>BibleGetIO.resources.dll6</td></row>
+		<row><td>PL</td><td>ISX_DEFAULTCOMPONENT9</td></row>
+		<row><td>SR</td><td>BibleGetIO.resources.dll7</td></row>
+		<row><td>SR</td><td>ISX_DEFAULTCOMPONENT10</td></row>
 		<row><td>X64</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>X64</td><td>SQLite.Interop.dll</td></row>
 		<row><td>X86</td><td>ISX_DEFAULTCOMPONENT2</td></row>
@@ -1214,6 +1251,7 @@
 		<row><td>DATABASEDIR</td><td>ISYourDataBaseDir</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>DE</td><td>INSTALLDIR</td><td>de</td><td/><td>0</td><td/></row>
 		<row><td>DesktopFolder</td><td>TARGETDIR</td><td>.:Desktop</td><td/><td>3</td><td/></row>
+		<row><td>EL</td><td>INSTALLDIR</td><td>el</td><td/><td>0</td><td/></row>
 		<row><td>EN</td><td>INSTALLDIR</td><td>en</td><td/><td>0</td><td/></row>
 		<row><td>ES</td><td>INSTALLDIR</td><td>es</td><td/><td>0</td><td/></row>
 		<row><td>FR</td><td>INSTALLDIR</td><td>fr</td><td/><td>0</td><td/></row>
@@ -1233,7 +1271,9 @@
 		<row><td>MY_PRODUCT_NAME2</td><td>BIBLEGET_IO</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY1</td><td>TARGETDIR</td><td>NEW_DIRECTORY1</td><td/><td>0</td><td/></row>
+		<row><td>NEW_FOLDER_1</td><td>TARGETDIR</td><td>NEW_FOLDER_1</td><td/><td>0</td><td/></row>
 		<row><td>NetHoodFolder</td><td>TARGETDIR</td><td>.:NetHood</td><td/><td>0</td><td/></row>
+		<row><td>PL</td><td>INSTALLDIR</td><td>pl</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
 		<row><td>PrimaryVolumePath</td><td>TARGETDIR</td><td>.:Primar~1|PrimaryVolumePath</td><td/><td>0</td><td/></row>
 		<row><td>PrintHoodFolder</td><td>TARGETDIR</td><td>.:PRINTH~1|PrintHood</td><td/><td>0</td><td/></row>
@@ -1241,6 +1281,7 @@
 		<row><td>ProgramFilesFolder</td><td>TARGETDIR</td><td>.:PROGRA~1|program files</td><td/><td>0</td><td/></row>
 		<row><td>ProgramMenuFolder</td><td>TARGETDIR</td><td>.:Programs</td><td/><td>3</td><td/></row>
 		<row><td>RecentFolder</td><td>TARGETDIR</td><td>.:Recent</td><td/><td>0</td><td/></row>
+		<row><td>SR</td><td>INSTALLDIR</td><td>sr</td><td/><td>0</td><td/></row>
 		<row><td>SendToFolder</td><td>TARGETDIR</td><td>.:SendTo</td><td/><td>3</td><td/></row>
 		<row><td>StartMenuFolder</td><td>TARGETDIR</td><td>.:STARTM~1|Start Menu</td><td/><td>3</td><td/></row>
 		<row><td>StartupFolder</td><td>TARGETDIR</td><td>.:StartUp</td><td/><td>3</td><td/></row>
@@ -1256,6 +1297,7 @@
 		<row><td>X64</td><td>INSTALLDIR</td><td>x64</td><td/><td>0</td><td/></row>
 		<row><td>X86</td><td>INSTALLDIR</td><td>x86</td><td/><td>0</td><td/></row>
 		<row><td>bibleg_1_bibleget_io</td><td>ProgramMenuFolder</td><td>BIBLEG~1|BibleGet IO</td><td/><td>1</td><td/></row>
+		<row><td>bibleg_1_bibleget_io_for_msword</td><td>bibleg_1_bibleget_io</td><td>BIBLEG~1|BibleGet IO for MSWord</td><td/><td>1</td><td/></row>
 		<row><td>bibleget_io_for_msword</td><td>bibleg_1_bibleget_io</td><td>BIBLEG~1|BibleGet IO AddIn For Microsoft Word</td><td/><td>1</td><td/></row>
 	</table>
 
@@ -1954,6 +1996,14 @@
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate1</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate2</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll2</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll3</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll4</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll5</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll6</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll7</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.exe</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll1</td></row>
@@ -1962,14 +2012,18 @@
 		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT10</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT3</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT4</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT5</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT6</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT7</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT8</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT9</td></row>
 		<row><td>AlwaysInstall</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>AlwaysInstall</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td></row>
+		<row><td>AlwaysInstall</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Newtonsoft.Json.dll</td></row>
 		<row><td>AlwaysInstall</td><td>SQLite.Interop.dll</td></row>
 		<row><td>AlwaysInstall</td><td>SQLite.Interop.dll1</td></row>
@@ -1988,25 +2042,35 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>biblegetio.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.MA~|BibleGetIO.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.dll.manifest</td><td>1</td><td/></row>
+		<row><td>biblegetio.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.MAN|BibleGetIO.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.dll.manifest</td><td>1</td><td/></row>
 		<row><td>biblegetio.output_primario</td><td>BibleGetIO.Output_primario2</td><td>BibleGetIO.Output primario</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|Built</td><td>3</td><td/></row>
+		<row><td>biblegetio.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.PDB|BibleGetIO.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.pdb</td><td>1</td><td/></row>
+		<row><td>biblegetio.resources.dll</td><td>BibleGetIO.resources.dll</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\de\BibleGetIO.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetio.resources.dll1</td><td>BibleGetIO.resources.dll1</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\en\BibleGetIO.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetio.resources.dll2</td><td>BibleGetIO.resources.dll2</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\es\BibleGetIO.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetio.resources.dll3</td><td>BibleGetIO.resources.dll3</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\fr\BibleGetIO.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetio.resources.dll4</td><td>BibleGetIO.resources.dll4</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\it\BibleGetIO.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetio.resources.dll5</td><td>BibleGetIO.resources.dll5</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\el\BibleGetIO.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetio.resources.dll6</td><td>BibleGetIO.resources.dll6</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\pl\BibleGetIO.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetio.resources.dll7</td><td>BibleGetIO.resources.dll7</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\sr\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.risorse_localizza</td><td>BibleGetIO.Risorse_localizzate2</td><td>BibleGetIO.Risorse localizzate</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
-		<row><td>biblegetio.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.VS~|BibleGetIO.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.vsto</td><td>1</td><td/></row>
-		<row><td>biblegetio.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.XML|BibleGetIO.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.xml</td><td>1</td><td/></row>
-		<row><td>biblegetmswordregistrykeys.e</td><td>BibleGetMSWordRegistryKeys.exe</td><td>BIBLEG~1.EXE|BibleGetMSWordRegistryKeys.exe</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2013\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\BibleGetMSWordRegistryKeys.exe</td><td>1</td><td/></row>
-		<row><td>biblegetmswordregistrykeys.r</td><td>BibleGetMSWordRegistryKeys.resources.dll</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2013\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\it\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
-		<row><td>biblegetmswordregistrykeys.r1</td><td>BibleGetMSWordRegistryKeys.resources.dll1</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2013\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
-		<row><td>biblegetmswordregistrykeys.r2</td><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2013\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\en\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
-		<row><td>biblegetmswordregistrykeys.r3</td><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2013\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\es\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
-		<row><td>biblegetmswordregistrykeys.r4</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2013\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\fr\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
-		<row><td>microsoft.office.tools.commo</td><td>ISX_DEFAULTCOMPONENT</td><td>MICROS~1.XML|Microsoft.Office.Tools.Common.v4.0.Utilities.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.xml</td><td>1</td><td/></row>
-		<row><td>microsoft.office.tools.commo1</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>1</td><td/></row>
-		<row><td>newtonsoft.json.dll</td><td>Newtonsoft.Json.dll</td><td>NEWTON~1.DLL|Newtonsoft.Json.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\Newtonsoft.Json.dll</td><td>1</td><td/></row>
-		<row><td>newtonsoft.json.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>NEWTON~1.XML|Newtonsoft.Json.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\Newtonsoft.Json.xml</td><td>1</td><td/></row>
-		<row><td>sqlite.interop.dll</td><td>SQLite.Interop.dll</td><td>SQLITE~1.DLL|SQLite.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\x64\SQLite.Interop.dll</td><td>1</td><td/></row>
-		<row><td>sqlite.interop.dll1</td><td>SQLite.Interop.dll1</td><td>SQLITE~1.DLL|SQLite.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\x86\SQLite.Interop.dll</td><td>1</td><td/></row>
-		<row><td>system.data.sqlite.dll</td><td>System.Data.SQLite.dll</td><td>SYSTEM~1.DLL|System.Data.SQLite.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\System.Data.SQLite.dll</td><td>1</td><td/></row>
-		<row><td>system.data.sqlite.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>SYSTEM~1.XML|System.Data.SQLite.xml</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Lwangaman\Documents\Visual Studio 2010\Projects\BibleGetIO\BibleGetIO\bin\Release\System.Data.SQLite.xml</td><td>1</td><td/></row>
+		<row><td>biblegetio.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.VST|BibleGetIO.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.vsto</td><td>1</td><td/></row>
+		<row><td>biblegetio.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.XML|BibleGetIO.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.xml</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.e</td><td>BibleGetMSWordRegistryKeys.exe</td><td>BIBLEG~1.EXE|BibleGetMSWordRegistryKeys.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\BibleGetMSWordRegistryKeys.exe</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.r</td><td>BibleGetMSWordRegistryKeys.resources.dll</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.r1</td><td>BibleGetMSWordRegistryKeys.resources.dll1</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\en\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.r2</td><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\es\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.r3</td><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\fr\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.r4</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\it\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
+		<row><td>microsoft.office.tools.commo</td><td>ISX_DEFAULTCOMPONENT</td><td>MICROS~1.XML|Microsoft.Office.Tools.Common.v4.0.Utilities.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.xml</td><td>1</td><td/></row>
+		<row><td>microsoft.office.tools.commo1</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>1</td><td/></row>
+		<row><td>microsoft.visualstudio.tools</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>MICROS~1.DLL|Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>1</td><td/></row>
+		<row><td>newtonsoft.json.dll</td><td>Newtonsoft.Json.dll</td><td>NEWTON~1.DLL|Newtonsoft.Json.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Newtonsoft.Json.dll</td><td>1</td><td/></row>
+		<row><td>newtonsoft.json.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>NEWTON~1.XML|Newtonsoft.Json.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Newtonsoft.Json.xml</td><td>1</td><td/></row>
+		<row><td>sqlite.interop.dll</td><td>SQLite.Interop.dll</td><td>SQLITE~1.DLL|SQLite.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\x64\SQLite.Interop.dll</td><td>1</td><td/></row>
+		<row><td>sqlite.interop.dll1</td><td>SQLite.Interop.dll1</td><td>SQLITE~1.DLL|SQLite.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\x86\SQLite.Interop.dll</td><td>1</td><td/></row>
+		<row><td>system.data.sqlite.dll</td><td>System.Data.SQLite.dll</td><td>SYSTEM~1.DLL|System.Data.SQLite.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\System.Data.SQLite.dll</td><td>1</td><td/></row>
+		<row><td>system.data.sqlite.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>SYSTEM~1.XML|System.Data.SQLite.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\System.Data.SQLite.xml</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2023,7 +2087,8 @@
 		<col key="yes" def="s72">Tag</col>
 		<col def="S255">Data</col>
 		<row><td>PROJECT_ASSISTANT_DEFAULT_FEATURE</td><td>AlwaysInstall</td></row>
-		<row><td>RegistryPageEnabled</td><td>Yes</td></row>
+		<row><td>RegistryPageEnabled</td><td>No</td></row>
+		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td/></row>
 	</table>
 
 	<table name="ISBillBoard">
@@ -2155,27 +2220,39 @@
 		<row><td>BibleGetIO.Output_primario2</td><td/><td/><td>_E27E11E3_161C_4BA5_9356_E86A1EABB272_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Risorse_localizzate</td><td/><td/><td>_7C558799_E208_4DBA_A55E_7546CA985276_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Risorse_localizzate1</td><td/><td/><td>_8BD920A9_13AD_492D_ABCF_DA047896E966_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>BibleGetIO.Risorse_localizzate2</td><td/><td/><td>_B277D5CA_9C98_4549_B338_020838730BFC_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>BibleGetMSWordRegistryKeys.exe</td><td/><td/><td>_7E570BD9_4C78_4DF1_8912_F090AA130B42_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll</td><td/><td/><td>_781C5754_D5ED_4092_B284_2D4F8ED9F7DE_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll1</td><td/><td/><td>_604062E1_F5F6_48FF_9EBC_564C67D71B64_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td/><td/><td>_8873C55E_3C06_4229_B49C_5EF6250DE7C3_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td/><td/><td>_DB35CE1A_D964_4C91_8C89_8F836203BF82_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td/><td/><td>_314475C1_352F_40A3_B431_A354FFD25577_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.Risorse_localizzate2</td><td/><td/><td>_DFB67517_9920_4FBB_91DF_75892284F70A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.resources.dll</td><td/><td/><td>_C292DE86_A3C7_4698_A90D_1C3A04D769BD_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.resources.dll1</td><td/><td/><td>_F10CCEF5_0F45_4705_885C_390064862833_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.resources.dll2</td><td/><td/><td>_47B3CA3F_4480_4FB9_BF44_ECA3777EB1EE_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.resources.dll3</td><td/><td/><td>_0A76807A_A170_4E60_AD27_DEF8F3785E1D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.resources.dll4</td><td/><td/><td>_21511DDE_C0BA_4BA3_AB73_B1D467827DB0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.resources.dll5</td><td/><td/><td>_A0A7E776_5FB3_41B9_9D4E_9C0EDCE648C7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.resources.dll6</td><td/><td/><td>_EBBA9459_38A1_439C_8839_740BC110577F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.resources.dll7</td><td/><td/><td>_7812A5BD_4EAC_4774_8D74_09B686404C9B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.exe</td><td/><td/><td>_AA5F1038_ACBB_45E8_A3DD_819F8C41256F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll</td><td/><td/><td>_475AC437_2E6A_424A_A635_7CEDAD195CC7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll1</td><td/><td/><td>_5ED05D34_AC14_48F7_A442_0C3742096A60_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td/><td/><td>_144A3E84_CD7B_49A9_B372_0967978BA73F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td/><td/><td>_E8C4912B_4661_4E2E_83F7_6CDE266A2910_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td/><td/><td>_81DF0F94_7FD4_434B_96F1_3C58AFBC5323_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_DB8ED903_25D0_4081_9C37_E93B3F441947_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_5E0F452D_E5CA_40A4_8159_DEB9870728EA_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT10</td><td/><td/><td>_F78C1321_916F_4693_A78A_BD8E7B5842DB_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_A2D7EB10_FC9A_4151_8A06_D8A8BBED81C1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT3</td><td/><td/><td>_DDAAC651_683D_429E_A5FE_1F6927844BFD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT4</td><td/><td/><td>_A2FFF98B_C813_4297_93C2_33D219650FD5_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT5</td><td/><td/><td>_56268E2A_8D3B_4666_BD7F_BA76B8BA4957_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT6</td><td/><td/><td>_A1C54712_C3CB_482D_B429_34FC64F5FFBC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT7</td><td/><td/><td>_7C086F87_9CD8_4E99_ABB2_A1F918117715_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT8</td><td/><td/><td>_BB10AC5E_1A8D_4E97_8E10_BFFB9E6068B1_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT9</td><td/><td/><td>_D9654B67_E517_469D_B808_5589B3DDA8DA_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td/><td/><td>_1EADEFFA_0047_4DBF_8A4B_1177ED679E81_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td/><td/><td>_8FB6D2C6_04B3_487F_A0D3_8266052D2F9B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Newtonsoft.Json.dll</td><td/><td/><td>_25A514F1_BF93_4156_8F03_5A951C781C0F_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>SQLite.Interop.dll</td><td/><td/><td>_40D04227_CC45_4D92_A5AD_558C18D00F56_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>SQLite.Interop.dll1</td><td/><td/><td>_D5B3434E_092C_467B_BC72_B0DB5B7BA6AE_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>System.Data.SQLite.dll</td><td/><td/><td>_CF9594D1_9C9E_4F25_B469_D9C5792E821D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td/><td/><td>_5173102A_6E4F_4122_8038_68FB8B1B36F0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td/><td/><td>_1A91205E_D0B3_4905_8431_28C386E3F0CC_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Newtonsoft.Json.dll</td><td/><td/><td>_51D1F06A_E0CF_4533_BB16_7677A51FFFE0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SQLite.Interop.dll</td><td/><td/><td>_B8755BFE_8020_4A37_A195_1FC4EC35AFB2_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>SQLite.Interop.dll1</td><td/><td/><td>_DA3C50CC_44AA_4F51_A635_51E8AF4734D6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>System.Data.SQLite.dll</td><td/><td/><td>_2807FA16_8FF0_45AE_BFD1_9FC6BCA94F2A_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2522,7 +2599,7 @@
 		<row><td>DVD-18</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>15.83</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
 		<row><td>DVD-5</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>4.38</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
 		<row><td>DVD-9</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>Default</td><td>3</td><td>1033</td><td>0</td><td>2</td><td>Intel</td><td/><td>1033</td><td>0</td><td>7.95</td><td>1</td><td>2048</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>75805</td><td/><td/><td/><td>3</td></row>
-		<row><td>SingleImage</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>1</td><td>1033</td><td>0</td><td>1</td><td>Intel</td><td/><td>1033</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://www.bibleget.io</td><td/><td>C:\Users\Lwangaman\Documents\ia.pfx</td><td/><td/><td>536979487</td><td/><td/><td/><td>2</td></row>
+		<row><td>SingleImage</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>1</td><td>1033</td><td>0</td><td>1</td><td>Intel</td><td/><td>1033</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://www.bibleget.io</td><td/><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\ia.pfx</td><td/><td/><td>536979487</td><td/><td/><td/><td>2</td></row>
 		<row><td>WebDeployment</td><td>Express</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>4</td><td>1033</td><td>2</td><td>1</td><td>Intel</td><td/><td>1033</td><td>0</td><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>124941</td><td/><td/><td/><td>3</td></row>
 	</table>
 
@@ -2733,8 +2810,9 @@
 		<col def="I2">Order</col>
 		<col def="I2">ISSetupLocation</col>
 		<col def="S255">ISReleaseFlags</col>
+		<row><td>_8D272CEC_E42F_4D90_9029_3A0D83B51051_</td><td>Visual Studio 2010 Tools for Office Runtime.prq</td><td/><td/><td/></row>
 		<row><td>_93D1BBDD_CA71_4B4D_AD1E_CEA16424C3FE_</td><td>Microsoft .NET Framework 4.0 Client.prq</td><td/><td/><td/></row>
-		<row><td>_F9B546A9_240E_4F39_ADDF_DB6CA2883856_</td><td>Visual Studio 2010 Tools for Office Runtime.prq</td><td/><td/><td/></row>
+		<row><td>_D1F0AF19_A0FE_4443_B66C_E8E30E7515E4_</td><td>Windows Installer 4.5 for Windows Vista (x86).prq</td><td/><td/><td/></row>
 	</table>
 
 	<table name="ISSetupType">
@@ -3583,6 +3661,7 @@
 		<row><td>IDS_PROGMSG_XML_UPDATE_FILE</td><td>1033</td><td>Updating XML file %s...</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>681889967</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>LAUNCH~1.EXE|Launch BibleGetMSWordRegistryKeys.exe</td><td>0</td><td/><td>698640430</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>681889967</td></row>
@@ -3871,12 +3950,13 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.BibleGetIO.com</td><td>0</td><td/><td>1898200043</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.bibleget.io</td><td>0</td><td/><td>698671616</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>BibleGet IO</td><td>0</td><td/><td>1898200043</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Rev. John R. D'Orazio</td><td>0</td><td/><td>153396913</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>mailto:admin@bibleget.io</td><td>0</td><td/><td>1898200043</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>BibleGet I/O Add-In for Microsoft Word 2007+. Easily insert Bible quotes into your documents.</td><td>0</td><td/><td>153409586</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>https://www.bibleget.io/download/bibleget-addin-for-microsoft-word/</td><td>0</td><td/><td>1898213387</td></row>
+		<row><td>ID_STRING7</td><td>1033</td><td/><td>0</td><td/><td>832847875</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>681889967</td></row>
 	</table>
 
@@ -3991,7 +4071,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
-		<row><td>UNINST_Uninstall_B_4A424CAAA2234E059B2FE548F5AC63F1.exe</td><td/><td>C:\Program Files (x86)\InstallShield\2015LE\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
+		<row><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td/><td>&lt;ISProductFolder&gt;\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4438,7 +4518,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ARPCONTACT</td><td>##ID_STRING3##</td><td/></row>
 		<row><td>ARPHELPLINK</td><td>##ID_STRING4##</td><td/></row>
 		<row><td>ARPINSTALLLOCATION</td><td/><td/></row>
-		<row><td>ARPNOREPAIR</td><td>1</td><td/></row>
+		<row><td>ARPNOMODIFY</td><td>1</td><td/></row>
 		<row><td>ARPPRODUCTICON</td><td>ARPPRODUCTICON.exe</td><td/></row>
 		<row><td>ARPSIZE</td><td/><td/></row>
 		<row><td>ARPURLINFOABOUT</td><td>##ID_STRING1##</td><td/></row>
@@ -4503,9 +4583,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{2B9878E5-6DDF-48EF-8121-ADB4CEFD7E8D}</td><td/></row>
+		<row><td>ProductCode</td><td>{E55E715D-D00E-4BE5-9DB9-8EB8617AD4A4}</td><td/></row>
 		<row><td>ProductName</td><td>BibleGet IO for MSWord</td><td/></row>
-		<row><td>ProductVersion</td><td>2.1.0.0</td><td/></row>
+		<row><td>ProductVersion</td><td>2.2.6.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4519,7 +4599,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
 		<row><td>SHOWLAUNCHPROGRAM</td><td>0</td><td/></row>
 		<row><td>SHOWLAUNCHREADME</td><td>0</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION40CLIENT</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION40CLIENT;ISACTIONPROP1</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td/></row>
@@ -4575,11 +4655,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S0">Value</col>
 		<col def="s72">Component_</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>Registry1</td><td>1</td><td>SOFTWARE\Microsoft\Office\Word\Addins\BibleGetIO</td><td>Description</td><td>Microsoft Word 2007+ AddIn for the BibleGet I/O Project. Easily insert Bible quotes into your documents.</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry2</td><td>1</td><td>SOFTWARE\Microsoft\Office\Word\Addins\BibleGetIO</td><td>FriendlyName</td><td>BibleGet I/O add-in for Microsoft Word 2007+</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry4</td><td>1</td><td>SOFTWARE\Microsoft\Office\Word\Addins\BibleGetIO</td><td>Manifest</td><td>file:///[INSTALLDIR]BibleGetIO.vsto|vstolocal</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry5</td><td>1</td><td>SOFTWARE\Microsoft\Office\Word\Addins\BibleGetIO</td><td/><td/><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
-		<row><td>Registry6</td><td>1</td><td>SOFTWARE\Microsoft\Office\Word\Addins\BibleGetIO</td><td>LoadBehavior</td><td>#3</td><td>ISX_DEFAULTCOMPONENT</td><td>0</td></row>
 	</table>
 
 	<table name="RemoveFile">
@@ -4588,6 +4663,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
+		<row><td>FileKey1</td><td>BibleGetMSWordRegistryKeys.exe</td><td/><td>bibleg_1_bibleget_io_for_msword</td><td>2</td></row>
 		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td/><td>bibleget_io_for_msword</td><td>2</td></row>
 	</table>
 
@@ -4674,7 +4750,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {2B9878E5-6DDF-48EF-8121-ADB4CEFD7E8D}</td><td/><td/><td>UNINST_Uninstall_B_4A424CAAA2234E059B2FE548F5AC63F1.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {2B9878E5-6DDF-48EF-8121-ADB4CEFD7E8D}</td><td/><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4797,6 +4873,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
+		<row><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td>1.0.0.0</td><td>2.2.5.0</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>NewUpgradeEntry1</td></row>
 	</table>
 
 	<table name="Verb">
