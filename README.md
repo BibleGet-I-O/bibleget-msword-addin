@@ -3,6 +3,7 @@
 
 **Project website** https://www.bibleget.io
 
+**Install Package download link** https://www.bibleget.io/applications/microsoft-word-macro/
 
 This project is released as open source, in the hopes that others might collaborate on the project, or that what I have not succeeded in accomplishing might be picked up again by someone else and made to be of better service to mankind.
 
