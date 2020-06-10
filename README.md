@@ -1,5 +1,7 @@
 # BibleGet plugin for Microsoft Word 2007+
 **@author** John Romano D'Orazio priest@johnromanodorazio.com
+**Project website** https://www.bibleget.io
+
 
 This project is released as open source, in the hopes that others might collaborate on the project, or that what I have not succeeded in accomplishing might be picked up again by someone else and made to be of better service to mankind.
 
