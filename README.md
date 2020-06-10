@@ -1,5 +1,6 @@
 # BibleGet plugin for Microsoft Word 2007+
 **@author** John Romano D'Orazio priest@johnromanodorazio.com
+
 **Project website** https://www.bibleget.io
 
 
