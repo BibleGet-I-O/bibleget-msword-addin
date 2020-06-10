@@ -18,3 +18,17 @@ It communicates with the [BibleGet I/O service endpoint](https://query.bibleget.
 You can set your preferred text formatting for the Bible quotes so that you don't have to format them manually every time you insert them into your document.
 
 Credits for the icon images used for the buttons are to be given to https://dryicons.com/icon-packs/wysiwyg-classic .
+
+# Changelog
+## Version 2.2.0.0 (February 18, 2016)
+
+Added debug log functionality to help debug those situations where the AddIn is not working correctly for some reason (debug log created in AppData location on AddIn startup, “enable debug” button added to “Health Status” form), debug log file if existing automatically attached to feedback email
+Added secondary registration of registry keys to make sure keys are installed to actual user registry even in cases where user is not administrator but installation is performed with administrator privileges
+
+## Version 2.1.0.0
+
+Added internal automatic update check (also added functionality on bibleget.io website that exposes the version information so that the plugin can communicate and obtain this information). Update check scheduled once every 7 days or when Server Data is renewed.
+
+## Version 2.0.0.0
+
+First release of the BibleGet AddIn for Microsoft Word!
