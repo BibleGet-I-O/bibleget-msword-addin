@@ -3950,7 +3950,7 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.bibleget.io</td><td>0</td><td/><td>698671616</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>https://www.bibleget.io</td><td>0</td><td/><td>2032567602</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>BibleGet IO</td><td>0</td><td/><td>1898200043</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Rev. John R. D'Orazio</td><td>0</td><td/><td>153396913</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>mailto:admin@bibleget.io</td><td>0</td><td/><td>1898200043</td></row>
@@ -4585,7 +4585,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{E55E715D-D00E-4BE5-9DB9-8EB8617AD4A4}</td><td/></row>
 		<row><td>ProductName</td><td>BibleGet IO for MSWord</td><td/></row>
-		<row><td>ProductVersion</td><td>2.2.6.0</td><td/></row>
+		<row><td>ProductVersion</td><td>2.2.6.2</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4873,7 +4873,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td>1.0.0.0</td><td>2.2.5.0</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>NewUpgradeEntry1</td></row>
+		<row><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td>1.0.0.0</td><td>2.2.5.0</td><td>2057,1033,1036,1031,1040,1034</td><td>772</td><td/><td>ISACTIONPROP1</td><td>NewUpgradeEntry1</td></row>
 	</table>
 
 	<table name="Verb">
