@@ -1,0 +1,138 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="BookChapterBold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="BookChapterItalic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BookChapterUnderline" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BookChapterStrikethrough" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BookChapterForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">0, 0, 64</Value>
+    </Setting>
+    <Setting Name="BookChapterBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Transparent</Value>
+    </Setting>
+    <Setting Name="BookChapterFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Times New Roman, 12pt</Value>
+    </Setting>
+    <Setting Name="BookChapterPosition" Type="BibleGetIO.POS" Scope="User">
+      <Value Profile="(Default)">TOP</Value>
+    </Setting>
+    <Setting Name="VerseNumberFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Times New Roman, 8.25pt</Value>
+    </Setting>
+    <Setting Name="VerseNumberBold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseNumberItalic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseNumberUnderline" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseNumberStrikethrough" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseNumberForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="VerseNumberBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Transparent</Value>
+    </Setting>
+    <Setting Name="VerseNumberVAlign" Type="BibleGetIO.VALIGN" Scope="User">
+      <Value Profile="(Default)">SUPERSCRIPT</Value>
+    </Setting>
+    <Setting Name="VerseTextBold" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseTextItalic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseTextUnderline" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseTextStrikethrough" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VerseTextForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="VerseTextBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Transparent</Value>
+    </Setting>
+    <Setting Name="ParagraphAlignment" Type="BibleGetIO.ALIGN" Scope="User">
+      <Value Profile="(Default)">JUSTIFY</Value>
+    </Setting>
+    <Setting Name="LeftIndent" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Linespacing" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">1.5</Value>
+    </Setting>
+    <Setting Name="PreferredVersions" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CEI2008,NABRE</Value>
+    </Setting>
+    <Setting Name="NOVERSIONFORMATTING" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UpdateCheck" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="NewVersionExists" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NewVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DEBUG_MODE" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="RightIndent" Type="System.Int16" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="BibleVersionFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Times New Roman, 12pt</Value>
+    </Setting>
+    <Setting Name="BibleVersionForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="BibleVersionBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Transparent</Value>
+    </Setting>
+    <Setting Name="VerseTextFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Times New Roman, 9.75pt</Value>
+    </Setting>
+    <Setting Name="BibleVersionPosition" Type="BibleGetIO.POS" Scope="User">
+      <Value Profile="(Default)">TOP</Value>
+    </Setting>
+    <Setting Name="BibleVersionAlign" Type="BibleGetIO.ALIGN" Scope="User">
+      <Value Profile="(Default)">LEFT</Value>
+    </Setting>
+    <Setting Name="BibleVersionWrap" Type="BibleGetIO.WRAP" Scope="User">
+      <Value Profile="(Default)">NONE</Value>
+    </Setting>
+    <Setting Name="BookChapterWrap" Type="BibleGetIO.WRAP" Scope="User">
+      <Value Profile="(Default)">NONE</Value>
+    </Setting>
+    <Setting Name="BookChapterAlign" Type="BibleGetIO.ALIGN" Scope="User">
+      <Value Profile="(Default)">LEFT</Value>
+    </Setting>
+    <Setting Name="BibleVersionVisibility" Type="BibleGetIO.VISIBILITY" Scope="User">
+      <Value Profile="(Default)">SHOW</Value>
+    </Setting>
+    <Setting Name="VerseNumberVisibility" Type="BibleGetIO.VISIBILITY" Scope="User">
+      <Value Profile="(Default)">SHOW</Value>
+    </Setting>
+    <Setting Name="BookChapterFormat" Type="BibleGetIO.FORMAT" Scope="User">
+      <Value Profile="(Default)">BIBLELANG</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
