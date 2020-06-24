@@ -513,15 +513,6 @@ Public Class BibleGetDocInject
         currentSelection.Font.Color = Word.WdColor.wdColorBlack
         'currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Microsoft.Office.Interop.Word.WdColor)
         currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorAutomatic
-        Select Case My.Settings.BookChapterPosition
-            Case "sub"
-                currentSelection.Font.Subscript = True
-            Case "super"
-                currentSelection.Font.Superscript = True
-            Case "baseline"
-                currentSelection.Font.Superscript = False
-                currentSelection.Font.Subscript = False
-        End Select
     End Sub
 
     Private Shared Sub setBookChapterStyles(ByRef currentSelection As Word.Selection, ByVal bookChapterFont As Word.Font)
@@ -539,27 +530,18 @@ Public Class BibleGetDocInject
         Else
             currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Microsoft.Office.Interop.Word.WdColor)
         End If
-        Select Case My.Settings.BookChapterPosition
-            Case "sub"
-                currentSelection.Font.Subscript = True
-            Case "super"
-                currentSelection.Font.Superscript = True
-            Case "baseline"
-                currentSelection.Font.Superscript = False
-                currentSelection.Font.Subscript = False
-        End Select
 
     End Sub
 
     Private Shared Sub setParagraphAlignment(ByRef currentSelection)
         Select Case My.Settings.ParagraphAlignment
-            Case "left"
+            Case ALIGN.LEFT
                 currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            Case "right"
+            Case ALIGN.RIGHT
                 currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight
-            Case "center"
+            Case ALIGN.CENTER
                 currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
-            Case "justify"
+            Case ALIGN.JUSTIFY
                 currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify
         End Select
     End Sub
@@ -578,11 +560,11 @@ Public Class BibleGetDocInject
             currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseNumberBackColor), Microsoft.Office.Interop.Word.WdColor)
         End If
         Select Case My.Settings.VerseNumberVAlign
-            Case "sub"
+            Case VALIGN.SUBSCRIPT
                 currentSelection.Font.Subscript = True
-            Case "super"
+            Case VALIGN.SUPERSCRIPT
                 currentSelection.Font.Superscript = True
-            Case "baseline"
+            Case VALIGN.NORMAL
                 currentSelection.Font.Superscript = False
                 currentSelection.Font.Subscript = False
         End Select

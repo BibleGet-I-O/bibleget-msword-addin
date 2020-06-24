@@ -579,30 +579,6 @@ Partial Friend NotInheritable Class MySettings
             Me("BookChapterFormat") = value
         End Set
     End Property
-    
-    <Global.System.Configuration.UserScopedSettingAttribute(),  _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-    Public Property UnitsInCM() As Boolean
-        Get
-            Return CType(Me("UnitsInCM"),Boolean)
-        End Get
-        Set
-            Me("UnitsInCM") = value
-        End Set
-    End Property
-    
-    <Global.System.Configuration.UserScopedSettingAttribute(),  _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-    Public Property OverrideSystemUnits() As Boolean
-        Get
-            Return CType(Me("OverrideSystemUnits"),Boolean)
-        End Get
-        Set
-            Me("OverrideSystemUnits") = value
-        End Set
-    End Property
 End Class
 
 Namespace My

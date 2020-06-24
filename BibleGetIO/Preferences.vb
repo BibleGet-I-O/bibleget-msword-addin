@@ -8,7 +8,8 @@ Public Class Preferences
     Const DS As Integer = 21
     Const SP As Integer = &H2
     Private DEBUG_MODE As Boolean
-    Private InterfaceInCM As Boolean = If(My.Settings.OverrideSystemUnits, My.Settings.UnitsInCM, RegionInfo.CurrentRegion.IsMetric)
+    Private Application As Word.Application = Globals.BibleGetAddIn.Application
+    Private InterfaceInCM As Boolean
 
     Private Shared Function __(ByVal myStr As String) As String
         Dim myTranslation As String = BibleGetAddIn.RM.GetString(myStr, BibleGetAddIn.locale)
@@ -422,7 +423,7 @@ jQuery(document).ready(function(){
     let rightindent = " & My.Settings.RightIndent & " * pixelRatioVals.dpi + 35;
     let bestWidth = 6.25 * 96 * window.devicePixelRatio + (35*2);
     $('.bibleQuote').css({""width"":bestWidth+""px"",""padding-left"":leftindent+""px"",""padding-right"":rightindent+""px""}); 
-    drawRuler(6.25," & InterfaceInCM.ToString.ToLower & "," & My.Settings.LeftIndent & "," & My.Settings.RightIndent & ");
+    drawRuler(7," & InterfaceInCM.ToString.ToLower & "," & My.Settings.LeftIndent & "," & My.Settings.RightIndent & ");
 });
 "
 
@@ -601,11 +602,19 @@ jQuery(document).ready(function(){
                 RadioButton25.Checked = True
         End Select
 
+
+        Select Case Application.Options.MeasurementUnit
+            Case Word.WdMeasurementUnits.wdCentimeters
+                InterfaceInCM = True
+            Case Else
+                InterfaceInCM = False
+        End Select
+
         Select Case InterfaceInCM
             Case True
-                RadioButton26.Checked = True
-            Case False
                 RadioButton27.Checked = True
+            Case False
+                RadioButton26.Checked = True
         End Select
 
         NativeMethods.CoInternetSetFeatureEnabled(DS, SP, True) 'Dim clickOff As Boolean = 
@@ -1142,13 +1151,4 @@ jQuery(document).ready(function(){
         setPreviewDocument()
     End Sub
 
-    Private Sub RadioButton26_Click(sender As Object, e As EventArgs) Handles RadioButton26.Click
-        My.Settings.OverrideSystemUnits = True
-        My.Settings.UnitsInCM = False
-    End Sub
-
-    Private Sub RadioButton27_Click(sender As Object, e As EventArgs) Handles RadioButton27.Click
-        My.Settings.OverrideSystemUnits = True
-        My.Settings.UnitsInCM = True
-    End Sub
 End Class

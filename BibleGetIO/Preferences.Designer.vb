@@ -1263,18 +1263,19 @@ Partial Class Preferences
         '
         Me.GroupBox22.Controls.Add(Me.RadioButton27)
         Me.GroupBox22.Controls.Add(Me.RadioButton26)
-        Me.GroupBox22.Location = New System.Drawing.Point(327, 631)
+        Me.GroupBox22.Location = New System.Drawing.Point(12, 631)
         Me.GroupBox22.Name = "GroupBox22"
-        Me.GroupBox22.Size = New System.Drawing.Size(200, 58)
+        Me.GroupBox22.Size = New System.Drawing.Size(506, 58)
         Me.GroupBox22.TabIndex = 16
         Me.GroupBox22.TabStop = False
-        Me.GroupBox22.Text = "Ruler Units of Measurement"
+        Me.GroupBox22.Text = "Current displayed units of Measurement in the Microsoft Word interface:"
         '
         'RadioButton26
         '
         Me.RadioButton26.Appearance = System.Windows.Forms.Appearance.Button
         Me.RadioButton26.AutoSize = True
-        Me.RadioButton26.Location = New System.Drawing.Point(47, 24)
+        Me.RadioButton26.Enabled = False
+        Me.RadioButton26.Location = New System.Drawing.Point(193, 19)
         Me.RadioButton26.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton26.Name = "RadioButton26"
         Me.RadioButton26.Size = New System.Drawing.Size(59, 27)
@@ -1288,7 +1289,8 @@ Partial Class Preferences
         '
         Me.RadioButton27.Appearance = System.Windows.Forms.Appearance.Button
         Me.RadioButton27.AutoSize = True
-        Me.RadioButton27.Location = New System.Drawing.Point(106, 24)
+        Me.RadioButton27.Enabled = False
+        Me.RadioButton27.Location = New System.Drawing.Point(252, 19)
         Me.RadioButton27.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton27.Name = "RadioButton27"
         Me.RadioButton27.Size = New System.Drawing.Size(38, 27)
