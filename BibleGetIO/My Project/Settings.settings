@@ -134,5 +134,11 @@
     <Setting Name="BookChapterFormat" Type="BibleGetIO.FORMAT" Scope="User">
       <Value Profile="(Default)">BIBLELANG</Value>
     </Setting>
+    <Setting Name="UnitsInCM" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OverrideSystemUnits" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

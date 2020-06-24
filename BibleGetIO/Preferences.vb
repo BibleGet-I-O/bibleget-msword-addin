@@ -8,6 +8,7 @@ Public Class Preferences
     Const DS As Integer = 21
     Const SP As Integer = &H2
     Private DEBUG_MODE As Boolean
+    Private InterfaceInCM As Boolean = If(My.Settings.OverrideSystemUnits, My.Settings.UnitsInCM, RegionInfo.CurrentRegion.IsMetric)
 
     Private Shared Function __(ByVal myStr As String) As String
         Dim myTranslation As String = BibleGetAddIn.RM.GetString(myStr, BibleGetAddIn.locale)
@@ -206,6 +207,7 @@ Public Class Preferences
     Private Sub setPreviewDocument()
         Dim previewDocument As String
         Dim stylesheet As String
+        Dim script As String
 
         Dim paragraphLineSpacing As Decimal = My.Settings.Linespacing
         Dim leftIndent As Short = My.Settings.LeftIndent * 5
@@ -258,10 +260,10 @@ Public Class Preferences
         previewDocument &= "<head>"
         previewDocument &= "<meta http-equiv=""X-UA-Compatible"" content=""IE=Edge"" >"
         previewDocument &= "<meta charset=""UTF-8"">"
-        previewDocument &= "<style type=""text/css"">"
 
-        stylesheet = "html,body { padding: 0px 6px; background-color: #FFFFFF; margin: 0px; }"
-        stylesheet = "p { margin: 0px; padding: 0px; }"
+        stylesheet = "<style type=""text/css"">"
+        stylesheet &= "html,body { padding: 0px 6px; background-color: #FFFFFF; margin: 0px; }"
+        stylesheet &= "p { margin: 0px; padding: 0px; }"
         stylesheet &= "div.results { margin-left: " & leftIndent & "pt; }"
         stylesheet &= "div.results { margin-right: " & rightIndent & "pt; }"
         stylesheet &= "div.results .bibleVersion { font-family: " & My.Settings.BookChapterFont.Name & "; }"
@@ -307,11 +309,130 @@ Public Class Preferences
         End If
         stylesheet &= "div.results .versesParagraph .verseText { color: " & textColorVerseText & "; }"
         stylesheet &= "div.results .versesParagraph .verseText { background-color: " & bgColorVerseText & "; }"
+        stylesheet &= "</style>"
+
+        script = "<script src=""https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js""></script>"
+        script &= "<script type=""text/javascript"">"
+        script &= "var getPixelRatioVals = function(rulerLength,convertToCM){
+  let inchesToCM = 2.54,
+    dpr = window.devicePixelRatio,
+    //ppi = ((96 * dpr) / 100),
+    //dpi = (96 * ppi),
+    dpi = 96 * dpr,
+    drawInterval = 0.125;
+  if(convertToCM){
+    //ppi /= inchesToCM;
+    dpi /= inchesToCM;
+    rulerLength *= inchesToCM;
+    drawInterval = 0.25;
+  }
+  return {
+    inchesToCM: inchesToCM,
+    dpr: dpr,      
+    //ppi: ppi,
+    dpi: dpi,
+    rulerLength: rulerLength,
+    drawInterval: drawInterval
+  };
+},
+triangleAt = function (x,context,pixelRatioVals,initialPadding,canvasWidth){
+  let xPos = x*pixelRatioVals.dpi;//x.map(0,pixelRatioVals.rulerLength,0,(canvasWidth-(initialPadding*2)));
+  window.xVal = x;
+  window.xPos = xPos;
+  context.lineWidth = 0.5;
+  context.fillStyle = ""#4285F4"";
+  context.beginPath();
+  context.moveTo(initialPadding+xPos-6,11);
+  context.lineTo(initialPadding+xPos+6,11);
+  context.lineTo(initialPadding+xPos,18);
+  context.closePath();
+  context.stroke();
+  context.fill();
+},
+/**
+ * FUNCTION drawRuler
+ * @ rulerLen (float) in Inches (e.g. 6.25)
+ * @ cvtToCM (boolean) whether to convert values from inches to centimeters
+ * @ lftindnt (float) in Inches, to set xPos of triangle for left indent
+ * @ rgtindnt (float) in Inches, to set xPos of triangle for right indent
+*/
+drawRuler = function(rulerLen, cvtToCM, lftindnt, rgtindnt){
+  var pixelRatioVals = getPixelRatioVals(rulerLen,cvtToCM),
+      initialPadding = 35,
+      $canvas = jQuery('.previewRuler');
+  $canvas.each(function(){
+    let canvas = this,
+        context = canvas.getContext('2d'),
+        canvasWidth = (rulerLen * 96 * pixelRatioVals.dpr) + (initialPadding*2);
+    canvas.style.width = canvasWidth + 'px';
+    canvas.style.height = '20px';
+    canvas.width = Math.round(canvasWidth * pixelRatioVals.dpr);
+    canvas.height = Math.round(20 * pixelRatioVals.dpr);
+    canvas.style.width = Math.round(canvas.width / pixelRatioVals.dpr) + 'px';
+    canvas.style.height = Math.round(canvas.height / pixelRatioVals.dpr) + 'px';
+
+    context.scale(pixelRatioVals.dpr,pixelRatioVals.dpr);
+    context.translate(pixelRatioVals.dpr, 0);
+      
+    context.lineWidth = 0.5;
+    context.strokeStyle = '#000';
+    context.font = 'bold 10px Arial';
+
+    context.beginPath();
+    context.moveTo(initialPadding, 1);
+    context.lineTo(initialPadding + (pixelRatioVals.rulerLength * pixelRatioVals.dpi),1);
+    context.stroke();
+
+    let currentWholeNumber = 0;
+    let offset = 2;
+
+    for(let interval = 0; interval <= pixelRatioVals.rulerLength; interval += pixelRatioVals.drawInterval){
+      let xPosA = Math.round(interval*pixelRatioVals.dpi)+0.5;
+    
+      if(interval == Math.floor(interval) && interval > 0){
+        if(currentWholeNumber+1 == 10){ offset+=4; }
+        context.fillText(++currentWholeNumber,initialPadding+xPosA-offset,14);
+      }
+      else if(interval == Math.floor(interval)+0.5){
+        context.beginPath();
+        context.moveTo(initialPadding+xPosA,15);
+        context.lineTo(initialPadding+xPosA,5); 
+        context.closePath();
+        context.stroke();   
+      }
+      else{
+        context.beginPath();
+        context.moveTo(initialPadding+xPosA,10);
+        context.lineTo(initialPadding+xPosA,5);
+        context.closePath();
+        context.stroke();
+      }
+    }
+  
+    triangleAt(lftindnt,context,pixelRatioVals,initialPadding,canvasWidth);
+    triangleAt(pixelRatioVals.rulerLength-rgtindnt,context,pixelRatioVals,initialPadding,canvasWidth);
+    context.translate(-pixelRatioVals.dpr, -0);
+
+  });
+  
+};
+jQuery(document).ready(function(){
+    let pixelRatioVals = getPixelRatioVals(6.25," & InterfaceInCM.ToString.ToLower & ");
+    let leftindent = " & My.Settings.LeftIndent & " * pixelRatioVals.dpi + 35;
+    let rightindent = " & My.Settings.RightIndent & " * pixelRatioVals.dpi + 35;
+    let bestWidth = 6.25 * 96 * window.devicePixelRatio + (35*2);
+    $('.bibleQuote').css({""width"":bestWidth+""px"",""padding-left"":leftindent+""px"",""padding-right"":rightindent+""px""}); 
+    drawRuler(6.25," & InterfaceInCM.ToString.ToLower & "," & My.Settings.LeftIndent & "," & My.Settings.RightIndent & ");
+});
+"
+
+        script &= "</script>"
 
         previewDocument &= stylesheet
-        previewDocument &= "</style>"
+        previewDocument &= script
         previewDocument &= "</head>"
         previewDocument &= "<body>"
+        previewDocument &= "<canvas class=""previewRuler""></canvas>"
         previewDocument &= "<div class=""results bibleQuote"">"
         If My.Settings.BibleVersionPosition = POS.TOP And My.Settings.BibleVersionVisibility = VISIBILITY.SHOW Then
             previewDocument &= "<p class=""bibleVersion"">" & bibleVersionWrapBefore & "NVBSE" & bibleVersionWrapAfter & "</p>"
@@ -478,6 +599,13 @@ Public Class Preferences
                 RadioButton24.Checked = True
             Case FORMAT.USERLANG
                 RadioButton25.Checked = True
+        End Select
+
+        Select Case InterfaceInCM
+            Case True
+                RadioButton26.Checked = True
+            Case False
+                RadioButton27.Checked = True
         End Select
 
         NativeMethods.CoInternetSetFeatureEnabled(DS, SP, True) 'Dim clickOff As Boolean = 
@@ -1012,5 +1140,15 @@ Public Class Preferences
         My.Settings.BookChapterFormat = FORMAT.USERLANG
         My.Settings.Save()
         setPreviewDocument()
+    End Sub
+
+    Private Sub RadioButton26_Click(sender As Object, e As EventArgs) Handles RadioButton26.Click
+        My.Settings.OverrideSystemUnits = True
+        My.Settings.UnitsInCM = False
+    End Sub
+
+    Private Sub RadioButton27_Click(sender As Object, e As EventArgs) Handles RadioButton27.Click
+        My.Settings.OverrideSystemUnits = True
+        My.Settings.UnitsInCM = True
     End Sub
 End Class
