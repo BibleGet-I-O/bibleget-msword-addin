@@ -1166,7 +1166,7 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
-    '''  Cerca una stringa localizzata simile a .
+    '''  Cerca una stringa localizzata simile a You must type a term to search for.
     '''</summary>
     Friend Shared ReadOnly Property You_must_type_a_term_to_search_for() As String
         Get

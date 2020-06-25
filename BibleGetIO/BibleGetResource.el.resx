@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BibleGet I/O plugin for Microsoft Word" xml:space="preserve">
-    <value>BibleGet I/O plugin για Microsoft Word</value>
-  </data>
   <data name="Version" xml:space="preserve">
-    <value>Έκδοση</value>
+    <value>Εκδοχή</value>
   </data>
   <data name="This plugin was developed by &lt;b&gt;John R. D'Orazio&lt;/b&gt;, a priest in the diocese of Rome." xml:space="preserve">
     <value>Αυτό το plugin αναπτύχθηκε από &lt;b&gt;John R. D'Orazio&lt;/b&gt;, ένας ιερέας στην Επισκοπή της Ρώμης.</value>
@@ -236,9 +233,6 @@ double up any single quotes or apostrophes.</comment>
   </data>
   <data name="Once the extension is installed, a new menu 'BibleGet I/O' will appear on the menu bar. Also a new floating toolbar will appear. The buttons on the floating toolbar correspond to the menu items in the new menu, as can be seen in this image:" xml:space="preserve">
     <value>Μόλις εγκατασταθεί η επέκταση, ένα νέο μενού «BibleGet I/O» θα εμφανιστεί στη γραμμή μενού. Επίσης μια νέα κινητή γραμμή εργαλείων θα εμφανιστεί. Τα κουμπιά στη γραμμή εργαλείων πλωτή αντιστοιχούν στα στοιχεία μενού στο μενού "δημιουργία", όπως μπορεί να δει σε αυτή την εικόνα:</value>
-  </data>
-  <data name="The floating toolbar can be dragged and placed anywhere on the screen. It can also be docked to certain areas of the workspace, for example on the toolbar below the menu bar, like in this image:" xml:space="preserve">
-    <value>Την επιπλέουσα ράβδο εργαλείων μπορούν να συρθούν και να τοποθετηθεί οπουδήποτε στην οθόνη. Αυτό μπορεί επίσης να αναδιπλώνονται σε ορισμένες περιοχές του χώρου εργασίας, για παράδειγμα, στη γραμμή εργαλείων κάτω από τη γραμμή μενού, όπως σε αυτή την εικόνα:</value>
   </data>
   <data name="There are two ways of inserting a bible quote into a document." xml:space="preserve">
     <value>Υπάρχουν δύο τρόποι για να εισαγάγετε ένα απόσπασμα της Βίβλου σε ένα έγγραφο.</value>
@@ -498,12 +492,6 @@ double up any single quotes or apostrophes.</comment>
 translations
 double up any single quotes or apostrophes.</comment>
   </data>
-  <data name="Genesis" xml:space="preserve">
-    <value>Γένεση</value>
-  </data>
-  <data name="and the earth was without form or shape, with darkness over the abyss and a mighty wind sweeping over the waters" xml:space="preserve">
-    <value>και η γη ήταν χωρίς μορφή ή σχήμα, με το σκοτάδι πάνω από την άβυσσο και ένα ισχυρό άνεμο που σαρώνει πάνω από τα νερά—</value>
-  </data>
   <data name="User Preferences" xml:space="preserve">
     <value>Προτιμήσεις χρήστη</value>
   </data>
@@ -513,14 +501,11 @@ double up any single quotes or apostrophes.</comment>
   <data name="Alignment" xml:space="preserve">
     <value>Ευθυγράμμιση</value>
   </data>
-  <data name="Indent" xml:space="preserve">
-    <value>Περίπτωση</value>
+  <data name="Left Indent" xml:space="preserve">
+    <value>Αριστερή εσοχή</value>
   </data>
   <data name="Line-spacing" xml:space="preserve">
     <value>Διάστιχου</value>
-  </data>
-  <data name="Font" xml:space="preserve">
-    <value>Γραμματοσειρά</value>
   </data>
   <data name="Book / Chapter" xml:space="preserve">
     <value>Βιβλίο / κεφάλαιο</value>
@@ -534,24 +519,6 @@ double up any single quotes or apostrophes.</comment>
   <data name="Preview" xml:space="preserve">
     <value>Προεπισκόπηση</value>
   </data>
-  <data name="Choose Book / Chapter Font Color" xml:space="preserve">
-    <value>Επιλέξτε βιβλίο / χρώμα γραμματοσειράς κεφάλαιο</value>
-  </data>
-  <data name="Choose Book / Chapter Background Color" xml:space="preserve">
-    <value>Επιλέξτε βιβλίο / κεφάλαιο χρώμα φόντου</value>
-  </data>
-  <data name="Choose Verse Number Font Color" xml:space="preserve">
-    <value>Επιλέξτε το στίχο αριθμός χρώμα γραμματοσειράς</value>
-  </data>
-  <data name="Choose Verse Number Background Color" xml:space="preserve">
-    <value>Επιλέξετε το στίχο αριθμός χρώμα φόντου</value>
-  </data>
-  <data name="Choose Verse Text Font Color" xml:space="preserve">
-    <value>Επιλέξτε χρώμα γραμματοσειράς κειμένου στίχο</value>
-  </data>
-  <data name="Choose Verse Text Background Color" xml:space="preserve">
-    <value>Επιλέξτε το χρώμα φόντου κείμενο στίχο</value>
-  </data>
   <data name="Some Bible versions have their own formatting. This is left by default to keep the text as close as possible to the original.&lt;br&gt; If however you need to have consistent formatting in your document, you may override the Bible version's own formatting." xml:space="preserve">
     <value>Ορισμένες εκδόσεις της Βίβλου έχουν τη δική τους μορφοποίηση. 
 Αυτό έχει απομείνει από προεπιλογή για να διατηρηθεί 
@@ -561,5 +528,27 @@ double up any single quotes or apostrophes.</comment>
   </data>
   <data name="Override Bible Version Formatting" xml:space="preserve">
     <value>Αγνοήστε τη μορφοποίηση από την Αγία Γραφή Έκδοση</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>δράση</value>
+  </data>
+  <data name="e.g. creation" xml:space="preserve">
+    <value>π.χ. δημιουργία</value>
+  </data>
+  <data name="Right Indent" xml:space="preserve">
+    <value>Σωστή εσοχή</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Αναζήτηση</value>
+    <comment>TRANSLATORS: context button label, indicates action</comment>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>επιλέγω</value>
+  </data>
+  <data name="You must choose a Bible version from which to search" xml:space="preserve">
+    <value>Πρέπει να επιλέξετε μια Βιβλική έκδοση από την οποία θα αναζητήσετε</value>
+  </data>
+  <data name="You must type a term to search for" xml:space="preserve">
+    <value>Πρέπει να πληκτρολογήσετε έναν όρο για αναζήτηση</value>
   </data>
 </root>

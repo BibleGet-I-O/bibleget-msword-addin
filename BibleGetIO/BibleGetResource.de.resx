@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BibleGet I/O plugin for Microsoft Word" xml:space="preserve">
-    <value>BibleGet I/O-Plugin für Microsoft Word</value>
-  </data>
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
@@ -236,9 +233,6 @@ double up any single quotes or apostrophes.</comment>
   </data>
   <data name="Once the extension is installed, a new menu 'BibleGet I/O' will appear on the menu bar. Also a new floating toolbar will appear. The buttons on the floating toolbar correspond to the menu items in the new menu, as can be seen in this image:" xml:space="preserve">
     <value>Sobald die Erweiterung installiert ist, erscheint ein neues Menü 'BibleGet I/O' in der Menüleiste. Auch wird eine neue unverankerte Symbolleiste angezeigt. Die Tasten auf der unverankerten Symbolleiste entsprechen die Menüpunkte im Menü "neu", wie in diesem Bild zu sehen ist:</value>
-  </data>
-  <data name="The floating toolbar can be dragged and placed anywhere on the screen. It can also be docked to certain areas of the workspace, for example on the toolbar below the menu bar, like in this image:" xml:space="preserve">
-    <value>Die unverankerte Symbolleiste kann gezogen und überall auf dem Bildschirm platziert werden. Es kann auch für bestimmte Bereiche des Arbeitsbereichs, zum Beispiel auf der Symbolleiste unterhalb der Menüleiste, wie in diesem Bild angedockt werden:</value>
   </data>
   <data name="There are two ways of inserting a bible quote into a document." xml:space="preserve">
     <value>Es gibt zwei Möglichkeiten ein Bibel-Zitat in ein Dokument einzufügen.</value>
@@ -498,12 +492,6 @@ double up any single quotes or apostrophes.</comment>
 translations
 double up any single quotes or apostrophes.</comment>
   </data>
-  <data name="Genesis" xml:space="preserve">
-    <value>Genesis</value>
-  </data>
-  <data name="and the earth was without form or shape, with darkness over the abyss and a mighty wind sweeping over the waters" xml:space="preserve">
-    <value>Und die Erde war wüst und leer, und es war finster auf der Tiefe; und der Geist Gottes schwebte auf dem Wasser.</value>
-  </data>
   <data name="User Preferences" xml:space="preserve">
     <value>Benutzereinstellungen</value>
   </data>
@@ -513,14 +501,11 @@ double up any single quotes or apostrophes.</comment>
   <data name="Alignment" xml:space="preserve">
     <value>Ausrichtung</value>
   </data>
-  <data name="Indent" xml:space="preserve">
-    <value>Gedankenstrich</value>
+  <data name="Left Indent" xml:space="preserve">
+    <value>Linker Einzug</value>
   </data>
   <data name="Line-spacing" xml:space="preserve">
     <value>Zeilenabstand</value>
-  </data>
-  <data name="Font" xml:space="preserve">
-    <value>Schriften</value>
   </data>
   <data name="Book / Chapter" xml:space="preserve">
     <value>Buch / Kapitel</value>
@@ -534,24 +519,6 @@ double up any single quotes or apostrophes.</comment>
   <data name="Preview" xml:space="preserve">
     <value>Vorschau</value>
   </data>
-  <data name="Choose Book / Chapter Font Color" xml:space="preserve">
-    <value>Wählen Sie Buch / Kapitel Font Color</value>
-  </data>
-  <data name="Choose Book / Chapter Background Color" xml:space="preserve">
-    <value>Wählen Sie Buch / Kapitel Hintergrund Farbe</value>
-  </data>
-  <data name="Choose Verse Number Font Color" xml:space="preserve">
-    <value>Wählen Sie Vers Nummer Schriftfarbe</value>
-  </data>
-  <data name="Choose Verse Number Background Color" xml:space="preserve">
-    <value>Wählen Sie Vers Nummer Hintergrundfarbe</value>
-  </data>
-  <data name="Choose Verse Text Font Color" xml:space="preserve">
-    <value>Wählen Sie Vers Text Schriftfarbe</value>
-  </data>
-  <data name="Choose Verse Text Background Color" xml:space="preserve">
-    <value>Wählen Sie Vers Texthintergrundfarbe</value>
-  </data>
   <data name="Some Bible versions have their own formatting. This is left by default to keep the text as close as possible to the original.&lt;br&gt; If however you need to have consistent formatting in your document, you may override the Bible version's own formatting." xml:space="preserve">
     <value>Einige Bibelübersetzungen haben ihre eigene Formatierung. 
 Dies ist standardmäßig aktiviert , um nach links , 
@@ -561,5 +528,27 @@ können Sie die Formatierung der Bibel -Version ignorieren.</value>
   </data>
   <data name="Override Bible Version Formatting" xml:space="preserve">
     <value>Überschreiben Sie Bibel Version Formatierung</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Aktion</value>
+  </data>
+  <data name="e.g. creation" xml:space="preserve">
+    <value>z.B. Schaffung</value>
+  </data>
+  <data name="Right Indent" xml:space="preserve">
+    <value>Rechter Einzug</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Suche</value>
+    <comment>TRANSLATORS: context button label, indicates action</comment>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Wählen</value>
+  </data>
+  <data name="You must choose a Bible version from which to search" xml:space="preserve">
+    <value>Sie müssen eine Bibelversion auswählen, aus der Sie suchen möchten</value>
+  </data>
+  <data name="You must type a term to search for" xml:space="preserve">
+    <value>Sie müssen einen Begriff eingeben, nach dem gesucht werden soll</value>
   </data>
 </root>

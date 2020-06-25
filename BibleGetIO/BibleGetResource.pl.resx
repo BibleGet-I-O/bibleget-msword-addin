@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BibleGet I/O plugin for Microsoft Word" xml:space="preserve">
-    <value>Wtyczki we/wy BibleGet dla Microsoft Word</value>
-  </data>
   <data name="Version" xml:space="preserve">
     <value>Wersja</value>
   </data>
@@ -151,7 +148,7 @@ double up any single quotes or apostrophes.</comment>
     <value>Aktualne informacje z serwera BibleGet:</value>
   </data>
   <data name="The BibleGet database currently supports {0} versions of the Bible in {1} different languages:" xml:space="preserve">
-    <value>Silnik BibleGet I/O obecnie obsługuje wersje {0} Biblii w różnych językach {1}</value>
+    <value>Silnik BibleGet I/O obecnie obsługuje wersje {0} Biblii w {1} różnych językach:</value>
     <comment>TRANSLATORS: This message is used by MessageFormat, make sure that
 translations
 double up any single quotes or apostrophes.</comment>
@@ -236,9 +233,6 @@ double up any single quotes or apostrophes.</comment>
   </data>
   <data name="Once the extension is installed, a new menu 'BibleGet I/O' will appear on the menu bar. Also a new floating toolbar will appear. The buttons on the floating toolbar correspond to the menu items in the new menu, as can be seen in this image:" xml:space="preserve">
     <value>Po zainstalowaniu rozszerzenia, nowe menu 'BibleGet I/O' pojawi się na pasku menu. Także pojawią się nowe przestawny pasek narzędzi. Przyciski na pasku narzędzi pływających odnoszą się do elementów menu w menu Nowy, równie mogą być widział w ten obraz:</value>
-  </data>
-  <data name="The floating toolbar can be dragged and placed anywhere on the screen. It can also be docked to certain areas of the workspace, for example on the toolbar below the menu bar, like in this image:" xml:space="preserve">
-    <value>Przestawny pasek narzędzi może być przeciągany i umieszczone w dowolnym miejscu na ekranie. To może też być zadokowany na niektórych częściach obszaru roboczego, na przykład na pasku poniżej paska menu, jak w ten obraz:</value>
   </data>
   <data name="There are two ways of inserting a bible quote into a document." xml:space="preserve">
     <value>Istnieją dwa sposoby wstawiania Biblii cytat w dokumencie.</value>
@@ -498,29 +492,20 @@ double up any single quotes or apostrophes.</comment>
 translations
 double up any single quotes or apostrophes.</comment>
   </data>
-  <data name="Genesis" xml:space="preserve">
-    <value>Rodzaju</value>
-  </data>
-  <data name="and the earth was without form or shape, with darkness over the abyss and a mighty wind sweeping over the waters" xml:space="preserve">
-    <value>a ziemia była bezładem i kształcie, z ciemności nad przepaścią i potężnego wiatru przetacza się nad wodami</value>
-  </data>
   <data name="User Preferences" xml:space="preserve">
     <value>Preferencje użytkownika</value>
   </data>
   <data name="Paragraph" xml:space="preserve">
-    <value>Ust.</value>
+    <value>Ustęp</value>
   </data>
   <data name="Alignment" xml:space="preserve">
     <value>Wyrównanie</value>
   </data>
-  <data name="Indent" xml:space="preserve">
-    <value>Wcięcie</value>
+  <data name="Left Indent" xml:space="preserve">
+    <value>Lewe wcięcie</value>
   </data>
   <data name="Line-spacing" xml:space="preserve">
     <value>Odstęp między wierszami</value>
-  </data>
-  <data name="Font" xml:space="preserve">
-    <value>Czcionka</value>
   </data>
   <data name="Book / Chapter" xml:space="preserve">
     <value>Książki / rozdział</value>
@@ -534,24 +519,6 @@ double up any single quotes or apostrophes.</comment>
   <data name="Preview" xml:space="preserve">
     <value>Podgląd</value>
   </data>
-  <data name="Choose Book / Chapter Font Color" xml:space="preserve">
-    <value>Wybierz książki / rozdział Font Color</value>
-  </data>
-  <data name="Choose Book / Chapter Background Color" xml:space="preserve">
-    <value>Wybierz książki / rozdział kolor tła</value>
-  </data>
-  <data name="Choose Verse Number Font Color" xml:space="preserve">
-    <value>Wybierz kolor czcionki werset</value>
-  </data>
-  <data name="Choose Verse Number Background Color" xml:space="preserve">
-    <value>Wybierz kolor tła werset</value>
-  </data>
-  <data name="Choose Verse Text Font Color" xml:space="preserve">
-    <value>Wybierz kolor czcionki tekstu werset</value>
-  </data>
-  <data name="Choose Verse Text Background Color" xml:space="preserve">
-    <value>Wybierz kolor tła tekstu werset</value>
-  </data>
   <data name="Some Bible versions have their own formatting. This is left by default to keep the text as close as possible to the original.&lt;br&gt; If however you need to have consistent formatting in your document, you may override the Bible version's own formatting." xml:space="preserve">
     <value>Niektóre wersje Biblii mają własne formatowanie. 
 To pozostaje domyślnie zachować tekst jak najbliżej oryginału. 
@@ -560,5 +527,27 @@ możesz zastąpić własne formatowanie wersji Biblii.</value>
   </data>
   <data name="Override Bible Version Formatting" xml:space="preserve">
     <value>Przestawianie Biblii Wersja formatowanie</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Akcja</value>
+  </data>
+  <data name="e.g. creation" xml:space="preserve">
+    <value>na przykład kreacja</value>
+  </data>
+  <data name="Right Indent" xml:space="preserve">
+    <value>Prawidłowe wcięcie</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Szukaj</value>
+    <comment>TRANSLATORS: context button label, indicates action</comment>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Wybierz</value>
+  </data>
+  <data name="You must choose a Bible version from which to search" xml:space="preserve">
+    <value>Musisz wybrać wersję biblijną, z której chcesz wyszukać</value>
+  </data>
+  <data name="You must type a term to search for" xml:space="preserve">
+    <value>Musisz wpisać wyszukiwane hasło</value>
   </data>
 </root>
