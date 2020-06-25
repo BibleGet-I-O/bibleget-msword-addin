@@ -38,6 +38,8 @@ Partial Class Preferences
         Me.VerseNumberFontBtnn = New System.Windows.Forms.Button()
         Me.VerseNumberStyleLbl = New System.Windows.Forms.Label()
         Me.VerseNumberUnderlineBtn = New System.Windows.Forms.CheckBox()
+        Me.VerseNumberSuperscriptBtn = New System.Windows.Forms.CheckBox()
+        Me.VerseNumberSubscriptBtn = New System.Windows.Forms.CheckBox()
         Me.VerseNumberItalicBtn = New System.Windows.Forms.CheckBox()
         Me.VerseNumberBoldBtn = New System.Windows.Forms.CheckBox()
         Me.VerseNumberBGColorBtn = New System.Windows.Forms.Button()
@@ -86,40 +88,40 @@ Partial Class Preferences
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox13 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox19 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton18 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton11 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox17 = New System.Windows.Forms.GroupBox()
         Me.RadioButton7 = New System.Windows.Forms.RadioButton()
-        Me.GroupBox14 = New System.Windows.Forms.GroupBox()
-        Me.VerseNumberSuperscriptBtn = New System.Windows.Forms.CheckBox()
-        Me.VerseNumberSubscriptBtn = New System.Windows.Forms.CheckBox()
-        Me.GroupBox16 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox14 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox15 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox17 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox18 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox19 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton11 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton18 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox16 = New System.Windows.Forms.GroupBox()
         Me.GroupBox20 = New System.Windows.Forms.GroupBox()
         Me.RadioButton19 = New System.Windows.Forms.RadioButton()
         Me.RadioButton20 = New System.Windows.Forms.RadioButton()
         Me.RadioButton21 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox18 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton8 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox15 = New System.Windows.Forms.GroupBox()
         Me.GroupBox21 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton22 = New System.Windows.Forms.RadioButton()
         Me.RadioButton23 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton24 = New System.Windows.Forms.RadioButton()
         Me.RadioButton25 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton22 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton24 = New System.Windows.Forms.RadioButton()
         Me.GroupBox22 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton26 = New System.Windows.Forms.RadioButton()
         Me.RadioButton27 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton26 = New System.Windows.Forms.RadioButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -132,14 +134,14 @@ Partial Class Preferences
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox11.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
+        Me.GroupBox19.SuspendLayout()
+        Me.GroupBox17.SuspendLayout()
+        Me.GroupBox12.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
         Me.GroupBox16.SuspendLayout()
-        Me.GroupBox12.SuspendLayout()
-        Me.GroupBox15.SuspendLayout()
-        Me.GroupBox17.SuspendLayout()
-        Me.GroupBox18.SuspendLayout()
-        Me.GroupBox19.SuspendLayout()
         Me.GroupBox20.SuspendLayout()
+        Me.GroupBox18.SuspendLayout()
+        Me.GroupBox15.SuspendLayout()
         Me.GroupBox21.SuspendLayout()
         Me.GroupBox22.SuspendLayout()
         Me.SuspendLayout()
@@ -292,6 +294,32 @@ Partial Class Preferences
         Me.VerseNumberUnderlineBtn.TabIndex = 7
         Me.VerseNumberUnderlineBtn.UseVisualStyleBackColor = True
         '
+        'VerseNumberSuperscriptBtn
+        '
+        Me.VerseNumberSuperscriptBtn.Appearance = System.Windows.Forms.Appearance.Button
+        Me.VerseNumberSuperscriptBtn.Image = Global.BibleGetIO.My.Resources.Resources.subscript
+        Me.VerseNumberSuperscriptBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.VerseNumberSuperscriptBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.VerseNumberSuperscriptBtn.Location = New System.Drawing.Point(519, 16)
+        Me.VerseNumberSuperscriptBtn.Name = "VerseNumberSuperscriptBtn"
+        Me.VerseNumberSuperscriptBtn.Padding = New System.Windows.Forms.Padding(0, 0, 0, 1)
+        Me.VerseNumberSuperscriptBtn.Size = New System.Drawing.Size(48, 48)
+        Me.VerseNumberSuperscriptBtn.TabIndex = 9
+        Me.VerseNumberSuperscriptBtn.UseVisualStyleBackColor = True
+        '
+        'VerseNumberSubscriptBtn
+        '
+        Me.VerseNumberSubscriptBtn.Appearance = System.Windows.Forms.Appearance.Button
+        Me.VerseNumberSubscriptBtn.Image = Global.BibleGetIO.My.Resources.Resources.superscript
+        Me.VerseNumberSubscriptBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.VerseNumberSubscriptBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.VerseNumberSubscriptBtn.Location = New System.Drawing.Point(566, 16)
+        Me.VerseNumberSubscriptBtn.Name = "VerseNumberSubscriptBtn"
+        Me.VerseNumberSubscriptBtn.Padding = New System.Windows.Forms.Padding(0, 2, 0, 0)
+        Me.VerseNumberSubscriptBtn.Size = New System.Drawing.Size(48, 48)
+        Me.VerseNumberSubscriptBtn.TabIndex = 10
+        Me.VerseNumberSubscriptBtn.UseVisualStyleBackColor = True
+        '
         'VerseNumberItalicBtn
         '
         Me.VerseNumberItalicBtn.Appearance = System.Windows.Forms.Appearance.Button
@@ -435,7 +463,7 @@ Partial Class Preferences
         Me.GroupBox4.Controls.Add(Me.WebBrowser1)
         Me.GroupBox4.Location = New System.Drawing.Point(533, 410)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(692, 282)
+        Me.GroupBox4.Size = New System.Drawing.Size(840, 282)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Preview"
@@ -450,12 +478,14 @@ Partial Class Preferences
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.ScrollBarsEnabled = False
-        Me.WebBrowser1.Size = New System.Drawing.Size(686, 260)
+        Me.WebBrowser1.Size = New System.Drawing.Size(834, 260)
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.WebBrowserShortcutsEnabled = False
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Label7)
+        Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Controls.Add(Me.GroupBox10)
         Me.GroupBox5.Controls.Add(Me.GroupBox9)
         Me.GroupBox5.Controls.Add(Me.GroupBox8)
@@ -474,7 +504,7 @@ Partial Class Preferences
         Me.GroupBox10.Controls.Add(Me.RightIndentBtn)
         Me.GroupBox10.Location = New System.Drawing.Point(330, 20)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(110, 82)
+        Me.GroupBox10.Size = New System.Drawing.Size(110, 73)
         Me.GroupBox10.TabIndex = 4
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Right Indent"
@@ -567,7 +597,7 @@ Partial Class Preferences
         Me.GroupBox7.Controls.Add(Me.LeftIndentBtn)
         Me.GroupBox7.Location = New System.Drawing.Point(214, 20)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(110, 82)
+        Me.GroupBox7.Size = New System.Drawing.Size(110, 73)
         Me.GroupBox7.TabIndex = 1
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Left Indent"
@@ -600,7 +630,7 @@ Partial Class Preferences
         Me.GroupBox6.Controls.Add(Me.RadioButton1)
         Me.GroupBox6.Location = New System.Drawing.Point(7, 20)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(201, 82)
+        Me.GroupBox6.Size = New System.Drawing.Size(201, 73)
         Me.GroupBox6.TabIndex = 0
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Alignment"
@@ -883,29 +913,70 @@ Partial Class Preferences
         Me.GroupBox13.TabStop = False
         Me.GroupBox13.Text = "Bible Version Layout"
         '
-        'RadioButton5
+        'GroupBox19
         '
-        Me.RadioButton5.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton5.Image = Global.BibleGetIO.My.Resources.Resources.align_right
-        Me.RadioButton5.Location = New System.Drawing.Point(97, 16)
-        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(48, 48)
-        Me.RadioButton5.TabIndex = 5
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.GroupBox19.Controls.Add(Me.RadioButton18)
+        Me.GroupBox19.Controls.Add(Me.RadioButton17)
+        Me.GroupBox19.Controls.Add(Me.RadioButton11)
+        Me.GroupBox19.Location = New System.Drawing.Point(316, 16)
+        Me.GroupBox19.Name = "GroupBox19"
+        Me.GroupBox19.Size = New System.Drawing.Size(163, 68)
+        Me.GroupBox19.TabIndex = 13
+        Me.GroupBox19.TabStop = False
+        Me.GroupBox19.Text = "Wrap"
         '
-        'RadioButton6
+        'RadioButton18
         '
-        Me.RadioButton6.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton6.Image = Global.BibleGetIO.My.Resources.Resources.align_center
-        Me.RadioButton6.Location = New System.Drawing.Point(50, 16)
-        Me.RadioButton6.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(48, 48)
-        Me.RadioButton6.TabIndex = 4
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.UseVisualStyleBackColor = True
+        Me.RadioButton18.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton18.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton18.Location = New System.Drawing.Point(110, 17)
+        Me.RadioButton18.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton18.Name = "RadioButton18"
+        Me.RadioButton18.Size = New System.Drawing.Size(48, 48)
+        Me.RadioButton18.TabIndex = 2
+        Me.RadioButton18.TabStop = True
+        Me.RadioButton18.Text = "[ ]"
+        Me.RadioButton18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton18.UseVisualStyleBackColor = True
+        '
+        'RadioButton17
+        '
+        Me.RadioButton17.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton17.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton17.Location = New System.Drawing.Point(62, 17)
+        Me.RadioButton17.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton17.Name = "RadioButton17"
+        Me.RadioButton17.Size = New System.Drawing.Size(48, 48)
+        Me.RadioButton17.TabIndex = 1
+        Me.RadioButton17.TabStop = True
+        Me.RadioButton17.Text = "( )"
+        Me.RadioButton17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton17.UseVisualStyleBackColor = True
+        '
+        'RadioButton11
+        '
+        Me.RadioButton11.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton11.Location = New System.Drawing.Point(6, 17)
+        Me.RadioButton11.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton11.Name = "RadioButton11"
+        Me.RadioButton11.Size = New System.Drawing.Size(56, 48)
+        Me.RadioButton11.TabIndex = 0
+        Me.RadioButton11.TabStop = True
+        Me.RadioButton11.Text = "NONE"
+        Me.RadioButton11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton11.UseVisualStyleBackColor = True
+        '
+        'GroupBox17
+        '
+        Me.GroupBox17.Controls.Add(Me.RadioButton7)
+        Me.GroupBox17.Controls.Add(Me.RadioButton6)
+        Me.GroupBox17.Controls.Add(Me.RadioButton5)
+        Me.GroupBox17.Location = New System.Drawing.Point(6, 17)
+        Me.GroupBox17.Name = "GroupBox17"
+        Me.GroupBox17.Size = New System.Drawing.Size(149, 68)
+        Me.GroupBox17.TabIndex = 12
+        Me.GroupBox17.TabStop = False
+        Me.GroupBox17.Text = "Alignment"
         '
         'RadioButton7
         '
@@ -919,6 +990,59 @@ Partial Class Preferences
         Me.RadioButton7.TabStop = True
         Me.RadioButton7.UseVisualStyleBackColor = True
         '
+        'RadioButton6
+        '
+        Me.RadioButton6.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton6.Image = Global.BibleGetIO.My.Resources.Resources.align_center
+        Me.RadioButton6.Location = New System.Drawing.Point(50, 16)
+        Me.RadioButton6.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(48, 48)
+        Me.RadioButton6.TabIndex = 4
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.UseVisualStyleBackColor = True
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton5.Image = Global.BibleGetIO.My.Resources.Resources.align_right
+        Me.RadioButton5.Location = New System.Drawing.Point(97, 16)
+        Me.RadioButton5.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(48, 48)
+        Me.RadioButton5.TabIndex = 5
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'GroupBox12
+        '
+        Me.GroupBox12.Controls.Add(Me.RadioButton13)
+        Me.GroupBox12.Controls.Add(Me.RadioButton12)
+        Me.GroupBox12.Location = New System.Drawing.Point(161, 16)
+        Me.GroupBox12.Name = "GroupBox12"
+        Me.GroupBox12.Size = New System.Drawing.Size(104, 68)
+        Me.GroupBox12.TabIndex = 11
+        Me.GroupBox12.TabStop = False
+        Me.GroupBox12.Text = "Position"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(564, 67)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 17)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Hidden"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(623, 67)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(49, 17)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Visible"
+        '
         'GroupBox14
         '
         Me.GroupBox14.Controls.Add(Me.Label5)
@@ -930,98 +1054,6 @@ Partial Class Preferences
         Me.GroupBox14.TabIndex = 13
         Me.GroupBox14.TabStop = False
         Me.GroupBox14.Text = "Verse Number Layout"
-        '
-        'VerseNumberSuperscriptBtn
-        '
-        Me.VerseNumberSuperscriptBtn.Appearance = System.Windows.Forms.Appearance.Button
-        Me.VerseNumberSuperscriptBtn.Image = Global.BibleGetIO.My.Resources.Resources.subscript
-        Me.VerseNumberSuperscriptBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.VerseNumberSuperscriptBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.VerseNumberSuperscriptBtn.Location = New System.Drawing.Point(519, 16)
-        Me.VerseNumberSuperscriptBtn.Name = "VerseNumberSuperscriptBtn"
-        Me.VerseNumberSuperscriptBtn.Padding = New System.Windows.Forms.Padding(0, 0, 0, 1)
-        Me.VerseNumberSuperscriptBtn.Size = New System.Drawing.Size(48, 48)
-        Me.VerseNumberSuperscriptBtn.TabIndex = 9
-        Me.VerseNumberSuperscriptBtn.UseVisualStyleBackColor = True
-        '
-        'VerseNumberSubscriptBtn
-        '
-        Me.VerseNumberSubscriptBtn.Appearance = System.Windows.Forms.Appearance.Button
-        Me.VerseNumberSubscriptBtn.Image = Global.BibleGetIO.My.Resources.Resources.superscript
-        Me.VerseNumberSubscriptBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.VerseNumberSubscriptBtn.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.VerseNumberSubscriptBtn.Location = New System.Drawing.Point(566, 16)
-        Me.VerseNumberSubscriptBtn.Name = "VerseNumberSubscriptBtn"
-        Me.VerseNumberSubscriptBtn.Padding = New System.Windows.Forms.Padding(0, 2, 0, 0)
-        Me.VerseNumberSubscriptBtn.Size = New System.Drawing.Size(48, 48)
-        Me.VerseNumberSubscriptBtn.TabIndex = 10
-        Me.VerseNumberSubscriptBtn.UseVisualStyleBackColor = True
-        '
-        'GroupBox16
-        '
-        Me.GroupBox16.Controls.Add(Me.GroupBox20)
-        Me.GroupBox16.Controls.Add(Me.GroupBox18)
-        Me.GroupBox16.Controls.Add(Me.GroupBox15)
-        Me.GroupBox16.Location = New System.Drawing.Point(541, 219)
-        Me.GroupBox16.Name = "GroupBox16"
-        Me.GroupBox16.Size = New System.Drawing.Size(485, 90)
-        Me.GroupBox16.TabIndex = 13
-        Me.GroupBox16.TabStop = False
-        Me.GroupBox16.Text = "Book / Chapter Layout"
-        '
-        'RadioButton8
-        '
-        Me.RadioButton8.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton8.Image = Global.BibleGetIO.My.Resources.Resources.align_right
-        Me.RadioButton8.Location = New System.Drawing.Point(97, 16)
-        Me.RadioButton8.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton8.Name = "RadioButton8"
-        Me.RadioButton8.Size = New System.Drawing.Size(48, 48)
-        Me.RadioButton8.TabIndex = 5
-        Me.RadioButton8.TabStop = True
-        Me.RadioButton8.UseVisualStyleBackColor = True
-        '
-        'RadioButton9
-        '
-        Me.RadioButton9.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton9.Image = Global.BibleGetIO.My.Resources.Resources.align_center
-        Me.RadioButton9.Location = New System.Drawing.Point(50, 16)
-        Me.RadioButton9.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(48, 48)
-        Me.RadioButton9.TabIndex = 4
-        Me.RadioButton9.TabStop = True
-        Me.RadioButton9.UseVisualStyleBackColor = True
-        '
-        'RadioButton10
-        '
-        Me.RadioButton10.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton10.Image = Global.BibleGetIO.My.Resources.Resources.align_left
-        Me.RadioButton10.Location = New System.Drawing.Point(3, 16)
-        Me.RadioButton10.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton10.Name = "RadioButton10"
-        Me.RadioButton10.Size = New System.Drawing.Size(48, 48)
-        Me.RadioButton10.TabIndex = 3
-        Me.RadioButton10.TabStop = True
-        Me.RadioButton10.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(623, 67)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 17)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Visible"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(564, 67)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 17)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Hidden"
         '
         'Label5
         '
@@ -1041,105 +1073,17 @@ Partial Class Preferences
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Visible"
         '
-        'GroupBox12
+        'GroupBox16
         '
-        Me.GroupBox12.Controls.Add(Me.RadioButton13)
-        Me.GroupBox12.Controls.Add(Me.RadioButton12)
-        Me.GroupBox12.Location = New System.Drawing.Point(161, 16)
-        Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Size = New System.Drawing.Size(104, 68)
-        Me.GroupBox12.TabIndex = 11
-        Me.GroupBox12.TabStop = False
-        Me.GroupBox12.Text = "Position"
-        '
-        'GroupBox15
-        '
-        Me.GroupBox15.Controls.Add(Me.RadioButton16)
-        Me.GroupBox15.Controls.Add(Me.RadioButton14)
-        Me.GroupBox15.Controls.Add(Me.RadioButton15)
-        Me.GroupBox15.Location = New System.Drawing.Point(161, 16)
-        Me.GroupBox15.Name = "GroupBox15"
-        Me.GroupBox15.Size = New System.Drawing.Size(149, 68)
-        Me.GroupBox15.TabIndex = 12
-        Me.GroupBox15.TabStop = False
-        Me.GroupBox15.Text = "Position"
-        '
-        'GroupBox17
-        '
-        Me.GroupBox17.Controls.Add(Me.RadioButton7)
-        Me.GroupBox17.Controls.Add(Me.RadioButton6)
-        Me.GroupBox17.Controls.Add(Me.RadioButton5)
-        Me.GroupBox17.Location = New System.Drawing.Point(6, 17)
-        Me.GroupBox17.Name = "GroupBox17"
-        Me.GroupBox17.Size = New System.Drawing.Size(149, 68)
-        Me.GroupBox17.TabIndex = 12
-        Me.GroupBox17.TabStop = False
-        Me.GroupBox17.Text = "Alignment"
-        '
-        'GroupBox18
-        '
-        Me.GroupBox18.Controls.Add(Me.RadioButton10)
-        Me.GroupBox18.Controls.Add(Me.RadioButton9)
-        Me.GroupBox18.Controls.Add(Me.RadioButton8)
-        Me.GroupBox18.Location = New System.Drawing.Point(6, 17)
-        Me.GroupBox18.Name = "GroupBox18"
-        Me.GroupBox18.Size = New System.Drawing.Size(149, 68)
-        Me.GroupBox18.TabIndex = 13
-        Me.GroupBox18.TabStop = False
-        Me.GroupBox18.Text = "Alignment"
-        '
-        'GroupBox19
-        '
-        Me.GroupBox19.Controls.Add(Me.RadioButton18)
-        Me.GroupBox19.Controls.Add(Me.RadioButton17)
-        Me.GroupBox19.Controls.Add(Me.RadioButton11)
-        Me.GroupBox19.Location = New System.Drawing.Point(316, 16)
-        Me.GroupBox19.Name = "GroupBox19"
-        Me.GroupBox19.Size = New System.Drawing.Size(163, 68)
-        Me.GroupBox19.TabIndex = 13
-        Me.GroupBox19.TabStop = False
-        Me.GroupBox19.Text = "Wrap"
-        '
-        'RadioButton11
-        '
-        Me.RadioButton11.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton11.Location = New System.Drawing.Point(6, 17)
-        Me.RadioButton11.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton11.Name = "RadioButton11"
-        Me.RadioButton11.Size = New System.Drawing.Size(56, 48)
-        Me.RadioButton11.TabIndex = 0
-        Me.RadioButton11.TabStop = True
-        Me.RadioButton11.Text = "NONE"
-        Me.RadioButton11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton11.UseVisualStyleBackColor = True
-        '
-        'RadioButton17
-        '
-        Me.RadioButton17.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton17.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton17.Location = New System.Drawing.Point(62, 17)
-        Me.RadioButton17.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton17.Name = "RadioButton17"
-        Me.RadioButton17.Size = New System.Drawing.Size(48, 48)
-        Me.RadioButton17.TabIndex = 1
-        Me.RadioButton17.TabStop = True
-        Me.RadioButton17.Text = "( )"
-        Me.RadioButton17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton17.UseVisualStyleBackColor = True
-        '
-        'RadioButton18
-        '
-        Me.RadioButton18.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton18.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton18.Location = New System.Drawing.Point(110, 17)
-        Me.RadioButton18.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton18.Name = "RadioButton18"
-        Me.RadioButton18.Size = New System.Drawing.Size(48, 48)
-        Me.RadioButton18.TabIndex = 2
-        Me.RadioButton18.TabStop = True
-        Me.RadioButton18.Text = "[ ]"
-        Me.RadioButton18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton18.UseVisualStyleBackColor = True
+        Me.GroupBox16.Controls.Add(Me.GroupBox20)
+        Me.GroupBox16.Controls.Add(Me.GroupBox18)
+        Me.GroupBox16.Controls.Add(Me.GroupBox15)
+        Me.GroupBox16.Location = New System.Drawing.Point(541, 219)
+        Me.GroupBox16.Name = "GroupBox16"
+        Me.GroupBox16.Size = New System.Drawing.Size(485, 90)
+        Me.GroupBox16.TabIndex = 13
+        Me.GroupBox16.TabStop = False
+        Me.GroupBox16.Text = "Book / Chapter Layout"
         '
         'GroupBox20
         '
@@ -1194,6 +1138,66 @@ Partial Class Preferences
         Me.RadioButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.RadioButton21.UseVisualStyleBackColor = True
         '
+        'GroupBox18
+        '
+        Me.GroupBox18.Controls.Add(Me.RadioButton10)
+        Me.GroupBox18.Controls.Add(Me.RadioButton9)
+        Me.GroupBox18.Controls.Add(Me.RadioButton8)
+        Me.GroupBox18.Location = New System.Drawing.Point(6, 17)
+        Me.GroupBox18.Name = "GroupBox18"
+        Me.GroupBox18.Size = New System.Drawing.Size(149, 68)
+        Me.GroupBox18.TabIndex = 13
+        Me.GroupBox18.TabStop = False
+        Me.GroupBox18.Text = "Alignment"
+        '
+        'RadioButton10
+        '
+        Me.RadioButton10.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton10.Image = Global.BibleGetIO.My.Resources.Resources.align_left
+        Me.RadioButton10.Location = New System.Drawing.Point(3, 16)
+        Me.RadioButton10.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton10.Name = "RadioButton10"
+        Me.RadioButton10.Size = New System.Drawing.Size(48, 48)
+        Me.RadioButton10.TabIndex = 3
+        Me.RadioButton10.TabStop = True
+        Me.RadioButton10.UseVisualStyleBackColor = True
+        '
+        'RadioButton9
+        '
+        Me.RadioButton9.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton9.Image = Global.BibleGetIO.My.Resources.Resources.align_center
+        Me.RadioButton9.Location = New System.Drawing.Point(50, 16)
+        Me.RadioButton9.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton9.Name = "RadioButton9"
+        Me.RadioButton9.Size = New System.Drawing.Size(48, 48)
+        Me.RadioButton9.TabIndex = 4
+        Me.RadioButton9.TabStop = True
+        Me.RadioButton9.UseVisualStyleBackColor = True
+        '
+        'RadioButton8
+        '
+        Me.RadioButton8.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton8.Image = Global.BibleGetIO.My.Resources.Resources.align_right
+        Me.RadioButton8.Location = New System.Drawing.Point(97, 16)
+        Me.RadioButton8.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton8.Name = "RadioButton8"
+        Me.RadioButton8.Size = New System.Drawing.Size(48, 48)
+        Me.RadioButton8.TabIndex = 5
+        Me.RadioButton8.TabStop = True
+        Me.RadioButton8.UseVisualStyleBackColor = True
+        '
+        'GroupBox15
+        '
+        Me.GroupBox15.Controls.Add(Me.RadioButton16)
+        Me.GroupBox15.Controls.Add(Me.RadioButton14)
+        Me.GroupBox15.Controls.Add(Me.RadioButton15)
+        Me.GroupBox15.Location = New System.Drawing.Point(161, 16)
+        Me.GroupBox15.Name = "GroupBox15"
+        Me.GroupBox15.Size = New System.Drawing.Size(149, 68)
+        Me.GroupBox15.TabIndex = 12
+        Me.GroupBox15.TabStop = False
+        Me.GroupBox15.Text = "Position"
+        '
         'GroupBox21
         '
         Me.GroupBox21.Controls.Add(Me.RadioButton23)
@@ -1206,19 +1210,6 @@ Partial Class Preferences
         Me.GroupBox21.TabIndex = 15
         Me.GroupBox21.TabStop = False
         Me.GroupBox21.Text = "Format"
-        '
-        'RadioButton22
-        '
-        Me.RadioButton22.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton22.Location = New System.Drawing.Point(3, 17)
-        Me.RadioButton22.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton22.Name = "RadioButton22"
-        Me.RadioButton22.Size = New System.Drawing.Size(184, 30)
-        Me.RadioButton22.TabIndex = 0
-        Me.RadioButton22.TabStop = True
-        Me.RadioButton22.Text = "Bible Lang Abbrev"
-        Me.RadioButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton22.UseVisualStyleBackColor = True
         '
         'RadioButton23
         '
@@ -1233,19 +1224,6 @@ Partial Class Preferences
         Me.RadioButton23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.RadioButton23.UseVisualStyleBackColor = True
         '
-        'RadioButton24
-        '
-        Me.RadioButton24.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton24.Location = New System.Drawing.Point(3, 73)
-        Me.RadioButton24.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton24.Name = "RadioButton24"
-        Me.RadioButton24.Size = New System.Drawing.Size(184, 30)
-        Me.RadioButton24.TabIndex = 2
-        Me.RadioButton24.TabStop = True
-        Me.RadioButton24.Text = "System Lang Abbrev"
-        Me.RadioButton24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton24.UseVisualStyleBackColor = True
-        '
         'RadioButton25
         '
         Me.RadioButton25.Appearance = System.Windows.Forms.Appearance.Button
@@ -1259,6 +1237,32 @@ Partial Class Preferences
         Me.RadioButton25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.RadioButton25.UseVisualStyleBackColor = True
         '
+        'RadioButton22
+        '
+        Me.RadioButton22.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton22.Location = New System.Drawing.Point(3, 17)
+        Me.RadioButton22.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton22.Name = "RadioButton22"
+        Me.RadioButton22.Size = New System.Drawing.Size(184, 30)
+        Me.RadioButton22.TabIndex = 0
+        Me.RadioButton22.TabStop = True
+        Me.RadioButton22.Text = "Bible Lang Abbrev"
+        Me.RadioButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton22.UseVisualStyleBackColor = True
+        '
+        'RadioButton24
+        '
+        Me.RadioButton24.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton24.Location = New System.Drawing.Point(3, 73)
+        Me.RadioButton24.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton24.Name = "RadioButton24"
+        Me.RadioButton24.Size = New System.Drawing.Size(184, 30)
+        Me.RadioButton24.TabIndex = 2
+        Me.RadioButton24.TabStop = True
+        Me.RadioButton24.Text = "System Lang Abbrev"
+        Me.RadioButton24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton24.UseVisualStyleBackColor = True
+        '
         'GroupBox22
         '
         Me.GroupBox22.Controls.Add(Me.RadioButton27)
@@ -1269,21 +1273,6 @@ Partial Class Preferences
         Me.GroupBox22.TabIndex = 16
         Me.GroupBox22.TabStop = False
         Me.GroupBox22.Text = "Current displayed units of Measurement in the Microsoft Word interface:"
-        '
-        'RadioButton26
-        '
-        Me.RadioButton26.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton26.AutoSize = True
-        Me.RadioButton26.Enabled = False
-        Me.RadioButton26.Location = New System.Drawing.Point(193, 19)
-        Me.RadioButton26.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton26.Name = "RadioButton26"
-        Me.RadioButton26.Size = New System.Drawing.Size(59, 27)
-        Me.RadioButton26.TabIndex = 0
-        Me.RadioButton26.TabStop = True
-        Me.RadioButton26.Text = "Inches"
-        Me.RadioButton26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton26.UseVisualStyleBackColor = True
         '
         'RadioButton27
         '
@@ -1300,11 +1289,50 @@ Partial Class Preferences
         Me.RadioButton27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.RadioButton27.UseVisualStyleBackColor = True
         '
+        'RadioButton26
+        '
+        Me.RadioButton26.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton26.AutoSize = True
+        Me.RadioButton26.Enabled = False
+        Me.RadioButton26.Location = New System.Drawing.Point(193, 19)
+        Me.RadioButton26.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton26.Name = "RadioButton26"
+        Me.RadioButton26.Size = New System.Drawing.Size(59, 27)
+        Me.RadioButton26.TabIndex = 0
+        Me.RadioButton26.TabStop = True
+        Me.RadioButton26.Text = "Inches"
+        Me.RadioButton26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton26.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(220, 90)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(95, 15)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "0"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label7
+        '
+        Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(336, 90)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(95, 15)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "0"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Preferences
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1237, 704)
+        Me.ClientSize = New System.Drawing.Size(1385, 704)
         Me.Controls.Add(Me.GroupBox22)
         Me.Controls.Add(Me.GroupBox21)
         Me.Controls.Add(Me.GroupBox16)
@@ -1338,15 +1366,15 @@ Partial Class Preferences
         Me.GroupBox11.PerformLayout()
         Me.GroupBox13.ResumeLayout(False)
         Me.GroupBox13.PerformLayout()
+        Me.GroupBox19.ResumeLayout(False)
+        Me.GroupBox17.ResumeLayout(False)
+        Me.GroupBox12.ResumeLayout(False)
         Me.GroupBox14.ResumeLayout(False)
         Me.GroupBox14.PerformLayout()
         Me.GroupBox16.ResumeLayout(False)
-        Me.GroupBox12.ResumeLayout(False)
-        Me.GroupBox15.ResumeLayout(False)
-        Me.GroupBox17.ResumeLayout(False)
-        Me.GroupBox18.ResumeLayout(False)
-        Me.GroupBox19.ResumeLayout(False)
         Me.GroupBox20.ResumeLayout(False)
+        Me.GroupBox18.ResumeLayout(False)
+        Me.GroupBox15.ResumeLayout(False)
         Me.GroupBox21.ResumeLayout(False)
         Me.GroupBox22.ResumeLayout(False)
         Me.GroupBox22.PerformLayout()
@@ -1449,4 +1477,6 @@ Partial Class Preferences
     Friend WithEvents GroupBox22 As Windows.Forms.GroupBox
     Friend WithEvents RadioButton27 As Windows.Forms.RadioButton
     Friend WithEvents RadioButton26 As Windows.Forms.RadioButton
+    Friend WithEvents Label7 As Windows.Forms.Label
+    Friend WithEvents Label2 As Windows.Forms.Label
 End Class

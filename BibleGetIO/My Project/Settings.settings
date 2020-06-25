@@ -71,10 +71,10 @@
     <Setting Name="ParagraphAlignment" Type="BibleGetIO.ALIGN" Scope="User">
       <Value Profile="(Default)">JUSTIFY</Value>
     </Setting>
-    <Setting Name="LeftIndent" Type="System.Int16" Scope="User">
+    <Setting Name="LeftIndent" Type="System.Single" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="Linespacing" Type="System.Decimal" Scope="User">
+    <Setting Name="Linespacing" Type="System.Single" Scope="User">
       <Value Profile="(Default)">1.5</Value>
     </Setting>
     <Setting Name="PreferredVersions" Type="System.String" Scope="User">
@@ -95,7 +95,7 @@
     <Setting Name="DEBUG_MODE" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="RightIndent" Type="System.Int16" Scope="User">
+    <Setting Name="RightIndent" Type="System.Single" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="BibleVersionFont" Type="System.Drawing.Font" Scope="User">
@@ -133,6 +133,9 @@
     </Setting>
     <Setting Name="BookChapterFormat" Type="BibleGetIO.FORMAT" Scope="User">
       <Value Profile="(Default)">BIBLELANG</Value>
+    </Setting>
+    <Setting Name="CurrentDisplayUnit" Type="Microsoft.Office.Interop.Word.WdMeasurementUnits" Scope="User">
+      <Value Profile="(Default)">wdInches</Value>
     </Setting>
   </Settings>
 </SettingsFile>

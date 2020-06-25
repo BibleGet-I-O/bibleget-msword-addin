@@ -332,9 +332,9 @@ Partial Friend NotInheritable Class MySettings
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
-    Public Property LeftIndent() As Short
+    Public Property LeftIndent() As Single
         Get
-            Return CType(Me("LeftIndent"),Short)
+            Return CType(Me("LeftIndent"),Single)
         End Get
         Set
             Me("LeftIndent") = value
@@ -344,9 +344,9 @@ Partial Friend NotInheritable Class MySettings
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.DefaultSettingValueAttribute("1.5")>  _
-    Public Property Linespacing() As Decimal
+    Public Property Linespacing() As Single
         Get
-            Return CType(Me("Linespacing"),Decimal)
+            Return CType(Me("Linespacing"),Single)
         End Get
         Set
             Me("Linespacing") = value
@@ -427,9 +427,9 @@ Partial Friend NotInheritable Class MySettings
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
-    Public Property RightIndent() As Short
+    Public Property RightIndent() As Single
         Get
-            Return CType(Me("RightIndent"),Short)
+            Return CType(Me("RightIndent"),Single)
         End Get
         Set
             Me("RightIndent") = value
@@ -577,6 +577,18 @@ Partial Friend NotInheritable Class MySettings
         End Get
         Set
             Me("BookChapterFormat") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("wdInches")>  _
+    Public Property CurrentDisplayUnit() As Global.Microsoft.Office.Interop.Word.WdMeasurementUnits
+        Get
+            Return CType(Me("CurrentDisplayUnit"),Global.Microsoft.Office.Interop.Word.WdMeasurementUnits)
+        End Get
+        Set
+            Me("CurrentDisplayUnit") = value
         End Set
     End Property
 End Class

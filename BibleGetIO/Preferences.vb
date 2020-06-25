@@ -210,10 +210,6 @@ Public Class Preferences
         Dim stylesheet As String
         Dim script As String
 
-        Dim paragraphLineSpacing As Decimal = My.Settings.Linespacing
-        Dim leftIndent As Short = My.Settings.LeftIndent * 5
-        Dim rightIndent As Short = My.Settings.RightIndent * 5
-
         Dim textColorBibleVersion As String = If(Not My.Settings.BibleVersionForeColor.IsEmpty, "#" & My.Settings.BibleVersionForeColor.ToArgb().ToString("X", CultureInfo.InvariantCulture).Substring(2), "transparent")
         Dim bgColorBibleVersion As String = If(Not My.Settings.BibleVersionBackColor.IsEmpty, "#" & My.Settings.BibleVersionBackColor.ToArgb().ToString("X", CultureInfo.InvariantCulture).Substring(2), "transparent")
         Dim textColorBookChapter As String = If(Not My.Settings.BookChapterForeColor.IsEmpty, "#" & My.Settings.BookChapterForeColor.ToArgb().ToString("X", CultureInfo.InvariantCulture).Substring(2), "transparent")
@@ -263,10 +259,15 @@ Public Class Preferences
         previewDocument &= "<meta charset=""UTF-8"">"
 
         stylesheet = "<style type=""text/css"">"
-        stylesheet &= "html,body { padding: 0px 6px; background-color: #FFFFFF; margin: 0px; }"
-        stylesheet &= "p { margin: 0px; padding: 0px; }"
-        stylesheet &= "div.results { margin-left: " & leftIndent & "pt; }"
-        stylesheet &= "div.results { margin-right: " & rightIndent & "pt; }"
+        stylesheet &= "html,body { padding: 0px; margin: 0px; background-color: #FFFFFF; }"
+        stylesheet &= "p { padding: 0px; margin: 0px; }"
+        stylesheet &= ".previewRuler { margin: 0px auto; }"
+        stylesheet &= "div.results {  
+  box-sizing: border-box;
+  margin: 0px auto;
+  padding-left: 35px;
+  padding-right:35px;
+}"
         stylesheet &= "div.results .bibleVersion { font-family: " & My.Settings.BookChapterFont.Name & "; }"
         stylesheet &= "div.results .bibleVersion { font-size: " & Math.Round(My.Settings.BookChapterFont.SizeInPoints).ToString(CultureInfo.InvariantCulture) & "pt; }"
         stylesheet &= "div.results .bibleVersion { font-weight: " & If(BibleVersionBoldBtn.Checked, "bold", "normal") & "; }"
@@ -289,7 +290,7 @@ Public Class Preferences
         stylesheet &= "div.results .bookChapter { text-align: " & CSSRULE.ALIGN(My.Settings.BookChapterAlign) & "; }"
         stylesheet &= "div.results span.bookChapter { display: inline-block; margin-left: 6px; }"
         stylesheet &= "div.results .versesParagraph { text-align: " & CSSRULE.ALIGN(My.Settings.ParagraphAlignment) & "; }"
-        stylesheet &= "div.results .versesParagraph { line-height: " & paragraphLineSpacing & "em; }"
+        stylesheet &= "div.results .versesParagraph { line-height: " & My.Settings.Linespacing.ToString("F1", CultureInfo.InvariantCulture) & "em; }"
         stylesheet &= "div.results .versesParagraph .verseNum { font-family: " & My.Settings.VerseNumberFont.Name & "; }"
         stylesheet &= "div.results .versesParagraph .verseNum { font-size:" & Math.Round(My.Settings.VerseNumberFont.SizeInPoints).ToString(CultureInfo.InvariantCulture) & "pt; }"
         stylesheet &= "div.results .versesParagraph .verseNum { font-weight: " & If(VerseNumberBoldBtn.Checked, "bold", "normal") & "; }"
@@ -352,7 +353,7 @@ triangleAt = function (x,context,pixelRatioVals,initialPadding,canvasWidth){
 },
 /**
  * FUNCTION drawRuler
- * @ rulerLen (float) in Inches (e.g. 6.25)
+ * @ rulerLen (float) in Inches (e.g. 7)
  * @ cvtToCM (boolean) whether to convert values from inches to centimeters
  * @ lftindnt (float) in Inches, to set xPos of triangle for left indent
  * @ rgtindnt (float) in Inches, to set xPos of triangle for right indent
@@ -418,12 +419,12 @@ drawRuler = function(rulerLen, cvtToCM, lftindnt, rgtindnt){
   
 };
 jQuery(document).ready(function(){
-    let pixelRatioVals = getPixelRatioVals(6.25," & InterfaceInCM.ToString.ToLower & ");
-    let leftindent = " & My.Settings.LeftIndent & " * pixelRatioVals.dpi + 35;
-    let rightindent = " & My.Settings.RightIndent & " * pixelRatioVals.dpi + 35;
-    let bestWidth = 6.25 * 96 * window.devicePixelRatio + (35*2);
+    let pixelRatioVals = getPixelRatioVals(7," & InterfaceInCM.ToString.ToLower & ");
+    let leftindent = " & My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & " * pixelRatioVals.dpi + 35;
+    let rightindent = " & My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & " * pixelRatioVals.dpi + 35;
+    let bestWidth = 7 * 96 * window.devicePixelRatio + (35*2);
     $('.bibleQuote').css({""width"":bestWidth+""px"",""padding-left"":leftindent+""px"",""padding-right"":rightindent+""px""}); 
-    drawRuler(7," & InterfaceInCM.ToString.ToLower & "," & My.Settings.LeftIndent & "," & My.Settings.RightIndent & ");
+    drawRuler(7," & InterfaceInCM.ToString.ToLower & "," & My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "," & My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & ");
 });
 "
 
@@ -433,7 +434,7 @@ jQuery(document).ready(function(){
         previewDocument &= script
         previewDocument &= "</head>"
         previewDocument &= "<body>"
-        previewDocument &= "<canvas class=""previewRuler""></canvas>"
+        previewDocument &= "<div style=""text-align: center;""><canvas class=""previewRuler""></canvas></div>"
         previewDocument &= "<div class=""results bibleQuote"">"
         If My.Settings.BibleVersionPosition = POS.TOP And My.Settings.BibleVersionVisibility = VISIBILITY.SHOW Then
             previewDocument &= "<p class=""bibleVersion"">" & bibleVersionWrapBefore & "NVBSE" & bibleVersionWrapAfter & "</p>"
@@ -498,11 +499,11 @@ jQuery(document).ready(function(){
         setCheckBtns("VerseText")
 
         Select Case My.Settings.Linespacing
-            Case 1.0
+            Case 1.0F
                 ComboBox1.SelectedIndex = 0
-            Case 1.5
+            Case 1.5F
                 ComboBox1.SelectedIndex = 1
-            Case 2.0
+            Case 2.0F
                 ComboBox1.SelectedIndex = 2
         End Select
         GroupBox5.Text = __("Paragraph")
@@ -602,12 +603,35 @@ jQuery(document).ready(function(){
                 RadioButton25.Checked = True
         End Select
 
+        'we need to detect if display measurement units option has changed
+        'if it has changed we need to adapt our left and right indents accordingly
+        If Application.Options.MeasurementUnit <> My.Settings.CurrentDisplayUnit Then
+            Select Case Application.Options.MeasurementUnit
+                Case Word.WdMeasurementUnits.wdCentimeters
+                    If My.Settings.CurrentDisplayUnit = Word.WdMeasurementUnits.wdInches Then
+                        My.Settings.LeftIndent = My.Settings.LeftIndent * 2.0F
+                        My.Settings.RightIndent = My.Settings.RightIndent * 2.0F
+                    End If
+                Case Word.WdMeasurementUnits.wdInches
+                    If My.Settings.CurrentDisplayUnit = Word.WdMeasurementUnits.wdCentimeters Then
+                        My.Settings.LeftIndent = My.Settings.LeftIndent / 2.0F
+                        My.Settings.RightIndent = My.Settings.RightIndent / 2.0F
+                    End If
+            End Select
+            My.Settings.CurrentDisplayUnit = Application.Options.MeasurementUnit
+            My.Settings.Save()
+        End If
+
 
         Select Case Application.Options.MeasurementUnit
             Case Word.WdMeasurementUnits.wdCentimeters
                 InterfaceInCM = True
+                Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
+                Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
             Case Else
                 InterfaceInCM = False
+                Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "in"
+                Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "in"
         End Select
 
         Select Case InterfaceInCM
@@ -617,7 +641,7 @@ jQuery(document).ready(function(){
                 RadioButton26.Checked = True
         End Select
 
-        NativeMethods.CoInternetSetFeatureEnabled(DS, SP, True) 'Dim clickOff As Boolean = 
+        NativeMethods.CoInternetSetFeatureEnabled(DS, SP, True)
 
         setPreviewDocument()
 
@@ -868,36 +892,62 @@ jQuery(document).ready(function(){
     End Sub
 
     Private Sub LeftIndentBtn_Click(sender As Object, e As EventArgs) Handles LeftIndentBtn.Click
-        Dim indent As Short = My.Settings.LeftIndent
-        indent += 1
-        If indent > 20 Then indent = 20
+        Dim indent As Single = My.Settings.LeftIndent
+        If Application.Options.MeasurementUnit = Microsoft.Office.Interop.Word.WdMeasurementUnits.wdCentimeters Then
+            indent += 1.0F
+            If indent > 8.0F Then indent = 8.0F
+            Label2.Text = indent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
+        ElseIf Application.Options.MeasurementUnit = Microsoft.Office.Interop.Word.WdMeasurementUnits.wdInches Then
+            indent += 0.5F
+            If indent > 3.0F Then indent = 3.0F
+            Label2.Text = indent.ToString("F1", CultureInfo.InvariantCulture) & "in"
+        End If
         My.Settings.LeftIndent = indent
         My.Settings.Save()
         setPreviewDocument()
     End Sub
 
     Private Sub LeftIndentBtn2_Click(sender As Object, e As EventArgs) Handles LeftIndentBtn2.Click
-        Dim indent As Short = My.Settings.LeftIndent
-        indent -= 1
-        If indent < 0 Then indent = 0
+        Dim indent As Single = My.Settings.LeftIndent
+        If Application.Options.MeasurementUnit = Microsoft.Office.Interop.Word.WdMeasurementUnits.wdCentimeters Then
+            indent -= 1.0F
+            Label2.Text = indent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
+        ElseIf Application.Options.MeasurementUnit = Microsoft.Office.Interop.Word.WdMeasurementUnits.wdInches Then
+            indent -= 0.5F
+            Label2.Text = indent.ToString("F1", CultureInfo.InvariantCulture) & "in"
+        End If
+        If indent < 0F Then indent = 0F
         My.Settings.LeftIndent = indent
         My.Settings.Save()
         setPreviewDocument()
     End Sub
 
     Private Sub RightIndentBtn_Click(sender As Object, e As EventArgs) Handles RightIndentBtn.Click
-        Dim indent As Short = My.Settings.RightIndent
-        indent += 1
-        If indent > 20 Then indent = 20
+        Dim indent As Single = My.Settings.RightIndent
+        If Application.Options.MeasurementUnit = Microsoft.Office.Interop.Word.WdMeasurementUnits.wdCentimeters Then
+            indent += 1.0F
+            If indent > 8.0F Then indent = 8.0F
+            Label7.Text = indent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
+        ElseIf Application.Options.MeasurementUnit = Microsoft.Office.Interop.Word.WdMeasurementUnits.wdInches Then
+            indent += 0.5F
+            If indent > 3.0F Then indent = 3.0F
+            Label7.Text = indent.ToString("F1", CultureInfo.InvariantCulture) & "in"
+        End If
         My.Settings.RightIndent = indent
         My.Settings.Save()
         setPreviewDocument()
     End Sub
 
     Private Sub RightIndentBtn2_Click(sender As Object, e As EventArgs) Handles RightIndentBtn2.Click
-        Dim indent As Short = My.Settings.RightIndent
-        indent -= 1
-        If indent < 0 Then indent = 0
+        Dim indent As Single = My.Settings.RightIndent
+        If Application.Options.MeasurementUnit = Microsoft.Office.Interop.Word.WdMeasurementUnits.wdCentimeters Then
+            indent -= 1.0F
+            Label7.Text = indent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
+        ElseIf Application.Options.MeasurementUnit = Microsoft.Office.Interop.Word.WdMeasurementUnits.wdInches Then
+            indent -= 0.5F
+            Label7.Text = indent.ToString("F1", CultureInfo.InvariantCulture) & "in"
+        End If
+        If indent < 0F Then indent = 0F
         My.Settings.RightIndent = indent
         My.Settings.Save()
         setPreviewDocument()
@@ -907,20 +957,16 @@ jQuery(document).ready(function(){
         If Not initializing Then
             Select Case ComboBox1.SelectedIndex
                 Case 0
-                    My.Settings.Linespacing = 1D
+                    My.Settings.Linespacing = 1.0F
                 Case 1
-                    My.Settings.Linespacing = 1.5D
+                    My.Settings.Linespacing = 1.5F
                 Case 2
-                    My.Settings.Linespacing = 2D
+                    My.Settings.Linespacing = 2.0F
             End Select
             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "linespacing has been set to " + My.Settings.Linespacing.ToString)
             My.Settings.Save()
             setPreviewDocument()
         End If
-    End Sub
-
-    Private Sub FontDlg_Apply(sender As Object, e As EventArgs) Handles FontDlg.Apply
-
     End Sub
 
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
