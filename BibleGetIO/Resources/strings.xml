@@ -8,9 +8,9 @@
  Exported at: Fri, 01 Jan 2016 11:32:40 +0000
 -->
 <resources>
-    <string name="bibleget_i_o_plugin_for_open_office_writer">BibleGet I/O plugin for Open Office Writer</string>
+    <string name="bibleget_i_o_plugin_for_open_office_writer">BibleGet I/O plugin for Microsoft Word</string>
     <string name="Version">Version</string>
-    <string name="this_plugin_was_developed_by_john_r_dorazio_a_priest_in_the_diocese_of_rome_chaplain_at_roma_tre_uni">This plugin was developed by &lt;b&gt;John R. D\'Orazio&lt;/b&gt;, a priest in the diocese of Rome, chaplain at Roma Tre University.</string>
+    <string name="this_plugin_was_developed_by_john_r_dorazio_a_priest_in_the_diocese_of_rome_chaplain_at_roma_tre_uni">This plugin was developed by &lt;b&gt;John R. D\'Orazio&lt;/b&gt;, a priest in the diocese of Rome.</string>
     <!-- TRANSLATORS: This message is used by MessageFormat, make sure that
         translations
         double up any single quotes or apostrophes. -->
@@ -39,13 +39,13 @@
     <string name="you_must_select_at_least_one_version_in_order_to_make_a_request">You must select at least one version in order to make a request.</string>
     <string name="there_was_a_problem_communicating_with_the_bibleget_server_please_try_again">There was a problem communicating with the BibleGet server. Please try again.</string>
     <string name="help_for_bibleget_open_office_writer">Help for BibleGet (Open Office Writer)</string>
-    <string name="this_help_dialog_window_introduces_the_user_to_the_usage_of_the_bibleget_i_o_plugin_for_open_office_">This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer.</string>
+    <string name="this_help_dialog_window_introduces_the_user_to_the_usage_of_the_bibleget_i_o_plugin_for_open_office_">This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Microsoft Word.</string>
     <string name="the_help_is_divided_into_three_sections">The Help is divided into three sections:</string>
     <string name="usage_of_the_plugin">Usage of the Plugin</string>
     <string name="formulation_of_the_queries">Formulation of the Queries</string>
     <string name="biblical_books_and_abbreviations">Biblical Books and Abbreviations</string>
     <string name="AUTHOR">AUTHOR</string>
-    <string name="john_r_dorazio_chaplain_at_roma_tre_university">John R. D\'Orazio (chaplain at Roma Tre University)</string>
+    <string name="john_r_dorazio_chaplain_at_roma_tre_university">John R. D\'Orazio</string>
     <string name="COLLABORATORS">COLLABORATORS</string>
     <string name="giovanni_gregori_computing_and_simone_urbinati_mug_roma_tre">Giovanni Gregori (computing) and Simone Urbinati (MUG Roma Tre)</string>
     <string name="project_website">PROJECT WEBSITE</string>

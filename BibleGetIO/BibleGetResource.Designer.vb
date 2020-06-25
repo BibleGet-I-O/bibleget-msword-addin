@@ -526,9 +526,9 @@ Friend Class BibleGetResource
     '''<summary>
     '''  Cerca una stringa localizzata simile a Help for BibleGet (Microsoft Word 2007+).
     '''</summary>
-    Friend Shared ReadOnly Property Help_for_BibleGet__Open_Office_Writer_() As String
+    Friend Shared ReadOnly Property Help_for_BibleGet__Microsoft_Office_() As String
         Get
-            Return ResourceManager.GetString("Help for BibleGet (Open Office Writer)", resourceCulture)
+            Return ResourceManager.GetString("Help for BibleGet (Microsoft Office)", resourceCulture)
         End Get
     End Property
     
@@ -613,15 +613,6 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
-    '''  Cerca una stringa localizzata simile a In the beginning, when God created the heavens and the earth—.
-    '''</summary>
-    Friend Shared ReadOnly Property In_the_beginning__when_God_created_the_heavens_and_the_earth() As String
-        Get
-            Return ResourceManager.GetString("In the beginning, when God created the heavens and the earth", resourceCulture)
-        End Get
-    End Property
-    
-    '''<summary>
     '''  Cerca una stringa localizzata simile a Indent.
     '''</summary>
     Friend Shared ReadOnly Property Indent() As String
@@ -696,11 +687,11 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
-    '''  Cerca una stringa localizzata simile a John R. D&apos;Orazio (chaplain at Roma Tre University).
+    '''  Cerca una stringa localizzata simile a John R. D&apos;Orazio.
     '''</summary>
-    Friend Shared ReadOnly Property John_R__D_Orazio__chaplain_at_Roma_Tre_University_() As String
+    Friend Shared ReadOnly Property John_R__D_Orazio() As String
         Get
-            Return ResourceManager.GetString("John R. D'Orazio (chaplain at Roma Tre University)", resourceCulture)
+            Return ResourceManager.GetString("John R. D'Orazio", resourceCulture)
         End Get
     End Property
     
@@ -710,15 +701,6 @@ Friend Class BibleGetResource
     Friend Shared ReadOnly Property Line_spacing() As String
         Get
             Return ResourceManager.GetString("Line-spacing", resourceCulture)
-        End Get
-    End Property
-    
-    '''<summary>
-    '''  Cerca una stringa localizzata simile a line-spacing not visible in the preview.
-    '''</summary>
-    Friend Shared ReadOnly Property line_spacing_not_visible_in_the_preview() As String
-        Get
-            Return ResourceManager.GetString("line-spacing not visible in the preview", resourceCulture)
         End Get
     End Property
     
@@ -999,15 +981,6 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
-    '''  Cerca una stringa localizzata simile a Then God said: Let there be light, and there was light..
-    '''</summary>
-    Friend Shared ReadOnly Property Then_God_said__Let_there_be_light__and_there_was_light_() As String
-        Get
-            Return ResourceManager.GetString("Then God said: Let there be light, and there was light.", resourceCulture)
-        End Get
-    End Property
-    
-    '''<summary>
     '''  Cerca una stringa localizzata simile a There are multiple dashes in the query, but there are not enough dots. There can only be one more dash than dots..
     '''</summary>
     Friend Shared ReadOnly Property There_are_multiple_dashes_in_the_query__but_there_are_not_enough_dots__There_can_only_be_one_more_dash_than_dots_() As String
@@ -1068,10 +1041,10 @@ Friend Class BibleGetResource
     '''<summary>
     '''  Cerca una stringa localizzata simile a This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Microsoft Word 2007+..
     '''</summary>
-    Friend Shared ReadOnly Property This_Help_dialog_window_introduces_the_user_to_the_usage_of_the_BibleGet_I_O_plugin_for_Open_Office_Writer_() As String
+    Friend Shared ReadOnly Property This_Help_dialog_window_introduces_the_user_to_the_usage_of_the_BibleGet_I_O_plugin_for_Microsoft_Word_() As String
         Get
             Return ResourceManager.GetString("This Help dialog window introduces the user to the usage of the BibleGet I/O plug"& _ 
-                    "in for Open Office Writer.", resourceCulture)
+                    "in for Microsoft Word.", resourceCulture)
         End Get
     End Property
     
@@ -1099,12 +1072,12 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
-    '''  Cerca una stringa localizzata simile a This plugin was developed by &lt;b&gt;John R. D&apos;Orazio&lt;/b&gt;, a priest in the diocese of Rome, chaplain at Roma Tre University..
+    '''  Cerca una stringa localizzata simile a This plugin was developed by &lt;b&gt;John R. D&apos;Orazio&lt;/b&gt;, a priest in the diocese of Rome..
     '''</summary>
-    Friend Shared ReadOnly Property This_plugin_was_developed_by__b_John_R__D_Orazio__b___a_priest_in_the_diocese_of_Rome__chaplain_at_Roma_Tre_University_() As String
+    Friend Shared ReadOnly Property This_plugin_was_developed_by__b_John_R__D_Orazio__b___a_priest_in_the_diocese_of_Rome_() As String
         Get
             Return ResourceManager.GetString("This plugin was developed by <b>John R. D'Orazio</b>, a priest in the diocese of "& _ 
-                    "Rome, chaplain at Roma Tre University.", resourceCulture)
+                    "Rome.", resourceCulture)
         End Get
     End Property
     

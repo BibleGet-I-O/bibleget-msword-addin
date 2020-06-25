@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("BibleGet IO for Microsoft Word")>
 <Assembly: AssemblyDescription("A tool for inserting Bible quotes into your documents.")>
-<Assembly: AssemblyCompany("Cappellania Università degli Studi Roma Tre")>
+<Assembly: AssemblyCompany("John R. D'Orazio")>
 <Assembly: AssemblyProduct("BibleGet IO for Microsoft Word")>
 <Assembly: AssemblyCopyright("Copyright © 2015 BibleGet IO | E-Mail admin@bibleget.io")>
 <Assembly: AssemblyTrademark("BibleGet IO")>

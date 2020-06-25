@@ -68,7 +68,7 @@ Public NotInheritable Class AboutBibleGet
 
         'Me.TextBoxDescription.Text = __(My.Application.Info.Description)
         Dim descr As String
-        descr = __("This plugin was developed by <b>John R. D'Orazio</b>, a priest in the diocese of Rome, chaplain at Roma Tre University.") _
+        descr = __("This plugin was developed by <b>John R. D'Orazio</b>, a priest in the diocese of Rome.") _
                 + " " _
                 + String.Format(__("It is a part of the <b>BibleGet Project</b> at {0}."), "<span style='color:Blue;'>http://www.bibleget.io</span>") _
                 + " " _
@@ -352,7 +352,7 @@ Public NotInheritable Class AboutBibleGet
     Private Sub LabelVersion_Click(sender As Object, e As EventArgs) Handles LabelVersion.Click
         If My.Settings.NewVersionExists Then
 
-            Dim remoteUri As New Uri("http://37.187.213.136/?wpdmdl=596") 'http://www.bibleget.io/?wpdmdl=596
+            Dim remoteUri As New Uri("https://www.bibleget.io/?wpdmdl=596") 'http://www.bibleget.io/?wpdmdl=596
             localFile = Path.GetTempPath & "BibleGetIOMSWordAddInSetup_" & My.Settings.NewVersion.Replace(".", "") & ".exe"
             If File.Exists(localFile) Then
                 Try

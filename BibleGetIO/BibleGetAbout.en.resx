@@ -123,9 +123,6 @@
   <data name="LabelCopyright.Text" xml:space="preserve">
     <value>Copyright © 2015 John Romano D'Orazio</value>
   </data>
-  <data name="LabelCompanyName.Text" xml:space="preserve">
-    <value>Cappellania Università degli Studi Roma Tre</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>

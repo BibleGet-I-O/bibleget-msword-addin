@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BibleGet I/O plugin for Open Office Writer" xml:space="preserve">
+  <data name="BibleGet I/O plugin for Microsoft Word" xml:space="preserve">
     <value>БиблеГет И / О плугин за Опен Оффице Вритер</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>Верзија</value>
   </data>
-  <data name="This plugin was developed by &lt;b&gt;John R. D'Orazio&lt;/b&gt;, a priest in the diocese of Rome, chaplain at Roma Tre University." xml:space="preserve">
-    <value>Овај плугин је развијен од стране &lt;б&gt; Јохн Р. Д'Оразио &lt;/ б&gt;, свештеник у епархији Рима, капелан на Рома Тре Университи.</value>
+  <data name="This plugin was developed by &lt;b&gt;John R. D'Orazio&lt;/b&gt;, a priest in the diocese of Rome." xml:space="preserve">
+    <value>Овај плугин је развијен од стране &lt;b&gt; Јохн Р. Д'Оразио &lt;/b&gt;, свештеник у епархији Рима.</value>
   </data>
   <data name="It is a part of the &lt;b&gt;BibleGet Project&lt;/b&gt; at {0}." xml:space="preserve">
     <value>То је део &lt;б&gt; БиблеГет Пројецт &lt;/ б&gt; на {0}.</value>
@@ -189,10 +189,10 @@ double up any single quotes or apostrophes.</comment>
   <data name="There was a problem communicating with the BibleGet server. Please try again." xml:space="preserve">
     <value>Došlo je do greške prilikom komuniciranja sa BibleGet serverom, sačekajte nekoliko minuta i pokušajte ponovo.</value>
   </data>
-  <data name="Help for BibleGet (Open Office Writer)" xml:space="preserve">
+  <data name="Help for BibleGet (Microsoft Office)" xml:space="preserve">
     <value>Помоћ за БиблеГет (Microsoft Word 2007+)</value>
   </data>
-  <data name="This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer." xml:space="preserve">
+  <data name="This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Microsoft Word." xml:space="preserve">
     <value>Овај дијалог прозор за помоћ уводи корисника на кориштењу БиблеГет И / О плугин за Microsoft Word 2007+.</value>
   </data>
   <data name="The Help is divided into three sections:" xml:space="preserve">
@@ -209,9 +209,6 @@ double up any single quotes or apostrophes.</comment>
   </data>
   <data name="AUTHOR" xml:space="preserve">
     <value>АУТОР</value>
-  </data>
-  <data name="John R. D'Orazio (chaplain at Roma Tre University)" xml:space="preserve">
-    <value>Џон Р. Д'Оразио (капелан у Рома Тре Университи)</value>
   </data>
   <data name="COLLABORATORS" xml:space="preserve">
     <value>САРАДНИЦИ</value>
@@ -504,14 +501,8 @@ double up any single quotes or apostrophes.</comment>
   <data name="Genesis" xml:space="preserve">
     <value>Postanje</value>
   </data>
-  <data name="In the beginning, when God created the heavens and the earth" xml:space="preserve">
-    <value>У почетку, када је Бог створио небо и земљу</value>
-  </data>
   <data name="and the earth was without form or shape, with darkness over the abyss and a mighty wind sweeping over the waters" xml:space="preserve">
     <value>и земља беше без обличја и облика, са тамом преко понора и моћног ветра хара над водама</value>
-  </data>
-  <data name="Then God said: Let there be light, and there was light." xml:space="preserve">
-    <value>Tada Bog reče: Neka bude svetlost i bi svetlost.</value>
   </data>
   <data name="User Preferences" xml:space="preserve">
     <value>Podešavanja karakteristika  </value>
@@ -542,9 +533,6 @@ double up any single quotes or apostrophes.</comment>
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Pregled</value>
-  </data>
-  <data name="line-spacing not visible in the preview" xml:space="preserve">
-    <value>линија размак не види у прегледу</value>
   </data>
   <data name="Choose Book / Chapter Font Color" xml:space="preserve">
     <value>Одаберите Боок / Цхаптер фонт цолор</value>

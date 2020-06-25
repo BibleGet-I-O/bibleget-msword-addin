@@ -98,8 +98,8 @@ Public Class BibleGetHelp
         HtmlStr0 = "<html><head><meta charset=""utf-8""><style type=""text/css"">"
         HtmlStr0 &= stylesheet
         HtmlStr0 &= "</style></head><body>"
-        HtmlStr0 &= "<h2>" + __("Help for BibleGet (Open Office Writer)") + "</h2>"
-        HtmlStr0 &= "<p>" + __("This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer.") + "</p>"
+        HtmlStr0 &= "<h2>" + __("Help for BibleGet (Microsoft Office)") + "</h2>"
+        HtmlStr0 &= "<p>" + __("This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Microsoft Word.") + "</p>"
         HtmlStr0 &= "<p>" + __("The Help is divided into three sections:") + "</p>"
         HtmlStr0 &= "<ul>"
         HtmlStr0 &= "<li>" + __("Usage of the Plugin") + "</li>"
@@ -109,10 +109,10 @@ Public Class BibleGetHelp
         HtmlStr0 &= "<p><b>" + __("AUTHOR") + ":</b> " + __("John R. D'Orazio (priest in the Diocese of Rome)") + "</p>"
         HtmlStr0 &= "<p><b>" + __("COLLABORATORS") + ":</b> " + __("Giovanni Gregori (computing) and Simone Urbinati (MUG Roma Tre)") + "</p>"
         HtmlStr0 &= "<p><b>" + __("Version").ToUpper(CultureInfo.CurrentCulture) + ":</b> " & My.Application.Info.Version.ToString + "</p>"
-        HtmlStr0 &= "<p>© <b>Copyright 2016 BibleGet I/O by John R. D'Orazio</b> <a href=""mailto:john.dorazio@cappellaniauniroma3.org"">john.dorazio@cappellaniauniroma3.org</a></p>"
+        HtmlStr0 &= "<p>© <b>Copyright 2016 BibleGet I/O by John R. D'Orazio</b> <a href=""mailto:priest@johnromanodorazio.com"">priest@johnromanodorazio.com</a></p>"
         HtmlStr0 &= "<p><b>" + __("PROJECT WEBSITE") + ": </b><a href=""http://www.bibleget.io"">http://www.bibleget.io</a><br>"
         HtmlStr0 &= "<b>" + __("EMAIL ADDRESS FOR INFORMATION OR FEEDBACK ON THE PROJECT") + ":</b> <a href=""mailto:bibleget.io@gmail.com"">bibleget.io@gmail.com</a></p>"
-        HtmlStr0 &= "<p>Cappellania Università degli Studi Roma Tre - Piazzale San Paolo 1/E - 00120 Città del Vaticano - +39 06.69.88.08.09 - <a href=""mailto:cappellania.uniroma3@gmail.com"">cappellania.uniroma3@gmail.com</a></p></body></html>"
+        HtmlStr0 &= "</body></html>"
 
         Dim strfmt1 As String = __("Insert quote from input window")
         Dim strfmt2 As String = __("About this plugin")

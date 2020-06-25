@@ -123,8 +123,8 @@
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
-  <data name="This plugin was developed by &lt;b&gt;John R. D'Orazio&lt;/b&gt;, a priest in the diocese of Rome, chaplain at Roma Tre University." xml:space="preserve">
-    <value>Cette extension a été développé par &lt;b&gt;John R. D'Orazio&lt;/b&gt;, un prêtre dans le diocèse de Rome, aumônier à l'Université Roma Tre.</value>
+  <data name="This plugin was developed by &lt;b&gt;John R. D'Orazio&lt;/b&gt;, a priest in the diocese of Rome." xml:space="preserve">
+    <value>Cette extension a été développé par &lt;b&gt;John R. D'Orazio&lt;/b&gt;, un prêtre dans le diocèse de Rome.</value>
   </data>
   <data name="It is a part of the &lt;b&gt;BibleGet Project&lt;/b&gt; at {0}." xml:space="preserve">
     <value>L'extension appartient à la &lt;b&gt;Projet BibleGet&lt;/b&gt; à {0}.</value>
@@ -189,10 +189,10 @@ double up any single quotes or apostrophes.</comment>
   <data name="There was a problem communicating with the BibleGet server. Please try again." xml:space="preserve">
     <value>Il y avait un problème de communication avec le serveur BibleGet. S'il vous plaît essayer de nouveau.</value>
   </data>
-  <data name="Help for BibleGet (Open Office Writer)" xml:space="preserve">
+  <data name="Help for BibleGet (Microsoft Office)" xml:space="preserve">
     <value>Aide pour BibleGet (Microsoft Word 2007+)</value>
   </data>
-  <data name="This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Open Office Writer." xml:space="preserve">
+  <data name="This Help dialog window introduces the user to the usage of the BibleGet I/O plugin for Microsoft Word." xml:space="preserve">
     <value>Cette fenêtre de dialogue d'aide initie l'utilisateur à l'utilisation du plugin BibleGet I/O pour Microsoft Word 2007+.</value>
   </data>
   <data name="The Help is divided into three sections:" xml:space="preserve">
@@ -209,9 +209,6 @@ double up any single quotes or apostrophes.</comment>
   </data>
   <data name="AUTHOR" xml:space="preserve">
     <value>AUTEUR</value>
-  </data>
-  <data name="John R. D'Orazio (chaplain at Roma Tre University)" xml:space="preserve">
-    <value>John R. D'Orazio (aumônier à l'Université Roma Tre)</value>
   </data>
   <data name="COLLABORATORS" xml:space="preserve">
     <value>COLLABORATEURS</value>
@@ -504,14 +501,8 @@ double up any single quotes or apostrophes.</comment>
   <data name="Genesis" xml:space="preserve">
     <value>Genèse</value>
   </data>
-  <data name="In the beginning, when God created the heavens and the earth" xml:space="preserve">
-    <value>Au commencement, Dieu créa le ciel et la terre.</value>
-  </data>
   <data name="and the earth was without form or shape, with darkness over the abyss and a mighty wind sweeping over the waters" xml:space="preserve">
     <value>Or, la terre était alors informe et vide. Les ténèbres couvraient l'abîme, et l'Esprit de Dieu planait au-dessus des eaux.</value>
-  </data>
-  <data name="Then God said: Let there be light, and there was light." xml:space="preserve">
-    <value>Et Dieu dit alors: —Que la lumière soit! Et la lumière fut.</value>
   </data>
   <data name="User Preferences" xml:space="preserve">
     <value>Préférences de l'utilisateur</value>
@@ -542,9 +533,6 @@ double up any single quotes or apostrophes.</comment>
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Aperçu</value>
-  </data>
-  <data name="line-spacing not visible in the preview" xml:space="preserve">
-    <value>interligne non visible dans l'aperçu</value>
   </data>
   <data name="Choose Book / Chapter Font Color" xml:space="preserve">
     <value>Choisissez livre / chapitre Font Color</value>
