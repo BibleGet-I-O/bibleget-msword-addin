@@ -620,4 +620,10 @@ können Sie die Formatierung der Bibel -Version ignorieren.</value>
   <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
     <value>Aktuell angezeigte Maßeinheiten in der Microsoft Word-Oberfläche:</value>
   </data>
+  <data name="Show full reference" xml:space="preserve">
+    <value>Vollständige Referenz anzeigen</value>
+  </data>
+  <data name="Bible version" xml:space="preserve">
+    <value>Bibelversion</value>
+  </data>
 </root>

@@ -619,4 +619,10 @@ vous pouvez outrepasser le formatage propre de la version de la Bible.</value>
   <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
     <value>Unités de mesure actuellement affichées dans l'interface Microsoft Word:</value>
   </data>
+  <data name="Show full reference" xml:space="preserve">
+    <value>Afficher la référence complète</value>
+  </data>
+  <data name="Bible version" xml:space="preserve">
+    <value>Version de la Bible</value>
+  </data>
 </root>

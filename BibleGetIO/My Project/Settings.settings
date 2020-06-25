@@ -11,9 +11,6 @@
     <Setting Name="BookChapterUnderline" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="BookChapterStrikethrough" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="BookChapterForeColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">0, 0, 64</Value>
     </Setting>
@@ -136,6 +133,9 @@
     </Setting>
     <Setting Name="CurrentDisplayUnit" Type="Microsoft.Office.Interop.Word.WdMeasurementUnits" Scope="User">
       <Value Profile="(Default)">wdInches</Value>
+    </Setting>
+    <Setting Name="BookChapterFullReference" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

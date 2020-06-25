@@ -55,6 +55,8 @@ Partial Class Preferences
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.RightIndentBtn2 = New System.Windows.Forms.Button()
         Me.RightIndentBtn = New System.Windows.Forms.Button()
@@ -79,6 +81,7 @@ Partial Class Preferences
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.RadioButton12 = New System.Windows.Forms.RadioButton()
         Me.RadioButton13 = New System.Windows.Forms.RadioButton()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
         Me.BibleVersionFontBtnn = New System.Windows.Forms.Button()
         Me.BibleVersionStyeLbl = New System.Windows.Forms.Label()
@@ -120,8 +123,7 @@ Partial Class Preferences
         Me.GroupBox22 = New System.Windows.Forms.GroupBox()
         Me.RadioButton27 = New System.Windows.Forms.RadioButton()
         Me.RadioButton26 = New System.Windows.Forms.RadioButton()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.GroupBox23 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -144,6 +146,7 @@ Partial Class Preferences
         Me.GroupBox15.SuspendLayout()
         Me.GroupBox21.SuspendLayout()
         Me.GroupBox22.SuspendLayout()
+        Me.GroupBox23.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -155,7 +158,7 @@ Partial Class Preferences
         Me.GroupBox1.Controls.Add(Me.BookChapterBoldBtn)
         Me.GroupBox1.Controls.Add(Me.BookChapterBGColorBtn)
         Me.GroupBox1.Controls.Add(Me.BookChapterColorBtn)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 219)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 224)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(506, 90)
         Me.GroupBox1.TabIndex = 0
@@ -254,9 +257,9 @@ Partial Class Preferences
         Me.GroupBox2.Controls.Add(Me.VerseNumberBoldBtn)
         Me.GroupBox2.Controls.Add(Me.VerseNumberBGColorBtn)
         Me.GroupBox2.Controls.Add(Me.VerseNumberColorBtn)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 314)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 319)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(622, 90)
+        Me.GroupBox2.Size = New System.Drawing.Size(622, 94)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Verse Number Formatting"
@@ -375,7 +378,7 @@ Partial Class Preferences
         Me.GroupBox3.Controls.Add(Me.VerseTextBoldBtn)
         Me.GroupBox3.Controls.Add(Me.VerseTextBGColorBtn)
         Me.GroupBox3.Controls.Add(Me.VerseTextColorBtn)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 409)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 419)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(506, 90)
         Me.GroupBox3.TabIndex = 2
@@ -461,9 +464,9 @@ Partial Class Preferences
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.WebBrowser1)
-        Me.GroupBox4.Location = New System.Drawing.Point(533, 410)
+        Me.GroupBox4.Location = New System.Drawing.Point(524, 419)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(840, 282)
+        Me.GroupBox4.Size = New System.Drawing.Size(849, 447)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Preview"
@@ -478,7 +481,7 @@ Partial Class Preferences
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.ScrollBarsEnabled = False
-        Me.WebBrowser1.Size = New System.Drawing.Size(834, 260)
+        Me.WebBrowser1.Size = New System.Drawing.Size(843, 425)
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.WebBrowserShortcutsEnabled = False
         '
@@ -493,18 +496,42 @@ Partial Class Preferences
         Me.GroupBox5.Controls.Add(Me.GroupBox6)
         Me.GroupBox5.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(1052, 108)
+        Me.GroupBox5.Size = New System.Drawing.Size(794, 113)
         Me.GroupBox5.TabIndex = 4
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Paragraph Formatting"
+        '
+        'Label7
+        '
+        Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(373, 92)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(95, 16)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "0"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(234, 92)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(95, 16)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "0"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox10
         '
         Me.GroupBox10.Controls.Add(Me.RightIndentBtn2)
         Me.GroupBox10.Controls.Add(Me.RightIndentBtn)
-        Me.GroupBox10.Location = New System.Drawing.Point(330, 20)
+        Me.GroupBox10.Location = New System.Drawing.Point(367, 20)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(110, 73)
+        Me.GroupBox10.Size = New System.Drawing.Size(121, 73)
         Me.GroupBox10.TabIndex = 4
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Right Indent"
@@ -533,9 +560,9 @@ Partial Class Preferences
         '
         Me.GroupBox9.Controls.Add(Me.Label1)
         Me.GroupBox9.Controls.Add(Me.CheckBox1)
-        Me.GroupBox9.Location = New System.Drawing.Point(671, 20)
+        Me.GroupBox9.Location = New System.Drawing.Point(620, 15)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(318, 82)
+        Me.GroupBox9.Size = New System.Drawing.Size(168, 93)
         Me.GroupBox9.TabIndex = 3
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "Override Bible Version Formatting"
@@ -546,7 +573,7 @@ Partial Class Preferences
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Help
         Me.Label1.Image = Global.BibleGetIO.My.Resources.Resources.help_large
-        Me.Label1.Location = New System.Drawing.Point(179, 29)
+        Me.Label1.Location = New System.Drawing.Point(111, 57)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(30, 28)
         Me.Label1.TabIndex = 1
@@ -564,7 +591,7 @@ Partial Class Preferences
         Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.CheckBox1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.CheckBox1.Image = Global.BibleGetIO.My.Resources.Resources.toggle_button_state_off
-        Me.CheckBox1.Location = New System.Drawing.Point(6, 19)
+        Me.CheckBox1.Location = New System.Drawing.Point(6, 33)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(86, 54)
         Me.CheckBox1.TabIndex = 0
@@ -573,7 +600,7 @@ Partial Class Preferences
         'GroupBox8
         '
         Me.GroupBox8.Controls.Add(Me.ComboBox1)
-        Me.GroupBox8.Location = New System.Drawing.Point(561, 20)
+        Me.GroupBox8.Location = New System.Drawing.Point(510, 20)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(104, 82)
         Me.GroupBox8.TabIndex = 2
@@ -595,9 +622,9 @@ Partial Class Preferences
         '
         Me.GroupBox7.Controls.Add(Me.LeftIndentBtn2)
         Me.GroupBox7.Controls.Add(Me.LeftIndentBtn)
-        Me.GroupBox7.Location = New System.Drawing.Point(214, 20)
+        Me.GroupBox7.Location = New System.Drawing.Point(228, 20)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(110, 73)
+        Me.GroupBox7.Size = New System.Drawing.Size(133, 73)
         Me.GroupBox7.TabIndex = 1
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Left Indent"
@@ -748,7 +775,7 @@ Partial Class Preferences
         Me.CheckBox3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CheckBox3.Image = Global.BibleGetIO.My.Resources.Resources.toggle_button_state_off
-        Me.CheckBox3.Location = New System.Drawing.Point(9, 13)
+        Me.CheckBox3.Location = New System.Drawing.Point(10, 14)
         Me.CheckBox3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(86, 54)
@@ -805,6 +832,25 @@ Partial Class Preferences
         Me.ToolTip1.SetToolTip(Me.RadioButton13, "Above")
         Me.RadioButton13.UseVisualStyleBackColor = True
         '
+        'CheckBox4
+        '
+        Me.CheckBox4.Appearance = System.Windows.Forms.Appearance.Button
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.BackColor = System.Drawing.Color.Transparent
+        Me.CheckBox4.FlatAppearance.BorderSize = 0
+        Me.CheckBox4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.CheckBox4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.CheckBox4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.CheckBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox4.Image = Global.BibleGetIO.My.Resources.Resources.toggle_button_state_off
+        Me.CheckBox4.Location = New System.Drawing.Point(14, 55)
+        Me.CheckBox4.Margin = New System.Windows.Forms.Padding(0)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(86, 54)
+        Me.CheckBox4.TabIndex = 9
+        Me.ToolTip1.SetToolTip(Me.CheckBox4, "Visible")
+        Me.CheckBox4.UseVisualStyleBackColor = False
+        '
         'GroupBox11
         '
         Me.GroupBox11.Controls.Add(Me.BibleVersionFontBtnn)
@@ -814,7 +860,7 @@ Partial Class Preferences
         Me.GroupBox11.Controls.Add(Me.BibleVersionBoldBtn)
         Me.GroupBox11.Controls.Add(Me.Button2)
         Me.GroupBox11.Controls.Add(Me.Button3)
-        Me.GroupBox11.Location = New System.Drawing.Point(12, 126)
+        Me.GroupBox11.Location = New System.Drawing.Point(12, 131)
         Me.GroupBox11.Name = "GroupBox11"
         Me.GroupBox11.Size = New System.Drawing.Size(506, 90)
         Me.GroupBox11.TabIndex = 5
@@ -906,7 +952,7 @@ Partial Class Preferences
         Me.GroupBox13.Controls.Add(Me.Label4)
         Me.GroupBox13.Controls.Add(Me.Label3)
         Me.GroupBox13.Controls.Add(Me.CheckBox2)
-        Me.GroupBox13.Location = New System.Drawing.Point(541, 126)
+        Me.GroupBox13.Location = New System.Drawing.Point(541, 131)
         Me.GroupBox13.Name = "GroupBox13"
         Me.GroupBox13.Size = New System.Drawing.Size(684, 90)
         Me.GroupBox13.TabIndex = 12
@@ -920,7 +966,7 @@ Partial Class Preferences
         Me.GroupBox19.Controls.Add(Me.RadioButton11)
         Me.GroupBox19.Location = New System.Drawing.Point(316, 16)
         Me.GroupBox19.Name = "GroupBox19"
-        Me.GroupBox19.Size = New System.Drawing.Size(163, 68)
+        Me.GroupBox19.Size = New System.Drawing.Size(175, 68)
         Me.GroupBox19.TabIndex = 13
         Me.GroupBox19.TabStop = False
         Me.GroupBox19.Text = "Wrap"
@@ -929,7 +975,7 @@ Partial Class Preferences
         '
         Me.RadioButton18.Appearance = System.Windows.Forms.Appearance.Button
         Me.RadioButton18.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton18.Location = New System.Drawing.Point(110, 17)
+        Me.RadioButton18.Location = New System.Drawing.Point(120, 17)
         Me.RadioButton18.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton18.Name = "RadioButton18"
         Me.RadioButton18.Size = New System.Drawing.Size(48, 48)
@@ -943,7 +989,7 @@ Partial Class Preferences
         '
         Me.RadioButton17.Appearance = System.Windows.Forms.Appearance.Button
         Me.RadioButton17.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton17.Location = New System.Drawing.Point(62, 17)
+        Me.RadioButton17.Location = New System.Drawing.Point(72, 17)
         Me.RadioButton17.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton17.Name = "RadioButton17"
         Me.RadioButton17.Size = New System.Drawing.Size(48, 48)
@@ -959,7 +1005,7 @@ Partial Class Preferences
         Me.RadioButton11.Location = New System.Drawing.Point(6, 17)
         Me.RadioButton11.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton11.Name = "RadioButton11"
-        Me.RadioButton11.Size = New System.Drawing.Size(56, 48)
+        Me.RadioButton11.Size = New System.Drawing.Size(66, 48)
         Me.RadioButton11.TabIndex = 0
         Me.RadioButton11.TabStop = True
         Me.RadioButton11.Text = "NONE"
@@ -1048,9 +1094,9 @@ Partial Class Preferences
         Me.GroupBox14.Controls.Add(Me.Label5)
         Me.GroupBox14.Controls.Add(Me.Label6)
         Me.GroupBox14.Controls.Add(Me.CheckBox3)
-        Me.GroupBox14.Location = New System.Drawing.Point(640, 314)
+        Me.GroupBox14.Location = New System.Drawing.Point(640, 319)
         Me.GroupBox14.Name = "GroupBox14"
-        Me.GroupBox14.Size = New System.Drawing.Size(184, 90)
+        Me.GroupBox14.Size = New System.Drawing.Size(395, 94)
         Me.GroupBox14.TabIndex = 13
         Me.GroupBox14.TabStop = False
         Me.GroupBox14.Text = "Verse Number Layout"
@@ -1058,7 +1104,7 @@ Partial Class Preferences
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 70)
+        Me.Label5.Location = New System.Drawing.Point(5, 71)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 17)
         Me.Label5.TabIndex = 13
@@ -1067,7 +1113,7 @@ Partial Class Preferences
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(65, 70)
+        Me.Label6.Location = New System.Drawing.Point(64, 71)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(49, 17)
         Me.Label6.TabIndex = 12
@@ -1078,9 +1124,9 @@ Partial Class Preferences
         Me.GroupBox16.Controls.Add(Me.GroupBox20)
         Me.GroupBox16.Controls.Add(Me.GroupBox18)
         Me.GroupBox16.Controls.Add(Me.GroupBox15)
-        Me.GroupBox16.Location = New System.Drawing.Point(541, 219)
+        Me.GroupBox16.Location = New System.Drawing.Point(541, 224)
         Me.GroupBox16.Name = "GroupBox16"
-        Me.GroupBox16.Size = New System.Drawing.Size(485, 90)
+        Me.GroupBox16.Size = New System.Drawing.Size(494, 90)
         Me.GroupBox16.TabIndex = 13
         Me.GroupBox16.TabStop = False
         Me.GroupBox16.Text = "Book / Chapter Layout"
@@ -1092,7 +1138,7 @@ Partial Class Preferences
         Me.GroupBox20.Controls.Add(Me.RadioButton21)
         Me.GroupBox20.Location = New System.Drawing.Point(316, 16)
         Me.GroupBox20.Name = "GroupBox20"
-        Me.GroupBox20.Size = New System.Drawing.Size(163, 68)
+        Me.GroupBox20.Size = New System.Drawing.Size(172, 68)
         Me.GroupBox20.TabIndex = 14
         Me.GroupBox20.TabStop = False
         Me.GroupBox20.Text = "Wrap"
@@ -1101,7 +1147,7 @@ Partial Class Preferences
         '
         Me.RadioButton19.Appearance = System.Windows.Forms.Appearance.Button
         Me.RadioButton19.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton19.Location = New System.Drawing.Point(110, 17)
+        Me.RadioButton19.Location = New System.Drawing.Point(120, 17)
         Me.RadioButton19.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton19.Name = "RadioButton19"
         Me.RadioButton19.Size = New System.Drawing.Size(48, 48)
@@ -1115,7 +1161,7 @@ Partial Class Preferences
         '
         Me.RadioButton20.Appearance = System.Windows.Forms.Appearance.Button
         Me.RadioButton20.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton20.Location = New System.Drawing.Point(62, 17)
+        Me.RadioButton20.Location = New System.Drawing.Point(72, 17)
         Me.RadioButton20.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton20.Name = "RadioButton20"
         Me.RadioButton20.Size = New System.Drawing.Size(48, 48)
@@ -1131,7 +1177,7 @@ Partial Class Preferences
         Me.RadioButton21.Location = New System.Drawing.Point(6, 17)
         Me.RadioButton21.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton21.Name = "RadioButton21"
-        Me.RadioButton21.Size = New System.Drawing.Size(56, 48)
+        Me.RadioButton21.Size = New System.Drawing.Size(66, 48)
         Me.RadioButton21.TabIndex = 0
         Me.RadioButton21.TabStop = True
         Me.RadioButton21.Text = "NONE"
@@ -1204,7 +1250,7 @@ Partial Class Preferences
         Me.GroupBox21.Controls.Add(Me.RadioButton25)
         Me.GroupBox21.Controls.Add(Me.RadioButton22)
         Me.GroupBox21.Controls.Add(Me.RadioButton24)
-        Me.GroupBox21.Location = New System.Drawing.Point(1032, 219)
+        Me.GroupBox21.Location = New System.Drawing.Point(1041, 224)
         Me.GroupBox21.Name = "GroupBox21"
         Me.GroupBox21.Size = New System.Drawing.Size(193, 136)
         Me.GroupBox21.TabIndex = 15
@@ -1267,7 +1313,7 @@ Partial Class Preferences
         '
         Me.GroupBox22.Controls.Add(Me.RadioButton27)
         Me.GroupBox22.Controls.Add(Me.RadioButton26)
-        Me.GroupBox22.Location = New System.Drawing.Point(12, 631)
+        Me.GroupBox22.Location = New System.Drawing.Point(12, 808)
         Me.GroupBox22.Name = "GroupBox22"
         Me.GroupBox22.Size = New System.Drawing.Size(506, 58)
         Me.GroupBox22.TabIndex = 16
@@ -1304,35 +1350,22 @@ Partial Class Preferences
         Me.RadioButton26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.RadioButton26.UseVisualStyleBackColor = True
         '
-        'Label2
+        'GroupBox23
         '
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(220, 90)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 15)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "0"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label7
-        '
-        Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(336, 90)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(95, 15)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "0"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.GroupBox23.Controls.Add(Me.CheckBox4)
+        Me.GroupBox23.Location = New System.Drawing.Point(1241, 224)
+        Me.GroupBox23.Name = "GroupBox23"
+        Me.GroupBox23.Size = New System.Drawing.Size(119, 130)
+        Me.GroupBox23.TabIndex = 17
+        Me.GroupBox23.TabStop = False
+        Me.GroupBox23.Text = "Show full reference"
         '
         'Preferences
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1385, 704)
+        Me.ClientSize = New System.Drawing.Size(1385, 872)
+        Me.Controls.Add(Me.GroupBox23)
         Me.Controls.Add(Me.GroupBox22)
         Me.Controls.Add(Me.GroupBox21)
         Me.Controls.Add(Me.GroupBox16)
@@ -1378,6 +1411,8 @@ Partial Class Preferences
         Me.GroupBox21.ResumeLayout(False)
         Me.GroupBox22.ResumeLayout(False)
         Me.GroupBox22.PerformLayout()
+        Me.GroupBox23.ResumeLayout(False)
+        Me.GroupBox23.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1479,4 +1514,6 @@ Partial Class Preferences
     Friend WithEvents RadioButton26 As Windows.Forms.RadioButton
     Friend WithEvents Label7 As Windows.Forms.Label
     Friend WithEvents Label2 As Windows.Forms.Label
+    Friend WithEvents GroupBox23 As Windows.Forms.GroupBox
+    Friend WithEvents CheckBox4 As Windows.Forms.CheckBox
 End Class

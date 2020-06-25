@@ -625,4 +625,10 @@ you may override the Bible version's own formatting.</value>
   <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
     <value>Current displayed units of Measurement in the Microsoft Word interface:</value>
   </data>
+  <data name="Show full reference" xml:space="preserve">
+    <value>Show full reference</value>
+  </data>
+  <data name="Bible version" xml:space="preserve">
+    <value>Bible version</value>
+  </data>
 </root>

@@ -619,4 +619,10 @@ puede anular el formateo propio de la versión de la Biblia.</value>
   <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
     <value>Unidades de medida mostradas actualmente en la interfaz de Microsoft Word:</value>
   </data>
+  <data name="Show full reference" xml:space="preserve">
+    <value>Mostra referencia completa</value>
+  </data>
+  <data name="Bible version" xml:space="preserve">
+    <value>Versión bíblica</value>
+  </data>
 </root>

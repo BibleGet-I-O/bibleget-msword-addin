@@ -1,5 +1,4 @@
 ﻿Imports System.Data.SQLite
-Imports System.Diagnostics
 Imports System.Globalization
 Imports Newtonsoft.Json.Linq
 
@@ -63,7 +62,7 @@ Public Class LocalizedBibleBooks
 
     End Sub
 
-    Public Function GetBookByIndex(idx As Integer)
+    Public Function GetBookByIndex(idx As Integer) As LocalizedBibleBook
         Return New LocalizedBibleBook(BookAbbreviations.Item(idx), BookNames.Item(idx))
     End Function
 End Class

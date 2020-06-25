@@ -264,6 +264,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Bible version.
+    '''</summary>
+    Friend Shared ReadOnly Property Bible_version() As String
+        Get
+            Return ResourceManager.GetString("Bible version", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a Biblical Books and Abbreviations.
     '''</summary>
     Friend Shared ReadOnly Property Biblical_Books_and_Abbreviations() As String
@@ -910,6 +919,15 @@ Friend Class BibleGetResource
     Friend Shared ReadOnly Property Sends_the_request_to_the_server_and_returns_the_results_to_the_document_() As String
         Get
             Return ResourceManager.GetString("Sends the request to the server and returns the results to the document.", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Show full reference.
+    '''</summary>
+    Friend Shared ReadOnly Property Show_full_reference() As String
+        Get
+            Return ResourceManager.GetString("Show full reference", resourceCulture)
         End Get
     End Property
     

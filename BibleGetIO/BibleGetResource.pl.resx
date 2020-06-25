@@ -619,4 +619,10 @@ możesz zastąpić własne formatowanie wersji Biblii.</value>
   <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
     <value>Aktualnie wyświetlane jednostki miary w interfejsie Microsoft Word:</value>
   </data>
+  <data name="Show full reference" xml:space="preserve">
+    <value>Pokaż pełne odniesienie</value>
+  </data>
+  <data name="Bible version" xml:space="preserve">
+    <value>Wersja biblijna</value>
+  </data>
 </root>

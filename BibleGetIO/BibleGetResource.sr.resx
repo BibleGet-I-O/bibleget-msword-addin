@@ -619,4 +619,10 @@ double up any single quotes or apostrophes.</comment>
   <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
     <value>Тренутно приказане мере мере у Мицрософт Ворд интерфејсу:</value>
   </data>
+  <data name="Show full reference" xml:space="preserve">
+    <value>Прикажи пуну референцу</value>
+  </data>
+  <data name="Bible version" xml:space="preserve">
+    <value>Верзија Библије</value>
+  </data>
 </root>

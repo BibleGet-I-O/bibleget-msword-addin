@@ -10,6 +10,7 @@ Public Class Preferences
     Private DEBUG_MODE As Boolean
     Private Application As Word.Application = Globals.BibleGetAddIn.Application
     Private InterfaceInCM As Boolean
+    Private L10NBibleBooks As LocalizedBibleBooks = New LocalizedBibleBooks
 
     Private Shared Function __(ByVal myStr As String) As String
         Dim myTranslation As String = BibleGetAddIn.RM.GetString(myStr, BibleGetAddIn.locale)
@@ -251,7 +252,23 @@ Public Class Preferences
             bookChapterWrapAfter = "]"
         End If
 
+        Dim bookChapter As String = ""
+        Dim LocalizedBookSamuel As LocalizedBibleBook = L10NBibleBooks.GetBookByIndex(8)
+        Select Case My.Settings.BookChapterFormat
+            Case FORMAT.BIBLELANG
+                bookChapter = "I Samuelis 1"
+            Case FORMAT.BIBLELANGABBREV
+                bookChapter = "I Sam 1"
+            Case FORMAT.USERLANG
+                bookChapter = LocalizedBookSamuel.Fullname & " 1"
+            Case FORMAT.USERLANGABBREV
+                bookChapter = LocalizedBookSamuel.Abbrev & " 1"
+        End Select
 
+        If My.Settings.BookChapterFullReference = True Then
+            bookChapter &= ",1-3"
+        End If
+        bookChapter = bookChapterWrapBefore & bookChapter & bookChapterWrapAfter
 
         previewDocument = "<!DOCTYPE html>"
         previewDocument &= "<head>"
@@ -268,8 +285,8 @@ Public Class Preferences
   padding-left: 35px;
   padding-right:35px;
 }"
-        stylesheet &= "div.results .bibleVersion { font-family: " & My.Settings.BookChapterFont.Name & "; }"
-        stylesheet &= "div.results .bibleVersion { font-size: " & Math.Round(My.Settings.BookChapterFont.SizeInPoints).ToString(CultureInfo.InvariantCulture) & "pt; }"
+        stylesheet &= "div.results .bibleVersion { font-family: " & My.Settings.BibleVersionFont.Name & "; }"
+        stylesheet &= "div.results .bibleVersion { font-size: " & Math.Round(My.Settings.BibleVersionFont.SizeInPoints).ToString(CultureInfo.InvariantCulture) & "pt; }"
         stylesheet &= "div.results .bibleVersion { font-weight: " & If(BibleVersionBoldBtn.Checked, "bold", "normal") & "; }"
         stylesheet &= "div.results .bibleVersion { font-style: " & If(BibleVersionItalicBtn.Checked, "italic", "normal") & "; }"
         If BibleVersionUnderlineBtn.Checked = True Then
@@ -302,6 +319,7 @@ Public Class Preferences
         stylesheet &= "div.results .versesParagraph .verseNum { background-color: " & bgColorVerseNumber & "; }"
         stylesheet &= "div.results .versesParagraph .verseNum { vertical-align: baseline; " & vnPosition & vnTop & " }"
         stylesheet &= "div.results .versesParagraph .verseNum { padding-left: 3px; }"
+        stylesheet &= "div.results .versesParagraph .verseNum:first-child { padding-left: 0px; }"
         stylesheet &= "div.results .versesParagraph .verseText { font-family: " & My.Settings.VerseTextFont.Name & "; }"
         stylesheet &= "div.results .versesParagraph .verseText { font-size:" & Math.Round(My.Settings.VerseTextFont.SizeInPoints).ToString(CultureInfo.InvariantCulture) & "pt; }"
         stylesheet &= "div.results .versesParagraph .verseText { font-weight: " & If(VerseTextBoldBtn.Checked, "bold", "normal") & "; }"
@@ -440,27 +458,27 @@ jQuery(document).ready(function(){
             previewDocument &= "<p class=""bibleVersion"">" & bibleVersionWrapBefore & "NVBSE" & bibleVersionWrapAfter & "</p>"
         End If
         If My.Settings.BookChapterPosition = POS.TOP Then
-            previewDocument &= "<p class=""bookChapter"">" & bookChapterWrapBefore & "Genesis&nbsp;1" & bookChapterWrapAfter & "</p>"
+            previewDocument &= "<p class=""bookChapter"">" & bookChapter & "</p>"
         End If
         previewDocument &= "<p class=""versesParagraph"" style=""margin-top:0px;"">"
         If My.Settings.VerseNumberVisibility = VISIBILITY.SHOW Then
             previewDocument &= "<span class=""verseNum"">1</span>"
         End If
-        previewDocument &= "<span class=""verseText"">In principio creavit Deus caelum et terram.</span>"
+        previewDocument &= "<span class=""verseText"">Fuit vir unus de Ramathaim Suphita de monte Ephraim, et nomen eius Elcana filius Ieroham filii Eliu filii Thohu filii Suph, Ephrathaeus.</span>"
         If My.Settings.VerseNumberVisibility = VISIBILITY.SHOW Then
             previewDocument &= "<span class=""verseNum"">2</span>"
         End If
-        previewDocument &= "<span class=""verseText"">Terra autem erat inanis et vacua, et tenebrae super faciem abyssi, et spiritus Dei ferebatur super aquas.</span>"
+        previewDocument &= "<span class=""verseText"">Et habuit duas uxores: nomen uni Anna et nomen secundae Phenenna. Fueruntque Phenennae filii, Annae autem non erant liberi.</span>"
         If My.Settings.VerseNumberVisibility = VISIBILITY.SHOW Then
             previewDocument &= "<span class=""verseNum"">3</span>"
         End If
-        previewDocument &= "<span class=""verseText"">Dixitque Deus: ""Fiat lux"". Et facta est lux.</span>"
+        previewDocument &= "<span class=""verseText"">Et ascendebat vir ille de civitate sua singulis annis, ut adoraret et sacrificaret Domino exercituum in Silo. Erant autem ibi duo filii Heli, Ophni et Phinees, sacerdotes Domini.</span>"
         If My.Settings.BookChapterPosition = POS.BOTTOMINLINE Then
-            previewDocument &= "<span class=""bookChapter"">" & bookChapterWrapBefore & "Genesis&nbsp;1" & bookChapterWrapAfter & "</span>"
+            previewDocument &= "<span class=""bookChapter"">" & bookChapter & "</span>"
         End If
         previewDocument &= "</p>"
         If My.Settings.BookChapterPosition = POS.BOTTOM Then
-            previewDocument &= "<p class=""bookChapter"">" & bookChapterWrapBefore & "Genesis&nbsp;1" & bookChapterWrapAfter & "</p>"
+            previewDocument &= "<p class=""bookChapter"">" & bookChapter & "</p>"
         End If
         If My.Settings.BibleVersionPosition = POS.BOTTOM And My.Settings.BibleVersionVisibility = VISIBILITY.SHOW Then
             previewDocument &= "<p class=""bibleVersion"">" & bibleVersionWrapBefore & "NVBSE" & bibleVersionWrapAfter & "</p>"
@@ -514,6 +532,8 @@ jQuery(document).ready(function(){
         GroupBox16.Text = __("Layout preferences for Book / Chapter")
         GroupBox14.Text = __("Layout preferences for Verse number")
         GroupBox6.Text = __("Alignment")
+        GroupBox17.Text = __("Alignment")
+        GroupBox18.Text = __("Alignment")
         GroupBox7.Text = __("Left Indent")
         GroupBox10.Text = __("Right Indent")
         GroupBox8.Text = __("Line-spacing")
@@ -537,6 +557,7 @@ jQuery(document).ready(function(){
         RadioButton24.Text = __("System Lang Abbrev")
         RadioButton25.Text = __("System Lang Full")
         GroupBox22.Text = __("Current displayed units of Measurement in the Microsoft Word interface:")
+        GroupBox23.Text = __("Show full reference")
 
         Select Case My.Settings.ParagraphAlignment
             Case BibleGetIO.ALIGN.LEFT
@@ -563,6 +584,8 @@ jQuery(document).ready(function(){
         CheckBox3.Checked = (My.Settings.VerseNumberVisibility = VISIBILITY.SHOW)
         Label6.Visible = (My.Settings.VerseNumberVisibility = VISIBILITY.SHOW)
         Label5.Visible = (My.Settings.VerseNumberVisibility = VISIBILITY.HIDE)
+
+        CheckBox4.Checked = My.Settings.BookChapterFullReference
 
         Select Case My.Settings.BibleVersionAlign
             Case ALIGN.LEFT
@@ -1021,7 +1044,6 @@ jQuery(document).ready(function(){
         Else
             CheckBox2.Image = My.Resources.toggle_button_state_off
         End If
-
     End Sub
 
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
@@ -1225,4 +1247,31 @@ jQuery(document).ready(function(){
         setPreviewDocument()
     End Sub
 
+    Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
+        If CheckBox4.Checked Then
+            CheckBox4.Image = My.Resources.toggle_button_state_on
+            My.Settings.BookChapterFullReference = True
+        Else
+            CheckBox4.Image = My.Resources.toggle_button_state_off
+            My.Settings.BookChapterFullReference = False
+        End If
+        My.Settings.Save()
+        If Not initializing Then setPreviewDocument()
+    End Sub
+
+    Private Sub CheckBox4_MouseEnter(sender As Object, e As EventArgs) Handles CheckBox4.MouseEnter
+        If CheckBox4.Checked Then
+            CheckBox4.Image = My.Resources.toggle_button_state_on_hover
+        Else
+            CheckBox4.Image = My.Resources.toggle_button_state_off_hover
+        End If
+    End Sub
+
+    Private Sub CheckBox4_MouseLeave(sender As Object, e As EventArgs) Handles CheckBox4.MouseLeave
+        If CheckBox4.Checked Then
+            CheckBox4.Image = My.Resources.toggle_button_state_on
+        Else
+            CheckBox4.Image = My.Resources.toggle_button_state_off
+        End If
+    End Sub
 End Class

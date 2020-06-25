@@ -620,4 +620,10 @@ double up any single quotes or apostrophes.</comment>
   <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
     <value>Τρέχουσες μονάδες μέτρησης που εμφανίζονται στην διεπαφή του Microsoft Word:</value>
   </data>
+  <data name="Show full reference" xml:space="preserve">
+    <value>Εμφάνιση πλήρους αναφοράς</value>
+  </data>
+  <data name="Bible version" xml:space="preserve">
+    <value>Βιβλική έκδοση</value>
+  </data>
 </root>

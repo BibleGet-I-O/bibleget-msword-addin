@@ -91,18 +91,6 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-    Public Property BookChapterStrikethrough() As Boolean
-        Get
-            Return CType(Me("BookChapterStrikethrough"),Boolean)
-        End Get
-        Set
-            Me("BookChapterStrikethrough") = value
-        End Set
-    End Property
-    
-    <Global.System.Configuration.UserScopedSettingAttribute(),  _
-     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.DefaultSettingValueAttribute("0, 0, 64")>  _
     Public Property BookChapterForeColor() As Global.System.Drawing.Color
         Get
@@ -589,6 +577,18 @@ Partial Friend NotInheritable Class MySettings
         End Get
         Set
             Me("CurrentDisplayUnit") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+    Public Property BookChapterFullReference() As Boolean
+        Get
+            Return CType(Me("BookChapterFullReference"),Boolean)
+        End Get
+        Set
+            Me("BookChapterFullReference") = value
         End Set
     End Property
 End Class
