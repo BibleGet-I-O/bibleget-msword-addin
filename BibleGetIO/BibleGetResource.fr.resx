@@ -550,4 +550,73 @@ vous pouvez outrepasser le formatage propre de la version de la Bible.</value>
   <data name="You must type a term to search for" xml:space="preserve">
     <value>Vous devez saisir un terme à rechercher</value>
   </data>
+  <data name="Term to search" xml:space="preserve">
+    <value>Terme de recherche</value>
+  </data>
+  <data name="Filter results with another term" xml:space="preserve">
+    <value>Filtrer les résultats avec un autre terme</value>
+  </data>
+  <data name="Apply filter" xml:space="preserve">
+    <value>Appliquer le filtre</value>
+  </data>
+  <data name="Order by Reference" xml:space="preserve">
+    <value>Ordonner par référence</value>
+  </data>
+  <data name="Order by Importance" xml:space="preserve">
+    <value>Ordonner par importance</value>
+  </data>
+  <data name="Layout preferences for Bible version" xml:space="preserve">
+    <value>Préférences de mise en page pour la version biblique</value>
+  </data>
+  <data name="Layout preferences for Book / Chapter" xml:space="preserve">
+    <value>Préférences de mise en page pour livre / chapitre</value>
+  </data>
+  <data name="Layout preferences for Verse number" xml:space="preserve">
+    <value>Préférences de mise en page pour le numéro de verset</value>
+  </data>
+  <data name="Verse Reference" xml:space="preserve">
+    <value>Référence du verset</value>
+  </data>
+  <data name="Remove filter" xml:space="preserve">
+    <value>Supprimer le filtre</value>
+  </data>
+  <data name="Inserted" xml:space="preserve">
+    <value>Inséré</value>
+  </data>
+  <data name="Search results" xml:space="preserve">
+    <value>Résultats de recherche</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Wrap" xml:space="preserve">
+    <value>Enveloppe</value>
+  </data>
+  <data name="Display options" xml:space="preserve">
+    <value>Options de présentation</value>
+  </data>
+  <data name="Hidden" xml:space="preserve">
+    <value>Caché</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="NONE" xml:space="preserve">
+    <value>RIEN</value>
+  </data>
+  <data name="Bible Lang Abbrev" xml:space="preserve">
+    <value>Langue Bible abr</value>
+  </data>
+  <data name="Bible Lang Full" xml:space="preserve">
+    <value>Langue Bible</value>
+  </data>
+  <data name="System Lang Full" xml:space="preserve">
+    <value>Langue système</value>
+  </data>
+  <data name="System Lang Abbrev" xml:space="preserve">
+    <value>Langue système abrev</value>
+  </data>
+  <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
+    <value>Unités de mesure actuellement affichées dans l'interface Microsoft Word:</value>
+  </data>
 </root>

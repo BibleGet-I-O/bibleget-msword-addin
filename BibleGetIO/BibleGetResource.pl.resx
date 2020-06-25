@@ -550,4 +550,73 @@ możesz zastąpić własne formatowanie wersji Biblii.</value>
   <data name="You must type a term to search for" xml:space="preserve">
     <value>Musisz wpisać wyszukiwane hasło</value>
   </data>
+  <data name="Term to search" xml:space="preserve">
+    <value>Szukany termin</value>
+  </data>
+  <data name="Filter results with another term" xml:space="preserve">
+    <value>Filtruj wyniki za pomocą innego terminu</value>
+  </data>
+  <data name="Apply filter" xml:space="preserve">
+    <value>Nałóż filtr</value>
+  </data>
+  <data name="Order by Reference" xml:space="preserve">
+    <value>Sortuj według referencji</value>
+  </data>
+  <data name="Order by Importance" xml:space="preserve">
+    <value>Sortuj według ważności</value>
+  </data>
+  <data name="Layout preferences for Bible version" xml:space="preserve">
+    <value>Preferencje układu dla wersji biblijnej</value>
+  </data>
+  <data name="Layout preferences for Book / Chapter" xml:space="preserve">
+    <value>Preferencje układu dla książki / rozdziału</value>
+  </data>
+  <data name="Layout preferences for Verse number" xml:space="preserve">
+    <value>Preferencje układu dla numeru wersetu</value>
+  </data>
+  <data name="Verse Reference" xml:space="preserve">
+    <value>Odniesienie do wersetu</value>
+  </data>
+  <data name="Remove filter" xml:space="preserve">
+    <value>Usuń filtr</value>
+  </data>
+  <data name="Inserted" xml:space="preserve">
+    <value>Wstawiony</value>
+  </data>
+  <data name="Search results" xml:space="preserve">
+    <value>Wyniki wyszukiwania</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Pozycja</value>
+  </data>
+  <data name="Wrap" xml:space="preserve">
+    <value>Zawiń</value>
+  </data>
+  <data name="Display options" xml:space="preserve">
+    <value>Opcje prezentacji</value>
+  </data>
+  <data name="Hidden" xml:space="preserve">
+    <value>Ukryty</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Widoczny</value>
+  </data>
+  <data name="NONE" xml:space="preserve">
+    <value>NIC</value>
+  </data>
+  <data name="Bible Lang Abbrev" xml:space="preserve">
+    <value>Skr. język biblijny</value>
+  </data>
+  <data name="Bible Lang Full" xml:space="preserve">
+    <value>język biblijny</value>
+  </data>
+  <data name="System Lang Abbrev" xml:space="preserve">
+    <value>Skrót języka systemu</value>
+  </data>
+  <data name="System Lang Full" xml:space="preserve">
+    <value>Język systemu</value>
+  </data>
+  <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
+    <value>Aktualnie wyświetlane jednostki miary w interfejsie Microsoft Word:</value>
+  </data>
 </root>

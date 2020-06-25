@@ -228,11 +228,38 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Apply filter.
+    '''</summary>
+    Friend Shared ReadOnly Property Apply_filter() As String
+        Get
+            Return ResourceManager.GetString("Apply filter", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a AUTHOR.
     '''</summary>
     Friend Shared ReadOnly Property AUTHOR() As String
         Get
             Return ResourceManager.GetString("AUTHOR", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Bible Lang Abbrev.
+    '''</summary>
+    Friend Shared ReadOnly Property Bible_Lang_Abbrev() As String
+        Get
+            Return ResourceManager.GetString("Bible Lang Abbrev", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Bible Lang Full.
+    '''</summary>
+    Friend Shared ReadOnly Property Bible_Lang_Full() As String
+        Get
+            Return ResourceManager.GetString("Bible Lang Full", resourceCulture)
         End Get
     End Property
     
@@ -310,6 +337,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Current displayed units of Measurement in the Microsoft Word interface:.
+    '''</summary>
+    Friend Shared ReadOnly Property Current_displayed_units_of_Measurement_in_the_Microsoft_Word_interface_() As String
+        Get
+            Return ResourceManager.GetString("Current displayed units of Measurement in the Microsoft Word interface:", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a Current information from the BibleGet Server:.
     '''</summary>
     Friend Shared ReadOnly Property Current_information_from_the_BibleGet_Server_() As String
@@ -350,6 +386,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Display options.
+    '''</summary>
+    Friend Shared ReadOnly Property Display_options() As String
+        Get
+            Return ResourceManager.GetString("Display options", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a e.g. creation.
     '''</summary>
     Friend Shared ReadOnly Property e_g__creation() As String
@@ -364,6 +409,15 @@ Friend Class BibleGetResource
     Friend Shared ReadOnly Property EMAIL_ADDRESS_FOR_INFORMATION_OR_FEEDBACK_ON_THE_PROJECT() As String
         Get
             Return ResourceManager.GetString("EMAIL ADDRESS FOR INFORMATION OR FEEDBACK ON THE PROJECT", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Filter results with another term.
+    '''</summary>
+    Friend Shared ReadOnly Property Filter_results_with_another_term() As String
+        Get
+            Return ResourceManager.GetString("Filter results with another term", resourceCulture)
         End Get
     End Property
     
@@ -490,6 +544,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Hidden.
+    '''</summary>
+    Friend Shared ReadOnly Property Hidden() As String
+        Get
+            Return ResourceManager.GetString("Hidden", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a How to formulate a bible query.
     '''</summary>
     Friend Shared ReadOnly Property How_to_formulate_a_bible_query() As String
@@ -576,6 +639,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Inserted.
+    '''</summary>
+    Friend Shared ReadOnly Property Inserted() As String
+        Get
+            Return ResourceManager.GetString("Inserted", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a Instructions.
     '''</summary>
     Friend Shared ReadOnly Property Instructions() As String
@@ -610,6 +682,33 @@ Friend Class BibleGetResource
         Get
             Return ResourceManager.GetString("It is also indifferent whether you use uppercase or lowercase letters, the querys"& _ 
                     "tring will be interpreted just the same.", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Layout preferences for Bible version.
+    '''</summary>
+    Friend Shared ReadOnly Property Layout_preferences_for_Bible_version() As String
+        Get
+            Return ResourceManager.GetString("Layout preferences for Bible version", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Layout preferences for Book / Chapter.
+    '''</summary>
+    Friend Shared ReadOnly Property Layout_preferences_for_Book___Chapter() As String
+        Get
+            Return ResourceManager.GetString("Layout preferences for Book / Chapter", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Layout preferences for Verse number.
+    '''</summary>
+    Friend Shared ReadOnly Property Layout_preferences_for_Verse_number() As String
+        Get
+            Return ResourceManager.GetString("Layout preferences for Verse number", resourceCulture)
         End Get
     End Property
     
@@ -651,6 +750,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a NONE.
+    '''</summary>
+    Friend Shared ReadOnly Property NONE() As String
+        Get
+            Return ResourceManager.GetString("NONE", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a Once the extension is installed, a new menu &apos;BibleGet I/O&apos; will appear on the menu bar. Also a new floating toolbar will appear. The buttons on the floating toolbar correspond to the menu items in the new menu, as can be seen in this image:.
     '''</summary>
     Friend Shared ReadOnly Property Once_the_extension_is_installed__a_new_menu__BibleGet_I_O__will_appear_on_the_menu_bar__Also_a_new_floating_toolbar_will_appear__The_buttons_on_the_floating_toolbar_correspond_to_the_menu_items_in_the_new_menu__as_can_be_seen_in_this_image_() As String
@@ -658,6 +766,24 @@ Friend Class BibleGetResource
             Return ResourceManager.GetString("Once the extension is installed, a new menu 'BibleGet I/O' will appear on the men"& _ 
                     "u bar. Also a new floating toolbar will appear. The buttons on the floating tool"& _ 
                     "bar correspond to the menu items in the new menu, as can be seen in this image:", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Order by Importance.
+    '''</summary>
+    Friend Shared ReadOnly Property Order_by_Importance() As String
+        Get
+            Return ResourceManager.GetString("Order by Importance", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Order by Reference.
+    '''</summary>
+    Friend Shared ReadOnly Property Order_by_Reference() As String
+        Get
+            Return ResourceManager.GetString("Order by Reference", resourceCulture)
         End Get
     End Property
     
@@ -680,6 +806,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Position.
+    '''</summary>
+    Friend Shared ReadOnly Property Position() As String
+        Get
+            Return ResourceManager.GetString("Position", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a Preview.
     '''</summary>
     Friend Shared ReadOnly Property Preview() As String
@@ -694,6 +829,15 @@ Friend Class BibleGetResource
     Friend Shared ReadOnly Property PROJECT_WEBSITE() As String
         Get
             Return ResourceManager.GetString("PROJECT WEBSITE", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Remove filter.
+    '''</summary>
+    Friend Shared ReadOnly Property Remove_filter() As String
+        Get
+            Return ResourceManager.GetString("Remove filter", resourceCulture)
         End Get
     End Property
     
@@ -721,6 +865,15 @@ Friend Class BibleGetResource
     Friend Shared ReadOnly Property Search() As String
         Get
             Return ResourceManager.GetString("Search", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Search results.
+    '''</summary>
+    Friend Shared ReadOnly Property Search_results() As String
+        Get
+            Return ResourceManager.GetString("Search results", resourceCulture)
         End Get
     End Property
     
@@ -772,6 +925,33 @@ Friend Class BibleGetResource
                     "e text as close as possible to the original.<br> If however you need to have con"& _ 
                     "sistent formatting in your document, you may override the Bible version's own fo"& _ 
                     "rmatting.", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a System Lang Abbrev.
+    '''</summary>
+    Friend Shared ReadOnly Property System_Lang_Abbrev() As String
+        Get
+            Return ResourceManager.GetString("System Lang Abbrev", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a System Lang Full.
+    '''</summary>
+    Friend Shared ReadOnly Property System_Lang_Full() As String
+        Get
+            Return ResourceManager.GetString("System Lang Full", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Term to search.
+    '''</summary>
+    Friend Shared ReadOnly Property Term_to_search() As String
+        Get
+            Return ResourceManager.GetString("Term to search", resourceCulture)
         End Get
     End Property
     
@@ -1062,6 +1242,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Verse Reference.
+    '''</summary>
+    Friend Shared ReadOnly Property Verse_Reference() As String
+        Get
+            Return ResourceManager.GetString("Verse Reference", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a Verse Text.
     '''</summary>
     Friend Shared ReadOnly Property Verse_Text() As String
@@ -1100,6 +1289,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Visible.
+    '''</summary>
+    Friend Shared ReadOnly Property Visible() As String
+        Get
+            Return ResourceManager.GetString("Visible", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a When you choose a version or multiple versions to quote from, this choice is automatically saved as a preference, and will be pre-selected the next time you open the &apos;&apos;{0}&apos;&apos; menu item..
     '''</summary>
     Friend Shared ReadOnly Property When_you_choose_a_version_or_multiple_versions_to_quote_from__this_choice_is_automatically_saved_as_a_preference__and_will_be_pre_selected_the_next_time_you_open_the____0____menu_item_() As String
@@ -1107,6 +1305,15 @@ Friend Class BibleGetResource
             Return ResourceManager.GetString("When you choose a version or multiple versions to quote from, this choice is auto"& _ 
                     "matically saved as a preference, and will be pre-selected the next time you open"& _ 
                     " the ''{0}'' menu item.", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Wrap.
+    '''</summary>
+    Friend Shared ReadOnly Property Wrap() As String
+        Get
+            Return ResourceManager.GetString("Wrap", resourceCulture)
         End Get
     End Property
     
@@ -1166,7 +1373,7 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
-    '''  Cerca una stringa localizzata simile a .
+    '''  Cerca una stringa localizzata simile a You must type a term to search for.
     '''</summary>
     Friend Shared ReadOnly Property You_must_type_a_term_to_search_for() As String
         Get

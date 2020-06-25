@@ -40,7 +40,12 @@ Public Class BibleGetSearchResults
         DEBUG_MODE = My.Settings.DEBUG_MODE
         LoadBibleVersions(BibleVersionForSearch)
         PlaceholderText = __("e.g. creation")
+        Label1.Text = __("Term to search")
+        Label6.Text = __("Filter results with another term")
+        Button2.Text = __("Apply filter")
+        Button3.Text = __("Order by Reference")
         TermToSearch.Text = PlaceholderText
+        Label5.Text = __("Search results")
         localizedBookNames = New LocalizedBibleBooks()
         searchResultsDT.Columns.Add("IDX", Type.GetType("System.Int32"))
         searchResultsDT.Columns.Add("BOOK", Type.GetType("System.Int32"))
@@ -102,7 +107,7 @@ a.button:hover { background-color: #EEF; }
         previewDocumentBodyOpen = "<body><div id=""bibleGetSearchResultsTableContainer"">
 								<table border=""0"" cellpadding=""0"" cellspacing=""0"" width=""100%"" class=""scrollTable"" id=""SearchResultsTable"">
 									<thead class=""fixedHeader"">
-										<tr class=""alternateRow""><th>" & __("Action") & "</th><th>" & __("Verse Reference") & "</th><th>" & __("VERSETEXT") & "</th></tr>
+										<tr class=""alternateRow""><th>" & __("Action") & "</th><th>" & __("Verse Reference") & "</th><th>" & __("Verse Text") & "</th></tr>
 									</thead>
 									<tbody class=""scrollContent"">"
 
@@ -123,8 +128,8 @@ a.button:hover { background-color: #EEF; }
 
         If Not BackgroundWorker1.IsBusy And Button1.Text = __("Search") Then
             searchResultsDT.Rows.Clear()
-            Button3.Text = "Order by Reference"
-            Button2.Text = "Apply filter"
+            Button3.Text = __("Order by Reference")
+            Button2.Text = __("Apply filter")
             Button2.Image = My.Resources.filter
             FilterForTerm.Text = String.Empty
             Button3.Visible = False
@@ -397,7 +402,7 @@ a.button:hover { background-color: #EEF; }
         'Dim curLangDisplayName As String = New CultureInfo(curLangIsoCode).DisplayName
 
         Dim numResults As Integer = jRRArray.Count
-        Label5.Text = "Search results: " & numResults & " verses found containing the term """ & searchTerm & """ in version """ & versionSearched & """ "
+        Label5.Text = __("Search results") & ": " & numResults & " verses found containing the term """ & searchTerm & """ in version """ & versionSearched & """ "
 
         ProgressBar2.Value = 25
         If numResults > 0 Then
@@ -458,12 +463,12 @@ a.button:hover { background-color: #EEF; }
     End Function
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If Button3.Text = "Order by Reference" Then
+        If Button3.Text = __("Order by Reference") Then
             searchResultsDT.DefaultView.Sort = "BOOK ASC,CHAPTER ASC,VERSE ASC"
-            Button3.Text = "Order by Importance"
+            Button3.Text = __("Order by Importance")
         Else
             searchResultsDT.DefaultView.Sort = "IDX ASC"
-            Button3.Text = "Order by Reference"
+            Button3.Text = __("Order by Reference")
         End If
         RefreshSearchResults()
     End Sub
@@ -535,11 +540,11 @@ a.button:hover { background-color: #EEF; }
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If Button2.Text = "Apply filter" Then
+        If Button2.Text = __("Apply filter") Then
             If FilterForTerm.Text = "" Then
                 MsgBox("Filter term cannot be empty!", MsgBoxStyle.Exclamation, "Error")
             Else
-                Button2.Text = "Remove filter"
+                Button2.Text = __("Remove filter")
                 Button2.Image = My.Resources.remove_filter
                 Dim filterTerm As String = FilterForTerm.Text.TrimStart
                 filterTerm = filterTerm.TrimEnd
@@ -549,7 +554,7 @@ a.button:hover { background-color: #EEF; }
                 searchResultsDT.DefaultView.RowFilter = "VERSETEXT LIKE '%" & filterTerm & "%'"
             End If
         Else
-            Button2.Text = "Apply filter"
+            Button2.Text = __("Apply filter")
             Button2.Image = My.Resources.filter
             searchResultsDT.DefaultView.RowFilter = ""
             FilterForTerm.Text = String.Empty
@@ -571,7 +576,7 @@ a.button:hover { background-color: #EEF; }
         'MsgBox("a link was clicked", MsgBoxStyle.Information, "Html Document button click event")
         Dim resultIdx As Integer = Integer.Parse(Replace(link.GetAttribute("id"), "row", ""))
         Dim data As String = "{""results"": [" & searchResultsDT.Rows.Item(resultIdx)("JSONSTR") & "]}"
-        link.InnerText = "Inserted"
+        link.InnerText = __("Inserted")
         link.Style = "color:Purple;background-color:Gray;border: 2px inset Blue;cursor:default;"
         link.DetachEventHandler("onclick", AddressOf LinkClicked)
         Dim x As BibleGetWorker = New BibleGetWorker("DOCINJECT", data)

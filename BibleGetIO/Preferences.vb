@@ -507,16 +507,36 @@ jQuery(document).ready(function(){
                 ComboBox1.SelectedIndex = 2
         End Select
         GroupBox5.Text = __("Paragraph")
+        GroupBox11.Text = __("Bible version")
+        GroupBox1.Text = __("Book / Chapter")
+        GroupBox2.Text = __("Verse Number")
+        GroupBox13.Text = __("Layout preferences for Bible version")
+        GroupBox16.Text = __("Layout preferences for Book / Chapter")
+        GroupBox14.Text = __("Layout preferences for Verse number")
         GroupBox6.Text = __("Alignment")
         GroupBox7.Text = __("Left Indent")
         GroupBox10.Text = __("Right Indent")
         GroupBox8.Text = __("Line-spacing")
         GroupBox9.Text = __("Override Bible Version Formatting")
-        GroupBox1.Text = __("Book / Chapter")
-        GroupBox2.Text = __("Verse Number")
         GroupBox3.Text = __("Verse Text")
         GroupBox4.Text = __("Preview")
         ToolTip1.SetToolTip(Label1, __("Some Bible versions have their own formatting. This is left by default to keep the text as close as possible to the original.<br> If however you need to have consistent formatting in your document, you may override the Bible version's own formatting."))
+        GroupBox12.Text = __("Position")
+        GroupBox15.Text = __("Position")
+        GroupBox19.Text = __("Wrap")
+        GroupBox20.Text = __("Wrap")
+        GroupBox21.Text = __("Display options")
+        Label4.Text = __("Hidden")
+        Label5.Text = __("Hidden")
+        Label3.Text = __("Visible")
+        Label6.Text = __("Visible")
+        RadioButton11.Text = __("NONE")
+        RadioButton21.Text = __("NONE")
+        RadioButton22.Text = __("Bible Lang Abbrev")
+        RadioButton23.Text = __("Bible Lang Full")
+        RadioButton24.Text = __("System Lang Abbrev")
+        RadioButton25.Text = __("System Lang Full")
+        GroupBox22.Text = __("Current displayed units of Measurement in the Microsoft Word interface:")
 
         Select Case My.Settings.ParagraphAlignment
             Case BibleGetIO.ALIGN.LEFT
@@ -538,7 +558,11 @@ jQuery(document).ready(function(){
 
         CheckBox1.Checked = My.Settings.NOVERSIONFORMATTING
         CheckBox2.Checked = (My.Settings.BibleVersionVisibility = VISIBILITY.SHOW)
+        Label3.Visible = (My.Settings.BibleVersionVisibility = VISIBILITY.SHOW)
+        Label4.Visible = (My.Settings.BibleVersionVisibility = VISIBILITY.HIDE)
         CheckBox3.Checked = (My.Settings.VerseNumberVisibility = VISIBILITY.SHOW)
+        Label6.Visible = (My.Settings.VerseNumberVisibility = VISIBILITY.SHOW)
+        Label5.Visible = (My.Settings.VerseNumberVisibility = VISIBILITY.HIDE)
 
         Select Case My.Settings.BibleVersionAlign
             Case ALIGN.LEFT
@@ -979,6 +1003,8 @@ jQuery(document).ready(function(){
         End If
         My.Settings.Save()
         If Not initializing Then setPreviewDocument()
+        Label3.Visible = (My.Settings.BibleVersionVisibility = VISIBILITY.SHOW)
+        Label4.Visible = (My.Settings.BibleVersionVisibility = VISIBILITY.HIDE)
     End Sub
 
     Private Sub CheckBox2_MouseEnter(sender As Object, e As EventArgs) Handles CheckBox2.MouseEnter
@@ -1008,6 +1034,8 @@ jQuery(document).ready(function(){
         End If
         My.Settings.Save()
         If Not initializing Then setPreviewDocument()
+        Label6.Visible = (My.Settings.VerseNumberVisibility = VISIBILITY.SHOW)
+        Label5.Visible = (My.Settings.VerseNumberVisibility = VISIBILITY.HIDE)
     End Sub
 
     Private Sub CheckBox3_MouseEnter(sender As Object, e As EventArgs) Handles CheckBox3.MouseEnter

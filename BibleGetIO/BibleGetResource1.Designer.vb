@@ -228,6 +228,15 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Apply filter.
+    '''</summary>
+    Friend Shared ReadOnly Property Apply_filter() As String
+        Get
+            Return ResourceManager.GetString("Apply filter", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a AUTHOR.
     '''</summary>
     Friend Shared ReadOnly Property AUTHOR() As String
@@ -364,6 +373,15 @@ Friend Class BibleGetResource
     Friend Shared ReadOnly Property EMAIL_ADDRESS_FOR_INFORMATION_OR_FEEDBACK_ON_THE_PROJECT() As String
         Get
             Return ResourceManager.GetString("EMAIL ADDRESS FOR INFORMATION OR FEEDBACK ON THE PROJECT", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Filter results with another term.
+    '''</summary>
+    Friend Shared ReadOnly Property Filter_results_with_another_term() As String
+        Get
+            Return ResourceManager.GetString("Filter results with another term", resourceCulture)
         End Get
     End Property
     
@@ -662,6 +680,24 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a Order by Importance.
+    '''</summary>
+    Friend Shared ReadOnly Property Order_by_Importance() As String
+        Get
+            Return ResourceManager.GetString("Order by Importance", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Order by Reference.
+    '''</summary>
+    Friend Shared ReadOnly Property Order_by_Reference() As String
+        Get
+            Return ResourceManager.GetString("Order by Reference", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a Override Bible Version Formatting.
     '''</summary>
     Friend Shared ReadOnly Property Override_Bible_Version_Formatting() As String
@@ -772,6 +808,15 @@ Friend Class BibleGetResource
                     "e text as close as possible to the original.<br> If however you need to have con"& _ 
                     "sistent formatting in your document, you may override the Bible version's own fo"& _ 
                     "rmatting.", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a Term to search.
+    '''</summary>
+    Friend Shared ReadOnly Property Term_to_search() As String
+        Get
+            Return ResourceManager.GetString("Term to search", resourceCulture)
         End Get
     End Property
     

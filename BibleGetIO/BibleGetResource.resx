@@ -553,4 +553,76 @@ you may override the Bible version's own formatting.</value>
   <data name="You must type a term to search for" xml:space="preserve">
     <value>You must type a term to search for</value>
   </data>
+  <data name="Term to search" xml:space="preserve">
+    <value>Term to search</value>
+  </data>
+  <data name="Filter results with another term" xml:space="preserve">
+    <value>Filter results with another term</value>
+  </data>
+  <data name="Apply filter" xml:space="preserve">
+    <value>Apply filter</value>
+  </data>
+  <data name="Order by Reference" xml:space="preserve">
+    <value>Order by Reference</value>
+  </data>
+  <data name="Order by Importance" xml:space="preserve">
+    <value>Order by Importance</value>
+  </data>
+  <data name="Layout preferences for Bible version" xml:space="preserve">
+    <value>Layout preferences for Bible version</value>
+  </data>
+  <data name="Layout preferences for Book / Chapter" xml:space="preserve">
+    <value>Layout preferences for Book / Chapter</value>
+  </data>
+  <data name="Layout preferences for Verse number" xml:space="preserve">
+    <value>Layout preferences for Verse number</value>
+  </data>
+  <data name="Verse Reference" xml:space="preserve">
+    <value>Verse Reference</value>
+  </data>
+  <data name="Remove filter" xml:space="preserve">
+    <value>Remove filter</value>
+  </data>
+  <data name="Inserted" xml:space="preserve">
+    <value>Inserted</value>
+    <comment>TRANSLATORS: context is the result of the action of inserting a verse into the document</comment>
+  </data>
+  <data name="Search results" xml:space="preserve">
+    <value>Search results</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="Wrap" xml:space="preserve">
+    <value>Wrap</value>
+  </data>
+  <data name="Display options" xml:space="preserve">
+    <value>Display options</value>
+    <comment>TRANSLATORS: context for book name, language, abbreviation</comment>
+  </data>
+  <data name="Hidden" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="NONE" xml:space="preserve">
+    <value>NONE</value>
+    <comment>TRANSLATORS: context is wrap options button, meaning is "no wrap", no parentheses or brackets</comment>
+  </data>
+  <data name="Bible Lang Abbrev" xml:space="preserve">
+    <value>Bible Lang Abbrev</value>
+  </data>
+  <data name="Bible Lang Full" xml:space="preserve">
+    <value>Bible Lang Full</value>
+  </data>
+  <data name="System Lang Abbrev" xml:space="preserve">
+    <value>System Lang Abbrev</value>
+  </data>
+  <data name="System Lang Full" xml:space="preserve">
+    <value>System Lang Full</value>
+  </data>
+  <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
+    <value>Current displayed units of Measurement in the Microsoft Word interface:</value>
+  </data>
 </root>

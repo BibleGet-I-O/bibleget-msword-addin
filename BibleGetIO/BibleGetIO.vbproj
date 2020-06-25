@@ -306,11 +306,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibleGetResource.sr.resx</DependentUpon>
     </Compile>
-    <Compile Include="BibleGetResource1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BibleGetResource.resx</DependentUpon>
-    </Compile>
     <Compile Include="BibleGetSearchResults.Designer.vb">
       <DependentUpon>BibleGetSearchResults.vb</DependentUpon>
     </Compile>
@@ -400,7 +395,7 @@
     <EmbeddedResource Include="BibleGetResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>BibleGetResource1.Designer.vb</LastGenOutput>
+      <LastGenOutput>BibleGetResource.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="BibleGetResource.sr.resx">
       <Generator>ResXFileCodeGenerator</Generator>

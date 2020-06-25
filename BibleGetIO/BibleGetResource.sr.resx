@@ -550,4 +550,73 @@ double up any single quotes or apostrophes.</comment>
   <data name="You must type a term to search for" xml:space="preserve">
     <value>За претрагу морате да унесете термин</value>
   </data>
+  <data name="Term to search" xml:space="preserve">
+    <value>Кључна реч за претраживање</value>
+  </data>
+  <data name="Filter results with another term" xml:space="preserve">
+    <value>Филтрирајте резултате другим термином</value>
+  </data>
+  <data name="Apply filter" xml:space="preserve">
+    <value>Примјени филтер</value>
+  </data>
+  <data name="Order by Reference" xml:space="preserve">
+    <value>Поредак по референци</value>
+  </data>
+  <data name="Order by Importance" xml:space="preserve">
+    <value>Поредак по важности</value>
+  </data>
+  <data name="Layout preferences for Bible version" xml:space="preserve">
+    <value>Поставке распореда за верзију Библије</value>
+  </data>
+  <data name="Layout preferences for Book / Chapter" xml:space="preserve">
+    <value>Поставке распореда књиге / поглавља</value>
+  </data>
+  <data name="Layout preferences for Verse number" xml:space="preserve">
+    <value>Поставке броја броја стиха</value>
+  </data>
+  <data name="Verse Reference" xml:space="preserve">
+    <value>Версе Референце</value>
+  </data>
+  <data name="Remove filter" xml:space="preserve">
+    <value>Уклоните филтер</value>
+  </data>
+  <data name="Inserted" xml:space="preserve">
+    <value>Уметнуто</value>
+  </data>
+  <data name="Search results" xml:space="preserve">
+    <value>Резултати претраге</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Положај</value>
+  </data>
+  <data name="Wrap" xml:space="preserve">
+    <value>Завијте</value>
+  </data>
+  <data name="Display options" xml:space="preserve">
+    <value>Опције презентације</value>
+  </data>
+  <data name="Hidden" xml:space="preserve">
+    <value>Сакривен</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Видљиво</value>
+  </data>
+  <data name="NONE" xml:space="preserve">
+    <value>НИШТА</value>
+  </data>
+  <data name="Bible Lang Abbrev" xml:space="preserve">
+    <value>Скраћени језик Библије</value>
+  </data>
+  <data name="Bible Lang Full" xml:space="preserve">
+    <value>Библијски језик</value>
+  </data>
+  <data name="System Lang Full" xml:space="preserve">
+    <value>Системски језик</value>
+  </data>
+  <data name="System Lang Abbrev" xml:space="preserve">
+    <value>Скраћени језик система</value>
+  </data>
+  <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
+    <value>Тренутно приказане мере мере у Мицрософт Ворд интерфејсу:</value>
+  </data>
 </root>

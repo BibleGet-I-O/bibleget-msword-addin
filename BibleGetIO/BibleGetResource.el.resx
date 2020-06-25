@@ -551,4 +551,73 @@ double up any single quotes or apostrophes.</comment>
   <data name="You must type a term to search for" xml:space="preserve">
     <value>Πρέπει να πληκτρολογήσετε έναν όρο για αναζήτηση</value>
   </data>
+  <data name="Term to search" xml:space="preserve">
+    <value>Ορος αναζήτησης</value>
+  </data>
+  <data name="Filter results with another term" xml:space="preserve">
+    <value>Φιλτράρετε τα αποτελέσματα με έναν άλλο όρο</value>
+  </data>
+  <data name="Apply filter" xml:space="preserve">
+    <value>Εφαρμόστε φίλτρο</value>
+  </data>
+  <data name="Order by Reference" xml:space="preserve">
+    <value>Παραγγελία με αναφορά</value>
+  </data>
+  <data name="Order by Importance" xml:space="preserve">
+    <value>Παραγγελία κατά σημασία</value>
+  </data>
+  <data name="Layout preferences for Bible version" xml:space="preserve">
+    <value>Προτιμήσεις διάταξης για τη Βιβλική έκδοση</value>
+  </data>
+  <data name="Layout preferences for Book / Chapter" xml:space="preserve">
+    <value>Προτιμήσεις διάταξης για Βιβλίο / Κεφάλαιο</value>
+  </data>
+  <data name="Layout preferences for Verse number" xml:space="preserve">
+    <value>Προτιμήσεις διάταξης για τον αριθμό του στίχου</value>
+  </data>
+  <data name="Verse Reference" xml:space="preserve">
+    <value>Αναφορά του στίχου</value>
+  </data>
+  <data name="Remove filter" xml:space="preserve">
+    <value>Αφαιρέστε το φίλτρο</value>
+  </data>
+  <data name="Inserted" xml:space="preserve">
+    <value>Έγινε εισαγωγή</value>
+  </data>
+  <data name="Search results" xml:space="preserve">
+    <value>Αποτελέσματα αναζήτησης</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>Θέση</value>
+  </data>
+  <data name="Wrap" xml:space="preserve">
+    <value>Κάλυμμα</value>
+  </data>
+  <data name="Display options" xml:space="preserve">
+    <value>Επιλογές παρουσίασης</value>
+  </data>
+  <data name="Hidden" xml:space="preserve">
+    <value>Κρυμμένος</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Ορατός</value>
+  </data>
+  <data name="NONE" xml:space="preserve">
+    <value>ΤΙΠΟΤΑ</value>
+  </data>
+  <data name="Bible Lang Abbrev" xml:space="preserve">
+    <value>Συντ. Γλώσσα Βίβλου</value>
+  </data>
+  <data name="Bible Lang Full" xml:space="preserve">
+    <value>Γλώσσα Βίβλου</value>
+  </data>
+  <data name="System Lang Full" xml:space="preserve">
+    <value>Γλώσσα συστήματος</value>
+  </data>
+  <data name="System Lang Abbrev" xml:space="preserve">
+    <value>Γλώσσα συστήματος συντ</value>
+  </data>
+  <data name="Current displayed units of Measurement in the Microsoft Word interface:" xml:space="preserve">
+    <value>Τρέχουσες μονάδες μέτρησης που εμφανίζονται στην διεπαφή του Microsoft Word:</value>
+  </data>
 </root>
