@@ -632,4 +632,13 @@ können Sie die Formatierung der Bibel -Version ignorieren.</value>
   <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
     <value>Das BibleGet-Plug-In wurde nicht korrekt initialisiert ...</value>
   </data>
+  <data name="Search for Bible Verses" xml:space="preserve">
+    <value>Suche nach Bibelversen</value>
+  </data>
+  <data name="Bible version to search from" xml:space="preserve">
+    <value>Bibelversion zum Suchen</value>
+  </data>
+  <data name="Search for verses by keyword" xml:space="preserve">
+    <value>Suche nach Versen nach Schlüsselwörtern</value>
+  </data>
 </root>

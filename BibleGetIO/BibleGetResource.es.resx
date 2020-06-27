@@ -631,4 +631,13 @@ puede anular el formateo propio de la versión de la Biblia.</value>
   <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
     <value>El complemento BibleGet no se ha inicializado correctamente ...</value>
   </data>
+  <data name="Search for Bible Verses" xml:space="preserve">
+    <value>Busca versículos bíblicos</value>
+  </data>
+  <data name="Bible version to search from" xml:space="preserve">
+    <value>Versión de la Biblia para buscar</value>
+  </data>
+  <data name="Search for verses by keyword" xml:space="preserve">
+    <value>Busca versículos por palabra clave</value>
+  </data>
 </root>

@@ -351,9 +351,11 @@
 		<row><td>BibleGetIO.Output_primario</td><td>{D758CB41-1B6C-4C15-B4AD-003E36FB0DBF}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Output_primario1</td><td>{4CBC9419-0EC8-40E4-A6CB-BD9C9B632A01}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Output_primario2</td><td>{C57562C7-D7DF-43DC-B874-7F72107B186E}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.Output_primario3</td><td>{B32A57C9-12F0-4FBA-B6FE-BAA67586C7B5}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Risorse_localizzate</td><td>{817B3133-2BD1-4F79-97B1-78817347A1CB}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Risorse_localizzate1</td><td>{03E19BE7-A98B-4541-A9AE-BD7203D1279F}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Risorse_localizzate2</td><td>{EB03664B-FA95-442E-8EBB-6E39D9E37AA4}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.Risorse_localizzate3</td><td>{AFE08C14-8694-4FF0-AFEB-CC20494A7F1D}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.resources.dll</td><td>{476984BE-A313-48AE-868E-942288DA16A8}</td><td>DE</td><td>2</td><td/><td>biblegetio.resources.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.resources.dll1</td><td>{F98CFB8F-8379-4C0A-A7D7-D3D0E2B33591}</td><td>EN</td><td>2</td><td/><td>biblegetio.resources.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.resources.dll2</td><td>{9A481026-3556-4782-9AC8-300528966C6D}</td><td>ES</td><td>2</td><td/><td>biblegetio.resources.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -985,7 +987,7 @@
 		<row><td>InstallChangeFolder</td><td>Up</td><td>DirectoryListUp</td><td>0</td><td>1</td><td>0</td></row>
 		<row><td>InstallWelcome</td><td>Back</td><td>NewDialog</td><td>SplashBitmap</td><td>NOT Installed</td><td>0</td></row>
 		<row><td>InstallWelcome</td><td>Cancel</td><td>SpawnDialog</td><td>CancelSetup</td><td>1</td><td>0</td></row>
-		<row><td>InstallWelcome</td><td>Next</td><td>NewDialog</td><td>DestinationFolder</td><td>1</td><td>0</td></row>
+		<row><td>InstallWelcome</td><td>Next</td><td>NewDialog</td><td>ReadyToInstall</td><td>1</td><td>0</td></row>
 		<row><td>LicenseAgreement</td><td>Back</td><td>NewDialog</td><td>InstallWelcome</td><td>1</td><td>0</td></row>
 		<row><td>LicenseAgreement</td><td>Cancel</td><td>SpawnDialog</td><td>CancelSetup</td><td>1</td><td>0</td></row>
 		<row><td>LicenseAgreement</td><td>ISPrintButton</td><td>DoAction</td><td>ISPrint</td><td>1</td><td>0</td></row>
@@ -1020,7 +1022,7 @@
 		<row><td>ReadmeInformation</td><td>Cancel</td><td>SpawnDialog</td><td>CancelSetup</td><td>1</td><td>1</td></row>
 		<row><td>ReadmeInformation</td><td>Next</td><td>NewDialog</td><td>CustomerInformation</td><td>1</td><td>1</td></row>
 		<row><td>ReadyToInstall</td><td>Back</td><td>NewDialog</td><td>CustomSetup</td><td>Installed OR _IsSetupTypeMin = "Custom"</td><td>2</td></row>
-		<row><td>ReadyToInstall</td><td>Back</td><td>NewDialog</td><td>DestinationFolder</td><td>NOT Installed</td><td>1</td></row>
+		<row><td>ReadyToInstall</td><td>Back</td><td>NewDialog</td><td>InstallWelcome</td><td>NOT Installed</td><td>1</td></row>
 		<row><td>ReadyToInstall</td><td>Back</td><td>NewDialog</td><td>MaintenanceType</td><td>Installed AND _IsMaintenance = "Reinstall"</td><td>3</td></row>
 		<row><td>ReadyToInstall</td><td>Cancel</td><td>SpawnDialog</td><td>CancelSetup</td><td>1</td><td>0</td></row>
 		<row><td>ReadyToInstall</td><td>InstallNow</td><td>EndDialog</td><td>Return</td><td>OutOfNoRbDiskSpace &lt;&gt; 1</td><td>0</td></row>
@@ -1115,9 +1117,11 @@
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario1</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario2</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario3</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate1</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate2</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate3</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll1</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll2</td></row>
@@ -2003,9 +2007,11 @@
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Output_primario</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Output_primario1</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Output_primario2</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.Output_primario3</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate1</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate2</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate3</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll1</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll2</td></row>
@@ -2056,6 +2062,7 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>biblegetio.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.MAN|BibleGetIO.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.dll.manifest</td><td>1</td><td/></row>
+		<row><td>biblegetio.output_primario</td><td>BibleGetIO.Output_primario3</td><td>BibleGetIO.Output primario</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|Built</td><td>3</td><td/></row>
 		<row><td>biblegetio.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.PDB|BibleGetIO.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.pdb</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll</td><td>BibleGetIO.resources.dll</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\de\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll1</td><td>BibleGetIO.resources.dll1</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\en\BibleGetIO.resources.dll</td><td>1</td><td/></row>
@@ -2065,6 +2072,7 @@
 		<row><td>biblegetio.resources.dll5</td><td>BibleGetIO.resources.dll5</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\el\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll6</td><td>BibleGetIO.resources.dll6</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\pl\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll7</td><td>BibleGetIO.resources.dll7</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\sr\BibleGetIO.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetio.risorse_localizza</td><td>BibleGetIO.Risorse_localizzate3</td><td>BibleGetIO.Risorse localizzate</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>biblegetio.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.VST|BibleGetIO.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.vsto</td><td>1</td><td/></row>
 		<row><td>biblegetio.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.XML|BibleGetIO.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.xml</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.e</td><td>BibleGetMSWordRegistryKeys.exe</td><td>BIBLEG~1.EXE|BibleGetMSWordRegistryKeys.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\BibleGetMSWordRegistryKeys.exe</td><td>1</td><td/></row>
@@ -2232,9 +2240,11 @@
 		<row><td>BibleGetIO.Output_primario</td><td/><td/><td>_BA1D5812_AA69_4222_B79D_9AC25D043BE0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Output_primario1</td><td/><td/><td>_0AEF7F45_11CC_40B9_906C_95B96D3A361C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Output_primario2</td><td/><td/><td>_E27E11E3_161C_4BA5_9356_E86A1EABB272_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.Output_primario3</td><td/><td/><td>_9029B6D7_9353_437C_9D40_9ED6FED71EFC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Risorse_localizzate</td><td/><td/><td>_7C558799_E208_4DBA_A55E_7546CA985276_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Risorse_localizzate1</td><td/><td/><td>_8BD920A9_13AD_492D_ABCF_DA047896E966_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Risorse_localizzate2</td><td/><td/><td>_DFB67517_9920_4FBB_91DF_75892284F70A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.Risorse_localizzate3</td><td/><td/><td>_F0DA7926_F055_4410_8108_52A74F02751C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.resources.dll</td><td/><td/><td>_C292DE86_A3C7_4698_A90D_1C3A04D769BD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.resources.dll1</td><td/><td/><td>_F10CCEF5_0F45_4705_885C_390064862833_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.resources.dll2</td><td/><td/><td>_47B3CA3F_4480_4FB9_BF44_ECA3777EB1EE_FILTER</td><td/><td/><td/><td/></row>
@@ -2830,7 +2840,6 @@
 		<row><td>_8D272CEC_E42F_4D90_9029_3A0D83B51051_</td><td>Visual Studio 2010 Tools for Office Runtime.prq</td><td/><td/><td/></row>
 		<row><td>_93D1BBDD_CA71_4B4D_AD1E_CEA16424C3FE_</td><td>Microsoft .NET Framework 4.0 Client.prq</td><td/><td/><td/></row>
 		<row><td>_D1F0AF19_A0FE_4443_B66C_E8E30E7515E4_</td><td>Windows Installer 4.5 for Windows Vista (x86).prq</td><td/><td/><td/></row>
-		<row><td>_E545ACD8_115C_49FD_A627_44B92AD518F6_</td><td>Microsoft VSTO 2010 Runtime.prq</td><td/><td/><td/></row>
 	</table>
 
 	<table name="ISSetupType">
@@ -4175,7 +4184,7 @@
 		<row><td>RemoveFolders</td><td/><td>3600</td><td>RemoveFolders</td><td/></row>
 		<row><td>RemoveIniValues</td><td/><td>3100</td><td>RemoveIniValues</td><td/></row>
 		<row><td>RemoveODBC</td><td/><td>2400</td><td>RemoveODBC</td><td/></row>
-		<row><td>RemoveRegistryKeys</td><td>REMOVE="ALL"</td><td>6402</td><td/><td/></row>
+		<row><td>RemoveRegistryKeys</td><td>REMOVE="ALL"</td><td>6405</td><td/><td/></row>
 		<row><td>RemoveRegistryValues</td><td/><td>2600</td><td>RemoveRegistryValues</td><td/></row>
 		<row><td>RemoveShortcuts</td><td/><td>3200</td><td>RemoveShortcuts</td><td/></row>
 		<row><td>ResolveSource</td><td>Not Installed</td><td>850</td><td>ResolveSource</td><td/></row>
@@ -4608,7 +4617,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{E55E715D-D00E-4BE5-9DB9-8EB8617AD4A4}</td><td/></row>
+		<row><td>ProductCode</td><td>{E73D7463-AE64-4D38-BCA9-8899D2B2782D}</td><td/></row>
 		<row><td>ProductName</td><td>BibleGet IO for MSWord</td><td/></row>
 		<row><td>ProductVersion</td><td>3.0.0.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>

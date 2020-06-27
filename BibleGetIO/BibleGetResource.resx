@@ -637,4 +637,13 @@ you may override the Bible version's own formatting.</value>
   <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
     <value>The BibleGet Plug-in has not been correctly initialized...</value>
   </data>
+  <data name="Search for Bible Verses" xml:space="preserve">
+    <value>Search for Bible Verses</value>
+  </data>
+  <data name="Bible version to search from" xml:space="preserve">
+    <value>Bible version to search from</value>
+  </data>
+  <data name="Search for verses by keyword" xml:space="preserve">
+    <value>Search for verses by keyword</value>
+  </data>
 </root>

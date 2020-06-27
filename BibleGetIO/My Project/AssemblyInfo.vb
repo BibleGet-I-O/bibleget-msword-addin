@@ -14,7 +14,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("A tool for inserting Bible quotes into your documents.")>
 <Assembly: AssemblyCompany("John R. D'Orazio")>
 <Assembly: AssemblyProduct("BibleGet IO for Microsoft Word")>
-<Assembly: AssemblyCopyright("Copyright © 2015 BibleGet IO | E-Mail admin@bibleget.io")>
+<Assembly: AssemblyCopyright("Copyright © 2020 BibleGet IO | E-Mail admin@bibleget.io")>
 <Assembly: AssemblyTrademark("BibleGet IO")>
 
 ' Setting ComVisible to false makes the types in this assembly not visible 
@@ -23,7 +23,7 @@ Imports System.Runtime.InteropServices
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("5288dc29-ba64-4411-88a6-02aeb7379d8e")>
+<Assembly: Guid("E73D7463-AE64-4D38-BCA9-8899D2B2782D")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -36,8 +36,8 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.2.6.2")>
-<Assembly: AssemblyFileVersion("2.2.6.2")>
+<Assembly: AssemblyVersion("3.0.0.1")>
+<Assembly: AssemblyFileVersion("3.0.0.1")>
 
 Friend Module DesignTimeConstants
     Public Const RibbonTypeSerializer As String = "Microsoft.VisualStudio.Tools.Office.Ribbon.Serialization.RibbonTypeCodeDomSerializer, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"

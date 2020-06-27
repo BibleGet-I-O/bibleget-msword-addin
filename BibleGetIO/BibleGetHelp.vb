@@ -110,7 +110,7 @@ Public Class BibleGetHelp
         HtmlStr0 &= "<p><b>" + __("COLLABORATORS") + ":</b> " + __("Giovanni Gregori (computing) and Simone Urbinati (MUG Roma Tre)") + "</p>"
         HtmlStr0 &= "<p><b>" + __("Version").ToUpper(CultureInfo.CurrentCulture) + ":</b> " & My.Application.Info.Version.ToString + "</p>"
         HtmlStr0 &= "<p>© <b>Copyright 2016 BibleGet I/O by John R. D'Orazio</b> <a href=""mailto:priest@johnromanodorazio.com"">priest@johnromanodorazio.com</a></p>"
-        HtmlStr0 &= "<p><b>" + __("PROJECT WEBSITE") + ": </b><a href=""http://www.bibleget.io"">http://www.bibleget.io</a><br>"
+        HtmlStr0 &= "<p><b>" + __("PROJECT WEBSITE") + ": </b><a href=""https://www.bibleget.io"">https://www.bibleget.io</a><br>"
         HtmlStr0 &= "<b>" + __("EMAIL ADDRESS FOR INFORMATION OR FEEDBACK ON THE PROJECT") + ":</b> <a href=""mailto:bibleget.io@gmail.com"">bibleget.io@gmail.com</a></p>"
         HtmlStr0 &= "</body></html>"
 

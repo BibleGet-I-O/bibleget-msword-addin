@@ -37,11 +37,14 @@ Public Class BibleGetSearchResults
 
     Private Sub BibleGetSearchResults_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'MsgBox("Term to search = " & BibleGetRibbon.TermToSearch & " & version for search = " & BibleGetRibbon.BibleVersionForSearch)
+        Text = __("Search for Bible Verses")
+        Label2.Text = __("Bible version to search from")
         DEBUG_MODE = My.Settings.DEBUG_MODE
         LoadBibleVersions(BibleVersionForSearch)
         PlaceholderText = __("e.g. creation")
         Label1.Text = __("Term to search")
         Label6.Text = __("Filter results with another term")
+        Button1.Text = __("Search")
         Button2.Text = __("Apply filter")
         Button3.Text = __("Order by Reference")
         TermToSearch.Text = PlaceholderText
@@ -410,8 +413,8 @@ a.button:hover { background-color: #EEF; }
             Dim workerProgressChunk = Math.Floor(75 / numResults)
             Dim resultCounter As Integer = 0
             For Each result As JToken In jRRArray
-                book = result.SelectToken("booknum").Value(Of Integer)()
-                Dim localizedBook As LocalizedBibleBook = localizedBookNames.GetBookByIndex(book)
+                book = result.SelectToken("univbooknum").Value(Of Integer)()
+                Dim localizedBook As LocalizedBibleBook = localizedBookNames.GetBookByIndex(book - 1)
                 chapter = result.SelectToken("chapter").Value(Of Integer)()
                 versenumber = result.SelectToken("verse").Value(Of Integer)()
                 versetext = result.SelectToken("text").Value(Of String)()
@@ -488,7 +491,7 @@ a.button:hover { background-color: #EEF; }
             Dim row As DataRow = rowView.Row
             Dim book As Integer = row("BOOK")
             Dim bookIdx As Integer = book
-            Dim localizedBook As LocalizedBibleBook = localizedBookNames.GetBookByIndex(bookIdx)
+            Dim localizedBook As LocalizedBibleBook = localizedBookNames.GetBookByIndex(bookIdx - 1)
             Dim chapter As Integer = row("CHAPTER")
             Dim versenumber As Integer = row("VERSE")
             Dim versetext As String = row("VERSETEXT")

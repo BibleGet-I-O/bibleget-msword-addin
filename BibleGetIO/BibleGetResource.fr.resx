@@ -631,4 +631,13 @@ vous pouvez outrepasser le formatage propre de la version de la Bible.</value>
   <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
     <value>Le plugin BibleGet n'a pas été correctement initialisé ...</value>
   </data>
+  <data name="Search for Bible Verses" xml:space="preserve">
+    <value>Recherche des versets bibliques</value>
+  </data>
+  <data name="Bible version to search from" xml:space="preserve">
+    <value>Version de la Bible à rechercher</value>
+  </data>
+  <data name="Search for verses by keyword" xml:space="preserve">
+    <value>Recherche des versets par mot-clé</value>
+  </data>
 </root>

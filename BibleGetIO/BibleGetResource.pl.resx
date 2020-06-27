@@ -631,4 +631,13 @@ możesz zastąpić własne formatowanie wersji Biblii.</value>
   <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
     <value>Wtyczka BibleGet nie została poprawnie zainicjowana ...</value>
   </data>
+  <data name="Search for Bible Verses" xml:space="preserve">
+    <value>Szukaj wersetów biblijnych</value>
+  </data>
+  <data name="Bible version to search from" xml:space="preserve">
+    <value>Wersja biblijna do wyszukiwania</value>
+  </data>
+  <data name="Search for verses by keyword" xml:space="preserve">
+    <value>Wyszukaj wiersze według słowa kluczowego</value>
+  </data>
 </root>

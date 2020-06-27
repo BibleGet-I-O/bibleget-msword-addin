@@ -631,4 +631,13 @@ double up any single quotes or apostrophes.</comment>
   <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
     <value>Додатак БиблеГет није исправно покренут ...</value>
   </data>
+  <data name="Search for Bible Verses" xml:space="preserve">
+    <value>Потражите Библијске стихове</value>
+  </data>
+  <data name="Bible version to search from" xml:space="preserve">
+    <value>Верзија Библије за претрагу</value>
+  </data>
+  <data name="Search for verses by keyword" xml:space="preserve">
+    <value>Тражите стихове по кључној речи</value>
+  </data>
 </root>

@@ -632,4 +632,13 @@ double up any single quotes or apostrophes.</comment>
   <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
     <value>Η προσθήκη BibleGet δεν έχει αρχικοποιηθεί σωστά ...</value>
   </data>
+  <data name="Search for Bible Verses" xml:space="preserve">
+    <value>Αναζητήστε Αγία Γραφή</value>
+  </data>
+  <data name="Bible version to search from" xml:space="preserve">
+    <value>Βιβλική έκδοση για αναζήτηση</value>
+  </data>
+  <data name="Search for verses by keyword" xml:space="preserve">
+    <value>Αναζήτηση στίχων ανά λέξη-κλειδί</value>
+  </data>
 </root>

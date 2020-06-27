@@ -39,6 +39,7 @@ Public Class BibleGetRibbon
         SendFeedbackBtn.Label = __("Send feedback")
         MakeContributionBtn.Label = __("Contribute")
         AboutBtn.Label = __("About this plugin")
+        SearchBtn.Label = __("Search for verses by keyword")
         bibleGetDB = New BibleGetDatabase
         If bibleGetDB.IsInitialized Then
             StatusBtn.Image = My.Resources.green_checkmark
