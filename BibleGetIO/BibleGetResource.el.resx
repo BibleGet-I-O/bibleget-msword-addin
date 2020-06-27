@@ -626,4 +626,10 @@ double up any single quotes or apostrophes.</comment>
   <data name="Bible version" xml:space="preserve">
     <value>Βιβλική έκδοση</value>
   </data>
+  <data name="The BibleGet Plug-in has been correctly initialized!" xml:space="preserve">
+    <value>Το BibleGet Plug-in έχει ξεκινήσει σωστά!</value>
+  </data>
+  <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
+    <value>Η προσθήκη BibleGet δεν έχει αρχικοποιηθεί σωστά ...</value>
+  </data>
 </root>

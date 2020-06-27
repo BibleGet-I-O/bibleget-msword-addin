@@ -625,4 +625,10 @@ puede anular el formateo propio de la versión de la Biblia.</value>
   <data name="Bible version" xml:space="preserve">
     <value>Versión bíblica</value>
   </data>
+  <data name="The BibleGet Plug-in has been correctly initialized!" xml:space="preserve">
+    <value>¡El complemento BibleGet se ha inicializado correctamente!</value>
+  </data>
+  <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
+    <value>El complemento BibleGet no se ha inicializado correctamente ...</value>
+  </data>
 </root>

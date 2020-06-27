@@ -626,4 +626,10 @@ puoi ignorare la formattazione della versione biblica.</value>
   <data name="Bible version" xml:space="preserve">
     <value>Versione Biblica</value>
   </data>
+  <data name="The BibleGet Plug-in has been correctly initialized!" xml:space="preserve">
+    <value>Il plug-in BibleGet è stato inizializzato correttamente!</value>
+  </data>
+  <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
+    <value>Il plug-in BibleGet non è stato inizializzato correttamente...</value>
+  </data>
 </root>

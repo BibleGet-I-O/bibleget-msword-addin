@@ -625,4 +625,10 @@ double up any single quotes or apostrophes.</comment>
   <data name="Bible version" xml:space="preserve">
     <value>Верзија Библије</value>
   </data>
+  <data name="The BibleGet Plug-in has been correctly initialized!" xml:space="preserve">
+    <value>Додатак БиблеГет исправно је покренут!</value>
+  </data>
+  <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
+    <value>Додатак БиблеГет није исправно покренут ...</value>
+  </data>
 </root>

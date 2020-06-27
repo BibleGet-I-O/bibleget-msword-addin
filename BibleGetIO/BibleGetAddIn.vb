@@ -29,7 +29,7 @@ Public Class BibleGetAddIn
     End Property
 
 
-    Private Shared Function __(ByVal myStr As String) As String
+    Public Shared Function __(ByVal myStr As String) As String
         Dim myTranslation As String = _RM.GetString(myStr, _locale)
         If Not String.IsNullOrEmpty(myTranslation) Then
             Return myTranslation

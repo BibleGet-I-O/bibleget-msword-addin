@@ -30,10 +30,5 @@
 	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
 	<ItemGroup/>
 	<ItemGroup/>
-	<ItemGroup>
-		<ProjectReference Include="..\BibleGetIO\BibleGetIO.vbproj">
-			<Name>BibleGetIO</Name>
-			<Project>{F7711BCB-52F9-44EC-9700-76AB25790AD3}</Project>
-		</ProjectReference>
-	</ItemGroup>
+	<ItemGroup/>
 </Project>

@@ -625,4 +625,10 @@ możesz zastąpić własne formatowanie wersji Biblii.</value>
   <data name="Bible version" xml:space="preserve">
     <value>Wersja biblijna</value>
   </data>
+  <data name="The BibleGet Plug-in has been correctly initialized!" xml:space="preserve">
+    <value>Wtyczka BibleGet została poprawnie zainicjowana!</value>
+  </data>
+  <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
+    <value>Wtyczka BibleGet nie została poprawnie zainicjowana ...</value>
+  </data>
 </root>

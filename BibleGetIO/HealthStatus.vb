@@ -1,4 +1,5 @@
-﻿Imports System.Speech.Synthesis
+﻿Imports System.Globalization
+Imports System.Speech.Synthesis
 
 Public Class HealthStatus
 
@@ -33,9 +34,9 @@ Public Class HealthStatus
         Dim dt As String = curTime.ToString("F")
 
         If bibleGetDB.IsInitialized Then
-            msg = "The BibleGet Plug-in has been correctly initialized!"
+            msg = BibleGetAddIn.__("The BibleGet Plug-in has been correctly initialized!")
         Else
-            msg = "The BibleGet Plug-in has not been correctly initialized..."
+            msg = BibleGetAddIn.__("The BibleGet Plug-in has not been correctly initialized...")
         End If
 
         Label1.Text = msg & Environment.NewLine & Environment.NewLine & dt
@@ -45,7 +46,7 @@ Public Class HealthStatus
         speakStr += " xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"""
         speakStr += " xsi:schemaLocation=""http://www.w3.org/2001/10/synthesis"
         speakStr += "           http://www.w3.org/TR/speech-synthesis/synthesis.xsd"""
-        speakStr += " xml:lang=""en-US"">"
+        speakStr += " xml:lang=""" & CultureInfo.CurrentCulture.Name & """>"
         speakStr += msg
         'If bibleGetDB.IsInitialized Then
         'speakStr += "The BibleGet Plug-in <prosody volume=""x-loud""> has been </prosody> <break strength=""weak"" /> correctly <break strength=""weak"" /> initialized!"
@@ -56,7 +57,7 @@ Public Class HealthStatus
 
         synth.SetOutputToDefaultAudioDevice()
         'Dim engLocale As New CultureInfo("en")
-        'synth.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 1, engLocale)
+        'synth.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 1, CultureInfo.CurrentCulture)
         synth.SpeakSsmlAsync(speakStr)
 
     End Sub

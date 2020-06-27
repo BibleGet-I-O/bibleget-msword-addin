@@ -1044,6 +1044,24 @@ Friend Class BibleGetResource
     End Property
     
     '''<summary>
+    '''  Cerca una stringa localizzata simile a The BibleGet Plug-in has been correctly initialized!.
+    '''</summary>
+    Friend Shared ReadOnly Property The_BibleGet_Plug_in_has_been_correctly_initialized_() As String
+        Get
+            Return ResourceManager.GetString("The BibleGet Plug-in has been correctly initialized!", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Cerca una stringa localizzata simile a The BibleGet Plug-in has not been correctly initialized....
+    '''</summary>
+    Friend Shared ReadOnly Property The_BibleGet_Plug_in_has_not_been_correctly_initialized___() As String
+        Get
+            Return ResourceManager.GetString("The BibleGet Plug-in has not been correctly initialized...", resourceCulture)
+        End Get
+    End Property
+    
+    '''<summary>
     '''  Cerca una stringa localizzata simile a The book indicator &lt;{0}&gt; in the query &lt;{1}&gt; is not valid. Please check the documentation for a list of valid book indicators..
     '''</summary>
     Friend Shared ReadOnly Property The_book_indicator___0___in_the_query___1___is_not_valid__Please_check_the_documentation_for_a_list_of_valid_book_indicators_() As String
