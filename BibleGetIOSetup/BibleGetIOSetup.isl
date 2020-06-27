@@ -55,14 +55,14 @@
 		<subject>BibleGet IO for MSWord</subject>
 		<author>##ID_STRING2##</author>
 		<keywords>Installer,MSI,Database</keywords>
-		<comments>Contact:  Your local administrator</comments>
+		<comments>##ID_STRING8##</comments>
 		<template>Intel;1033</template>
 		<lastauthor>Administrator</lastauthor>
 		<revnumber>{FAF1D257-6BD4-44F6-B675-2FBD3869E3ED}</revnumber>
 		<lastprinted/>
 		<createdtm>06/21/1999 14:00</createdtm>
 		<lastsavedtm>07/14/2000 17:50</lastsavedtm>
-		<pagecount>200</pagecount>
+		<pagecount>405</pagecount>
 		<wordcount>0</wordcount>
 		<charcount/>
 		<appname>InstallShield Express</appname>
@@ -226,6 +226,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col key="yes" def="s72">Signature_</col>
 		<row><td>DOTNETVERSION40CLIENT</td><td>DotNet40Client</td></row>
+		<row><td>MSOFFICE2003</td><td>OFFICE2003</td></row>
 	</table>
 
 	<table name="BBControl">
@@ -350,9 +351,11 @@
 		<row><td>BibleGetIO.Output_primario</td><td>{D758CB41-1B6C-4C15-B4AD-003E36FB0DBF}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Output_primario1</td><td>{4CBC9419-0EC8-40E4-A6CB-BD9C9B632A01}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Output_primario2</td><td>{C57562C7-D7DF-43DC-B874-7F72107B186E}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.Output_primario3</td><td>{B32A57C9-12F0-4FBA-B6FE-BAA67586C7B5}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.output_primario</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Risorse_localizzate</td><td>{817B3133-2BD1-4F79-97B1-78817347A1CB}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Risorse_localizzate1</td><td>{03E19BE7-A98B-4541-A9AE-BD7203D1279F}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.Risorse_localizzate2</td><td>{EB03664B-FA95-442E-8EBB-6E39D9E37AA4}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetIO.Risorse_localizzate3</td><td>{AFE08C14-8694-4FF0-AFEB-CC20494A7F1D}</td><td>INSTALLDIR</td><td>2</td><td/><td>biblegetio.risorse_localizza</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.resources.dll</td><td>{476984BE-A313-48AE-868E-942288DA16A8}</td><td>DE</td><td>2</td><td/><td>biblegetio.resources.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.resources.dll1</td><td>{F98CFB8F-8379-4C0A-A7D7-D3D0E2B33591}</td><td>EN</td><td>2</td><td/><td>biblegetio.resources.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetIO.resources.dll2</td><td>{9A481026-3556-4782-9AC8-300528966C6D}</td><td>ES</td><td>2</td><td/><td>biblegetio.resources.dll2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -367,6 +370,9 @@
 		<row><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td>{D44F5738-3D6A-416F-8D8D-0A6B84610D41}</td><td>ES</td><td>2</td><td/><td>biblegetmswordregistrykeys.r2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td>{6D92BA36-B1B2-49DB-BF12-D987AB3BFCBF}</td><td>FR</td><td>2</td><td/><td>biblegetmswordregistrykeys.r3</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td>{E0FE7449-1F3E-4F21-96C9-42814449DACC}</td><td>IT</td><td>2</td><td/><td>biblegetmswordregistrykeys.r4</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll6</td><td>{EB5302B7-90A1-435E-AB59-2C8F1F850A88}</td><td>EL</td><td>2</td><td/><td>biblegetmswordregistrykeys.r6</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll7</td><td>{87D51D39-4F99-4210-B5C9-3285257C5CF9}</td><td>PL</td><td>2</td><td/><td>biblegetmswordregistrykeys.r7</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll8</td><td>{A3F0450F-B894-4216-94AE-B440D439B6CF}</td><td>SR</td><td>2</td><td/><td>biblegetmswordregistrykeys.r8</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{18F3C0F0-5040-46B9-8B75-1968664C4B3B}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{AA489B2F-2F85-49E4-8226-0E071A9BD789}</td><td>X64</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT10</td><td>{28BB9C54-C0D2-4246-B3B8-087E0B1172C2}</td><td>SR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -964,7 +970,7 @@
 		<row><td>DatabaseFolder</td><td>ChangeFolder</td><td>SpawnDialog</td><td>InstallChangeFolder</td><td>1</td><td>1</td></row>
 		<row><td>DatabaseFolder</td><td>ChangeFolder</td><td>[_BrowseProperty]</td><td>DATABASEDIR</td><td>1</td><td>2</td></row>
 		<row><td>DatabaseFolder</td><td>Next</td><td>NewDialog</td><td>SetupType</td><td>1</td><td>1</td></row>
-		<row><td>DestinationFolder</td><td>Back</td><td>NewDialog</td><td>LicenseAgreement</td><td>NOT Installed</td><td>0</td></row>
+		<row><td>DestinationFolder</td><td>Back</td><td>NewDialog</td><td>InstallWelcome</td><td>NOT Installed</td><td>0</td></row>
 		<row><td>DestinationFolder</td><td>Cancel</td><td>SpawnDialog</td><td>CancelSetup</td><td>1</td><td>1</td></row>
 		<row><td>DestinationFolder</td><td>ChangeFolder</td><td>SpawnDialog</td><td>InstallChangeFolder</td><td>1</td><td>1</td></row>
 		<row><td>DestinationFolder</td><td>ChangeFolder</td><td>[_BrowseProperty]</td><td>INSTALLDIR</td><td>1</td><td>2</td></row>
@@ -1097,6 +1103,7 @@
 		<row><td>DE</td><td>BibleGetMSWordRegistryKeys.resources.dll</td></row>
 		<row><td>DE</td><td>ISX_DEFAULTCOMPONENT4</td></row>
 		<row><td>EL</td><td>BibleGetIO.resources.dll5</td></row>
+		<row><td>EL</td><td>BibleGetMSWordRegistryKeys.resources.dll6</td></row>
 		<row><td>EL</td><td>ISX_DEFAULTCOMPONENT8</td></row>
 		<row><td>EN</td><td>BibleGetIO.resources.dll1</td></row>
 		<row><td>EN</td><td>BibleGetMSWordRegistryKeys.resources.dll1</td></row>
@@ -1110,9 +1117,11 @@
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario1</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario2</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.Output_primario3</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate1</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate2</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetIO.Risorse_localizzate3</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll1</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetIO.resources.dll2</td></row>
@@ -1127,6 +1136,9 @@
 		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll2</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll3</td></row>
 		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll6</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll7</td></row>
+		<row><td>INSTALLDIR</td><td>BibleGetMSWordRegistryKeys.resources.dll8</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT10</td></row>
@@ -1149,8 +1161,10 @@
 		<row><td>IT</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td></row>
 		<row><td>IT</td><td>ISX_DEFAULTCOMPONENT3</td></row>
 		<row><td>PL</td><td>BibleGetIO.resources.dll6</td></row>
+		<row><td>PL</td><td>BibleGetMSWordRegistryKeys.resources.dll7</td></row>
 		<row><td>PL</td><td>ISX_DEFAULTCOMPONENT9</td></row>
 		<row><td>SR</td><td>BibleGetIO.resources.dll7</td></row>
+		<row><td>SR</td><td>BibleGetMSWordRegistryKeys.resources.dll8</td></row>
 		<row><td>SR</td><td>ISX_DEFAULTCOMPONENT10</td></row>
 		<row><td>X64</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>X64</td><td>SQLite.Interop.dll</td></row>
@@ -1177,6 +1191,7 @@
 		<row><td>RemoveRegistryKeys</td><td>1026</td><td>NewBinary23</td><td/><td/><td/></row>
 		<row><td>RootCerticateInstall</td><td>2</td><td>NewBinary19</td><td/><td/><td>Installs the Root Certificate for the BibleGet website and plugin</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
+		<row><td>SetARPReadme</td><td>51</td><td>ARPREADME</td><td>https://www.bibleget.io/applications/microsoft-word-macro/</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
 		<row><td>ShowMsiLog</td><td>226</td><td>SystemFolder</td><td>[SystemFolder]notepad.exe "[MsiLogFileLocation]"</td><td/><td>Shows Property-driven MSI Log</td></row>
 		<row><td>setAllUsersProfile2K</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%ALLUSERSPROFILE]</td><td/><td/></row>
@@ -1298,7 +1313,6 @@
 		<row><td>X86</td><td>INSTALLDIR</td><td>x86</td><td/><td>0</td><td/></row>
 		<row><td>bibleg_1_bibleget_io</td><td>ProgramMenuFolder</td><td>BIBLEG~1|BibleGet IO</td><td/><td>1</td><td/></row>
 		<row><td>bibleg_1_bibleget_io_for_msword</td><td>bibleg_1_bibleget_io</td><td>BIBLEG~1|BibleGet IO for MSWord</td><td/><td>1</td><td/></row>
-		<row><td>bibleget_io_for_msword</td><td>bibleg_1_bibleget_io</td><td>BIBLEG~1|BibleGet IO AddIn For Microsoft Word</td><td/><td>1</td><td/></row>
 	</table>
 
 	<table name="DrLocator">
@@ -1993,9 +2007,11 @@
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Output_primario</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Output_primario1</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Output_primario2</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.Output_primario3</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate1</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate2</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetIO.Risorse_localizzate3</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll1</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetIO.resources.dll2</td></row>
@@ -2010,6 +2026,9 @@
 		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll2</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll3</td></row>
 		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll6</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll7</td></row>
+		<row><td>AlwaysInstall</td><td>BibleGetMSWordRegistryKeys.resources.dll8</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT10</td></row>
@@ -2043,7 +2062,7 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>biblegetio.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.MAN|BibleGetIO.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.dll.manifest</td><td>1</td><td/></row>
-		<row><td>biblegetio.output_primario</td><td>BibleGetIO.Output_primario2</td><td>BibleGetIO.Output primario</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|Built</td><td>3</td><td/></row>
+		<row><td>biblegetio.output_primario</td><td>BibleGetIO.Output_primario3</td><td>BibleGetIO.Output primario</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|Built</td><td>3</td><td/></row>
 		<row><td>biblegetio.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.PDB|BibleGetIO.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.pdb</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll</td><td>BibleGetIO.resources.dll</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\de\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll1</td><td>BibleGetIO.resources.dll1</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\en\BibleGetIO.resources.dll</td><td>1</td><td/></row>
@@ -2053,7 +2072,7 @@
 		<row><td>biblegetio.resources.dll5</td><td>BibleGetIO.resources.dll5</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\el\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll6</td><td>BibleGetIO.resources.dll6</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\pl\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll7</td><td>BibleGetIO.resources.dll7</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\sr\BibleGetIO.resources.dll</td><td>1</td><td/></row>
-		<row><td>biblegetio.risorse_localizza</td><td>BibleGetIO.Risorse_localizzate2</td><td>BibleGetIO.Risorse localizzate</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
+		<row><td>biblegetio.risorse_localizza</td><td>BibleGetIO.Risorse_localizzate3</td><td>BibleGetIO.Risorse localizzate</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>biblegetio.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.VST|BibleGetIO.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.vsto</td><td>1</td><td/></row>
 		<row><td>biblegetio.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.XML|BibleGetIO.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.xml</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.e</td><td>BibleGetMSWordRegistryKeys.exe</td><td>BIBLEG~1.EXE|BibleGetMSWordRegistryKeys.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\BibleGetMSWordRegistryKeys.exe</td><td>1</td><td/></row>
@@ -2062,6 +2081,9 @@
 		<row><td>biblegetmswordregistrykeys.r2</td><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\es\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.r3</td><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\fr\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.r4</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\it\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.r6</td><td>BibleGetMSWordRegistryKeys.resources.dll6</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.r7</td><td>BibleGetMSWordRegistryKeys.resources.dll7</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
+		<row><td>biblegetmswordregistrykeys.r8</td><td>BibleGetMSWordRegistryKeys.resources.dll8</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.office.tools.commo</td><td>ISX_DEFAULTCOMPONENT</td><td>MICROS~1.XML|Microsoft.Office.Tools.Common.v4.0.Utilities.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.xml</td><td>1</td><td/></row>
 		<row><td>microsoft.office.tools.commo1</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.visualstudio.tools</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>MICROS~1.DLL|Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>1</td><td/></row>
@@ -2218,9 +2240,11 @@
 		<row><td>BibleGetIO.Output_primario</td><td/><td/><td>_BA1D5812_AA69_4222_B79D_9AC25D043BE0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Output_primario1</td><td/><td/><td>_0AEF7F45_11CC_40B9_906C_95B96D3A361C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Output_primario2</td><td/><td/><td>_E27E11E3_161C_4BA5_9356_E86A1EABB272_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.Output_primario3</td><td/><td/><td>_9029B6D7_9353_437C_9D40_9ED6FED71EFC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Risorse_localizzate</td><td/><td/><td>_7C558799_E208_4DBA_A55E_7546CA985276_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Risorse_localizzate1</td><td/><td/><td>_8BD920A9_13AD_492D_ABCF_DA047896E966_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.Risorse_localizzate2</td><td/><td/><td>_DFB67517_9920_4FBB_91DF_75892284F70A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetIO.Risorse_localizzate3</td><td/><td/><td>_F0DA7926_F055_4410_8108_52A74F02751C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.resources.dll</td><td/><td/><td>_C292DE86_A3C7_4698_A90D_1C3A04D769BD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.resources.dll1</td><td/><td/><td>_F10CCEF5_0F45_4705_885C_390064862833_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetIO.resources.dll2</td><td/><td/><td>_47B3CA3F_4480_4FB9_BF44_ECA3777EB1EE_FILTER</td><td/><td/><td/><td/></row>
@@ -2235,6 +2259,9 @@
 		<row><td>BibleGetMSWordRegistryKeys.resources.dll2</td><td/><td/><td>_144A3E84_CD7B_49A9_B372_0967978BA73F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetMSWordRegistryKeys.resources.dll3</td><td/><td/><td>_E8C4912B_4661_4E2E_83F7_6CDE266A2910_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>BibleGetMSWordRegistryKeys.resources.dll4</td><td/><td/><td>_81DF0F94_7FD4_434B_96F1_3C58AFBC5323_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll6</td><td/><td/><td>_0B370AB2_20F6_4907_9B90_68E61C4FF678_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll7</td><td/><td/><td>_EFCF5AFA_E110_4FA3_8FD7_F1DD3DAA6229_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>BibleGetMSWordRegistryKeys.resources.dll8</td><td/><td/><td>_B60C7F2A_B4BD_4085_A7B6_4F6AE4A3FAA7_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_DB8ED903_25D0_4081_9C37_E93B3F441947_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_5E0F452D_E5CA_40A4_8159_DEB9870728EA_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT10</td><td/><td/><td>_F78C1321_916F_4693_A78A_BD8E7B5842DB_FILTER</td><td/><td/><td/><td/></row>
@@ -2850,6 +2877,7 @@
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT</td><td>1033</td><td>Microsoft .NET Framework 4.0 Client Package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>681869647</td></row>
+		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_MSOFFICE2003</td><td>1033</td><td>Microsoft Office 2003 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-618129903</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_MSOFFICE2007</td><td>1033</td><td>Microsoft Office 2007 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>681843055</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_MSOFFICE2010</td><td>1033</td><td>Microsoft Office 2010 or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>681892175</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
@@ -3950,13 +3978,14 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>681889967</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://www.bibleget.io</td><td>0</td><td/><td>698671616</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>https://www.bibleget.io</td><td>0</td><td/><td>2032567602</td></row>
 		<row><td>ID_STRING2</td><td>1033</td><td>BibleGet IO</td><td>0</td><td/><td>1898200043</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Rev. John R. D'Orazio</td><td>0</td><td/><td>153396913</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>mailto:admin@bibleget.io</td><td>0</td><td/><td>1898200043</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>BibleGet I/O Add-In for Microsoft Word 2007+. Easily insert Bible quotes into your documents.</td><td>0</td><td/><td>153409586</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>https://www.bibleget.io/download/bibleget-addin-for-microsoft-word/</td><td>0</td><td/><td>1898213387</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td/><td>0</td><td/><td>832847875</td></row>
+		<row><td>ID_STRING8</td><td>1033</td><td>Contact:  plugin author at bibleget.io@gmail.com</td><td>0</td><td/><td>-618091887</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>681889967</td></row>
 	</table>
 
@@ -4112,7 +4141,7 @@
 		<row><td>DuplicateFiles</td><td/><td>4210</td><td>DuplicateFiles</td><td/></row>
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
-		<row><td>FixUserRegistryKeys</td><td>Not Installed</td><td>6405</td><td/><td/></row>
+		<row><td>FixUserRegistryKeys</td><td>Not Installed</td><td>6401</td><td/><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
 		<row><td>ISRunSetupTypeAddLocalEvent</td><td>Not Installed And Not ISRUNSETUPTYPEADDLOCALEVENT</td><td>1050</td><td>ISRunSetupTypeAddLocalEvent</td><td/></row>
 		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
@@ -4155,7 +4184,7 @@
 		<row><td>RemoveFolders</td><td/><td>3600</td><td>RemoveFolders</td><td/></row>
 		<row><td>RemoveIniValues</td><td/><td>3100</td><td>RemoveIniValues</td><td/></row>
 		<row><td>RemoveODBC</td><td/><td>2400</td><td>RemoveODBC</td><td/></row>
-		<row><td>RemoveRegistryKeys</td><td>REMOVE="ALL"</td><td>6402</td><td/><td/></row>
+		<row><td>RemoveRegistryKeys</td><td>REMOVE="ALL"</td><td>6405</td><td/><td/></row>
 		<row><td>RemoveRegistryValues</td><td/><td>2600</td><td>RemoveRegistryValues</td><td/></row>
 		<row><td>RemoveShortcuts</td><td/><td>3200</td><td>RemoveShortcuts</td><td/></row>
 		<row><td>ResolveSource</td><td>Not Installed</td><td>850</td><td>ResolveSource</td><td/></row>
@@ -4164,6 +4193,7 @@
 		<row><td>SelfRegModules</td><td/><td>5600</td><td>SelfRegModules</td><td/></row>
 		<row><td>SelfUnregModules</td><td/><td>2200</td><td>SelfUnregModules</td><td/></row>
 		<row><td>SetARPINSTALLLOCATION</td><td/><td>1100</td><td>SetARPINSTALLLOCATION</td><td/></row>
+		<row><td>SetARPReadme</td><td/><td>1001</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>VersionNT = 400</td><td>970</td><td/><td/></row>
 		<row><td>SetODBCFolders</td><td/><td>1200</td><td>SetODBCFolders</td><td/></row>
 		<row><td>StartServices</td><td>VersionNT</td><td>5900</td><td>StartServices</td><td/></row>
@@ -4246,6 +4276,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PatchWelcome</td><td>Installed And PATCH And Not IS_MAJOR_UPGRADE</td><td>1205</td><td>Patch Panel</td><td/></row>
 		<row><td>RMCCPSearch</td><td>Not CCP_SUCCESS And CCP_TEST</td><td>600</td><td>RMCCPSearch</td><td/></row>
 		<row><td>ResolveSource</td><td>Not Installed</td><td>990</td><td>ResolveSource</td><td/></row>
+		<row><td>SetARPReadme</td><td/><td>1001</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>VersionNT = 400</td><td>970</td><td/><td/></row>
 		<row><td>SetupCompleteError</td><td/><td>-3</td><td>SetupCompleteError</td><td/></row>
 		<row><td>SetupCompleteSuccess</td><td/><td>-1</td><td>SetupCompleteSuccess</td><td/></row>
@@ -4268,6 +4299,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col key="yes" def="s255">Condition</col>
 		<col def="l255">Description</col>
 		<row><td>DOTNETVERSION40CLIENT&gt;="#1"</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT##</td></row>
+		<row><td>NOT (MSOFFICE2003)</td><td>##IDPROP_EXPRESS_LAUNCH_CONDITION_MSOFFICE2003##</td></row>
 	</table>
 
 	<table name="ListBox">
@@ -4520,6 +4552,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ARPINSTALLLOCATION</td><td/><td/></row>
 		<row><td>ARPNOMODIFY</td><td>1</td><td/></row>
 		<row><td>ARPPRODUCTICON</td><td>ARPPRODUCTICON.exe</td><td/></row>
+		<row><td>ARPREADME</td><td>https://www.bibleget.io/applications/microsoft-word-macro/</td><td/></row>
 		<row><td>ARPSIZE</td><td/><td/></row>
 		<row><td>ARPURLINFOABOUT</td><td>##ID_STRING1##</td><td/></row>
 		<row><td>ARPURLUPDATEINFO</td><td>##ID_STRING6##</td><td/></row>
@@ -4558,6 +4591,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>IS_SQLSERVER_USERNAME</td><td>sa</td><td/></row>
 		<row><td>InstallChoice</td><td>AR</td><td/></row>
 		<row><td>Manufacturer</td><td>##COMPANY_NAME##</td><td/></row>
+		<row><td>MsiLogging</td><td>voicewarmup</td><td/></row>
 		<row><td>PIDKEY</td><td/><td/></row>
 		<row><td>PIDTemplate</td><td>12345&lt;###-%%%%%%%&gt;@@@@@</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOL</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOL##</td><td/></row>
@@ -4583,9 +4617,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{E55E715D-D00E-4BE5-9DB9-8EB8617AD4A4}</td><td/></row>
+		<row><td>ProductCode</td><td>{E73D7463-AE64-4D38-BCA9-8899D2B2782D}</td><td/></row>
 		<row><td>ProductName</td><td>BibleGet IO for MSWord</td><td/></row>
-		<row><td>ProductVersion</td><td>2.2.6.0</td><td/></row>
+		<row><td>ProductVersion</td><td>3.0.0.1</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4599,7 +4633,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
 		<row><td>SHOWLAUNCHPROGRAM</td><td>0</td><td/></row>
 		<row><td>SHOWLAUNCHREADME</td><td>0</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION40CLIENT;ISACTIONPROP1</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;DOTNETVERSION40CLIENT;ISACTIONPROP1;MSOFFICE2003</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td/></row>
@@ -4645,6 +4679,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">Name</col>
 		<col def="I2">Type</col>
 		<row><td>DotNet40Client</td><td>2</td><td>SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client</td><td>Install</td><td>2</td></row>
+		<row><td>OFFICE2003</td><td>2</td><td>SOFTWARE\Microsoft\Office\11.0\Common\InstallRoot</td><td>Path</td><td>2</td></row>
 	</table>
 
 	<table name="Registry">
@@ -4664,7 +4699,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
 		<row><td>FileKey1</td><td>BibleGetMSWordRegistryKeys.exe</td><td/><td>bibleg_1_bibleget_io_for_msword</td><td>2</td></row>
-		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td/><td>bibleget_io_for_msword</td><td>2</td></row>
+		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td/><td>bibleg_1_bibleget_io_for_msword</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -4750,7 +4785,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {2B9878E5-6DDF-48EF-8121-ADB4CEFD7E8D}</td><td/><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleg_1_bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {2B9878E5-6DDF-48EF-8121-ADB4CEFD7E8D}</td><td/><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4873,7 +4908,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td>1.0.0.0</td><td>2.2.5.0</td><td></td><td>772</td><td/><td>ISACTIONPROP1</td><td>NewUpgradeEntry1</td></row>
+		<row><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td>1.0.0.0</td><td>2.2.6.2</td><td>2057,1033,1036,1031,1032,1040,3098,2074,1034</td><td>772</td><td/><td>ISACTIONPROP1</td><td>NewUpgradeEntry1</td></row>
 	</table>
 
 	<table name="Verb">
