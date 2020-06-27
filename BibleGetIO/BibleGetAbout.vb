@@ -70,7 +70,7 @@ Public NotInheritable Class AboutBibleGet
         Dim descr As String
         descr = __("This plugin was developed by <b>John R. D'Orazio</b>, a priest in the diocese of Rome.") _
                 + " " _
-                + String.Format(__("It is a part of the <b>BibleGet Project</b> at {0}."), "<span style='color:Blue;'>http://www.bibleget.io</span>") _
+                + String.Format(__("It is a part of the <b>BibleGet Project</b> at {0}."), "<span style='color:Blue;'>https://www.bibleget.io</span>") _
                 + " " _
                 + __("The author would like to thank <b>Giovanni Gregori</b> and <b>Simone Urbinati</b> for their code contributions.") _
                 + " " _
