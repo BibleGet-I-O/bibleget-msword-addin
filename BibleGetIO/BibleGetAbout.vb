@@ -19,7 +19,7 @@ Public NotInheritable Class AboutBibleGet
     Private langsLocalized As List(Of String) = New List(Of String)
     Private colHeader As ColumnHeader
     Private localFile As String
-    Private eventHandled As Boolean
+    'Private eventHandled As Boolean
     Private WithEvents updateProcess As New Process
     Private elapsedTime As TimeSpan
     Private DEBUG_MODE As Boolean
@@ -428,7 +428,7 @@ Public NotInheritable Class AboutBibleGet
     Private Sub updateProcess_Exited(ByVal sender As Object,
             ByVal e As System.EventArgs) Handles updateProcess.Exited
         elapsedTime = updateProcess.ExitTime - updateProcess.StartTime
-        eventHandled = True
+        'eventHandled = True
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Start time:    " & updateProcess.StartTime)
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Exit time:    " & updateProcess.ExitTime)
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Exit code:    " & updateProcess.ExitCode)

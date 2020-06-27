@@ -669,16 +669,24 @@ jQuery(document).ready(function(){
             My.Settings.Save()
         End If
 
-
+        InterfaceInCM = False
         Select Case Application.Options.MeasurementUnit
+            Case Word.WdMeasurementUnits.wdInches
+                Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "in"
+                Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "in"
             Case Word.WdMeasurementUnits.wdCentimeters
                 InterfaceInCM = True
                 Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
                 Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
-            Case Else
-                InterfaceInCM = False
-                Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "in"
-                Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "in"
+            Case Word.WdMeasurementUnits.wdMillimeters
+                Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "mm"
+                Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "mm"
+            Case Word.WdMeasurementUnits.wdPicas
+                Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "pc"
+                Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "pc"
+            Case Word.WdMeasurementUnits.wdPoints
+                Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "pt"
+                Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "pt"
         End Select
 
         Select Case InterfaceInCM

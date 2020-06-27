@@ -124,6 +124,9 @@ Partial Class Preferences
         Me.RadioButton27 = New System.Windows.Forms.RadioButton()
         Me.RadioButton26 = New System.Windows.Forms.RadioButton()
         Me.GroupBox23 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton28 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton29 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton30 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -1311,6 +1314,9 @@ Partial Class Preferences
         '
         'GroupBox22
         '
+        Me.GroupBox22.Controls.Add(Me.RadioButton30)
+        Me.GroupBox22.Controls.Add(Me.RadioButton29)
+        Me.GroupBox22.Controls.Add(Me.RadioButton28)
         Me.GroupBox22.Controls.Add(Me.RadioButton27)
         Me.GroupBox22.Controls.Add(Me.RadioButton26)
         Me.GroupBox22.Location = New System.Drawing.Point(12, 808)
@@ -1325,7 +1331,7 @@ Partial Class Preferences
         Me.RadioButton27.Appearance = System.Windows.Forms.Appearance.Button
         Me.RadioButton27.AutoSize = True
         Me.RadioButton27.Enabled = False
-        Me.RadioButton27.Location = New System.Drawing.Point(252, 19)
+        Me.RadioButton27.Location = New System.Drawing.Point(167, 19)
         Me.RadioButton27.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton27.Name = "RadioButton27"
         Me.RadioButton27.Size = New System.Drawing.Size(38, 27)
@@ -1340,7 +1346,7 @@ Partial Class Preferences
         Me.RadioButton26.Appearance = System.Windows.Forms.Appearance.Button
         Me.RadioButton26.AutoSize = True
         Me.RadioButton26.Enabled = False
-        Me.RadioButton26.Location = New System.Drawing.Point(193, 19)
+        Me.RadioButton26.Location = New System.Drawing.Point(108, 19)
         Me.RadioButton26.Margin = New System.Windows.Forms.Padding(0)
         Me.RadioButton26.Name = "RadioButton26"
         Me.RadioButton26.Size = New System.Drawing.Size(59, 27)
@@ -1359,6 +1365,51 @@ Partial Class Preferences
         Me.GroupBox23.TabIndex = 17
         Me.GroupBox23.TabStop = False
         Me.GroupBox23.Text = "Show full reference"
+        '
+        'RadioButton28
+        '
+        Me.RadioButton28.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton28.AutoSize = True
+        Me.RadioButton28.Enabled = False
+        Me.RadioButton28.Location = New System.Drawing.Point(205, 19)
+        Me.RadioButton28.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton28.Name = "RadioButton28"
+        Me.RadioButton28.Size = New System.Drawing.Size(40, 27)
+        Me.RadioButton28.TabIndex = 2
+        Me.RadioButton28.TabStop = True
+        Me.RadioButton28.Text = "MM"
+        Me.RadioButton28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton28.UseVisualStyleBackColor = True
+        '
+        'RadioButton29
+        '
+        Me.RadioButton29.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton29.AutoSize = True
+        Me.RadioButton29.Enabled = False
+        Me.RadioButton29.Location = New System.Drawing.Point(245, 19)
+        Me.RadioButton29.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton29.Name = "RadioButton29"
+        Me.RadioButton29.Size = New System.Drawing.Size(57, 27)
+        Me.RadioButton29.TabIndex = 3
+        Me.RadioButton29.TabStop = True
+        Me.RadioButton29.Text = "Points"
+        Me.RadioButton29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton29.UseVisualStyleBackColor = True
+        '
+        'RadioButton30
+        '
+        Me.RadioButton30.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton30.AutoSize = True
+        Me.RadioButton30.Enabled = False
+        Me.RadioButton30.Location = New System.Drawing.Point(302, 19)
+        Me.RadioButton30.Margin = New System.Windows.Forms.Padding(0)
+        Me.RadioButton30.Name = "RadioButton30"
+        Me.RadioButton30.Size = New System.Drawing.Size(52, 27)
+        Me.RadioButton30.TabIndex = 4
+        Me.RadioButton30.TabStop = True
+        Me.RadioButton30.Text = "Picas"
+        Me.RadioButton30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadioButton30.UseVisualStyleBackColor = True
         '
         'Preferences
         '
@@ -1516,4 +1567,7 @@ Partial Class Preferences
     Friend WithEvents Label2 As Windows.Forms.Label
     Friend WithEvents GroupBox23 As Windows.Forms.GroupBox
     Friend WithEvents CheckBox4 As Windows.Forms.CheckBox
+    Friend WithEvents RadioButton28 As Windows.Forms.RadioButton
+    Friend WithEvents RadioButton30 As Windows.Forms.RadioButton
+    Friend WithEvents RadioButton29 As Windows.Forms.RadioButton
 End Class

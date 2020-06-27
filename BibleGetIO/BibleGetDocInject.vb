@@ -3,7 +3,7 @@ Imports Newtonsoft.Json.Linq
 Imports System.Drawing
 Imports System.Text.RegularExpressions
 Imports System.Globalization
-
+Imports System.Collections
 
 Public Class BibleGetDocInject
 
@@ -18,8 +18,13 @@ Public Class BibleGetDocInject
         DEBUG_MODE = My.Settings.DEBUG_MODE
     End Sub
 
+    'Compared to Google Docs, Microsoft Word does not return a reference to a paragraph when creating it
+    'Instead it moves the cursor into the new paragraph and you simply set styles on the new position in the document
     Public Function InsertTextAtCurrentSelection(ByVal myStr As String) As String
         Dim currentSelection As Word.Selection = Application.Selection
+        Dim BibleVersionStack = New ArrayList
+        Dim BookChapterStack = New ArrayList
+        Dim L10NBookNames = New LocalizedBibleBooks
 
         'Backup current styles, will restore after
         Dim currentStyle As Word.Font = New Word.Font
@@ -41,11 +46,7 @@ Public Class BibleGetDocInject
             Application.Options.Overtype = False
         End If
 
-        Dim paragraphFont As Word.Font = wdFontConverter(My.Settings.BookChapterFont)
-        Dim bookChapterFont As Word.Font = wdFontConverter(My.Settings.BookChapterFont)
-        Dim verseNumberFont As Word.Font = wdFontConverter(My.Settings.VerseNumberFont)
-        Dim verseTextFont As Word.Font = wdFontConverter(My.Settings.VerseTextFont)
-        Dim noVersionFormatting As Boolean = My.Settings.NOVERSIONFORMATTING
+        'Dim noVersionFormatting As Boolean = My.Settings.NOVERSIONFORMATTING
 
         Dim jsObj As JToken = JObject.Parse(myStr)
         Dim jRRArray As JArray = jsObj.SelectToken("results")
@@ -61,11 +62,14 @@ Public Class BibleGetDocInject
 
         Dim currentversion As String
         Dim currentbook As String
+        Dim currentbookabbrev As String
+        Dim currentbookUnivIdx As Integer
         Dim currentchapter As Integer
         Dim currentverse As String
+        Dim originalquery As String
 
         Dim firstversion As Boolean = True
-        Dim firstchapter As Boolean = True
+        Dim firstChapter As Boolean = True
 
         Dim firstVerse As Boolean = False
         Dim normalText As Boolean = False
@@ -78,9 +82,12 @@ Public Class BibleGetDocInject
             End If
             worker.ReportProgress(workerProgress)
             currentbook = currentJson.SelectToken("book").Value(Of String)()
+            currentbookabbrev = currentJson.SelectToken("bookabbrev").Value(Of String)()
+            currentbookUnivIdx = currentJson.SelectToken("univbooknum").Value(Of Integer)()
             currentchapter = currentJson.SelectToken("chapter").Value(Of Integer)()
             currentverse = currentJson.SelectToken("verse").Value(Of String)()
             currentversion = currentJson.SelectToken("version").Value(Of String)()
+            originalquery = currentJson.SelectToken("originalquery").Value(Of String)()
 
             If Not currentverse = prevverse Then
                 newverse = True
@@ -116,48 +123,140 @@ Public Class BibleGetDocInject
                 newversion = False
             End If
 
-            setParagraphStyles(currentSelection) ', paragraphFont
-
             If newversion Then
                 firstVerse = True
+                'firstChapter = True
 
-                firstchapter = True
-                If firstversion Then
-                    firstversion = False
-                Else
-                    TypeText(currentSelection, "NEWLINE")
+                Select Case My.Settings.BibleVersionWrap
+                    Case WRAP.PARENTHESES
+                        currentversion = "(" & currentversion & ")"
+                    Case WRAP.BRACKETS
+                        currentversion = "[" & currentversion & "]"
+                End Select
+
+
+                'so here's a case for you: Bible Version on top, Book/Chapter on the bottom
+                'Book/Chapter however was winding up below the next Version instead of before
+                'so when Version is top and Book/Chapter is bottom we have to output Book/Chapter first
+
+                If My.Settings.BibleVersionVisibility = VISIBILITY.SHOW Then
+                    If BookChapterStack.Count > 0 Then
+                        Select Case My.Settings.BookChapterPosition
+                            Case POS.BOTTOM
+                                CreateNewPar(currentSelection)                   'create a new paragraph
+                                setParagraphStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                            Case POS.TOP
+                                CreateNewPar(currentSelection)                   'create a new paragraph
+                                setParagraphStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                            Case POS.BOTTOMINLINE
+                                TypeText(currentSelection, " ")
+                        End Select
+                        setTextStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                        TypeText(currentSelection, BookChapterStack.Item(0))   'insert the Bible version into the paragraph
+                        BookChapterStack.RemoveAt(0)
+                    End If
+                    Select Case My.Settings.BibleVersionPosition
+                        Case POS.BOTTOM
+                            BibleVersionStack.Add(currentversion)
+                            If BibleVersionStack.Count > 1 Then
+                                CreateNewPar(currentSelection)                   'create a new paragraph
+                                setParagraphStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
+                                setTextStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
+                                TypeText(currentSelection, BibleVersionStack.Item(0))   'insert the Bible version into the paragraph
+                                BibleVersionStack.RemoveAt(0)
+                            End If
+                        Case POS.TOP
+                            If firstversion = False Then
+                                CreateNewPar(currentSelection)
+                            Else
+                                firstversion = False
+                            End If
+                            setParagraphStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
+                            setTextStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
+                            TypeText(currentSelection, currentversion)
+                    End Select
                 End If
-
-                setVersionStyles(currentSelection, paragraphFont)
-
-                TypeText(currentSelection, currentversion)
-                TypeText(currentSelection, "NEWLINE")
             End If
 
             If newbook Or newchapter Then
                 '//System.out.println(currentbook+" "+currentchapter);
-                firstVerse = True
-
-                If firstchapter Then
-                    firstchapter = False
-                Else
-                    TypeText(currentSelection, "NEWLINE")
+                Dim bkChStr As String = ""
+                Select Case My.Settings.BookChapterFormat
+                    Case FORMAT.BIBLELANG
+                        bkChStr = currentbook + " " + currentchapter.ToString(CultureInfo.InvariantCulture)
+                    Case FORMAT.BIBLELANGABBREV
+                        bkChStr = currentbookabbrev + " " + currentchapter.ToString(CultureInfo.InvariantCulture)
+                    Case FORMAT.USERLANG
+                        bkChStr = L10NBookNames.GetBookByIndex(currentbookUnivIdx - 1).Fullname + " " + currentchapter.ToString(CultureInfo.InvariantCulture)
+                    Case FORMAT.USERLANGABBREV
+                        bkChStr = L10NBookNames.GetBookByIndex(currentbookUnivIdx - 1).Abbrev + " " + currentchapter.ToString(CultureInfo.InvariantCulture)
+                End Select
+                If My.Settings.BookChapterFullReference Then
+                    'retrieve the original query from originalquery property in the json response received
+                    If Regex.IsMatch(originalquery, "^[1-3]{0,1}((\p{L}\p{M}*)+)[1-9][0-9]{0,2}", RegexOptions.Singleline) Then
+                        bkChStr &= Regex.Replace(originalquery, "^[1-3]{0,1}((\p{L}\p{M}*)+)[1-9][0-9]{0,2}", "")
+                    Else
+                        bkChStr &= Regex.Replace(originalquery, "^[1-9][0-9]{0,2}", "")
+                    End If
                 End If
 
-                setBookChapterStyles(currentSelection, bookChapterFont)
-                TypeText(currentSelection, currentbook + " " + currentchapter.ToString(CultureInfo.InvariantCulture))
-                TypeText(currentSelection, "NEWLINE")
-                setParagraphAlignment(currentSelection)
+                Select Case My.Settings.BookChapterWrap
+                    Case WRAP.PARENTHESES
+                        bkChStr = "(" & bkChStr & ")"
+                    Case WRAP.BRACKETS
+                        bkChStr = "[" & bkChStr & "]"
+                End Select
+
+                firstVerse = True
+
+                Select Case My.Settings.BookChapterPosition
+                    Case POS.BOTTOM
+                        BookChapterStack.Add(bkChStr)
+                        If BookChapterStack.Count > 1 Then
+                            CreateNewPar(currentSelection)
+                            setParagraphStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                            setTextStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                            TypeText(currentSelection, BookChapterStack.Item(0))
+                            BookChapterStack.RemoveAt(0)
+                        End If
+                    Case POS.TOP
+                        If firstChapter = False Then
+                            CreateNewPar(currentSelection)
+                            setParagraphStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                        ElseIf firstChapter = True And (My.Settings.BibleVersionVisibility = VISIBILITY.HIDE Or My.Settings.BibleVersionPosition = POS.BOTTOM) Then
+                            setParagraphStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                            firstChapter = False
+                        Else
+                            CreateNewPar(currentSelection)
+                            setParagraphStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                            firstChapter = False
+                        End If
+                        setTextStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                        TypeText(currentSelection, bkChStr)
+                    Case POS.BOTTOMINLINE
+                        BookChapterStack.Add(bkChStr)
+                        If BookChapterStack.Count > 1 Then
+                            TypeText(currentSelection, " ")
+                            setTextStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+                            TypeText(currentSelection, BookChapterStack.Item(0))
+                            BookChapterStack.RemoveAt(0)
+                        End If
+                End Select
             End If
 
             If newverse Then
                 normalText = False
                 '//System.out.print("\n"+currentverse);
-                setVerseNumberStyles(currentSelection, verseNumberFont)
+                If firstVerse Then
+                    CreateNewPar(currentSelection)
+                    setParagraphStyles(currentSelection, PARAGRAPHTYPE.VERSES)
+                    firstVerse = False
+                End If
+                setTextStyles(currentSelection, PARAGRAPHTYPE.VERSENUMBER)
                 TypeText(currentSelection, " " + currentverse)
             End If
 
-            setVerseTextStyles(currentSelection, verseTextFont)
+            setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
             Dim currentText As String = currentJson.SelectToken("text").Value(Of String)()
             currentText = currentText.Replace(vbCr, String.Empty).Replace(vbLf, String.Empty)
             Dim remainingText As String = currentText
@@ -216,13 +315,13 @@ Public Class BibleGetDocInject
                             Next
                         End If
 
-                        If noVersionFormatting Then formattingTagContents = " " + formattingTagContents + " "
+                        If My.Settings.NOVERSIONFORMATTING Then formattingTagContents = " " + formattingTagContents + " "
 
                         Select Case matchedTag
                             Case "pof"
-                                If Not noVersionFormatting Then
-                                    If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
@@ -231,16 +330,16 @@ Public Class BibleGetDocInject
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
-                                If Not noVersionFormatting Then
-                                    TypeText(currentSelection, "NEWLINE")
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    CreateNewPar(currentSelection)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
                                 normalText = False
                             Case "pos"
-                                If Not noVersionFormatting Then
-                                    If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
@@ -249,16 +348,16 @@ Public Class BibleGetDocInject
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
-                                If Not noVersionFormatting Then
-                                    TypeText(currentSelection, "NEWLINE")
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    CreateNewPar(currentSelection)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
                                 normalText = False
                             Case "poif"
-                                If Not noVersionFormatting Then
-                                    If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
@@ -267,34 +366,34 @@ Public Class BibleGetDocInject
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
-                                If Not noVersionFormatting Then
-                                    TypeText(currentSelection, "NEWLINE")
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    CreateNewPar(currentSelection)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
                                 normalText = False
                             Case "po"
-                                If Not noVersionFormatting Then
-                                    If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
                                 If nestedTag Then
                                     insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
-                                If Not noVersionFormatting Then
-                                    TypeText(currentSelection, "NEWLINE")
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    CreateNewPar(currentSelection)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
                                 normalText = False
                             Case "poi"
-                                If Not noVersionFormatting Then
-                                    If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
@@ -303,16 +402,16 @@ Public Class BibleGetDocInject
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
-                                If Not noVersionFormatting Then
-                                    TypeText(currentSelection, "NEWLINE")
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    CreateNewPar(currentSelection)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
                                 normalText = False
                             Case "pol"
-                                If Not noVersionFormatting Then
-                                    If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                                 End If
@@ -321,18 +420,18 @@ Public Class BibleGetDocInject
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
-                                If Not noVersionFormatting Then
-                                    TypeText(currentSelection, "NEWLINE")
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1)
                                 End If
                                 normalText = False
                             Case "poil"
-                                If Not noVersionFormatting Then
-                                    If firstVerse = False And normalText = True Then TypeText(currentSelection, "NEWLINE")
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                                 End If
@@ -341,10 +440,10 @@ Public Class BibleGetDocInject
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
-                                If Not noVersionFormatting Then
-                                    TypeText(currentSelection, "NEWLINE")
+                                If Not My.Settings.NOVERSIONFORMATTING Then
+                                    CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
-                                    setVerseTextStyles(currentSelection, verseTextFont)
+                                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent)
                                 End If
                                 normalText = False
@@ -402,12 +501,33 @@ Public Class BibleGetDocInject
                 TypeText(currentSelection, currentText)
             End If
 
+
             If firstVerse Then firstVerse = False
 
             workerProgress += 1
         Next
 
-        TypeText(currentSelection, "NEWLINE") 'one last paragraph
+        If BookChapterStack.Count > 0 Then
+            If My.Settings.BookChapterPosition = POS.BOTTOM Then
+                CreateNewPar(currentSelection)
+                setParagraphStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+            Else
+                TypeText(currentSelection, " ")
+            End If
+            setTextStyles(currentSelection, PARAGRAPHTYPE.BOOKCHAPTER)
+            TypeText(currentSelection, BookChapterStack.Item(0))
+            BookChapterStack.RemoveAt(0)
+        End If
+
+        If BibleVersionStack.Count > 0 Then
+            CreateNewPar(currentSelection)
+            setParagraphStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
+            setTextStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
+            TypeText(currentSelection, BibleVersionStack.Item(0))
+            BibleVersionStack.RemoveAt(0)
+        End If
+
+        CreateNewPar(currentSelection) 'one last paragraph
         'Restore original text styles
         currentSelection.Font.Bold = currentStyle.Bold
         currentSelection.Font.Italic = currentStyle.Italic
@@ -424,28 +544,33 @@ Public Class BibleGetDocInject
         Return "Ok! All done!"
     End Function
 
-    Private Sub TypeText(ByVal currentSelection As Microsoft.Office.Interop.Word.Selection, ByVal myString As String)
+    Private Sub CreateNewPar(ByVal currentSelection As Word.Selection)
         With currentSelection
-
-            ' Test to see if selection is an insertion point.
             If .Type = Word.WdSelectionType.wdSelectionIP Then
-                If myString = "NEWLINE" Then
-                    .TypeParagraph()
-                Else
-                    .TypeText(myString)
-                End If
-
+                .TypeParagraph()
             ElseIf .Type = Word.WdSelectionType.wdSelectionNormal Then
                 ' Move to start of selection.
                 If Application.Options.ReplaceSelection Then
                     .Collapse(Direction:=Word.WdCollapseDirection.wdCollapseStart)
                 End If
-                If myString = "NEWLINE" Then
-                    .TypeParagraph()
-                Else
-                    .TypeText(myString)
-                End If
+                .TypeParagraph()
+            Else
+                ' Do nothing.
+            End If
+        End With
+    End Sub
 
+    Private Sub TypeText(ByVal currentSelection As Word.Selection, ByVal myString As String)
+        With currentSelection
+            ' Test to see if selection is an insertion point.
+            If .Type = Word.WdSelectionType.wdSelectionIP Then
+                .TypeText(myString)
+            ElseIf .Type = Word.WdSelectionType.wdSelectionNormal Then
+                ' Move to start of selection.
+                If Application.Options.ReplaceSelection Then
+                    .Collapse(Direction:=Word.WdCollapseDirection.wdCollapseStart)
+                End If
+                .TypeText(myString)
             Else
                 ' Do nothing.
             End If
@@ -463,128 +588,143 @@ Public Class BibleGetDocInject
             Else
                 returnFont.Underline = Word.WdUnderline.wdUnderlineNone
             End If
-            returnFont.StrikeThrough = myFont.Strikeout
+            'returnFont.StrikeThrough = myFont.Strikeout
             returnFont.Size = myFont.Size
         Else
             returnFont.Name = "Times New Roman"
             returnFont.Bold = False
             returnFont.Italic = False
             returnFont.Underline = Word.WdUnderline.wdUnderlineNone
-            returnFont.StrikeThrough = False
+            'returnFont.StrikeThrough = False
             returnFont.Size = 12
         End If
 
         Return returnFont
     End Function
 
-    Private Sub setParagraphStyles(ByRef currentSelection As Word.Selection) ', ByVal paragraphFont As Word.Font
-        'currentSelection.Font.Name = paragraphFont.Name
-        'currentSelection.Font.Size = paragraphFont.Size
-        'currentSelection.Font.Bold = paragraphFont.Bold
-        'currentSelection.Font.Italic = paragraphFont.Italic
-        'currentSelection.Font.Underline = paragraphFont.Underline
-        'currentSelection.Font.StrikeThrough = paragraphFont.StrikeThrough
+    Private Sub setParagraphStyles(ByRef currentSelection As Word.Selection, ByVal PARTYPE As PARAGRAPHTYPE)
+        Select Case Application.Options.MeasurementUnit
+            Case Word.WdMeasurementUnits.wdInches
+                currentSelection.Range.ParagraphFormat.LeftIndent = Application.InchesToPoints(My.Settings.LeftIndent)
+                currentSelection.Range.ParagraphFormat.RightIndent = Application.InchesToPoints(My.Settings.RightIndent)
+            Case Word.WdMeasurementUnits.wdCentimeters
+                currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent)
+                currentSelection.Range.ParagraphFormat.RightIndent = Application.CentimetersToPoints(My.Settings.RightIndent)
+            Case Word.WdMeasurementUnits.wdMillimeters
+                currentSelection.Range.ParagraphFormat.LeftIndent = Application.MillimetersToPoints(My.Settings.LeftIndent)
+                currentSelection.Range.ParagraphFormat.RightIndent = Application.MillimetersToPoints(My.Settings.RightIndent)
+            Case Word.WdMeasurementUnits.wdPoints
+                currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.LeftIndent
+                currentSelection.Range.ParagraphFormat.RightIndent = My.Settings.RightIndent
+            Case Word.WdMeasurementUnits.wdPicas
+                currentSelection.Range.ParagraphFormat.LeftIndent = Application.PicasToPoints(My.Settings.LeftIndent)
+                currentSelection.Range.ParagraphFormat.RightIndent = Application.PicasToPoints(My.Settings.RightIndent)
+        End Select
 
-        currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent)
         'currentSelection.Range.ParagraphFormat.FirstLineIndent = My.Settings.Indent
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "current linespacing = " + My.Settings.Linespacing.ToString)
         Select Case My.Settings.Linespacing
-            Case 1.0
+            Case 1.0F
                 If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "current linespacing has been detected as Single")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpaceSingle
-            Case 1.5
+            Case 1.5F
                 If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "current linespacing has been detected as one and a half")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpace1pt5
-            Case 2.0
+            Case 2.0F
                 If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "current linespacing has been detected as Double")
                 currentSelection.Range.ParagraphFormat.LineSpacingRule = Word.WdLineSpacing.wdLineSpaceDouble
         End Select
+
+        Dim myAlignment As ALIGN
+        Select Case PARTYPE
+            Case PARAGRAPHTYPE.BIBLEVERSION
+                myAlignment = My.Settings.BibleVersionAlign
+            Case PARAGRAPHTYPE.BOOKCHAPTER
+                myAlignment = My.Settings.BookChapterAlign
+            Case PARAGRAPHTYPE.VERSES
+                myAlignment = My.Settings.ParagraphAlignment
+        End Select
+        If PARTYPE = PARAGRAPHTYPE.BOOKCHAPTER And My.Settings.BookChapterPosition = POS.BOTTOMINLINE Then
+            'Do nothing
+        Else
+            Select Case myAlignment
+                Case ALIGN.LEFT
+                    currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+                Case ALIGN.CENTER
+                    currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
+                Case ALIGN.RIGHT
+                    currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight
+                Case ALIGN.JUSTIFY
+                    currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify
+            End Select
+        End If
     End Sub
 
-    Private Shared Sub setVersionStyles(ByRef currentSelection As Word.Selection, ByVal paragraphFont As Word.Font)
-        currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
+    Private Sub setTextStyles(ByRef currentSelection As Word.Selection, ByVal PARTYPE As PARAGRAPHTYPE)
+        Dim paragraphFont As Word.Font
+        Dim foreColor As Word.WdColor
+        Dim backColor As Word.WdColor
+
+        Select Case PARTYPE
+            Case PARAGRAPHTYPE.BIBLEVERSION
+                paragraphFont = wdFontConverter(My.Settings.BibleVersionFont)
+                foreColor = CType(ColorTranslator.ToOle(My.Settings.BibleVersionForeColor), Word.WdColor)
+                If My.Settings.BibleVersionBackColor = Nothing Then
+                    backColor = Word.WdColor.wdColorAutomatic
+                Else
+                    backColor = CType(ColorTranslator.ToOle(My.Settings.BibleVersionBackColor), Word.WdColor)
+                End If
+            Case PARAGRAPHTYPE.BOOKCHAPTER
+                paragraphFont = wdFontConverter(My.Settings.BookChapterFont)
+                foreColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterForeColor), Word.WdColor)
+                If My.Settings.BookChapterBackColor = Nothing Then
+                    backColor = Word.WdColor.wdColorAutomatic
+                Else
+                    backColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Word.WdColor)
+                End If
+            Case PARAGRAPHTYPE.VERSENUMBER
+                paragraphFont = wdFontConverter(My.Settings.VerseNumberFont)
+                foreColor = CType(ColorTranslator.ToOle(My.Settings.VerseNumberForeColor), Word.WdColor)
+                If My.Settings.VerseNumberBackColor = Nothing Then
+                    backColor = Word.WdColor.wdColorAutomatic
+                Else
+                    backColor = CType(ColorTranslator.ToOle(My.Settings.VerseNumberBackColor), Word.WdColor)
+                End If
+                Select Case My.Settings.VerseNumberVAlign
+                    Case VALIGN.SUPERSCRIPT
+                        currentSelection.Font.Superscript = True
+                    Case VALIGN.SUBSCRIPT
+                        currentSelection.Font.Subscript = True
+                    Case VALIGN.NORMAL
+                        currentSelection.Font.Superscript = False
+                        currentSelection.Font.Subscript = False
+                End Select
+            Case PARAGRAPHTYPE.VERSETEXT
+                paragraphFont = wdFontConverter(My.Settings.VerseTextFont)
+                foreColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextForeColor), Word.WdColor)
+                If My.Settings.VerseTextBackColor = Nothing Then
+                    backColor = Word.WdColor.wdColorAutomatic
+                Else
+                    backColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Word.WdColor)
+                End If
+                currentSelection.Font.Superscript = False
+                currentSelection.Font.Subscript = False
+            Case Else 'this will never be the case, but it's just to say that the variables will certainly be set
+                paragraphFont = wdFontConverter(My.Settings.VerseTextFont)
+                foreColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextForeColor), Word.WdColor)
+                If My.Settings.VerseTextBackColor = Nothing Then
+                    backColor = Word.WdColor.wdColorAutomatic
+                Else
+                    backColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Word.WdColor)
+                End If
+        End Select
         currentSelection.Font.Name = paragraphFont.Name
         currentSelection.Font.Size = paragraphFont.Size
         currentSelection.Font.Bold = paragraphFont.Bold
         currentSelection.Font.Italic = paragraphFont.Italic
         currentSelection.Font.Underline = paragraphFont.Underline
-        currentSelection.Font.StrikeThrough = paragraphFont.StrikeThrough
-        'currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.BookChapterForeColor), Microsoft.Office.Interop.Word.WdColor)
-        currentSelection.Font.Color = Word.WdColor.wdColorBlack
-        'currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Microsoft.Office.Interop.Word.WdColor)
-        currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorAutomatic
-    End Sub
-
-    Private Shared Sub setBookChapterStyles(ByRef currentSelection As Word.Selection, ByVal bookChapterFont As Word.Font)
-        currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-
-        currentSelection.Font.Name = bookChapterFont.Name
-        currentSelection.Font.Size = bookChapterFont.Size
-        currentSelection.Font.Bold = bookChapterFont.Bold
-        currentSelection.Font.Italic = bookChapterFont.Italic
-        currentSelection.Font.Underline = bookChapterFont.Underline
-        currentSelection.Font.StrikeThrough = bookChapterFont.StrikeThrough
-        currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.BookChapterForeColor), Microsoft.Office.Interop.Word.WdColor)
-        If My.Settings.BookChapterBackColor = Nothing Then
-            currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorAutomatic
-        Else
-            currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.BookChapterBackColor), Microsoft.Office.Interop.Word.WdColor)
-        End If
-
-    End Sub
-
-    Private Shared Sub setParagraphAlignment(ByRef currentSelection)
-        Select Case My.Settings.ParagraphAlignment
-            Case ALIGN.LEFT
-                currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft
-            Case ALIGN.RIGHT
-                currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight
-            Case ALIGN.CENTER
-                currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter
-            Case ALIGN.JUSTIFY
-                currentSelection.Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphJustify
-        End Select
-    End Sub
-
-    Private Shared Sub setVerseNumberStyles(ByRef currentSelection As Word.Selection, ByVal verseNumberFont As Word.Font)
-        currentSelection.Font.Name = verseNumberFont.Name
-        currentSelection.Font.Size = verseNumberFont.Size
-        currentSelection.Font.Bold = verseNumberFont.Bold
-        currentSelection.Font.Italic = verseNumberFont.Italic
-        currentSelection.Font.Underline = verseNumberFont.Underline
-        currentSelection.Font.StrikeThrough = verseNumberFont.StrikeThrough
-        currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.VerseNumberForeColor), Microsoft.Office.Interop.Word.WdColor)
-        If My.Settings.VerseNumberBackColor = Nothing Then
-            currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorAutomatic
-        Else
-            currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseNumberBackColor), Microsoft.Office.Interop.Word.WdColor)
-        End If
-        Select Case My.Settings.VerseNumberVAlign
-            Case VALIGN.SUBSCRIPT
-                currentSelection.Font.Subscript = True
-            Case VALIGN.SUPERSCRIPT
-                currentSelection.Font.Superscript = True
-            Case VALIGN.NORMAL
-                currentSelection.Font.Superscript = False
-                currentSelection.Font.Subscript = False
-        End Select
-    End Sub
-
-    Private Shared Sub setVerseTextStyles(ByRef currentSelection As Word.Selection, ByVal verseTextFont As Word.Font)
-        currentSelection.Font.Name = verseTextFont.Name
-        currentSelection.Font.Size = verseTextFont.Size
-        currentSelection.Font.Bold = verseTextFont.Bold
-        currentSelection.Font.Italic = verseTextFont.Italic
-        currentSelection.Font.Underline = verseTextFont.Underline
-        currentSelection.Font.StrikeThrough = verseTextFont.StrikeThrough
-        currentSelection.Font.Color = CType(ColorTranslator.ToOle(My.Settings.VerseTextForeColor), Microsoft.Office.Interop.Word.WdColor)
-        If My.Settings.VerseTextBackColor = Nothing Then
-            currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorAutomatic
-        Else
-            currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Microsoft.Office.Interop.Word.WdColor)
-        End If
-        currentSelection.Font.Superscript = False
-        currentSelection.Font.Subscript = False
+        currentSelection.Font.Color = foreColor
+        currentSelection.Font.Shading.BackgroundPatternColor = backColor
     End Sub
 
     Private Sub insertNestedSpeakerTag(ByVal speakerTagBefore As String, ByVal speakerTagContents As String, ByVal speakerTagAfter As String, ByRef currentSelection As Word.Selection)
