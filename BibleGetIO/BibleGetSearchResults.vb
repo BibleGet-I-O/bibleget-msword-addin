@@ -53,7 +53,7 @@ Public Class BibleGetSearchResults
         searchResultsDT.Columns.Add("IDX", Type.GetType("System.Int32"))
         searchResultsDT.Columns.Add("BOOK", Type.GetType("System.Int32"))
         searchResultsDT.Columns.Add("CHAPTER", Type.GetType("System.Int32"))
-        searchResultsDT.Columns.Add("VERSE", Type.GetType("System.Int32"))
+        searchResultsDT.Columns.Add("VERSE", Type.GetType("System.String"))
         searchResultsDT.Columns.Add("VERSETEXT", Type.GetType("System.String"))
         searchResultsDT.Columns.Add("SEARCHTERM", Type.GetType("System.String"))
         searchResultsDT.Columns.Add("JSONSTR", Type.GetType("System.String"))
@@ -395,9 +395,9 @@ a.button:hover { background-color: #EEF; }
         Dim previewDocument As String
         Dim rowsSearchResultsTable As String = ""
 
-        Dim book As String
-        Dim chapter As String
-        Dim versenumber As String
+        Dim book As Integer
+        Dim chapter As Integer
+        Dim versenumber As String 'we use string and not integer because some verses contain a letter! otherwise conversion exceptions will be generated
         Dim versetext As String
         Dim resultJsonStr As String
 
@@ -416,7 +416,7 @@ a.button:hover { background-color: #EEF; }
                 book = result.SelectToken("univbooknum").Value(Of Integer)()
                 Dim localizedBook As LocalizedBibleBook = localizedBookNames.GetBookByIndex(book - 1)
                 chapter = result.SelectToken("chapter").Value(Of Integer)()
-                versenumber = result.SelectToken("verse").Value(Of Integer)()
+                versenumber = result.SelectToken("verse").Value(Of String)() 'we use string and not integer because some verses contain a letter! otherwise conversion exceptions will be generated
                 versetext = result.SelectToken("text").Value(Of String)()
                 versetext = AddMark(versetext, searchTerm)
                 resultJsonStr = JsonConvert.SerializeObject(result, Formatting.None)
