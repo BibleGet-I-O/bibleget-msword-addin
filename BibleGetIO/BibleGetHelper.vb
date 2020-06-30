@@ -400,7 +400,7 @@ Public Class BibleGetHelper
             idx += 1
         End While
         If idx < txt.Length - 2 Then
-            Return txt.Substring(0, idx) + Char.ToString(txt.Chars(idx)).ToUpper(CultureInfo.CurrentCulture) + txt.Substring(idx + 1).ToLower(CultureInfo.CurrentCulture)
+            Return txt.Substring(0, idx) + Char.ToString(txt.Chars(idx)).ToUpper(CultureInfo.CurrentUICulture) + txt.Substring(idx + 1).ToLower(CultureInfo.CurrentUICulture)
         Else
             Return txt
         End If

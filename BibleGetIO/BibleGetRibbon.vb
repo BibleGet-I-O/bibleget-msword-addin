@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.Office.Tools.Ribbon
 Imports System.Diagnostics
+Imports System.Globalization
 
 Public Class BibleGetRibbon
 
@@ -13,8 +14,8 @@ Public Class BibleGetRibbon
     Public BibleVersionForSearch As String
     Public TermToSearch As String
 
-    Private Shared Function __(ByVal myStr As String) As String
-        Dim myTranslation As String = BibleGetAddIn.RM.GetString(myStr, BibleGetAddIn.locale)
+    Private Shared Function __(ByVal myStr As String, ByVal locale As CultureInfo) As String
+        Dim myTranslation As String = BibleGetAddIn.RM.GetString(myStr, locale)
         If Not String.IsNullOrEmpty(myTranslation) Then
             Return myTranslation
         Else
@@ -32,14 +33,19 @@ Public Class BibleGetRibbon
     End Sub
 
     Private Sub BibleGetRibbon_Load(ByVal sender As System.Object, ByVal e As RibbonUIEventArgs) Handles MyBase.Load
-        InsertBibleQuoteFromDialogBtn.Label = __("Insert quote from input window")
-        InsertBibleQuoteFromTextSelectionBtn.Label = __("Insert quote from text selection")
-        PreferencesBtn.Label = __("User Preferences")
-        HelpBtn.Label = __("Help")
-        SendFeedbackBtn.Label = __("Send feedback")
-        MakeContributionBtn.Label = __("Contribute")
-        AboutBtn.Label = __("About this plugin")
-        SearchBtn.Label = __("Search for verses by keyword")
+        Dim Application As Word.Application = Globals.BibleGetAddIn.Application
+        Dim lang As Office.MsoLanguageID = Application.LanguageSettings.LanguageID(Office.MsoAppLanguageID.msoLanguageIDUI)
+        Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(lang)
+        Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(lang)
+        Dim locale As CultureInfo = CultureInfo.GetCultureInfo(lang)
+        InsertBibleQuoteFromDialogBtn.Label = __("Insert quote from input window", locale)
+        InsertBibleQuoteFromTextSelectionBtn.Label = __("Insert quote from text selection", locale)
+        PreferencesBtn.Label = __("User Preferences", locale)
+        HelpBtn.Label = __("Help", locale)
+        SendFeedbackBtn.Label = __("Send feedback", locale)
+        MakeContributionBtn.Label = __("Contribute", locale)
+        AboutBtn.Label = __("About this plugin", locale)
+        SearchBtn.Label = __("Search for verses by keyword", locale)
         bibleGetDB = New BibleGetDatabase
         If bibleGetDB.IsInitialized Then
             StatusBtn.Image = My.Resources.green_checkmark

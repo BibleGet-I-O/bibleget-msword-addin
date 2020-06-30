@@ -193,7 +193,7 @@ a.button:hover { background-color: #EEF; }
                             Dim myCulture As CultureInfo = New CultureInfo(strArray(2), False)
                             Dim fullLanguageName As String = myCulture.DisplayName
                             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & fullLanguageName)
-                            Dim languageName As String = fullLanguageName.ToUpper(CultureInfo.CurrentCulture)
+                            Dim languageName As String = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
                             BibleVersions.Add(New BibleVersion(s, strArray(0), strArray(1), languageName))
                         Next
 

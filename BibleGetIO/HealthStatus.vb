@@ -46,7 +46,7 @@ Public Class HealthStatus
         speakStr += " xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"""
         speakStr += " xsi:schemaLocation=""http://www.w3.org/2001/10/synthesis"
         speakStr += "           http://www.w3.org/TR/speech-synthesis/synthesis.xsd"""
-        speakStr += " xml:lang=""" & CultureInfo.CurrentCulture.Name & """>"
+        speakStr += " xml:lang=""" & CultureInfo.CurrentUICulture.Name & """>"
         speakStr += msg
         'If bibleGetDB.IsInitialized Then
         'speakStr += "The BibleGet Plug-in <prosody volume=""x-loud""> has been </prosody> <break strength=""weak"" /> correctly <break strength=""weak"" /> initialized!"
@@ -57,7 +57,7 @@ Public Class HealthStatus
 
         synth.SetOutputToDefaultAudioDevice()
         'Dim engLocale As New CultureInfo("en")
-        'synth.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 1, CultureInfo.CurrentCulture)
+        'synth.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult, 1, CultureInfo.CurrentUICulture)
         synth.SpeakSsmlAsync(speakStr)
 
     End Sub
