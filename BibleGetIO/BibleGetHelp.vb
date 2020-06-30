@@ -108,7 +108,7 @@ Public Class BibleGetHelp
         HtmlStr0 &= "</ul>"
         HtmlStr0 &= "<p><b>" + __("AUTHOR") + ":</b> " + __("John R. D'Orazio (priest in the Diocese of Rome)") + "</p>"
         HtmlStr0 &= "<p><b>" + __("COLLABORATORS") + ":</b> " + __("Giovanni Gregori (computing) and Simone Urbinati (MUG Roma Tre)") + "</p>"
-        HtmlStr0 &= "<p><b>" + __("Version").ToUpper(CultureInfo.CurrentCulture) + ":</b> " & My.Application.Info.Version.ToString + "</p>"
+        HtmlStr0 &= "<p><b>" + __("Version").ToUpper(CultureInfo.CurrentUICulture) + ":</b> " & My.Application.Info.Version.ToString + "</p>"
         HtmlStr0 &= "<p>© <b>Copyright 2016 BibleGet I/O by John R. D'Orazio</b> <a href=""mailto:priest@johnromanodorazio.com"">priest@johnromanodorazio.com</a></p>"
         HtmlStr0 &= "<p><b>" + __("PROJECT WEBSITE") + ": </b><a href=""https://www.bibleget.io"">https://www.bibleget.io</a><br>"
         HtmlStr0 &= "<b>" + __("EMAIL ADDRESS FOR INFORMATION OR FEEDBACK ON THE PROJECT") + ":</b> <a href=""mailto:bibleget.io@gmail.com"">bibleget.io@gmail.com</a></p>"
@@ -306,7 +306,7 @@ Public Class BibleGetHelp
             Case __("Biblical Books and Abbreviations")
                 Dim curLangIsoCode As String = BibleGetAddIn.locale.TwoLetterISOLanguageName
                 Dim curLangDisplayName As String = New CultureInfo(curLangIsoCode).DisplayName
-                curLang = localizeLanguage(curLangDisplayName).ToUpper(CultureInfo.CurrentCulture)
+                curLang = localizeLanguage(curLangDisplayName).ToUpper(CultureInfo.CurrentUICulture)
                 previewDocument = HtmlStr3
                 previewDocument &= String.Format(HtmlStr3Table, curLang, booksAndAbbreviations.Item(curLang))
                 previewDocument &= HtmlStr3Closing
@@ -369,7 +369,7 @@ Public Class BibleGetHelp
                         langsObj = JArray.Parse(langsSupported)
                         booksLangs = langsObj.Count
                         For Each jsonValue As JValue In langsObj
-                            langsLocalized.Add(localizeLanguage(jsonValue.ToString(CultureInfo.CurrentCulture)))
+                            langsLocalized.Add(localizeLanguage(jsonValue.ToString(CultureInfo.CurrentUICulture)))
                         Next
                         langsLocalized.Sort()
                         booksStr = String.Join(", ", langsLocalized)
@@ -394,7 +394,7 @@ Public Class BibleGetHelp
                         Dim buildStr As String
                         For y As Integer = 0 To (langsObj.Count - 1)
                             curLang = String.Empty
-                            If langsObj.Value(Of String)(y) IsNot Nothing Then curLang = localizeLanguage(langsObj.Value(Of String)(y)).ToUpper(CultureInfo.CurrentCulture)
+                            If langsObj.Value(Of String)(y) IsNot Nothing Then curLang = localizeLanguage(langsObj.Value(Of String)(y)).ToUpper(CultureInfo.CurrentUICulture)
                             buildStr = String.Empty
                             For n As Integer = 0 To 72
                                 Dim styleStr As String = String.Empty
@@ -424,12 +424,12 @@ Public Class BibleGetHelp
 
     Private Function localizeLanguage(ByVal language As String) As String
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Attempting to localize language <" & language & ">")
-        language = language.ToUpper(CultureInfo.CurrentCulture)
+        language = language.ToUpper(CultureInfo.CurrentUICulture)
         Dim langCode As String = String.Empty
         If langcodes.TryGetValue(language, langCode) Then
             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & ">> localization is now taking place...")
             Dim myCulture As CultureInfo = New CultureInfo(langCode, False)
-            Return myCulture.DisplayName.ToUpper(CultureInfo.CurrentCulture)
+            Return myCulture.DisplayName.ToUpper(CultureInfo.CurrentUICulture)
         Else
             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & ">> Oops, localization does not seem to have been successful. Returning original language string.")
             Return language

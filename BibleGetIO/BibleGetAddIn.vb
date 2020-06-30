@@ -6,7 +6,7 @@ Imports System.Management
 Public Class BibleGetAddIn
 
     Private Shared _RM As Resources.ResourceManager = New Resources.ResourceManager("BibleGetIO.BibleGetResource", System.Reflection.Assembly.GetExecutingAssembly())
-    Private Shared _locale As CultureInfo = CultureInfo.CurrentCulture
+    Private Shared _locale As CultureInfo = CultureInfo.CurrentUICulture
     'Public Shared helpFile As String    
     Public Shared ThisAppDataHome As String = "BibleGetMSOfficePlugin"
     Public Shared ThisAppDataDirectory As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ThisAppDataHome)
@@ -40,6 +40,231 @@ Public Class BibleGetAddIn
 
     Private Shared Sub BibleGetAddIn_Startup() Handles Me.Startup
         Dim DEBUG_MODE As Boolean = My.Settings.DEBUG_MODE
+        Dim Application As Word.Application = Globals.BibleGetAddIn.Application
+        Dim lang As Office.MsoLanguageID = Application.LanguageSettings.LanguageID(Office.MsoAppLanguageID.msoLanguageIDUI)
+        Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(lang)
+        Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(lang)
+        _locale = CultureInfo.GetCultureInfo(lang)
+        'Select Case lang
+        '    Case Office.MsoLanguageID.msoLanguageIDAfrikaans
+
+        '    Case Office.MsoLanguageID.msoLanguageIDAlbanian
+        '    Case Office.MsoLanguageID.msoLanguageIDAmharic
+        '    Case Office.MsoLanguageID.msoLanguageIDArabic
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicAlgeria
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicBahrain
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicEgypt
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicIraq
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicJordan
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicKuwait
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicLebanon
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicLibya
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicMorocco
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicOman
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicQatar
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicSyria
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicTunisia
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicUAE
+        '    Case Office.MsoLanguageID.msoLanguageIDArabicYemen
+        '    Case Office.MsoLanguageID.msoLanguageIDArmenian
+        '    Case Office.MsoLanguageID.msoLanguageIDAssamese
+        '    Case Office.MsoLanguageID.msoLanguageIDAzeriCyrillic
+        '    Case Office.MsoLanguageID.msoLanguageIDAzeriLatin
+        '    Case Office.MsoLanguageID.msoLanguageIDBasque
+        '    Case Office.MsoLanguageID.msoLanguageIDBelgianDutch
+        '    Case Office.MsoLanguageID.msoLanguageIDBelgianFrench
+        '    Case Office.MsoLanguageID.msoLanguageIDBengali
+        '    Case Office.MsoLanguageID.msoLanguageIDBosnian
+        '    Case Office.MsoLanguageID.msoLanguageIDBosnianBosniaHerzegovinaCyrillic
+        '    Case Office.MsoLanguageID.msoLanguageIDBosnianBosniaHerzegovinaLatin
+        '    Case Office.MsoLanguageID.msoLanguageIDBrazilianPortuguese
+        '    Case Office.MsoLanguageID.msoLanguageIDBulgarian
+        '    Case Office.MsoLanguageID.msoLanguageIDBurmese
+        '    Case Office.MsoLanguageID.msoLanguageIDByelorussian
+        '    Case Office.MsoLanguageID.msoLanguageIDCatalan
+        '    Case Office.MsoLanguageID.msoLanguageIDCherokee
+        '    Case Office.MsoLanguageID.msoLanguageIDChineseHongKongSAR
+        '    Case Office.MsoLanguageID.msoLanguageIDChineseMacaoSAR
+        '    Case Office.MsoLanguageID.msoLanguageIDChineseSingapore
+        '    Case Office.MsoLanguageID.msoLanguageIDCroatian
+        '    Case Office.MsoLanguageID.msoLanguageIDCzech
+        '    Case Office.MsoLanguageID.msoLanguageIDDanish
+        '    Case Office.MsoLanguageID.msoLanguageIDDivehi
+        '    Case Office.MsoLanguageID.msoLanguageIDDutch
+        '    Case Office.MsoLanguageID.msoLanguageIDEdo
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishAUS
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishBelize
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishCanadian
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishCaribbean
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishIndonesia
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishIreland
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishJamaica
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishNewZealand
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishPhilippines
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishSouthAfrica
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishTrinidadTobago
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishUK
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishUS
+        '    Case Office.MsoLanguageID.msoLanguageIDEnglishZimbabwe
+        '    Case Office.MsoLanguageID.msoLanguageIDEstonian
+        '    Case Office.MsoLanguageID.msoLanguageIDFaeroese
+        '    Case Office.MsoLanguageID.msoLanguageIDFarsi
+        '    Case Office.MsoLanguageID.msoLanguageIDFilipino
+        '    Case Office.MsoLanguageID.msoLanguageIDFinnish
+        '    Case Office.MsoLanguageID.msoLanguageIDFrench
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchCameroon
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchCanadian
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchCotedIvoire
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchHaiti
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchLuxembourg
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchMali
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchMonaco
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchMorocco
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchReunion
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchSenegal
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchWestIndies
+        '    Case Office.MsoLanguageID.msoLanguageIDFrenchCongoDRC
+        '    Case Office.MsoLanguageID.msoLanguageIDFrisianNetherlands
+        '    Case Office.MsoLanguageID.msoLanguageIDFulfulde
+        '    Case Office.MsoLanguageID.msoLanguageIDGaelicIreland
+        '    Case Office.MsoLanguageID.msoLanguageIDGaelicScotland
+        '    Case Office.MsoLanguageID.msoLanguageIDGalician
+        '    Case Office.MsoLanguageID.msoLanguageIDGeorgian
+        '    Case Office.MsoLanguageID.msoLanguageIDGerman
+        '    Case Office.MsoLanguageID.msoLanguageIDGermanAustria
+        '    Case Office.MsoLanguageID.msoLanguageIDGermanLiechtenstein
+        '    Case Office.MsoLanguageID.msoLanguageIDGermanLuxembourg
+        '    Case Office.MsoLanguageID.msoLanguageIDGreek
+        '    Case Office.MsoLanguageID.msoLanguageIDGuarani
+        '    Case Office.MsoLanguageID.msoLanguageIDGujarati
+        '    Case Office.MsoLanguageID.msoLanguageIDHausa
+        '    Case Office.MsoLanguageID.msoLanguageIDHawaiian
+        '    Case Office.MsoLanguageID.msoLanguageIDHebrew
+        '    Case Office.MsoLanguageID.msoLanguageIDHindi
+        '    Case Office.MsoLanguageID.msoLanguageIDHungarian
+        '    Case Office.MsoLanguageID.msoLanguageIDIbibio
+        '    Case Office.MsoLanguageID.msoLanguageIDIcelandic
+        '    Case Office.MsoLanguageID.msoLanguageIDIgbo
+        '    Case Office.MsoLanguageID.msoLanguageIDIndonesian
+        '    Case Office.MsoLanguageID.msoLanguageIDInuktitut
+        '    Case Office.MsoLanguageID.msoLanguageIDItalian
+        '    Case Office.MsoLanguageID.msoLanguageIDJapanese
+        '    Case Office.MsoLanguageID.msoLanguageIDKannada
+        '    Case Office.MsoLanguageID.msoLanguageIDKanuri
+        '    Case Office.MsoLanguageID.msoLanguageIDKashmiri
+        '    Case Office.MsoLanguageID.msoLanguageIDKashmiriDevanagari
+        '    Case Office.MsoLanguageID.msoLanguageIDKazakh
+        '    Case Office.MsoLanguageID.msoLanguageIDKhmer
+        '    Case Office.MsoLanguageID.msoLanguageIDKirghiz
+        '    Case Office.MsoLanguageID.msoLanguageIDKonkani
+        '    Case Office.MsoLanguageID.msoLanguageIDKorean
+        '    Case Office.MsoLanguageID.msoLanguageIDKyrgyz
+        '    Case Office.MsoLanguageID.msoLanguageIDLao
+        '    Case Office.MsoLanguageID.msoLanguageIDLatin
+        '    Case Office.MsoLanguageID.msoLanguageIDLatvian
+        '    Case Office.MsoLanguageID.msoLanguageIDLithuanian
+        '    Case Office.MsoLanguageID.msoLanguageIDMacedonianFYROM
+        '    Case Office.MsoLanguageID.msoLanguageIDMalayalam
+        '    Case Office.MsoLanguageID.msoLanguageIDMalayBruneiDarussalam
+        '    Case Office.MsoLanguageID.msoLanguageIDMalaysian
+        '    Case Office.MsoLanguageID.msoLanguageIDMaltese
+        '    Case Office.MsoLanguageID.msoLanguageIDManipuri
+        '    Case Office.MsoLanguageID.msoLanguageIDMaori
+        '    Case Office.MsoLanguageID.msoLanguageIDMarathi
+        '    Case Office.MsoLanguageID.msoLanguageIDMexicanSpanish
+        '    Case Office.MsoLanguageID.msoLanguageIDMixed
+        '    Case Office.MsoLanguageID.msoLanguageIDMongolian
+        '    Case Office.MsoLanguageID.msoLanguageIDNepali
+        '    Case Office.MsoLanguageID.msoLanguageIDNone
+        '    Case Office.MsoLanguageID.msoLanguageIDNoProofing
+        '    Case Office.MsoLanguageID.msoLanguageIDNorwegianBokmol
+        '    Case Office.MsoLanguageID.msoLanguageIDNorwegianNynorsk
+        '    Case Office.MsoLanguageID.msoLanguageIDOriya
+        '    Case Office.MsoLanguageID.msoLanguageIDOromo
+        '    Case Office.MsoLanguageID.msoLanguageIDPashto
+        '    Case Office.MsoLanguageID.msoLanguageIDPolish
+        '    Case Office.MsoLanguageID.msoLanguageIDPortuguese
+        '    Case Office.MsoLanguageID.msoLanguageIDPunjabi
+        '    Case Office.MsoLanguageID.msoLanguageIDQuechuaBolivia
+        '    Case Office.MsoLanguageID.msoLanguageIDQuechuaEcuador
+        '    Case Office.MsoLanguageID.msoLanguageIDQuechuaPeru
+        '    Case Office.MsoLanguageID.msoLanguageIDRhaetoRomanic
+        '    Case Office.MsoLanguageID.msoLanguageIDRomanian
+        '    Case Office.MsoLanguageID.msoLanguageIDRomanianMoldova
+        '    Case Office.MsoLanguageID.msoLanguageIDRussian
+        '    Case Office.MsoLanguageID.msoLanguageIDRussianMoldova
+        '    Case Office.MsoLanguageID.msoLanguageIDSamiLappish
+        '    Case Office.MsoLanguageID.msoLanguageIDSanskrit
+        '    Case Office.MsoLanguageID.msoLanguageIDSepedi
+        '    Case Office.MsoLanguageID.msoLanguageIDSerbianBosniaHerzegovinaCyrillic
+        '    Case Office.MsoLanguageID.msoLanguageIDSerbianBosniaHerzegovinaLatin
+        '    Case Office.MsoLanguageID.msoLanguageIDSerbianCyrillic
+        '    Case Office.MsoLanguageID.msoLanguageIDSerbianLatin
+        '    Case Office.MsoLanguageID.msoLanguageIDSesotho
+        '    Case Office.MsoLanguageID.msoLanguageIDSimplifiedChinese
+        '    Case Office.MsoLanguageID.msoLanguageIDSindhi
+        '    Case Office.MsoLanguageID.msoLanguageIDSindhiPakistan
+        '    Case Office.MsoLanguageID.msoLanguageIDSinhalese
+        '    Case Office.MsoLanguageID.msoLanguageIDSlovak
+        '    Case Office.MsoLanguageID.msoLanguageIDSlovenian
+        '    Case Office.MsoLanguageID.msoLanguageIDSomali
+        '    Case Office.MsoLanguageID.msoLanguageIDSorbian
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanish
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishArgentina
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishBolivia
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishChile
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishColombia
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishCostaRica
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishDominicanRepublic
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishEcuador
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishElSalvador
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishGuatemala
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishHonduras
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishModernSort
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishNicaragua
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishPanama
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishParaguay
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishPeru
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishPuertoRico
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishUruguay
+        '    Case Office.MsoLanguageID.msoLanguageIDSpanishVenezuela
+        '    Case Office.MsoLanguageID.msoLanguageIDSutu
+        '    Case Office.MsoLanguageID.msoLanguageIDSwahili
+        '    Case Office.MsoLanguageID.msoLanguageIDSwedish
+        '    Case Office.MsoLanguageID.msoLanguageIDSwedishFinland
+        '    Case Office.MsoLanguageID.msoLanguageIDSwissFrench
+        '    Case Office.MsoLanguageID.msoLanguageIDSwissGerman
+        '    Case Office.MsoLanguageID.msoLanguageIDSwissItalian
+        '    Case Office.MsoLanguageID.msoLanguageIDSyriac
+        '    Case Office.MsoLanguageID.msoLanguageIDTajik
+        '    Case Office.MsoLanguageID.msoLanguageIDTamazight
+        '    Case Office.MsoLanguageID.msoLanguageIDTamazightLatin
+        '    Case Office.MsoLanguageID.msoLanguageIDTamil
+        '    Case Office.MsoLanguageID.msoLanguageIDTatar
+        '    Case Office.MsoLanguageID.msoLanguageIDTelugu
+        '    Case Office.MsoLanguageID.msoLanguageIDThai
+        '    Case Office.MsoLanguageID.msoLanguageIDTibetan
+        '    Case Office.MsoLanguageID.msoLanguageIDTigrignaEritrea
+        '    Case Office.MsoLanguageID.msoLanguageIDTigrignaEthiopic
+        '    Case Office.MsoLanguageID.msoLanguageIDTraditionalChinese
+        '    Case Office.MsoLanguageID.msoLanguageIDTsonga
+        '    Case Office.MsoLanguageID.msoLanguageIDTswana
+        '    Case Office.MsoLanguageID.msoLanguageIDTurkish
+        '    Case Office.MsoLanguageID.msoLanguageIDTurkmen
+        '    Case Office.MsoLanguageID.msoLanguageIDUkrainian
+        '    Case Office.MsoLanguageID.msoLanguageIDUrdu
+        '    Case Office.MsoLanguageID.msoLanguageIDUzbekCyrillic
+        '    Case Office.MsoLanguageID.msoLanguageIDUzbekLatin
+        '    Case Office.MsoLanguageID.msoLanguageIDVenda
+        '    Case Office.MsoLanguageID.msoLanguageIDVietnamese
+        '    Case Office.MsoLanguageID.msoLanguageIDWelsh
+        '    Case Office.MsoLanguageID.msoLanguageIDXhosa
+        '    Case Office.MsoLanguageID.msoLanguageIDYi
+        '    Case Office.MsoLanguageID.msoLanguageIDYiddish
+        '    Case Office.MsoLanguageID.msoLanguageIDYoruba
+        '    Case Office.MsoLanguageID.msoLanguageIDZulu
+        'End Select
+
         If Not Directory.Exists(ThisAppDataDirectory) Then
             Try
                 Dim dirInfo As DirectoryInfo
@@ -186,12 +411,12 @@ Public Class BibleGetAddIn
     'Private Sub Application_Startup() Handles Application.Startup
     '    ''Dim oCult As String = Application.Language.ToString
     '    ''Dim culture2 As CultureInfo = Thread.CurrentThread.CurrentCulture
-    '    'Dim culture1 As CultureInfo = CultureInfo.CurrentCulture
+    '    'Dim culture1 As CultureInfo = CultureInfo.CurrentUICulture
     '    'Dim lang As String = culture1.TwoLetterISOLanguageName
     '    If Me.DEBUG_MODE Then ThisAddIn.LogInfoToDebug(Me.GetType().FullName & vbTab & String.Fo_RMat("The current culture is {0}", lang))
     '    '_RM = New Resources.ResourceManager("BibleGetIO.BibleGetResource", System.Reflection.Assembly.GetExecutingAssembly())
     '    If Me.DEBUG_MODE Then ThisAddIn.LogInfoToDebug(Me.GetType().FullName & vbTab & _RM.BaseName)
-    '    'Dim greeting As String = _RM.GetString("About this plugin", CultureInfo.CurrentCulture)
+    '    'Dim greeting As String = _RM.GetString("About this plugin", CultureInfo.CurrentUICulture)
     '    If Me.DEBUG_MODE Then ThisAddIn.LogInfoToDebug(Me.GetType().FullName & vbTab & greeting)
     'End Sub
 

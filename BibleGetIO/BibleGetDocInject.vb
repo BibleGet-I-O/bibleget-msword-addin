@@ -448,7 +448,7 @@ Public Class BibleGetDocInject
                                 End If
                                 normalText = False
                             Case "sm"
-                                Dim smallCaps As String = match.Groups(4).Value.ToLower(CultureInfo.CurrentCulture)
+                                Dim smallCaps As String = match.Groups(4).Value.ToLower(CultureInfo.CurrentUICulture)
                                 '//System.out.println("SMALLCAPSIZE THIS TEXT: "+smallCaps);
                                 currentSelection.Font.SmallCaps = True
                                 TypeText(currentSelection, smallCaps)

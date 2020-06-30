@@ -626,7 +626,7 @@ vous pouvez outrepasser le formatage propre de la version de la Bible.</value>
     <value>Version de la Bible</value>
   </data>
   <data name="The BibleGet Plug-in has been correctly initialized!" xml:space="preserve">
-    <value>Le plugin BibleGet a été &lt;emph&gt; correctement &lt;/emph&gt; initialisé!</value>
+    <value>Le plugin BibleGet a été correctement initialisé!</value>
   </data>
   <data name="The BibleGet Plug-in has not been correctly initialized..." xml:space="preserve">
     <value>Le plugin BibleGet n'a pas été correctement initialisé ...</value>
