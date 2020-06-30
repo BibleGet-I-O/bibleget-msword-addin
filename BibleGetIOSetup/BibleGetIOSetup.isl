@@ -385,12 +385,8 @@
 		<row><td>ISX_DEFAULTCOMPONENT8</td><td>{916FB7D6-32B6-4FB6-8BE9-5A0C2B07362E}</td><td>EL</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT9</td><td>{008CCBF2-6B20-4EAA-B2F1-2A33F2722BB3}</td><td>PL</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td>{B35945BD-3BF9-4CD6-A4D7-DD4B7AB61214}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>{9418902D-509E-4831-908B-35339A54B3DC}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.office.tools.commo1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>{1CBB025A-0A89-48F2-BB3C-A114EA61DC2A}</td><td>INSTALLDIR</td><td>2</td><td/><td>microsoft.visualstudio.tools</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>Newtonsoft.Json.dll</td><td>{08DA2501-BCF0-4FD3-BA7B-32D036EF1C34}</td><td>INSTALLDIR</td><td>2</td><td/><td>newtonsoft.json.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>SQLite.Interop.dll</td><td>{64BD8647-6B29-48BD-B5E4-B93D65241E31}</td><td>X64</td><td>2</td><td/><td>sqlite.interop.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>SQLite.Interop.dll1</td><td>{821B086A-756C-4F74-991E-49293A5875C6}</td><td>X86</td><td>2</td><td/><td>sqlite.interop.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>System.Data.SQLite.dll</td><td>{8D180330-1FBC-4794-93CE-E89FBC48D1DA}</td><td>INSTALLDIR</td><td>2</td><td/><td>system.data.sqlite.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1151,12 +1147,8 @@
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT8</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT9</td></row>
 		<row><td>INSTALLDIR</td><td>IS_ININSTALL_SHORTCUT</td></row>
-		<row><td>INSTALLDIR</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td></row>
-		<row><td>INSTALLDIR</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td></row>
-		<row><td>INSTALLDIR</td><td>Newtonsoft.Json.dll</td></row>
 		<row><td>INSTALLDIR</td><td>SQLite.Interop.dll</td></row>
 		<row><td>INSTALLDIR</td><td>SQLite.Interop.dll1</td></row>
-		<row><td>INSTALLDIR</td><td>System.Data.SQLite.dll</td></row>
 		<row><td>IT</td><td>BibleGetIO.resources.dll4</td></row>
 		<row><td>IT</td><td>BibleGetMSWordRegistryKeys.resources.dll4</td></row>
 		<row><td>IT</td><td>ISX_DEFAULTCOMPONENT3</td></row>
@@ -2041,12 +2033,8 @@
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT8</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT9</td></row>
 		<row><td>AlwaysInstall</td><td>IS_ININSTALL_SHORTCUT</td></row>
-		<row><td>AlwaysInstall</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td></row>
-		<row><td>AlwaysInstall</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td></row>
-		<row><td>AlwaysInstall</td><td>Newtonsoft.Json.dll</td></row>
 		<row><td>AlwaysInstall</td><td>SQLite.Interop.dll</td></row>
 		<row><td>AlwaysInstall</td><td>SQLite.Interop.dll1</td></row>
-		<row><td>AlwaysInstall</td><td>System.Data.SQLite.dll</td></row>
 	</table>
 
 	<table name="File">
@@ -2063,7 +2051,6 @@
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>biblegetio.dll.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.MAN|BibleGetIO.dll.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.dll.manifest</td><td>1</td><td/></row>
 		<row><td>biblegetio.output_primario</td><td>BibleGetIO.Output_primario3</td><td>BibleGetIO.Output primario</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|Built</td><td>3</td><td/></row>
-		<row><td>biblegetio.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.PDB|BibleGetIO.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.pdb</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll</td><td>BibleGetIO.resources.dll</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\de\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll1</td><td>BibleGetIO.resources.dll1</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\en\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.resources.dll2</td><td>BibleGetIO.resources.dll2</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\es\BibleGetIO.resources.dll</td><td>1</td><td/></row>
@@ -2074,7 +2061,6 @@
 		<row><td>biblegetio.resources.dll7</td><td>BibleGetIO.resources.dll7</td><td>BIBLEG~1.DLL|BibleGetIO.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\sr\BibleGetIO.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetio.risorse_localizza</td><td>BibleGetIO.Risorse_localizzate3</td><td>BibleGetIO.Risorse localizzate</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;BibleGetIO&gt;|LocalizedResourceDlls</td><td>3</td><td/></row>
 		<row><td>biblegetio.vsto</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.VST|BibleGetIO.vsto</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.vsto</td><td>1</td><td/></row>
-		<row><td>biblegetio.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>BIBLEG~1.XML|BibleGetIO.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\BibleGetIO.xml</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.e</td><td>BibleGetMSWordRegistryKeys.exe</td><td>BIBLEG~1.EXE|BibleGetMSWordRegistryKeys.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\BibleGetMSWordRegistryKeys.exe</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.r</td><td>BibleGetMSWordRegistryKeys.resources.dll</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.r1</td><td>BibleGetMSWordRegistryKeys.resources.dll1</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\en\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
@@ -2084,15 +2070,8 @@
 		<row><td>biblegetmswordregistrykeys.r6</td><td>BibleGetMSWordRegistryKeys.resources.dll6</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.r7</td><td>BibleGetMSWordRegistryKeys.resources.dll7</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
 		<row><td>biblegetmswordregistrykeys.r8</td><td>BibleGetMSWordRegistryKeys.resources.dll8</td><td>BIBLEG~1.DLL|BibleGetMSWordRegistryKeys.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetMSWordRegistryKeys\BibleGetMSWordRegistryKeys\bin\Release\de\BibleGetMSWordRegistryKeys.resources.dll</td><td>1</td><td/></row>
-		<row><td>microsoft.office.tools.commo</td><td>ISX_DEFAULTCOMPONENT</td><td>MICROS~1.XML|Microsoft.Office.Tools.Common.v4.0.Utilities.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.xml</td><td>1</td><td/></row>
-		<row><td>microsoft.office.tools.commo1</td><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>MICROS~1.DLL|Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td>1</td><td/></row>
-		<row><td>microsoft.visualstudio.tools</td><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>MICROS~1.DLL|Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td>1</td><td/></row>
-		<row><td>newtonsoft.json.dll</td><td>Newtonsoft.Json.dll</td><td>NEWTON~1.DLL|Newtonsoft.Json.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Newtonsoft.Json.dll</td><td>1</td><td/></row>
-		<row><td>newtonsoft.json.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>NEWTON~1.XML|Newtonsoft.Json.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\Newtonsoft.Json.xml</td><td>1</td><td/></row>
 		<row><td>sqlite.interop.dll</td><td>SQLite.Interop.dll</td><td>SQLITE~1.DLL|SQLite.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\x64\SQLite.Interop.dll</td><td>1</td><td/></row>
 		<row><td>sqlite.interop.dll1</td><td>SQLite.Interop.dll1</td><td>SQLITE~1.DLL|SQLite.Interop.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\x86\SQLite.Interop.dll</td><td>1</td><td/></row>
-		<row><td>system.data.sqlite.dll</td><td>System.Data.SQLite.dll</td><td>SYSTEM~1.DLL|System.Data.SQLite.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\System.Data.SQLite.dll</td><td>1</td><td/></row>
-		<row><td>system.data.sqlite.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>SYSTEM~1.XML|System.Data.SQLite.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Users\johnrdorazio\Documents\Visual Studio 2015\Projects\BibleGetIO\BibleGetIO\bin\Release\System.Data.SQLite.xml</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2274,12 +2253,8 @@
 		<row><td>ISX_DEFAULTCOMPONENT8</td><td/><td/><td>_BB10AC5E_1A8D_4E97_8E10_BFFB9E6068B1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT9</td><td/><td/><td>_D9654B67_E517_469D_B808_5589B3DDA8DA_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td/><td/><td>_1EADEFFA_0047_4DBF_8A4B_1177ED679E81_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.Office.Tools.Common.v4.0.Utilities.dll</td><td/><td/><td>_5173102A_6E4F_4122_8038_68FB8B1B36F0_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Microsoft.VisualStudio.Tools.Applications.Runtime.dll</td><td/><td/><td>_1A91205E_D0B3_4905_8431_28C386E3F0CC_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>Newtonsoft.Json.dll</td><td/><td/><td>_51D1F06A_E0CF_4533_BB16_7677A51FFFE0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>SQLite.Interop.dll</td><td/><td/><td>_B8755BFE_8020_4A37_A195_1FC4EC35AFB2_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>SQLite.Interop.dll1</td><td/><td/><td>_DA3C50CC_44AA_4F51_A635_51E8AF4734D6_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>System.Data.SQLite.dll</td><td/><td/><td>_2807FA16_8FF0_45AE_BFD1_9FC6BCA94F2A_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -4619,7 +4594,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{E73D7463-AE64-4D38-BCA9-8899D2B2782D}</td><td/></row>
 		<row><td>ProductName</td><td>BibleGet IO for MSWord</td><td/></row>
-		<row><td>ProductVersion</td><td>3.0.0.1</td><td/></row>
+		<row><td>ProductVersion</td><td>3.0.0.2</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4785,7 +4760,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleg_1_bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {2B9878E5-6DDF-48EF-8121-ADB4CEFD7E8D}</td><td/><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleg_1_bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {E73D7463-AE64-4D38-BCA9-8899D2B2782D}</td><td/><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4908,7 +4883,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
-		<row><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td>1.0.0.0</td><td>2.2.6.2</td><td>2057,1033,1036,1031,1032,1040,3098,2074,1034</td><td>772</td><td/><td>ISACTIONPROP1</td><td>NewUpgradeEntry1</td></row>
+		<row><td>{721C974F-9221-4108-90EE-225D724B365F}</td><td>1.0.0.0</td><td>3.0.0.1</td><td>2057,1033,1036,1031,1032,1040,3098,2074,1034</td><td>772</td><td/><td>ISACTIONPROP1</td><td>NewUpgradeEntry1</td></row>
 	</table>
 
 	<table name="Verb">
