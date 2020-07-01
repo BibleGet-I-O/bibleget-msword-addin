@@ -4,6 +4,7 @@ Imports System.Drawing
 Imports System.Text.RegularExpressions
 Imports System.Globalization
 Imports System.Collections
+Imports System.Diagnostics
 
 Public Class BibleGetDocInject
 
@@ -260,13 +261,15 @@ Public Class BibleGetDocInject
             Dim currentText As String = currentJson.SelectToken("text").Value(Of String)()
             currentText = currentText.Replace(vbCr, String.Empty).Replace(vbLf, String.Empty)
             Dim remainingText As String = currentText
+            Dim pattern1 As String = "(.*?)<((speaker|sm|i|pr|po)[f|l|s|i|3]{0,1}[f|l]{0,1})>(.*?)</\2>"
 
-            If Regex.IsMatch(currentText, ".*<[/]{0,1}(?:speaker|sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1}>.*", RegexOptions.Singleline) Then '//[/]{0,1}(?:sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1}>
+            If Regex.IsMatch(currentText, ".*<[/]{0,1}(?:speaker|sm|i|pr|po)[f|l|s|i|3]{0,1}[f|l]{0,1}>.*", RegexOptions.Singleline) Then '//[/]{0,1}(?:sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1}>
                 If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "We have detected a text string with special formatting: " + currentText)
-                Dim pattern1 As String = "(.*?)<((speaker|sm|po)[f|l|s|i|3]{0,1}[f|l]{0,1})>(.*?)</\2>"
+                Dim currentSpaceAfter As Single = currentSelection.Range.ParagraphFormat.SpaceAfter
+
+                'HandleFormattingTags(currentText)
                 'Matcher matcher1 = pattern1.matcher(currentText);
                 'Dim iteration As Integer = 0
-                Dim currentSpaceAfter As Single = currentSelection.Range.ParagraphFormat.SpaceAfter
                 For Each match As Match In Regex.Matches(currentText, pattern1, RegexOptions.Singleline)
                     '//                    System.out.print("Iteration ");
                     '//                    System.out.println(++iteration);
@@ -277,6 +280,7 @@ Public Class BibleGetDocInject
                     If match.Groups(1).Value IsNot Nothing And match.Groups(1).Value IsNot String.Empty Then
                         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "We seem to have some normal text preceding our special formatting text: " + match.Groups(1).Value)
                         normalText = True
+                        'Insert into the document normal text before the detected special formatting tag
                         TypeText(currentSelection, match.Groups(1).Value)
                         Dim regex As Regex = New Regex(match.Groups(1).Value)
                         remainingText = regex.Replace(remainingText, String.Empty, 1)
@@ -290,29 +294,32 @@ Public Class BibleGetDocInject
 
                         '//check for nested speaker tags!
                         Dim nestedTag As Boolean = False
-                        Dim speakerTagBefore As String = ""
-                        Dim speakerTagContents As String = ""
-                        Dim speakerTagAfter As String = ""
+                        Dim nestedTagObj As NestedTagObj = Nothing
+                        'Dim speakerTagBefore As String = ""
+                        'Dim speakerTagContents As String = ""
+                        'Dim speakerTagAfter As String = ""
 
-                        If Regex.IsMatch(formattingTagContents, ".*<[/]{0,1}speaker>.*", RegexOptions.Singleline) Then
+                        If Regex.IsMatch(formattingTagContents, ".*<[/]{0,1}(?:speaker|sm|i|pr|po)[f|l|s|i]{0,1}[f|l]{0,1}>.*", RegexOptions.Singleline) Then
                             nestedTag = True
+                            'Debug.Print("nestedTag was detected in string {" & formattingTagContents & "}")
                             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "We have a nested tag in this special formatting text: " + formattingTagContents)
-                            Dim remainingText2 As String = formattingTagContents
+                            nestedTagObj = New NestedTagObj(formattingTagContents)
 
                             'Matcher matcher2 = pattern1.matcher(formattingTagContents);
                             'Dim iteration2 As Integer = 0
-                            For Each matcher2 As Match In Regex.Matches(formattingTagContents, pattern1)
-                                If matcher2.Groups(2).Value IsNot Nothing And matcher2.Groups(2).Value IsNot String.Empty And matcher2.Groups(2).Value = "speaker" Then
-                                    If matcher2.Groups(1).Value IsNot Nothing And matcher2.Groups(1).Value IsNot String.Empty Then
-                                        speakerTagBefore = matcher2.Groups(1).Value
-                                        Dim reggaeton As Regex = New Regex(matcher2.Groups(1).Value)
-                                        remainingText2 = reggaeton.Replace(remainingText2, String.Empty, 1)
-                                    End If
-                                    speakerTagContents = matcher2.Groups(4).Value
-                                    Dim reggae As Regex = New Regex("<" + matcher2.Groups(2).Value + ">" + matcher2.Groups(4).Value + "</" + matcher2.Groups(2).Value + ">")
-                                    speakerTagAfter = reggae.Replace(remainingText2, String.Empty, 1)
-                                End If
-                            Next
+                            'Dim remainingText2 As String = formattingTagContents
+                            'For Each matcher2 As Match In Regex.Matches(formattingTagContents, pattern1)
+                            '    If matcher2.Groups(2).Value IsNot Nothing And matcher2.Groups(2).Value IsNot String.Empty And matcher2.Groups(2).Value = "speaker" Then
+                            '        If matcher2.Groups(1).Value IsNot Nothing And matcher2.Groups(1).Value IsNot String.Empty Then
+                            '            speakerTagBefore = matcher2.Groups(1).Value
+                            '            Dim reggaeton As Regex = New Regex(matcher2.Groups(1).Value)
+                            '            remainingText2 = reggaeton.Replace(remainingText2, String.Empty, 1)
+                            '        End If
+                            '        speakerTagContents = matcher2.Groups(4).Value
+                            '        Dim reggae As Regex = New Regex("<" + matcher2.Groups(2).Value + ">" + matcher2.Groups(4).Value + "</" + matcher2.Groups(2).Value + ">")
+                            '        speakerTagAfter = reggae.Replace(remainingText2, String.Empty, 1)
+                            '    End If
+                            'Next
                         End If
 
                         If My.Settings.NOVERSIONFORMATTING Then formattingTagContents = " " + formattingTagContents + " "
@@ -322,11 +329,12 @@ Public Class BibleGetDocInject
                                 If Not My.Settings.NOVERSIONFORMATTING Then
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
-                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
+                                    'TODO: fix CentimetersToPoints to reflect whichever unit is currently used
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                 End If
                                 If nestedTag Then
-                                    insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
+                                    insertNestedTag(nestedTagObj, currentSelection)
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
@@ -340,11 +348,12 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
-                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
+                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                 End If
                                 If nestedTag Then
-                                    insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
+                                    insertNestedTag(nestedTagObj, currentSelection)
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
@@ -358,11 +367,12 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
-                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
+                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                 End If
                                 If nestedTag Then
-                                    insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
+                                    insertNestedTag(nestedTagObj, currentSelection)
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
@@ -375,12 +385,13 @@ Public Class BibleGetDocInject
                                 If Not My.Settings.NOVERSIONFORMATTING Then
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
-                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
+                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
                                 If nestedTag Then
-                                    insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
+                                    insertNestedTag(nestedTagObj, currentSelection)
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
@@ -393,12 +404,13 @@ Public Class BibleGetDocInject
                                 If Not My.Settings.NOVERSIONFORMATTING Then
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
+                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
+                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1)
-                                    currentSelection.Range.ParagraphFormat.SpaceAfter = 0
                                 End If
                                 If nestedTag Then
-                                    insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
+                                    insertNestedTag(nestedTagObj, currentSelection)
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
@@ -412,11 +424,12 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5)
+                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                                 End If
                                 If nestedTag Then
-                                    insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
+                                    insertNestedTag(nestedTagObj, currentSelection)
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
@@ -424,7 +437,8 @@ Public Class BibleGetDocInject
                                     CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1)
+                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
                                 End If
                                 normalText = False
                             Case "poil"
@@ -432,11 +446,12 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1)
+                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                                 End If
                                 If nestedTag Then
-                                    insertNestedSpeakerTag(speakerTagBefore, speakerTagContents, speakerTagAfter, currentSelection)
+                                    insertNestedTag(nestedTagObj, currentSelection)
                                 Else
                                     TypeText(currentSelection, formattingTagContents)
                                 End If
@@ -444,6 +459,7 @@ Public Class BibleGetDocInject
                                     CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
+                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
                                     currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent)
                                 End If
                                 normalText = False
@@ -459,16 +475,20 @@ Public Class BibleGetDocInject
                                 '//xPropertySet.setPropertyValue("CharBackTransparent", false);
                                 'xPropertySet.setPropertyValue("CharBackColor", Color.LIGHT_GRAY.getRGB() & ~0xFF000000);
                                 currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorGray30
-                                TypeText(currentSelection, match.Groups(4).Value)
+                                TypeText(currentSelection, " " & match.Groups(4).Value & " ")
                                 If Not My.Settings.VerseTextFont.Bold Then
                                     currentSelection.Font.Bold = False
                                 End If
                                 'xPropertySet.setPropertyValue("CharBackColor", bgColorVerseText.getRGB() & ~0xFF000000);
-                                currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Microsoft.Office.Interop.Word.WdColor)
+                                currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Word.WdColor)
                         End Select
 
-                        Dim nonmereggaepiu As Regex = New Regex("<" + match.Groups(2).Value + ">" + match.Groups(4).Value + "</" + match.Groups(2).Value + ">")
+                        'Debug.Print("currentVerse: " & currentverse & " :: remainingText before regex.replace = {" & remainingText & "}")
+                        Dim remainingPattern = Regex.Escape("<" + match.Groups(2).Value + ">" + match.Groups(4).Value + "</" + match.Groups(2).Value + ">")
+                        Dim nonmereggaepiu As Regex = New Regex(remainingPattern)
                         remainingText = nonmereggaepiu.Replace(remainingText, String.Empty, 1)
+                        'Debug.Print("currentVerse: " & currentverse & " :: remainingText after regex.replace = {" & remainingText & "}")
+
                     End If
                 Next
                 currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
@@ -478,6 +498,7 @@ Public Class BibleGetDocInject
                 If remainingText IsNot String.Empty Then
                     If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "We have a fragment of text left over after all this: " + remainingText)
                     TypeText(currentSelection, remainingText)
+                    'Debug.Print("remainingText = {" & remainingText & "}")
                 End If
                 '/*
                 'Pattern pattern2 = Pattern.compile("([.^>]+)$",Pattern.UNICODE_CHARACTER_CLASS | Pattern.DOTALL);
@@ -519,7 +540,7 @@ Public Class BibleGetDocInject
             BookChapterStack.RemoveAt(0)
         End If
 
-        If BibleVersionStack.Count > 0 Then
+        If My.Settings.BibleVersionVisibility = VISIBILITY.SHOW And BibleVersionStack.Count > 0 Then
             CreateNewPar(currentSelection)
             setParagraphStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
             setTextStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
@@ -727,26 +748,61 @@ Public Class BibleGetDocInject
         currentSelection.Font.Shading.BackgroundPatternColor = backColor
     End Sub
 
-    Private Sub insertNestedSpeakerTag(ByVal speakerTagBefore As String, ByVal speakerTagContents As String, ByVal speakerTagAfter As String, ByRef currentSelection As Word.Selection)
-
-
-        '//        System.out.println("We are now working with a nested Speaker Tag."); //Using BG="+grayBG.getRGB()+"=R("+r+"),B("+b+"),G("+g+")
-        '//        System.out.println("speakerTagBefore=<"+speakerTagBefore+">,speakerTagContents=<"+speakerTagContents+">,speakerTagAfter=<"+speakerTagAfter+">");
-        TypeText(currentSelection, speakerTagBefore)
-        currentSelection.Font.Bold = True
-
-        'xPropertySet.setPropertyValue("CharBackColor", Color.LIGHT_GRAY.getRGB() & ~0xFF000000);
-        currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorGray30
-
-        TypeText(currentSelection, " " + speakerTagContents + " ")
-
-        If Not My.Settings.VerseTextFont.Bold Then
-            currentSelection.Font.Bold = False
+    Private Sub insertNestedTag(ByVal nestedTagObj As NestedTagObj, ByVal currentSelection As Word.Selection)
+        If nestedTagObj.Before IsNot String.Empty Then
+            setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
+            TypeText(currentSelection, nestedTagObj.Before)
         End If
-        'xPropertySet.setPropertyValue("CharBackColor", bgColorVerseText.getRGB() & ~0xFF000000);
-        currentSelection.Font.Shading.BackgroundPatternColor = CType(ColorTranslator.ToOle(My.Settings.VerseTextBackColor), Microsoft.Office.Interop.Word.WdColor)
-        TypeText(currentSelection, speakerTagAfter)
+
+        Select Case nestedTagObj.Tag
+            Case "speaker"
+                currentSelection.Font.Bold = True
+                currentSelection.Font.Italic = False
+                currentSelection.Font.Underline = False
+                currentSelection.Font.Size = My.Settings.VerseTextFont.Size
+                currentSelection.Font.Color = Word.WdColor.wdColorBlack
+                currentSelection.Font.Shading.BackgroundPatternColor = Word.WdColor.wdColorGray30
+                currentSelection.Font.Superscript = False
+                currentSelection.Font.Subscript = False
+                TypeText(currentSelection, nestedTagObj.Contents)
+            Case "sm"
+                currentSelection.Font.SmallCaps = True
+                TypeText(currentSelection, nestedTagObj.Contents)
+                currentSelection.Font.SmallCaps = False
+            Case "poi"
+                'If firstVerse = False And normalText = True Then CreateNewPar(currentSelection) ???
+                CreateNewPar(currentSelection)
+                'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
+                currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
+                setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
+                TypeText(currentSelection, nestedTagObj.Contents)
+                CreateNewPar(currentSelection)
+                setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
+            Case "po"
+                'If firstVerse = False And normalText = True Then CreateNewPar(currentSelection) ???
+                CreateNewPar(currentSelection)
+                'TODO: fix CentimetersToPoints to whichever unit is actually being used
+                currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
+                setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
+                TypeText(currentSelection, nestedTagObj.Contents)
+                CreateNewPar(currentSelection)
+                setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
+        End Select
+
+        If nestedTagObj.After IsNot String.Empty Then
+            setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
+            TypeText(currentSelection, nestedTagObj.After)
+        End If
+
+        setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
+
     End Sub
 
+    'Private Sub HandleFormattingTags(ByVal currentText As String)
+    '    Dim pattern1 As String = "(.*?)<((speaker|sm|i|pr|po)[f|l|s|i|3]{0,1}[f|l]{0,1})>(.*?)</\2>"
+
+    'End Sub
 
 End Class
