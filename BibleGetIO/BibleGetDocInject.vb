@@ -4,7 +4,6 @@ Imports System.Drawing
 Imports System.Text.RegularExpressions
 Imports System.Globalization
 Imports System.Collections
-Imports System.Diagnostics
 
 Public Class BibleGetDocInject
 
@@ -12,11 +11,45 @@ Public Class BibleGetDocInject
     Private Application As Word.Application = Globals.BibleGetAddIn.Application
     Private worker As BackgroundWorker
     Private e As DoWorkEventArgs
+    Private pofIndent As Single
+    Private poiIndent As Single
+    Private leftIndent As Single
+    Private rightIndent As Single
 
-    Public Sub New(ByRef worker As BackgroundWorker, ByRef eventArgs As System.ComponentModel.DoWorkEventArgs)
+
+    Public Sub New(ByRef worker As BackgroundWorker, ByRef eventArgs As DoWorkEventArgs)
         Me.worker = worker
         e = eventArgs
         DEBUG_MODE = My.Settings.DEBUG_MODE
+
+        Select Case Application.Options.MeasurementUnit
+            Case Word.WdMeasurementUnits.wdInches
+                leftIndent = Application.InchesToPoints(My.Settings.LeftIndent)
+                rightIndent = Application.InchesToPoints(My.Settings.RightIndent)
+                pofIndent = Application.InchesToPoints(My.Settings.LeftIndent + 0.2F)
+                poiIndent = Application.InchesToPoints(My.Settings.LeftIndent + 0.4F)
+            Case Word.WdMeasurementUnits.wdCentimeters
+                leftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent)
+                rightIndent = Application.CentimetersToPoints(My.Settings.RightIndent)
+                pofIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                poiIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
+            Case Word.WdMeasurementUnits.wdMillimeters
+                leftIndent = Application.MillimetersToPoints(My.Settings.LeftIndent)
+                rightIndent = Application.MillimetersToPoints(My.Settings.RightIndent)
+                pofIndent = Application.MillimetersToPoints(My.Settings.LeftIndent + 5.0F)
+                poiIndent = Application.MillimetersToPoints(My.Settings.LeftIndent + 10.0F)
+            Case Word.WdMeasurementUnits.wdPoints
+                leftIndent = My.Settings.LeftIndent
+                rightIndent = My.Settings.RightIndent
+                pofIndent = My.Settings.LeftIndent + 14.0F
+                poiIndent = My.Settings.LeftIndent + 28.0F
+            Case Word.WdMeasurementUnits.wdPicas
+                leftIndent = Application.PicasToPoints(My.Settings.LeftIndent)
+                rightIndent = Application.PicasToPoints(My.Settings.RightIndent)
+                pofIndent = Application.PicasToPoints(My.Settings.LeftIndent + 1.2F)
+                poiIndent = Application.PicasToPoints(My.Settings.LeftIndent + 2.4F)
+        End Select
+
     End Sub
 
     'Compared to Google Docs, Microsoft Word does not return a reference to a paragraph when creating it
@@ -282,8 +315,9 @@ Public Class BibleGetDocInject
                         normalText = True
                         'Insert into the document normal text before the detected special formatting tag
                         TypeText(currentSelection, match.Groups(1).Value)
-                        Dim regex As Regex = New Regex(match.Groups(1).Value)
-                        remainingText = regex.Replace(remainingText, String.Empty, 1)
+                        Dim normalTextStr As String = Regex.Escape(match.Groups(1).Value)
+                        Dim regx As Regex = New Regex(normalTextStr)
+                        remainingText = regx.Replace(remainingText, String.Empty, 1)
                         'remainingText.replaceFirst(match.Groups(1).Value, "")
                     End If
 
@@ -329,8 +363,7 @@ Public Class BibleGetDocInject
                                 If Not My.Settings.NOVERSIONFORMATTING Then
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    'TODO: fix CentimetersToPoints to reflect whichever unit is currently used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = pofIndent
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                 End If
                                 If nestedTag Then
@@ -348,8 +381,7 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = pofIndent
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                 End If
                                 If nestedTag Then
@@ -367,8 +399,7 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = pofIndent
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                 End If
                                 If nestedTag Then
@@ -385,8 +416,7 @@ Public Class BibleGetDocInject
                                 If Not My.Settings.NOVERSIONFORMATTING Then
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
-                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = pofIndent
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
@@ -404,8 +434,7 @@ Public Class BibleGetDocInject
                                 If Not My.Settings.NOVERSIONFORMATTING Then
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
-                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = poiIndent
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                                 End If
@@ -424,8 +453,7 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+400);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = pofIndent
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                                 End If
                                 If nestedTag Then
@@ -437,8 +465,7 @@ Public Class BibleGetDocInject
                                     CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = poiIndent
                                 End If
                                 normalText = False
                             Case "poil"
@@ -446,8 +473,7 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = poiIndent
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = currentSpaceAfter
                                 End If
                                 If nestedTag Then
@@ -459,8 +485,7 @@ Public Class BibleGetDocInject
                                     CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent)
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = leftIndent
                                 End If
                                 normalText = False
                             Case "sm"
@@ -484,7 +509,7 @@ Public Class BibleGetDocInject
                         End Select
 
                         'Debug.Print("currentVerse: " & currentverse & " :: remainingText before regex.replace = {" & remainingText & "}")
-                        Dim remainingPattern = Regex.Escape("<" + match.Groups(2).Value + ">" + match.Groups(4).Value + "</" + match.Groups(2).Value + ">")
+                        Dim remainingPattern As String = Regex.Escape("<" + match.Groups(2).Value + ">" + match.Groups(4).Value + "</" + match.Groups(2).Value + ">")
                         Dim nonmereggaepiu As Regex = New Regex(remainingPattern)
                         remainingText = nonmereggaepiu.Replace(remainingText, String.Empty, 1)
                         'Debug.Print("currentVerse: " & currentverse & " :: remainingText after regex.replace = {" & remainingText & "}")
@@ -624,23 +649,8 @@ Public Class BibleGetDocInject
     End Function
 
     Private Sub setParagraphStyles(ByRef currentSelection As Word.Selection, ByVal PARTYPE As PARAGRAPHTYPE)
-        Select Case Application.Options.MeasurementUnit
-            Case Word.WdMeasurementUnits.wdInches
-                currentSelection.Range.ParagraphFormat.LeftIndent = Application.InchesToPoints(My.Settings.LeftIndent)
-                currentSelection.Range.ParagraphFormat.RightIndent = Application.InchesToPoints(My.Settings.RightIndent)
-            Case Word.WdMeasurementUnits.wdCentimeters
-                currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent)
-                currentSelection.Range.ParagraphFormat.RightIndent = Application.CentimetersToPoints(My.Settings.RightIndent)
-            Case Word.WdMeasurementUnits.wdMillimeters
-                currentSelection.Range.ParagraphFormat.LeftIndent = Application.MillimetersToPoints(My.Settings.LeftIndent)
-                currentSelection.Range.ParagraphFormat.RightIndent = Application.MillimetersToPoints(My.Settings.RightIndent)
-            Case Word.WdMeasurementUnits.wdPoints
-                currentSelection.Range.ParagraphFormat.LeftIndent = My.Settings.LeftIndent
-                currentSelection.Range.ParagraphFormat.RightIndent = My.Settings.RightIndent
-            Case Word.WdMeasurementUnits.wdPicas
-                currentSelection.Range.ParagraphFormat.LeftIndent = Application.PicasToPoints(My.Settings.LeftIndent)
-                currentSelection.Range.ParagraphFormat.RightIndent = Application.PicasToPoints(My.Settings.RightIndent)
-        End Select
+        currentSelection.Range.ParagraphFormat.LeftIndent = leftIndent
+        currentSelection.Range.ParagraphFormat.RightIndent = rightIndent
 
         'currentSelection.Range.ParagraphFormat.FirstLineIndent = My.Settings.Indent
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "current linespacing = " + My.Settings.Linespacing.ToString)
