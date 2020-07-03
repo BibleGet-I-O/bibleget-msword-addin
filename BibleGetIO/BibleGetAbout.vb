@@ -352,7 +352,7 @@ Public NotInheritable Class AboutBibleGet
     Private Sub LabelVersion_Click(sender As Object, e As EventArgs) Handles LabelVersion.Click
         If My.Settings.NewVersionExists Then
 
-            Dim remoteUri As New Uri("https://www.bibleget.io/?wpdmdl=596") 'http://www.bibleget.io/?wpdmdl=596
+            Dim remoteUri As New Uri("https://www.bibleget.io/?wpdmdl=596")
             localFile = Path.GetTempPath & "BibleGetIOMSWordAddInSetup_" & My.Settings.NewVersion.Replace(".", "") & ".exe"
             If File.Exists(localFile) Then
                 Try
