@@ -121,12 +121,12 @@ Partial Class Preferences
         Me.RadioButton22 = New System.Windows.Forms.RadioButton()
         Me.RadioButton24 = New System.Windows.Forms.RadioButton()
         Me.GroupBox22 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton27 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton26 = New System.Windows.Forms.RadioButton()
+        Me.PicasRadioButton = New System.Windows.Forms.RadioButton()
+        Me.PointsRadioButton = New System.Windows.Forms.RadioButton()
+        Me.MMRadioButton = New System.Windows.Forms.RadioButton()
+        Me.CMRadioButton = New System.Windows.Forms.RadioButton()
+        Me.InchesRadioButton = New System.Windows.Forms.RadioButton()
         Me.GroupBox23 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton28 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton29 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton30 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -1314,11 +1314,11 @@ Partial Class Preferences
         '
         'GroupBox22
         '
-        Me.GroupBox22.Controls.Add(Me.RadioButton30)
-        Me.GroupBox22.Controls.Add(Me.RadioButton29)
-        Me.GroupBox22.Controls.Add(Me.RadioButton28)
-        Me.GroupBox22.Controls.Add(Me.RadioButton27)
-        Me.GroupBox22.Controls.Add(Me.RadioButton26)
+        Me.GroupBox22.Controls.Add(Me.PicasRadioButton)
+        Me.GroupBox22.Controls.Add(Me.PointsRadioButton)
+        Me.GroupBox22.Controls.Add(Me.MMRadioButton)
+        Me.GroupBox22.Controls.Add(Me.CMRadioButton)
+        Me.GroupBox22.Controls.Add(Me.InchesRadioButton)
         Me.GroupBox22.Location = New System.Drawing.Point(12, 808)
         Me.GroupBox22.Name = "GroupBox22"
         Me.GroupBox22.Size = New System.Drawing.Size(506, 58)
@@ -1326,35 +1326,80 @@ Partial Class Preferences
         Me.GroupBox22.TabStop = False
         Me.GroupBox22.Text = "Current displayed units of Measurement in the Microsoft Word interface:"
         '
-        'RadioButton27
+        'PicasRadioButton
         '
-        Me.RadioButton27.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton27.AutoSize = True
-        Me.RadioButton27.Enabled = False
-        Me.RadioButton27.Location = New System.Drawing.Point(167, 19)
-        Me.RadioButton27.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton27.Name = "RadioButton27"
-        Me.RadioButton27.Size = New System.Drawing.Size(38, 27)
-        Me.RadioButton27.TabIndex = 1
-        Me.RadioButton27.TabStop = True
-        Me.RadioButton27.Text = "CM"
-        Me.RadioButton27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton27.UseVisualStyleBackColor = True
+        Me.PicasRadioButton.Appearance = System.Windows.Forms.Appearance.Button
+        Me.PicasRadioButton.AutoSize = True
+        Me.PicasRadioButton.Enabled = False
+        Me.PicasRadioButton.Location = New System.Drawing.Point(302, 19)
+        Me.PicasRadioButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.PicasRadioButton.Name = "PicasRadioButton"
+        Me.PicasRadioButton.Size = New System.Drawing.Size(52, 27)
+        Me.PicasRadioButton.TabIndex = 4
+        Me.PicasRadioButton.TabStop = True
+        Me.PicasRadioButton.Text = "Picas"
+        Me.PicasRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PicasRadioButton.UseVisualStyleBackColor = True
         '
-        'RadioButton26
+        'PointsRadioButton
         '
-        Me.RadioButton26.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton26.AutoSize = True
-        Me.RadioButton26.Enabled = False
-        Me.RadioButton26.Location = New System.Drawing.Point(108, 19)
-        Me.RadioButton26.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton26.Name = "RadioButton26"
-        Me.RadioButton26.Size = New System.Drawing.Size(59, 27)
-        Me.RadioButton26.TabIndex = 0
-        Me.RadioButton26.TabStop = True
-        Me.RadioButton26.Text = "Inches"
-        Me.RadioButton26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton26.UseVisualStyleBackColor = True
+        Me.PointsRadioButton.Appearance = System.Windows.Forms.Appearance.Button
+        Me.PointsRadioButton.AutoSize = True
+        Me.PointsRadioButton.Enabled = False
+        Me.PointsRadioButton.Location = New System.Drawing.Point(245, 19)
+        Me.PointsRadioButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.PointsRadioButton.Name = "PointsRadioButton"
+        Me.PointsRadioButton.Size = New System.Drawing.Size(57, 27)
+        Me.PointsRadioButton.TabIndex = 3
+        Me.PointsRadioButton.TabStop = True
+        Me.PointsRadioButton.Text = "Points"
+        Me.PointsRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PointsRadioButton.UseVisualStyleBackColor = True
+        '
+        'MMRadioButton
+        '
+        Me.MMRadioButton.Appearance = System.Windows.Forms.Appearance.Button
+        Me.MMRadioButton.AutoSize = True
+        Me.MMRadioButton.Enabled = False
+        Me.MMRadioButton.Location = New System.Drawing.Point(205, 19)
+        Me.MMRadioButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.MMRadioButton.Name = "MMRadioButton"
+        Me.MMRadioButton.Size = New System.Drawing.Size(40, 27)
+        Me.MMRadioButton.TabIndex = 2
+        Me.MMRadioButton.TabStop = True
+        Me.MMRadioButton.Text = "MM"
+        Me.MMRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MMRadioButton.UseVisualStyleBackColor = True
+        '
+        'CMRadioButton
+        '
+        Me.CMRadioButton.Appearance = System.Windows.Forms.Appearance.Button
+        Me.CMRadioButton.AutoSize = True
+        Me.CMRadioButton.Enabled = False
+        Me.CMRadioButton.Location = New System.Drawing.Point(167, 19)
+        Me.CMRadioButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.CMRadioButton.Name = "CMRadioButton"
+        Me.CMRadioButton.Size = New System.Drawing.Size(38, 27)
+        Me.CMRadioButton.TabIndex = 1
+        Me.CMRadioButton.TabStop = True
+        Me.CMRadioButton.Text = "CM"
+        Me.CMRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.CMRadioButton.UseVisualStyleBackColor = True
+        '
+        'InchesRadioButton
+        '
+        Me.InchesRadioButton.Appearance = System.Windows.Forms.Appearance.Button
+        Me.InchesRadioButton.AutoSize = True
+        Me.InchesRadioButton.Enabled = False
+        Me.InchesRadioButton.Location = New System.Drawing.Point(108, 19)
+        Me.InchesRadioButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.InchesRadioButton.Name = "InchesRadioButton"
+        Me.InchesRadioButton.Size = New System.Drawing.Size(59, 27)
+        Me.InchesRadioButton.TabIndex = 0
+        Me.InchesRadioButton.TabStop = True
+        Me.InchesRadioButton.Text = "Inches"
+        Me.InchesRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.InchesRadioButton.UseVisualStyleBackColor = True
         '
         'GroupBox23
         '
@@ -1365,51 +1410,6 @@ Partial Class Preferences
         Me.GroupBox23.TabIndex = 17
         Me.GroupBox23.TabStop = False
         Me.GroupBox23.Text = "Show full reference"
-        '
-        'RadioButton28
-        '
-        Me.RadioButton28.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton28.AutoSize = True
-        Me.RadioButton28.Enabled = False
-        Me.RadioButton28.Location = New System.Drawing.Point(205, 19)
-        Me.RadioButton28.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton28.Name = "RadioButton28"
-        Me.RadioButton28.Size = New System.Drawing.Size(40, 27)
-        Me.RadioButton28.TabIndex = 2
-        Me.RadioButton28.TabStop = True
-        Me.RadioButton28.Text = "MM"
-        Me.RadioButton28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton28.UseVisualStyleBackColor = True
-        '
-        'RadioButton29
-        '
-        Me.RadioButton29.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton29.AutoSize = True
-        Me.RadioButton29.Enabled = False
-        Me.RadioButton29.Location = New System.Drawing.Point(245, 19)
-        Me.RadioButton29.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton29.Name = "RadioButton29"
-        Me.RadioButton29.Size = New System.Drawing.Size(57, 27)
-        Me.RadioButton29.TabIndex = 3
-        Me.RadioButton29.TabStop = True
-        Me.RadioButton29.Text = "Points"
-        Me.RadioButton29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton29.UseVisualStyleBackColor = True
-        '
-        'RadioButton30
-        '
-        Me.RadioButton30.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton30.AutoSize = True
-        Me.RadioButton30.Enabled = False
-        Me.RadioButton30.Location = New System.Drawing.Point(302, 19)
-        Me.RadioButton30.Margin = New System.Windows.Forms.Padding(0)
-        Me.RadioButton30.Name = "RadioButton30"
-        Me.RadioButton30.Size = New System.Drawing.Size(52, 27)
-        Me.RadioButton30.TabIndex = 4
-        Me.RadioButton30.TabStop = True
-        Me.RadioButton30.Text = "Picas"
-        Me.RadioButton30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadioButton30.UseVisualStyleBackColor = True
         '
         'Preferences
         '
@@ -1561,13 +1561,13 @@ Partial Class Preferences
     Friend WithEvents RadioButton22 As Windows.Forms.RadioButton
     Friend WithEvents RadioButton24 As Windows.Forms.RadioButton
     Friend WithEvents GroupBox22 As Windows.Forms.GroupBox
-    Friend WithEvents RadioButton27 As Windows.Forms.RadioButton
-    Friend WithEvents RadioButton26 As Windows.Forms.RadioButton
+    Friend WithEvents CMRadioButton As Windows.Forms.RadioButton
+    Friend WithEvents InchesRadioButton As Windows.Forms.RadioButton
     Friend WithEvents Label7 As Windows.Forms.Label
     Friend WithEvents Label2 As Windows.Forms.Label
     Friend WithEvents GroupBox23 As Windows.Forms.GroupBox
     Friend WithEvents CheckBox4 As Windows.Forms.CheckBox
-    Friend WithEvents RadioButton28 As Windows.Forms.RadioButton
-    Friend WithEvents RadioButton30 As Windows.Forms.RadioButton
-    Friend WithEvents RadioButton29 As Windows.Forms.RadioButton
+    Friend WithEvents MMRadioButton As Windows.Forms.RadioButton
+    Friend WithEvents PicasRadioButton As Windows.Forms.RadioButton
+    Friend WithEvents PointsRadioButton As Windows.Forms.RadioButton
 End Class

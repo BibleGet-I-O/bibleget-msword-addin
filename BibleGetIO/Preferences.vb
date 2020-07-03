@@ -1,5 +1,6 @@
 ﻿Imports System.Drawing
 Imports System.Globalization
+Imports System.Windows.Forms
 
 Public Class Preferences
     Private initializing As Boolean = True
@@ -652,48 +653,120 @@ jQuery(document).ready(function(){
 
         'we need to detect if display measurement units option has changed
         'if it has changed we need to adapt our left and right indents accordingly
+        'the adaptation should try to make the units snap to a clean division line for this type of unit...
         If Application.Options.MeasurementUnit <> My.Settings.CurrentDisplayUnit Then
             Select Case Application.Options.MeasurementUnit
                 Case Word.WdMeasurementUnits.wdCentimeters
-                    If My.Settings.CurrentDisplayUnit = Word.WdMeasurementUnits.wdInches Then
-                        My.Settings.LeftIndent = My.Settings.LeftIndent * 2.0F
-                        My.Settings.RightIndent = My.Settings.RightIndent * 2.0F
-                    End If
+                    Select Case My.Settings.CurrentDisplayUnit
+                        Case Word.WdMeasurementUnits.wdInches 'Inches to Centimeters snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent * 2.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent * 2.0F
+                        Case Word.WdMeasurementUnits.wdMillimeters 'Millimeters to Centimeters snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent / 10.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent / 10.0F
+                        Case Word.WdMeasurementUnits.wdPicas 'Picas to Centimeters snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent / 2.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent / 2.0F
+                        Case Word.WdMeasurementUnits.wdPoints 'Points to Centimeters snap conversion
+                            My.Settings.LeftIndent = CSng(Math.Floor(My.Settings.LeftIndent / 28.346F))
+                            My.Settings.RightIndent = CSng(Math.Floor(My.Settings.RightIndent / 28.346F))
+                    End Select
                 Case Word.WdMeasurementUnits.wdInches
-                    If My.Settings.CurrentDisplayUnit = Word.WdMeasurementUnits.wdCentimeters Then
-                        My.Settings.LeftIndent = My.Settings.LeftIndent / 2.0F
-                        My.Settings.RightIndent = My.Settings.RightIndent / 2.0F
-                    End If
+                    Select Case My.Settings.CurrentDisplayUnit
+                        Case Word.WdMeasurementUnits.wdCentimeters 'Centimeters to Inches snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent / 2.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent / 2.0F
+                        Case Word.WdMeasurementUnits.wdMillimeters 'Millimeters to Inches snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent / 0.2F
+                            My.Settings.RightIndent = My.Settings.RightIndent / 0.2F
+                        Case Word.WdMeasurementUnits.wdPicas 'Picas to Inches snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent / 6.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent / 6.0F
+                        Case Word.WdMeasurementUnits.wdPoints 'Points to Inches snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent / 72.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent / 72.0F
+                    End Select
+                Case Word.WdMeasurementUnits.wdMillimeters
+                    Select Case My.Settings.CurrentDisplayUnit
+                        Case Word.WdMeasurementUnits.wdInches 'Inches to Millimeters snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent * 20.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent * 20.0F
+                        Case Word.WdMeasurementUnits.wdCentimeters 'Centimeters to Millimeters snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent * 10.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent * 10.0F
+                        Case Word.WdMeasurementUnits.wdPicas 'Picas to Millimeters snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent / 0.2F
+                            My.Settings.RightIndent = My.Settings.RightIndent / 0.2F
+                        Case Word.WdMeasurementUnits.wdPoints 'Points to Millimeters snap conversion
+                            My.Settings.LeftIndent = CSng(Math.Floor(My.Settings.LeftIndent / 2.835F))
+                            My.Settings.RightIndent = CSng(Math.Floor(My.Settings.RightIndent / 2.835F))
+                    End Select
+                Case Word.WdMeasurementUnits.wdPicas
+                    Select Case My.Settings.CurrentDisplayUnit
+                        Case Word.WdMeasurementUnits.wdInches 'Inches to Picas snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent * 6.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent * 6.0F
+                        Case Word.WdMeasurementUnits.wdCentimeters 'Centimeters to Picas snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent * 2.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent * 2.0F
+                        Case Word.WdMeasurementUnits.wdMillimeters 'Millimeters to Picas snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent * 0.2F
+                            My.Settings.RightIndent = My.Settings.RightIndent * 0.2F
+                        Case Word.WdMeasurementUnits.wdPoints 'Points to Picas snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent / 12.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent / 12.0F
+                    End Select
+                Case Word.WdMeasurementUnits.wdPoints
+                    Select Case My.Settings.CurrentDisplayUnit
+                        Case Word.WdMeasurementUnits.wdInches 'Inches to Points snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent * 72.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent * 72.0F
+                        Case Word.WdMeasurementUnits.wdCentimeters 'Centimeters to Points snap conversion
+                            My.Settings.LeftIndent = CSng(Math.Round(Math.Ceiling(My.Settings.LeftIndent * 28.346F) / 6, MidpointRounding.AwayFromZero) * 6)
+                            My.Settings.RightIndent = CSng(Math.Round(Math.Ceiling(My.Settings.RightIndent * 28.346F) / 6, MidpointRounding.AwayFromZero) * 6)
+                        Case Word.WdMeasurementUnits.wdMillimeters 'Millimeters to Points snap conversion
+                            My.Settings.LeftIndent = CSng(Math.Ceiling(My.Settings.LeftIndent * 2.835F))
+                            My.Settings.RightIndent = CSng(Math.Ceiling(My.Settings.RightIndent * 2.835F))
+                        Case Word.WdMeasurementUnits.wdPicas 'Picas to Points snap conversion
+                            My.Settings.LeftIndent = My.Settings.LeftIndent * 12.0F
+                            My.Settings.RightIndent = My.Settings.RightIndent * 12.0F
+                    End Select
             End Select
             My.Settings.CurrentDisplayUnit = Application.Options.MeasurementUnit
             My.Settings.Save()
         End If
 
         InterfaceInCM = False
+        For Each radioBtn As RadioButton In GroupBox22.Controls.OfType(Of RadioButton)
+            radioBtn.Enabled = False
+        Next
         Select Case Application.Options.MeasurementUnit
             Case Word.WdMeasurementUnits.wdInches
                 Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "in"
                 Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "in"
+                InchesRadioButton.Checked = True
+                InchesRadioButton.Enabled = True
             Case Word.WdMeasurementUnits.wdCentimeters
                 InterfaceInCM = True
                 Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
                 Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "cm"
+                CMRadioButton.Checked = True
+                CMRadioButton.Enabled = True
             Case Word.WdMeasurementUnits.wdMillimeters
                 Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "mm"
                 Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "mm"
+                MMRadioButton.Checked = True
+                MMRadioButton.Enabled = True
             Case Word.WdMeasurementUnits.wdPicas
                 Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "pc"
                 Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "pc"
+                PicasRadioButton.Checked = True
+                PicasRadioButton.Enabled = True
             Case Word.WdMeasurementUnits.wdPoints
                 Label2.Text = My.Settings.LeftIndent.ToString("F1", CultureInfo.InvariantCulture) & "pt"
                 Label7.Text = My.Settings.RightIndent.ToString("F1", CultureInfo.InvariantCulture) & "pt"
-        End Select
-
-        Select Case InterfaceInCM
-            Case True
-                RadioButton27.Checked = True
-            Case False
-                RadioButton26.Checked = True
+                PointsRadioButton.Checked = True
+                PointsRadioButton.Enabled = True
         End Select
 
         NativeMethods.CoInternetSetFeatureEnabled(DS, SP, True)

@@ -44,7 +44,7 @@
     <PublishUrl>ftp://bibleget.io/httpdocs/msword-addin/</PublishUrl>
     <InstallUrl>https://bibleget.io/msword-addin/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>3.0.0.2</ApplicationVersion>
+    <ApplicationVersion>3.0.0.4</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>4</UpdateInterval>
@@ -336,6 +336,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LocalizedBibleBooks.vb" />
+    <Compile Include="NestedTagObj.vb" />
     <Compile Include="Preferences.Designer.vb">
       <DependentUpon>Preferences.vb</DependentUpon>
     </Compile>
