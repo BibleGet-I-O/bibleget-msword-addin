@@ -360,7 +360,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="VersionCompareByLang.vb" />
+    <EmbeddedResource Include="BibleGetAbout.el.resx">
+      <DependentUpon>BibleGetAbout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BibleGetAbout.en.resx">
+      <DependentUpon>BibleGetAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BibleGetAbout.fr.resx">
+      <DependentUpon>BibleGetAbout.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BibleGetAbout.it.resx">
       <DependentUpon>BibleGetAbout.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BibleGetAbout.resx">
