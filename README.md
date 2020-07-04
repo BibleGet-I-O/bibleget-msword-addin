@@ -20,15 +20,27 @@ You can set your preferred text formatting for the Bible quotes so that you don'
 Credits for the icon images used for the buttons are to be given to https://dryicons.com/icon-packs/wysiwyg-classic .
 
 # Changelog
+
+## Version 3.0.0.7 (July 1, 2020)
+* Add search for verses by keyword
+* Add layout options to the preferences area
+* Fix regular expression issues when text contains special characters
+* Use Word interface language for localization rather than system language (they're not necessarily the same)
+
+## Version 2.2.6.0 (March 7, 2016)
+
+* Fixed update process
+* Added automatic check for new updates
+
 ## Version 2.2.0.0 (February 18, 2016)
 
-Added debug log functionality to help debug those situations where the AddIn is not working correctly for some reason (debug log created in AppData location on AddIn startup, “enable debug” button added to “Health Status” form), debug log file if existing automatically attached to feedback email
-Added secondary registration of registry keys to make sure keys are installed to actual user registry even in cases where user is not administrator but installation is performed with administrator privileges
+* Added debug log functionality to help debug those situations where the AddIn is not working correctly for some reason (debug log created in AppData location on AddIn startup, “enable debug” button added to “Health Status” form), debug log file if existing automatically attached to feedback email
+* Added secondary registration of registry keys to make sure keys are installed to actual user registry even in cases where user is not administrator but installation is performed with administrator privileges
 
 ## Version 2.1.0.0
 
-Added internal automatic update check (also added functionality on bibleget.io website that exposes the version information so that the plugin can communicate and obtain this information). Update check scheduled once every 7 days or when Server Data is renewed.
+* Added internal automatic update check (also added functionality on bibleget.io website that exposes the version information so that the plugin can communicate and obtain this information). Update check scheduled once every 7 days or when Server Data is renewed.
 
 ## Version 2.0.0.0
 
-First release of the BibleGet AddIn for Microsoft Word!
+* First release of the BibleGet AddIn for Microsoft Word!
