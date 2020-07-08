@@ -26,8 +26,9 @@
     <OutputType>Library</OutputType>
     <RootNamespace>BibleGetIO</RootNamespace>
     <AssemblyName>BibleGetIO</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <DefineConstants>VSTO40</DefineConstants>
     <StartupObject>
     </StartupObject>
@@ -44,14 +45,14 @@
     <PublishUrl>ftp://bibleget.io/httpdocs/msword-addin/</PublishUrl>
     <InstallUrl>https://bibleget.io/msword-addin/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>3.0.0.4</ApplicationVersion>
+    <ApplicationVersion>3.0.0.8</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>4</UpdateInterval>
     <UpdateIntervalUnits>weeks</UpdateIntervalUnits>
     <ProductName>BibleGet IO</ProductName>
-    <PublisherName>Cappellania Università degli Studi Roma Tre</PublisherName>
-    <SupportUrl>http://www.bibleget.io</SupportUrl>
+    <PublisherName>John Romano D%27Orazio</PublisherName>
+    <SupportUrl>https://www.bibleget.io</SupportUrl>
     <FriendlyName>BibleGetIO</FriendlyName>
     <OfficeApplicationDescription>A tool for inserting Bible Quotes into a document with preferred formatting.</OfficeApplicationDescription>
     <LoadBehavior>3</LoadBehavior>
@@ -198,7 +199,7 @@
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
@@ -207,7 +208,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net40\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net45\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
@@ -434,7 +435,7 @@
       <DependentUpon>BibleGetRibbon.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="BibleGetIO_TemporaryKey.pfx" />
+    <None Include="BibleGetIO_Temp2020.pfx" />
     <None Include="ia.pfx" />
     <None Include="packages.config" />
     <None Include="BibleGetAddIn.Designer.xml">
@@ -651,7 +652,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>BibleGetIO_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>BibleGetIO_Temp2020.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -718,11 +719,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net40\System.Data.SQLite.Core.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net45\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net40\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.113.1\build\net45\System.Data.SQLite.Core.targets'))" />
   </Target>
 </Project>

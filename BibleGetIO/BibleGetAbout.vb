@@ -22,7 +22,7 @@ Public NotInheritable Class AboutBibleGet
     'Private eventHandled As Boolean
     Private WithEvents updateProcess As New Process
     Private elapsedTime As TimeSpan
-    Private DEBUG_MODE As Boolean
+    Private DEBUG_MODE As Boolean = My.Settings.DEBUG_MODE
     Private WordApplication As Word.Application = Globals.BibleGetAddIn.Application
 
     Private Shared Function __(ByVal myStr As String) As String
@@ -39,7 +39,6 @@ Public NotInheritable Class AboutBibleGet
     End Sub
 
     Private Sub AboutBox1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        DEBUG_MODE = My.Settings.DEBUG_MODE
         ' Imposta il titolo del form.
         'Dim ApplicationTitle As String
         'If My.Application.Info.Title <> "" Then
@@ -50,8 +49,6 @@ Public NotInheritable Class AboutBibleGet
 
         'Me.Text = String.Format("Informazioni su {0}", ApplicationTitle)
         Text = __("About this plugin")
-
-        BuildLangCodes()
 
         ' Inizializza tutto il testo visualizzato nella finestra di dialogo Informazioni su.
         LabelProductName.Text = __(My.Application.Info.ProductName)
@@ -82,15 +79,19 @@ Public NotInheritable Class AboutBibleGet
         WebBrowser1.DocumentText = "<!DOCTYPE html><head></head><body style=""background-color:transparent;margin:0;padding:0 1em;line-height:120%;""><div style=""font-size:10pt;text-align:justify;"">" & descr & "</div></body>"
         'Me.TextBoxDescription.Text =
 
-
         ServerData.Text = __("Current information from the BibleGet Server:")
+        Button1.Text = __("RENEW SERVER DATA")
 
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "about to call BuildLangCodes Sub...")
+        BuildLangCodes()
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "BuildLangCodes Sub completed")
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "about to call prepareDynamicInformation Sub...")
         prepareDynamicInformation()
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "prepareDynamicInformation Sub completed")
 
         CurrentInfo.Text = String.Format(__("The BibleGet database currently supports {0} versions of the Bible in {1} different languages:"), versionCount, versionLangs)
         ServerDataLangsCount.Text = String.Format(__("The BibleGet engine currently understands the names of the books of the Bible in {0} different languages:"), booksLangs)
         ServerDataLangs.Text = String.Join(", ", langsLocalized)
-        Button1.Text = __("RENEW SERVER DATA")
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -112,6 +113,7 @@ Public NotInheritable Class AboutBibleGet
 
     Private Sub BuildLangCodes()
         'ISO language codes supported by Microsoft, taken from https://msdn.microsoft.com/it-it/goglobal/bb896001.aspx
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Entering BuildLangCodes Sub...")
         langcodes.Add("AFRIKAANS", "af")
         langcodes.Add("ALBANIAN", "sq")
         langcodes.Add("AMHARIC", "am")
@@ -172,6 +174,7 @@ Public NotInheritable Class AboutBibleGet
         langcodes.Add("KONKANI", "kok")
         langcodes.Add("KOREAN", "ko")
         langcodes.Add("KYRGYZ", "ky")
+        langcodes.Add("LATIN", "la")
         langcodes.Add("LAO", "lo")
         langcodes.Add("LAOTHIAN", "lo")
         langcodes.Add("LATVIAN", "lv")
@@ -240,41 +243,73 @@ Public NotInheritable Class AboutBibleGet
         langcodes.Add("YI", "ii")
         langcodes.Add("YORUBA", "yo")
         langcodes.Add("ZULU", "zu")
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "finishing BuildLangCodes Sub...")
     End Sub
 
     Private Sub prepareDynamicInformation()
-        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType].FullName & vbTab & "Entering prepareDynamicInformation Sub...")
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Entering prepareDynamicInformation Sub...")
         langsLocalized.Clear()
         ListView1.Clear()
         If bibleGetDB Is Nothing Then bibleGetDB = New BibleGetDatabase
         If bibleGetDB.IsInitialized Then
-            If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType].FullName & vbTab & "BibleGetDatabase is correctly initialized...")
+            If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "BibleGetDatabase is correctly initialized...")
             Using conn As New SQLiteConnection(bibleGetDB.connectionStr)
                 If conn IsNot Nothing Then
+                    If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Connection to BibleGet sqlite database succeeded")
                     conn.Open()
                     Using sqlQuery As New SQLiteCommand(conn)
                         Dim queryString As String = "SELECT VERSIONS FROM METADATA WHERE ID=0"
                         Dim queryString2 As String = "SELECT LANGUAGES FROM METADATA WHERE ID=0"
                         sqlQuery.CommandText = queryString
                         Dim versionsString As String = sqlQuery.ExecuteScalar()
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "versionsString = " & versionsString)
                         sqlQuery.CommandText = queryString2
                         Dim langsSupported As String = sqlQuery.ExecuteScalar
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "langsSupported = " & langsSupported)
 
-                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "versionsString = " + versionsString)
-                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType].FullName & vbTab & "langsSupported = " & langsSupported)
                         Dim versionsObj As JObject = JObject.Parse(versionsString)
                         Dim keys() As String = versionsObj.Properties().Select(Function(p) p.Name).ToArray()
                         versionCount = keys.Length
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "versionCount = " & versionCount)
                         Dim BibleVersions As New ArrayList()
 
                         Dim lvGroups As New Dictionary(Of String, ListViewGroup)
 
                         For Each s As String In keys
-                            Dim versionStr As String = versionsObj.SelectToken(s).ToString
+                            Dim versionStr As String = versionsObj.SelectToken(s).Value(Of String)
                             Dim strArray() As String = versionStr.Split("|")
-                            Dim myCulture As CultureInfo = New CultureInfo(strArray(2), False)
-                            Dim fullLanguageName As String = myCulture.DisplayName
-                            Dim languageName As String = fullLanguageName.ToUpper
+                            Dim fullLanguageName As String = ""
+                            Dim languageName As String
+                            Try
+                                Dim myCulture As CultureInfo = New CultureInfo(strArray(2), False)
+                                fullLanguageName = myCulture.DisplayName
+                                If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & fullLanguageName)
+                                languageName = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
+                            Catch e As CultureNotFoundException
+                                If strArray(2) = "la" Then
+                                    Select Case CultureInfo.CurrentUICulture.TwoLetterISOLanguageName
+                                        Case "en"
+                                            fullLanguageName = "Latin"
+                                        Case "es"
+                                            fullLanguageName = "Latín"
+                                        Case "fr"
+                                            fullLanguageName = "Latin"
+                                        Case "it"
+                                            fullLanguageName = "Latino"
+                                        Case "de"
+                                            fullLanguageName = "Lateinische"
+                                        Case "ar"
+                                            fullLanguageName = "لاتينية"
+                                        Case "pt"
+                                            fullLanguageName = "Latim"
+                                        Case "sr"
+                                            fullLanguageName = "Латински"
+                                        Case Else
+                                            fullLanguageName = "Latin"
+                                    End Select
+                                End If
+                            End Try
+                            languageName = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
                             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "lang code <" & strArray(2) & "> expanded to localized language name as: " & languageName)
                             BibleVersions.Add(New BibleVersion(s, strArray(0), strArray(1), languageName))
                         Next

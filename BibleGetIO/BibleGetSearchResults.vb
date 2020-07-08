@@ -25,7 +25,6 @@ Public Class BibleGetSearchResults
     Private previewDocumentBodyClose As String
 
 
-
     Private Shared Function __(ByVal myStr As String) As String
         Dim myTranslation As String = BibleGetAddIn.RM.GetString(myStr, BibleGetAddIn.locale)
         If Not String.IsNullOrEmpty(myTranslation) Then
@@ -190,11 +189,42 @@ a.button:hover { background-color: #EEF; }
                         For Each s As String In keys
                             Dim versionStr As String = versionsObj.SelectToken(s).ToString
                             Dim strArray() As String = versionStr.Split("|")
-                            Dim myCulture As CultureInfo = New CultureInfo(strArray(2), False)
-                            Dim fullLanguageName As String = myCulture.DisplayName
-                            If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & fullLanguageName)
-                            Dim languageName As String = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
+                            Dim fullLanguageName As String = ""
+                            Dim languageName As String
+                            Try
+                                Dim myCulture As CultureInfo = New CultureInfo(strArray(2), False)
+                                fullLanguageName = myCulture.DisplayName
+                                If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & fullLanguageName)
+                                languageName = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
+                            Catch e As CultureNotFoundException
+                                If strArray(2) = "la" Then
+                                    Select Case CultureInfo.CurrentUICulture.TwoLetterISOLanguageName
+                                        Case "en"
+                                            fullLanguageName = "Latin"
+                                        Case "es"
+                                            fullLanguageName = "Latín"
+                                        Case "fr"
+                                            fullLanguageName = "Latin"
+                                        Case "it"
+                                            fullLanguageName = "Latino"
+                                        Case "de"
+                                            fullLanguageName = "Lateinische"
+                                        Case "ar"
+                                            fullLanguageName = "لاتينية"
+                                        Case "pt"
+                                            fullLanguageName = "Latim"
+                                        Case "sr"
+                                            fullLanguageName = "Латински"
+                                        Case Else
+                                            fullLanguageName = "Latin"
+                                    End Select
+                                End If
+                            Catch e As Exception
+                                MsgBox("There was an error: " & e.Message & ". Please send feedback about this error to the add-in author using the Send Feedback menu item.", MsgBoxStyle.Critical, "ERROR!")
+                            End Try
+                            languageName = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
                             BibleVersions.Add(New BibleVersion(s, strArray(0), strArray(1), languageName))
+
                         Next
 
                         BibleVersions.Sort(New VersionCompareByLang())
