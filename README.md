@@ -21,6 +21,9 @@ Credits for the icon images used for the buttons are to be given to https://dryi
 
 # Changelog
 
+## Version 3.0.1.1 (July 8, 2020)
+* Fix blocking error on Windows 7 systems which have no internationalization information about the latin language
+
 ## Version 3.0.0.7 (July 1, 2020)
 * Add search for verses by keyword
 * Add layout options to the preferences area
