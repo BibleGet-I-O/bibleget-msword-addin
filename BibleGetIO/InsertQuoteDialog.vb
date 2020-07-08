@@ -30,16 +30,19 @@ Public Class InsertQuoteDialog
     End Function
 
     Private Sub InsertQuoteDialog_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DEBUG_MODE = My.Settings.DEBUG_MODE
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Loading InsertQuoteDialog")
         Text = __("Insert quote from input window")
         Label3.Text = __("Type the desired Bible Quote using standard notation:")
         TextBox2.Text = __("(e.g. Mt 1,1-10.12-15;5,3-4;Jn 3,16)")
         Label4.Text = __("Choose version (or versions)")
         Button1.Text = __("Send query")
         ToolTip1.SetToolTip(Button1, __("Sends the request to the server and returns the results to the document."))
-        LoadBibleVersions(ListView1)
-        TextBox2.Focus()
         INITIALIZING = False
-        DEBUG_MODE = My.Settings.DEBUG_MODE
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "about to call LoadBibleVersions")
+        LoadBibleVersions(ListView1)
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "LoadBibleVersions called")
+        TextBox2.Focus()
     End Sub
 
 
@@ -208,11 +211,14 @@ Public Class InsertQuoteDialog
 
     Private Sub LoadBibleVersions(myListView As ListView)
         'Dim versionCount As Integer
+        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "Entering LoadBibleVersions Sub...")
         Dim versionLangs As Integer
         Dim bibleGetDB As New BibleGetDatabase
         If bibleGetDB.IsInitialized Then
+            If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "bibleGetDB.IsInitialized")
             Using conn As New SQLiteConnection(bibleGetDB.connectionStr)
                 If conn IsNot Nothing Then
+                    If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "SQLiteConnection OK")
                     conn.Open()
                     Using sqlQuery As New SQLiteCommand(conn)
                         Dim queryString As String = "SELECT VERSIONS FROM METADATA WHERE ID=0"
@@ -224,22 +230,58 @@ Public Class InsertQuoteDialog
                         'versionCount = keys.Length
                         Dim BibleVersions As New ArrayList()
 
-                        Dim lvGroups As New Dictionary(Of String, ListViewGroup)
-
                         For Each s As String In keys
-                            Dim versionStr As String = versionsObj.SelectToken(s).ToString
+                            Dim versionStr As String = versionsObj.SelectToken(s).Value(Of String)
+                            If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "versionStr = " + versionStr)
                             Dim strArray() As String = versionStr.Split("|")
-                            Dim myCulture As CultureInfo = New CultureInfo(strArray(2), False)
-                            Dim fullLanguageName As String = myCulture.DisplayName
-                            If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & fullLanguageName)
-                            Dim languageName As String = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
+                            Dim fullLanguageName As String = ""
+                            Dim languageName As String
+                            Try
+                                Dim myCulture As CultureInfo = New CultureInfo(strArray(2), False)
+                                fullLanguageName = myCulture.DisplayName
+                                If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & fullLanguageName)
+                                languageName = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
+                            Catch e As CultureNotFoundException
+                                If strArray(2) = "la" Then
+                                    Select Case CultureInfo.CurrentUICulture.TwoLetterISOLanguageName
+                                        Case "en"
+                                            fullLanguageName = "Latin"
+                                        Case "es"
+                                            fullLanguageName = "Latín"
+                                        Case "fr"
+                                            fullLanguageName = "Latin"
+                                        Case "it"
+                                            fullLanguageName = "Latino"
+                                        Case "de"
+                                            fullLanguageName = "Lateinische"
+                                        Case "ar"
+                                            fullLanguageName = "لاتينية"
+                                        Case "pt"
+                                            fullLanguageName = "Latim"
+                                        Case "sr"
+                                            fullLanguageName = "Латински"
+                                        Case Else
+                                            fullLanguageName = "Latin"
+                                    End Select
+                                End If
+                            Catch e As Exception
+                                MsgBox("There was an error: " & e.Message & ". Please send feedback about this error to the add-in author using the Send Feedback menu item.", MsgBoxStyle.Critical, "ERROR!")
+                            End Try
+                            languageName = fullLanguageName.ToUpper(CultureInfo.CurrentUICulture)
                             BibleVersions.Add(New BibleVersion(s, strArray(0), strArray(1), languageName))
+
                         Next
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "BibleVersions ArrayList should now be built")
 
                         BibleVersions.Sort(New VersionCompareByLang())
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "BibleVersions ArrayList should now be sorted using VersionCompareByLang")
 
+                        Dim lvGroups As New Dictionary(Of String, ListViewGroup)
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "About to start building listview based on Bible versions sorted by lang")
                         For Each el As BibleVersion In BibleVersions
+                            If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "BibleVersions ArrayList should now be sorted using VersionCompareByLang")
                             If Not lvGroups.ContainsKey(el.Lang) Then
+                                If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & el.Lang & " cannot be found in the list view groups dictionary, now creating new listviewgroup and adding to lvGroups dictionary...")
                                 Dim lvGroup As New ListViewGroup(el.Lang)
                                 lvGroups.Add(el.Lang, lvGroup)
                                 myListView.Groups.Add(lvGroup)
@@ -250,15 +292,24 @@ Public Class InsertQuoteDialog
                             lvItem.Text = el.Abbrev & " - " & el.Fullname & " (" & el.Year & ")"
                             myListView.Items.Add(lvItem)
                             listItems.Add(lvItem.Index, el.Abbrev)
+                            If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "created new listview item with index " & lvItem.Index & " and abbreviation value " & el.Abbrev)
                         Next
                         myListView.View = View.Details
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "set myListView.View to View.Details")
                         colHeader = New ColumnHeader()
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "created new ColumnHeader")
                         colHeader.Text = String.Empty
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "set colHeader Text to empty string")
                         colHeader.Width = -2
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "set colHeader width to -2")
                         colHeader.TextAlign = HorizontalAlignment.Left
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "set colHeader.TextAlign to HorizontalAlignment.Left")
                         myListView.Columns.Add(colHeader)
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "added colHeader to myListView.Columns")
                         myListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "set myListView.HeaderStyle to ColumnHeaderStyle.None")
                         myListView.Columns(0).Width = myListView.Width - 4 - SystemInformation.VerticalScrollBarWidth
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "set myListView.Columns(0).Width to myListView.Width-4-SystemInformation.VerticalScrollBarWidth")
 
                         For Each item As ListViewItem In myListView.Items
                             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "item " + item.Index.ToString + ": " + item.Text + ": " + listItems(item.Index))
@@ -267,6 +318,7 @@ Public Class InsertQuoteDialog
                                 item.Selected = True
                             End If
                         Next
+                        If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "ListView should now be populated")
                     End Using
 
                 Else
