@@ -1,9 +1,16 @@
 # BibleGet plugin for Microsoft Word 2007+
-**@author** John Romano D'Orazio priest@johnromanodorazio.com
 
-**Project website** https://www.bibleget.io
-
-**Installation Package** https://www.bibleget.io/applications/microsoft-word-macro/
+<table>
+  <thead>
+    <tr><th colspan=2>About this package</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><b>Author</b></td><td>John Romano D'Orazio</td></tr>
+    <tr><td><b>Author email</b></td><td>priest@johnromanodorazio.com</td></tr>
+    <tr><td><b>Project Website</b></td><td>https://www.bibleget.io</td></tr>
+    <tr><td><b>Latest release</b></td><td>https://sourceforge.net/projects/bibleget/files/latest/download</td></tr>
+  </tbody>
+</table>
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/BibleGet-I-O/bibleget-msword-addin?style=flat-square)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/BibleGet-I-O/bibleget-msword-addin?style=flat-square)
