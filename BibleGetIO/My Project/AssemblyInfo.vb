@@ -23,7 +23,7 @@ Imports System.Runtime.InteropServices
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("1F069262-E051-4C13-9CF2-C8AD39AE36AE")>
+<Assembly: Guid("B7D3A10A-F9B9-4073-BF87-949824C279F7")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -36,8 +36,8 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("3.0.1.1")>
-<Assembly: AssemblyFileVersion("3.0.1.1")>
+<Assembly: AssemblyVersion("3.0.1.2")>
+<Assembly: AssemblyFileVersion("3.0.1.2")>
 
 Friend Module DesignTimeConstants
     Public Const RibbonTypeSerializer As String = "Microsoft.VisualStudio.Tools.Office.Ribbon.Serialization.RibbonTypeCodeDomSerializer, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
