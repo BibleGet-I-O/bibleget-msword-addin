@@ -1,6 +1,6 @@
 ﻿Imports System.Net
 Imports System.IO
-
+Imports Newtonsoft.Json.Linq
 
 Public NotInheritable Class HTTPCaller
 
@@ -61,12 +61,16 @@ Public NotInheritable Class HTTPCaller
 
     Public Shared Function GetCurrentVersion() As Version
         Dim retVersion As Version = My.Application.Info.Version 'initialize as known current version
-        Dim url As String = "https://bibleget.io/?wpdm_api=API_KEY&package_id=596&task=getpackageversion"
+        'Dim url As String = "https://bibleget.io/?wpdm_api=API_KEY&package_id=596&task=getpackageversion"
+        Dim url As String = "https://sourceforge.net/projects/bibleget/best_release.json"
         Dim response As String = GetResponse(New Uri(url))
         If response IsNot Nothing Then
-            response = response.Replace("""", "")
-            If My.Settings.DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("HTTPCaller.vb" & vbTab & "onlineVersion = " & response)
-            retVersion = New Version(response)
+            Dim BestRelease As JObject = JObject.Parse(response)
+            Dim release As JObject = BestRelease.SelectToken("release")
+            Dim fileName As String = release.SelectToken("filename").Value(Of String)()
+            Dim detectedVersion As String = fileName.Substring(2, 7) 'skip /v and get the version info such as 3.0.1.2 (7 characters)
+            If My.Settings.DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("HTTPCaller.vb" & vbTab & "onlineVersion = " & detectedVersion)
+            retVersion = New Version(detectedVersion)
         End If
         Return retVersion
     End Function
