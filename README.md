@@ -35,6 +35,10 @@ Credits for the icon images used for the buttons are to be given to https://dryi
 
 # Changelog
 
+## Version 3.0.1.2 (September 26, 2020)
+* Add full word highlighting when partial matches are found when searching verses by keyword: the exact match will be highlighted yellow, the rest of the word will be highlighted light yellow
+* Fix verse numbers showing even when verse number visibility is set to hide (thanks to user feedback from Tommaso F.)
+
 ## Version 3.0.1.1 (July 8, 2020)
 * Fix blocking error on Windows 7 systems which have no internationalization information about the latin language
 
