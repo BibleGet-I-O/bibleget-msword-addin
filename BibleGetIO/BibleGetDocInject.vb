@@ -286,10 +286,11 @@ Public Class BibleGetDocInject
                     setParagraphStyles(currentSelection, PARAGRAPHTYPE.VERSES)
                     firstVerse = False
                 End If
-                setTextStyles(currentSelection, PARAGRAPHTYPE.VERSENUMBER)
-                TypeText(currentSelection, " " + currentverse)
+                If My.Settings.VerseNumberVisibility = VISIBILITY.SHOW Then
+                    setTextStyles(currentSelection, PARAGRAPHTYPE.VERSENUMBER)
+                    TypeText(currentSelection, " " + currentverse)
+                End If
             End If
-
             setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
             Dim currentText As String = currentJson.SelectToken("text").Value(Of String)()
             currentText = currentText.Replace(vbCr, String.Empty).Replace(vbLf, String.Empty)

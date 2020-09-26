@@ -9,6 +9,7 @@ Imports System.IO
 Imports System.Data
 Imports Newtonsoft.Json
 Imports System.Diagnostics
+Imports System.Text.RegularExpressions
 
 Public Class BibleGetSearchResults
 
@@ -49,6 +50,7 @@ Public Class BibleGetSearchResults
         TermToSearch.Text = PlaceholderText
         Label5.Text = __("Search results")
         localizedBookNames = New LocalizedBibleBooks()
+        searchResultsDT.CaseSensitive = False
         searchResultsDT.Columns.Add("IDX", Type.GetType("System.Int32"))
         searchResultsDT.Columns.Add("BOOK", Type.GetType("System.Int32"))
         searchResultsDT.Columns.Add("CHAPTER", Type.GetType("System.Int32"))
@@ -100,6 +102,7 @@ body { border: 1px solid Black; }
 }
 
 a.mark { background-color: yellow; font-weight: bold; padding: 2px 4px; }
+a.submark { background-color: lightyellow; padding: 2px 0px; }
 a.button { padding: 6px; color: DarkBlue; font-weight: bold; background-color: LightBlue; border: 2px outset Blue; border-radius: 3px; display: inline-block; box-shadow: 2px 2px 4px 4px DarkBlue; cursor: pointer; text-decoration: none; }
 a.button:hover { background-color: #EEF; }
 "
@@ -448,6 +451,8 @@ a.button:hover { background-color: #EEF; }
                 chapter = result.SelectToken("chapter").Value(Of Integer)()
                 versenumber = result.SelectToken("verse").Value(Of String)() 'we use string and not integer because some verses contain a letter! otherwise conversion exceptions will be generated
                 versetext = result.SelectToken("text").Value(Of String)()
+                Dim matchpattern As String = "<(?:[^>=]|='[^']*'|=""[^""]*""|=[^'""][^\s>]*)*>"
+                versetext = Regex.Replace(versetext, matchpattern, "")
                 versetext = AddMark(versetext, searchTerm)
                 resultJsonStr = JsonConvert.SerializeObject(result, Formatting.None)
                 searchResultsDT.Rows.Add(New Object() {resultCounter, book, chapter, versenumber, versetext, searchTerm, resultJsonStr})
@@ -492,7 +497,10 @@ a.button:hover { background-color: #EEF; }
 
 
     Private Function AddMark(verseText As String, searchTerm As String)
-        Return Replace(verseText, searchTerm, "<a class=""mark"">" & searchTerm & "</a>")
+        Dim pattern As String = "(.*)(\b.*?)(" & searchTerm & ")(.*?\b)(.*)"
+        Dim replacement As String = "$1<a class=""submark"">$2</a><a class=""mark"">$3</a><a class=""submark"">$4</a>$5"
+        Return Regex.Replace(verseText, pattern, replacement, RegexOptions.IgnoreCase)
+        'Return Replace(verseText, searchTerm, "<a class=""mark"">" & searchTerm & "</a>", 1, -1, CompareMethod.Text)
     End Function
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -584,6 +592,7 @@ a.button:hover { background-color: #EEF; }
                 If filterTerm.Contains(" ") Then
                     filterTerm = filterTerm.Split(" ").First
                 End If
+                'searchResultsDT.CaseSensitive = False
                 searchResultsDT.DefaultView.RowFilter = "VERSETEXT LIKE '%" & filterTerm & "%'"
             End If
         Else
