@@ -7,7 +7,8 @@ Imports Newtonsoft.Json.Linq
 Imports System.Collections
 Imports System.Globalization
 Imports System.Timers
-
+Imports System.Diagnostics
+Imports System.Text.RegularExpressions
 
 Public Class InsertQuoteDialog
 
@@ -52,6 +53,8 @@ Public Class InsertQuoteDialog
             Label2.Text = "ELABORATING REQUEST..."
             Dim queryString As String = TextBox2.Text
             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "dirty queryString = " + queryString)
+            'Debug.WriteLine("Query string is:" & myQuery)
+            queryString = Regex.Replace(queryString, "[\u2011-\u2015|\u2212|\u23AF]", Chr(45))
             queryString = New String(queryString.Where(Function(x) (Char.IsWhiteSpace(x) Or Char.IsLetterOrDigit(x) Or x = "," Or x = "." Or x = ":" Or x = "-" Or x = ";")).ToArray())
             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & "clean queryString = " + queryString)
             'First we perform some verifications to make sure we are dealing with a good query

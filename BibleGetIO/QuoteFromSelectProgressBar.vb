@@ -3,6 +3,8 @@ Imports System.Net
 Imports System.IO
 Imports System.ComponentModel
 Imports System.Windows.Forms
+Imports System.Diagnostics
+Imports System.Text.RegularExpressions
 
 Public Class QuoteFromSelectProgressBar
 
@@ -170,6 +172,8 @@ Public Class QuoteFromSelectProgressBar
             UseWaitCursor = False
             Cursor = Cursors.Default
         Else
+            'Debug.WriteLine("Query string is:" & myQuery)
+            queryString = Regex.Replace(queryString, "[\u2011-\u2015|\u2212|\u23AF]", Chr(45))
             queryString = New String(queryString.Where(Function(x) (Char.IsWhiteSpace(x) Or Char.IsLetterOrDigit(x) Or x = "," Or x = "." Or x = ":" Or x = "-" Or x = ";")).ToArray())
             Dim integrityResult As Boolean = helperFunctions.IntegrityCheck(queryString, PreferredVersions.ToArray)
             If integrityResult Then
