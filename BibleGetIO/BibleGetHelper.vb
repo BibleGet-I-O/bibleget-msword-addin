@@ -1,6 +1,7 @@
 ﻿Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 Imports System.Globalization
+Imports System.Diagnostics
 
 Public Class BibleGetHelper
 

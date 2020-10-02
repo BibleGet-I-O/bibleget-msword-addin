@@ -289,6 +289,8 @@ Public Class BibleGetDocInject
                 If My.Settings.VerseNumberVisibility = VISIBILITY.SHOW Then
                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSENUMBER)
                     TypeText(currentSelection, " " + currentverse)
+                Else
+                    TypeText(currentSelection, " ")
                 End If
             End If
             setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
