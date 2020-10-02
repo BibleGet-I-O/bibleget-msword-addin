@@ -41,22 +41,23 @@
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BibleGetRibbon))
         Me.BibleGetTab = Me.Factory.CreateRibbonTab
         Me.BibleGetTabGroup1 = Me.Factory.CreateRibbonGroup
-        Me.InsertBibleQuoteFromDialogBtn = Me.Factory.CreateRibbonButton
         Me.Separator2 = Me.Factory.CreateRibbonSeparator
-        Me.InsertBibleQuoteFromTextSelectionBtn = Me.Factory.CreateRibbonButton
         Me.BibleGetTabGroup2 = Me.Factory.CreateRibbonGroup
-        Me.SearchBtn = Me.Factory.CreateRibbonButton
         Me.BibleGetTabGroup3 = Me.Factory.CreateRibbonGroup
-        Me.PreferencesBtn = Me.Factory.CreateRibbonButton
         Me.Separator3 = Me.Factory.CreateRibbonSeparator
-        Me.HelpBtn = Me.Factory.CreateRibbonButton
         Me.BibleGetTabGroup4 = Me.Factory.CreateRibbonGroup
+        Me.Separator1 = Me.Factory.CreateRibbonSeparator
+        Me.InsertBibleQuoteFromDialogBtn = Me.Factory.CreateRibbonButton
+        Me.InsertBibleQuoteFromTextSelectionBtn = Me.Factory.CreateRibbonButton
+        Me.SearchBtn = Me.Factory.CreateRibbonButton
+        Me.PreferencesBtn = Me.Factory.CreateRibbonButton
+        Me.HelpBtn = Me.Factory.CreateRibbonButton
         Me.SendFeedbackBtn = Me.Factory.CreateRibbonButton
         Me.MakeContributionBtn = Me.Factory.CreateRibbonButton
         Me.AboutBtn = Me.Factory.CreateRibbonButton
-        Me.Separator1 = Me.Factory.CreateRibbonSeparator
         Me.StatusBtn = Me.Factory.CreateRibbonButton
         Me.BibleGetTab.SuspendLayout()
         Me.BibleGetTabGroup1.SuspendLayout()
@@ -84,45 +85,15 @@
         Me.BibleGetTabGroup1.Label = "Insert Bible Quote"
         Me.BibleGetTabGroup1.Name = "BibleGetTabGroup1"
         '
-        'InsertBibleQuoteFromDialogBtn
-        '
-        Me.InsertBibleQuoteFromDialogBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.InsertBibleQuoteFromDialogBtn.Image = Global.BibleGetIO.My.Resources.Resources.quotefrominput_small
-        Me.InsertBibleQuoteFromDialogBtn.KeyTip = "B"
-        Me.InsertBibleQuoteFromDialogBtn.Label = "Insert Bible Quote from Dialog"
-        Me.InsertBibleQuoteFromDialogBtn.Name = "InsertBibleQuoteFromDialogBtn"
-        Me.InsertBibleQuoteFromDialogBtn.ScreenTip = "Get your desired Bible quote using the dialog and choosing preferred Bible Versio" &
-    "ns"
-        Me.InsertBibleQuoteFromDialogBtn.ShowImage = True
-        '
         'Separator2
         '
         Me.Separator2.Name = "Separator2"
-        '
-        'InsertBibleQuoteFromTextSelectionBtn
-        '
-        Me.InsertBibleQuoteFromTextSelectionBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.InsertBibleQuoteFromTextSelectionBtn.Image = Global.BibleGetIO.My.Resources.Resources.quotefromselection_large
-        Me.InsertBibleQuoteFromTextSelectionBtn.KeyTip = "T"
-        Me.InsertBibleQuoteFromTextSelectionBtn.Label = "Insert bible quote from Text selection"
-        Me.InsertBibleQuoteFromTextSelectionBtn.Name = "InsertBibleQuoteFromTextSelectionBtn"
-        Me.InsertBibleQuoteFromTextSelectionBtn.ScreenTip = "Select your desired Bible quote directly in your document"
-        Me.InsertBibleQuoteFromTextSelectionBtn.ShowImage = True
         '
         'BibleGetTabGroup2
         '
         Me.BibleGetTabGroup2.Items.Add(Me.SearchBtn)
         Me.BibleGetTabGroup2.Label = "Search"
         Me.BibleGetTabGroup2.Name = "BibleGetTabGroup2"
-        '
-        'SearchBtn
-        '
-        Me.SearchBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.SearchBtn.Image = Global.BibleGetIO.My.Resources.Resources.search_32x32
-        Me.SearchBtn.KeyTip = "S"
-        Me.SearchBtn.Label = "Search for verses by keyword"
-        Me.SearchBtn.Name = "SearchBtn"
-        Me.SearchBtn.ShowImage = True
         '
         'BibleGetTabGroup3
         '
@@ -132,29 +103,9 @@
         Me.BibleGetTabGroup3.Label = "Settings"
         Me.BibleGetTabGroup3.Name = "BibleGetTabGroup3"
         '
-        'PreferencesBtn
-        '
-        Me.PreferencesBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.PreferencesBtn.Image = Global.BibleGetIO.My.Resources.Resources.preferences_large
-        Me.PreferencesBtn.KeyTip = "P"
-        Me.PreferencesBtn.Label = "Preferences"
-        Me.PreferencesBtn.Name = "PreferencesBtn"
-        Me.PreferencesBtn.ScreenTip = "Choose your preferred text and paragraph formatting"
-        Me.PreferencesBtn.ShowImage = True
-        '
         'Separator3
         '
         Me.Separator3.Name = "Separator3"
-        '
-        'HelpBtn
-        '
-        Me.HelpBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.HelpBtn.Image = Global.BibleGetIO.My.Resources.Resources.help_large
-        Me.HelpBtn.KeyTip = "H"
-        Me.HelpBtn.Label = "Help"
-        Me.HelpBtn.Name = "HelpBtn"
-        Me.HelpBtn.ScreenTip = "Instructions for the usage of this AddIn"
-        Me.HelpBtn.ShowImage = True
         '
         'BibleGetTabGroup4
         '
@@ -165,6 +116,60 @@
         Me.BibleGetTabGroup4.Items.Add(Me.StatusBtn)
         Me.BibleGetTabGroup4.Label = "About"
         Me.BibleGetTabGroup4.Name = "BibleGetTabGroup4"
+        '
+        'Separator1
+        '
+        Me.Separator1.Name = "Separator1"
+        '
+        'InsertBibleQuoteFromDialogBtn
+        '
+        Me.InsertBibleQuoteFromDialogBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.InsertBibleQuoteFromDialogBtn.Image = Global.BibleGetIO.My.Resources.Resources.quotefrominput_large
+        Me.InsertBibleQuoteFromDialogBtn.KeyTip = "B"
+        Me.InsertBibleQuoteFromDialogBtn.Label = "Insert Bible Quote from Dialog"
+        Me.InsertBibleQuoteFromDialogBtn.Name = "InsertBibleQuoteFromDialogBtn"
+        Me.InsertBibleQuoteFromDialogBtn.ScreenTip = "Get your desired Bible quote using the dialog and choosing preferred Bible Versio" &
+    "ns"
+        Me.InsertBibleQuoteFromDialogBtn.ShowImage = True
+        '
+        'InsertBibleQuoteFromTextSelectionBtn
+        '
+        Me.InsertBibleQuoteFromTextSelectionBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.InsertBibleQuoteFromTextSelectionBtn.Image = CType(resources.GetObject("InsertBibleQuoteFromTextSelectionBtn.Image"), System.Drawing.Image)
+        Me.InsertBibleQuoteFromTextSelectionBtn.KeyTip = "T"
+        Me.InsertBibleQuoteFromTextSelectionBtn.Label = "Insert bible quote from Text selection"
+        Me.InsertBibleQuoteFromTextSelectionBtn.Name = "InsertBibleQuoteFromTextSelectionBtn"
+        Me.InsertBibleQuoteFromTextSelectionBtn.ScreenTip = "Select your desired Bible quote directly in your document"
+        Me.InsertBibleQuoteFromTextSelectionBtn.ShowImage = True
+        '
+        'SearchBtn
+        '
+        Me.SearchBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.SearchBtn.Image = Global.BibleGetIO.My.Resources.Resources.search_32x32
+        Me.SearchBtn.KeyTip = "S"
+        Me.SearchBtn.Label = "Search for verses by keyword"
+        Me.SearchBtn.Name = "SearchBtn"
+        Me.SearchBtn.ShowImage = True
+        '
+        'PreferencesBtn
+        '
+        Me.PreferencesBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.PreferencesBtn.Image = CType(resources.GetObject("PreferencesBtn.Image"), System.Drawing.Image)
+        Me.PreferencesBtn.KeyTip = "P"
+        Me.PreferencesBtn.Label = "Preferences"
+        Me.PreferencesBtn.Name = "PreferencesBtn"
+        Me.PreferencesBtn.ScreenTip = "Choose your preferred text and paragraph formatting"
+        Me.PreferencesBtn.ShowImage = True
+        '
+        'HelpBtn
+        '
+        Me.HelpBtn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.HelpBtn.Image = Global.BibleGetIO.My.Resources.Resources.help_large
+        Me.HelpBtn.KeyTip = "H"
+        Me.HelpBtn.Label = "Help"
+        Me.HelpBtn.Name = "HelpBtn"
+        Me.HelpBtn.ScreenTip = "Instructions for the usage of this AddIn"
+        Me.HelpBtn.ShowImage = True
         '
         'SendFeedbackBtn
         '
@@ -192,10 +197,6 @@
         Me.AboutBtn.Name = "AboutBtn"
         Me.AboutBtn.ScreenTip = "Information about this plugin."
         Me.AboutBtn.ShowImage = True
-        '
-        'Separator1
-        '
-        Me.Separator1.Name = "Separator1"
         '
         'StatusBtn
         '

@@ -288,6 +288,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BibleGetResource.el.resx</DependentUpon>
     </Compile>
+    <Compile Include="BibleGetResource.en.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibleGetResource.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="BibleGetResource.es.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -392,7 +397,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BibleGetResource.el.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="BibleGetResource.en.resx" />
+    <EmbeddedResource Include="BibleGetResource.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BibleGetResource.en.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="BibleGetResource.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>BibleGetResource.es.Designer.vb</LastGenOutput>
@@ -512,9 +520,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quotefrominput-small.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\quotefromselection-large.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\quotefromselection-small.bmp" />
@@ -638,6 +643,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\remove_filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quotefromselection_large.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quotefromselection-large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preferences-tweak-tool-icon_32x32.png" />
   </ItemGroup>
   <!-- Include the build rules for a Visual Basic project. -->
   <PropertyGroup>
