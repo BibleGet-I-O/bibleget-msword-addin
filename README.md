@@ -35,6 +35,11 @@ Credits for the icon images used for the buttons are to be given to https://dryi
 
 # Changelog
 
+## Version 3.0.1.6 (October 2, 2020)
+* Allow any kind of emdash, endash, or hyphens as the hyphen separator in query strings
+* small fixes on popup windows element alignment
+* use png's instead of bmp's for Ribbon icons, with correct background transparency
+
 ## Version 3.0.1.3 (September 26, 2020)
 * Fix update process using sourceforge releases rather than Wordpress Download Manager
 
