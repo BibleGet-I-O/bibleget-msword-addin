@@ -22,6 +22,7 @@ Partial Class BibleGetSearchResults
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BibleGetSearchResults))
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.TermToSearch = New System.Windows.Forms.TextBox()
@@ -39,7 +40,8 @@ Partial Class BibleGetSearchResults
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
+        Me.ExactMatchChkBox = New System.Windows.Forms.CheckBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'BackgroundWorker1
@@ -205,11 +207,28 @@ Partial Class BibleGetSearchResults
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'ExactMatchChkBox
+        '
+        Me.ExactMatchChkBox.AutoSize = True
+        Me.ExactMatchChkBox.Location = New System.Drawing.Point(240, 297)
+        Me.ExactMatchChkBox.Name = "ExactMatchChkBox"
+        Me.ExactMatchChkBox.Size = New System.Drawing.Size(153, 21)
+        Me.ExactMatchChkBox.TabIndex = 19
+        Me.ExactMatchChkBox.Text = "Only exact matches"
+        Me.ToolTip1.SetToolTip(Me.ExactMatchChkBox, resources.GetString("ExactMatchChkBox.ToolTip"))
+        Me.ExactMatchChkBox.UseVisualStyleBackColor = True
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.ToolTip1.ToolTipTitle = "More info"
+        '
         'BibleGetSearchResults
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1689, 879)
+        Me.Controls.Add(Me.ExactMatchChkBox)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label6)
@@ -250,5 +269,6 @@ Partial Class BibleGetSearchResults
     Friend WithEvents Label6 As Windows.Forms.Label
     Friend WithEvents Button2 As Windows.Forms.Button
     Friend WithEvents Button3 As Windows.Forms.Button
-    Friend WithEvents BackgroundWorker2 As ComponentModel.BackgroundWorker
+    Friend WithEvents ExactMatchChkBox As Windows.Forms.CheckBox
+    Friend WithEvents ToolTip1 As Windows.Forms.ToolTip
 End Class
