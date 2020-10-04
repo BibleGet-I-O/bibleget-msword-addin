@@ -35,6 +35,9 @@ Credits for the icon images used for the buttons are to be given to https://dryi
 
 # Changelog
 
+## Version 3.0.1.8 (October 4, 2020)
+* Highlight plain ascii matches other than diacritic matches against search term
+
 ## Version 3.0.1.6 (October 2, 2020)
 * Allow any kind of emdash, endash, or hyphens as the hyphen separator in query strings
 * small fixes on popup windows element alignment
