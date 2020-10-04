@@ -156,6 +156,9 @@ a.button:hover { background-color: #EEF; }
                 queryString = queryString.Split(" ").First
             End If
             Dim serverRequestString As String = BibleGetAddIn.BGET_SEARCH_ENDPOINT & "?query=keywordsearch&keyword=" & queryString & "&version=" & BibleVersionForSearch.SelectedItems.Item(0).Tag & "&return=json&appid=msword&pluginversion=" & My.Application.Info.Version.ToString
+            If Me.ExactMatchChkBox.Checked Then
+                serverRequestString &= "&exactmatch=true"
+            End If
 
             Dim x As BibleGetWorker = New BibleGetWorker("SENDQUERY", serverRequestString)
             BackgroundWorker1.RunWorkerAsync(x)
@@ -454,6 +457,7 @@ a.button:hover { background-color: #EEF; }
                 Dim matchpattern As String = "<(?:[^>=]|='[^']*'|=""[^""]*""|=[^'""][^\s>]*)*>"
                 versetext = Regex.Replace(versetext, matchpattern, "")
                 versetext = AddMark(versetext, searchTerm)
+                versetext = AddMark(versetext, stripDiacritics(searchTerm))
                 resultJsonStr = JsonConvert.SerializeObject(result, Formatting.None)
                 searchResultsDT.Rows.Add(New Object() {resultCounter, book, chapter, versenumber, versetext, searchTerm, resultJsonStr})
                 'Debug.Print(resultJsonStr)
@@ -503,6 +507,20 @@ a.button:hover { background-color: #EEF; }
         'Return Replace(verseText, searchTerm, "<a class=""mark"">" & searchTerm & "</a>", 1, -1, CompareMethod.Text)
     End Function
 
+    Private Function stripDiacritics(inText As String)
+        Dim normalizedString = inText.Normalize(NormalizationForm.FormD)
+        Dim StringBuilder = New StringBuilder()
+        Dim c
+        For Each c In normalizedString
+            Dim UnicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c)
+            If (UnicodeCategory <> UnicodeCategory.NonSpacingMark) Then
+                StringBuilder.Append(c)
+            End If
+        Next
+
+        Return StringBuilder.ToString().Normalize(NormalizationForm.FormC)
+    End Function
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If Button3.Text = __("Order by Reference") Then
             searchResultsDT.DefaultView.Sort = "BOOK ASC,CHAPTER ASC,VERSE ASC"
@@ -537,6 +555,7 @@ a.button:hover { background-color: #EEF; }
             Dim rowIdx As Integer = row("IDX")
             Dim resultJsonStr As String = row("JSONSTR")
             versetext = AddMark(versetext, searchTerm)
+            versetext = AddMark(versetext, stripDiacritics(searchTerm))
             If filterTerm IsNot String.Empty Then
                 versetext = AddMark(versetext, filterTerm)
             End If
