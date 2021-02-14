@@ -41,6 +41,8 @@ Public Class QuoteFromSelectProgressBar
             y = 10
             worker.ReportProgress(y)
             Dim queryString As String = x.QueryString
+            ServicePointManager.Expect100Continue = True
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls Or SecurityProtocolType.Tls11 Or SecurityProtocolType.Tls12
             Dim request As WebRequest = WebRequest.Create(queryString)
             Try
                 Dim response As WebResponse = request.GetResponse()

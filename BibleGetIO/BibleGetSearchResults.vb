@@ -299,6 +299,8 @@ a.button:hover { background-color: #EEF; }
         If x.Command = "SENDQUERY" Then
             y = 10
             worker.ReportProgress(y)
+            ServicePointManager.Expect100Continue = True
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls Or SecurityProtocolType.Tls11 Or SecurityProtocolType.Tls12
             Dim queryString As String = x.QueryString
             Dim request As HttpWebRequest = WebRequest.Create(queryString)
             Try
