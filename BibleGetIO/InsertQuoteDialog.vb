@@ -67,7 +67,7 @@ Public Class InsertQuoteDialog
                 'When we are sure that this is a good query, we can finally prepare it for the web request
                 queryString = Uri.EscapeDataString(queryString)
                 Dim queryVersions As String = Uri.EscapeDataString(String.Join(",", PreferredVersions))
-                Dim serverRequestString As String = BibleGetAddIn.BGET_ENDPOINT & "?query=" & queryString & "&version=" & queryVersions & "&return=json&appid=msword&pluginversion=" & My.Application.Info.Version.ToString
+                Dim serverRequestString As String = BibleGetAddIn.BGET_ENDPOINT & "?query=" & queryString & "&version=" & queryVersions & "&preferorigin=" & [Enum].GetName(GetType(PREFERORIGIN), My.Settings.PreferOrigin) & "&return=json&appid=msword&pluginversion=" & My.Application.Info.Version.ToString
 
                 Dim x As BibleGetWorker = New BibleGetWorker("SENDQUERY", serverRequestString)
                 BackgroundWorker1.RunWorkerAsync(x)
