@@ -493,3 +493,8 @@ Public Enum PARAGRAPHTYPE
     VERSENUMBER
     VERSETEXT
 End Enum
+
+Public Enum PREFERORIGIN
+    HEBREW
+    GREEK
+End Enum
