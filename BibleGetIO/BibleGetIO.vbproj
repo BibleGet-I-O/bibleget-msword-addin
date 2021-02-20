@@ -653,6 +653,12 @@
   <ItemGroup>
     <None Include="Resources\preferences-tweak-tool-icon_32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle button state left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle button state left hover.png" />
+  </ItemGroup>
   <!-- Include the build rules for a Visual Basic project. -->
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

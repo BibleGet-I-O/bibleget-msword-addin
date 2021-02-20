@@ -382,7 +382,31 @@ Public Class InsertQuoteDialog
         CloseForm()
     End Sub
 
+    Private Sub PreferOriginToggle_MouseEnter(sender As Object, e As EventArgs) Handles PreferOriginToggle.MouseEnter
+        If PreferOriginToggle.Checked Then
+            PreferOriginToggle.Image = My.Resources.toggle_button_state_on_hover
+        Else
+            PreferOriginToggle.Image = My.Resources.toggle_button_state_left_hover
+        End If
+    End Sub
 
+    Private Sub PreferOriginToggle_MouseLeave(sender As Object, e As EventArgs) Handles PreferOriginToggle.MouseLeave
+        If PreferOriginToggle.Checked Then
+            PreferOriginToggle.Image = My.Resources.toggle_button_state_on
+        Else
+            PreferOriginToggle.Image = My.Resources.toggle_button_state_left
+        End If
+    End Sub
+
+    Private Sub PreferOriginToggle_CheckedChanged(sender As Object, e As EventArgs) Handles PreferOriginToggle.CheckedChanged
+        If PreferOriginToggle.Checked Then
+            PreferOriginToggle.Image = My.Resources.toggle_button_state_on
+            My.Settings.PreferOrigin = PREFERORIGIN.GREEK
+        Else
+            PreferOriginToggle.Image = My.Resources.toggle_button_state_left
+            My.Settings.PreferOrigin = PREFERORIGIN.HEBREW
+        End If
+    End Sub
 End Class
 
 
