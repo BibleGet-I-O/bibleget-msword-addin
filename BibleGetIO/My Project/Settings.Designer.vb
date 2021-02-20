@@ -591,6 +591,18 @@ Partial Friend NotInheritable Class MySettings
             Me("BookChapterFullReference") = value
         End Set
     End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("HEBREW")>  _
+    Public Property PreferOrigin() As Global.BibleGetIO.PREFERORIGIN
+        Get
+            Return CType(Me("PreferOrigin"),Global.BibleGetIO.PREFERORIGIN)
+        End Get
+        Set
+            Me("PreferOrigin") = value
+        End Set
+    End Property
 End Class
 
 Namespace My

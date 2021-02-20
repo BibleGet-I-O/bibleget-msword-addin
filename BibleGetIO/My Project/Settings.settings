@@ -137,5 +137,8 @@
     <Setting Name="BookChapterFullReference" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="PreferOrigin" Type="BibleGetIO.PREFERORIGIN" Scope="User">
+      <Value Profile="(Default)">HEBREW</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

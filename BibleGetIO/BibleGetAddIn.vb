@@ -11,9 +11,9 @@ Public Class BibleGetAddIn
     Public Shared ThisAppDataHome As String = "BibleGetMSOfficePlugin"
     Public Shared ThisAppDataDirectory As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ThisAppDataHome)
     Public Shared logFile As String = Path.Combine(ThisAppDataDirectory, "BibleGet.log")
-    Public Shared BGET_ENDPOINT = "https://query.bibleget.io/index.php"
-    Public Shared BGET_METADATA_ENDPOINT = "https://query.bibleget.io/metadata.php"
-    Public Shared BGET_SEARCH_ENDPOINT = "https://query.bibleget.io/search.php"
+    Public Shared BGET_ENDPOINT = "https://query.bibleget.io/v3/index.php"
+    Public Shared BGET_METADATA_ENDPOINT = "https://query.bibleget.io/v3/metadata.php"
+    Public Shared BGET_SEARCH_ENDPOINT = "https://query.bibleget.io/v3/search.php"
     'Private DEBUG_MODE = My.Settings.DEBUG_MODE
 
     Shared ReadOnly Property RM As Resources.ResourceManager
@@ -492,4 +492,9 @@ Public Enum PARAGRAPHTYPE
     VERSES
     VERSENUMBER
     VERSETEXT
+End Enum
+
+Public Enum PREFERORIGIN
+    HEBREW
+    GREEK
 End Enum

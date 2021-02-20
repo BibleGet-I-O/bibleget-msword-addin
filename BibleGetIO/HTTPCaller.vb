@@ -19,6 +19,8 @@ Public NotInheritable Class HTTPCaller
     End Function
 
     Public Shared Function GetResponse(ByVal uri As Uri) As String
+        ServicePointManager.Expect100Continue = True
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls Or SecurityProtocolType.Tls11 Or SecurityProtocolType.Tls12
         Dim request As HttpWebRequest
         Dim response As HttpWebResponse
         Try

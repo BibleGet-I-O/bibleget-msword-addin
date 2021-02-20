@@ -24,7 +24,6 @@ Partial Class InsertQuoteDialog
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InsertQuoteDialog))
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,22 +34,11 @@ Partial Class InsertQuoteDialog
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PreferHebrewOriginLbl = New System.Windows.Forms.Label()
+        Me.PreferGreekOriginLbl = New System.Windows.Forms.Label()
+        Me.PreferOriginToggle = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.Enabled = False
-        Me.Button1.Image = Global.BibleGetIO.My.Resources.Resources.arrow_down
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.Location = New System.Drawing.Point(719, 148)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(0, 0, 9, 0)
-        Me.Button1.Size = New System.Drawing.Size(251, 73)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "GET BIBLE QUOTE"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -138,15 +126,73 @@ Partial Class InsertQuoteDialog
         Me.Label4.Location = New System.Drawing.Point(156, 106)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(51, 17)
+        Me.Label4.Size = New System.Drawing.Size(143, 17)
         Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Label4"
+        Me.Label4.Text = "Choose Bible Version"
+        '
+        'PreferHebrewOriginLbl
+        '
+        Me.PreferHebrewOriginLbl.AutoSize = True
+        Me.PreferHebrewOriginLbl.Location = New System.Drawing.Point(730, 183)
+        Me.PreferHebrewOriginLbl.MaximumSize = New System.Drawing.Size(80, 0)
+        Me.PreferHebrewOriginLbl.Name = "PreferHebrewOriginLbl"
+        Me.PreferHebrewOriginLbl.Size = New System.Drawing.Size(60, 51)
+        Me.PreferHebrewOriginLbl.TabIndex = 12
+        Me.PreferHebrewOriginLbl.Text = "Prefer Hebrew origin"
+        Me.PreferHebrewOriginLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PreferGreekOriginLbl
+        '
+        Me.PreferGreekOriginLbl.AutoSize = True
+        Me.PreferGreekOriginLbl.Location = New System.Drawing.Point(888, 183)
+        Me.PreferGreekOriginLbl.MaximumSize = New System.Drawing.Size(80, 0)
+        Me.PreferGreekOriginLbl.MinimumSize = New System.Drawing.Size(60, 0)
+        Me.PreferGreekOriginLbl.Name = "PreferGreekOriginLbl"
+        Me.PreferGreekOriginLbl.Size = New System.Drawing.Size(60, 51)
+        Me.PreferGreekOriginLbl.TabIndex = 13
+        Me.PreferGreekOriginLbl.Text = "Prefer Greek origin"
+        Me.PreferGreekOriginLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PreferOriginToggle
+        '
+        Me.PreferOriginToggle.Appearance = System.Windows.Forms.Appearance.Button
+        Me.PreferOriginToggle.AutoSize = True
+        Me.PreferOriginToggle.BackColor = System.Drawing.Color.Transparent
+        Me.PreferOriginToggle.FlatAppearance.BorderSize = 0
+        Me.PreferOriginToggle.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.PreferOriginToggle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.PreferOriginToggle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.PreferOriginToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.PreferOriginToggle.Image = Global.BibleGetIO.My.Resources.Resources.toggle_button_state_left
+        Me.PreferOriginToggle.Location = New System.Drawing.Point(796, 181)
+        Me.PreferOriginToggle.Name = "PreferOriginToggle"
+        Me.PreferOriginToggle.Size = New System.Drawing.Size(86, 54)
+        Me.PreferOriginToggle.TabIndex = 11
+        Me.PreferOriginToggle.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.Enabled = False
+        Me.Button1.Image = Global.BibleGetIO.My.Resources.Resources.arrow_down
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.Location = New System.Drawing.Point(715, 62)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(0, 0, 9, 0)
+        Me.Button1.Size = New System.Drawing.Size(251, 73)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "GET BIBLE QUOTE"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'InsertQuoteDialog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1001, 484)
+        Me.Controls.Add(Me.PreferGreekOriginLbl)
+        Me.Controls.Add(Me.PreferHebrewOriginLbl)
+        Me.Controls.Add(Me.PreferOriginToggle)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.TextBox2)
@@ -176,4 +222,7 @@ Partial Class InsertQuoteDialog
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents PreferOriginToggle As Windows.Forms.CheckBox
+    Friend WithEvents PreferHebrewOriginLbl As Windows.Forms.Label
+    Friend WithEvents PreferGreekOriginLbl As Windows.Forms.Label
 End Class

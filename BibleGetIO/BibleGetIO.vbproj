@@ -45,7 +45,7 @@
     <PublishUrl>ftp://bibleget.io/httpdocs/msword-addin/</PublishUrl>
     <InstallUrl>https://bibleget.io/msword-addin/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>3.0.1.6</ApplicationVersion>
+    <ApplicationVersion>3.0.1.9</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>4</UpdateInterval>
@@ -653,6 +653,12 @@
   <ItemGroup>
     <None Include="Resources\preferences-tweak-tool-icon_32x32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle button state left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle button state left hover.png" />
+  </ItemGroup>
   <!-- Include the build rules for a Visual Basic project. -->
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -722,7 +728,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestTimestampUrl>http://timestamp.verisign.com/scripts/timstamp.dll</ManifestTimestampUrl>
+    <ManifestTimestampUrl>http://timestamp.comodoca.com/authenticode</ManifestTimestampUrl>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- Include additional build rules for an Office application add-in. -->

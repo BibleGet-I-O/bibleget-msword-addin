@@ -85,24 +85,24 @@ Public Class BibleGetDocInject
         Dim jsObj As JToken = JObject.Parse(myStr)
         Dim jRRArray As JArray = jsObj.SelectToken("results")
 
-        Dim prevversion As String = String.Empty
-        Dim newversion As Boolean
-        Dim prevbook As String = String.Empty
-        Dim newbook As Boolean
-        Dim prevchapter As Integer = -1
-        Dim newchapter As Boolean
-        Dim prevverse As String = String.Empty
-        Dim newverse As Boolean
+        Dim prevVersion As String = String.Empty
+        Dim newVersion As Boolean
+        Dim prevBook As String = String.Empty
+        Dim newBook As Boolean
+        Dim prevChapter As Integer = -1
+        Dim newChapter As Boolean
+        Dim prevVerse As String = String.Empty
+        Dim newVerse As Boolean
 
-        Dim currentversion As String
-        Dim currentbook As String
-        Dim currentbookabbrev As String
-        Dim currentbookUnivIdx As Integer
-        Dim currentchapter As Integer
-        Dim currentverse As String
-        Dim originalquery As String
+        Dim currentVersion As String
+        Dim currentBook As String
+        Dim currentBookAbbrev As String
+        Dim currentBookUnivIdx As Integer
+        Dim currentChapter As Integer
+        Dim currentVerse As String
+        Dim originalQuery As String
 
-        Dim firstversion As Boolean = True
+        Dim firstVersion As Boolean = True
         Dim firstChapter As Boolean = True
 
         Dim firstVerse As Boolean = False
@@ -115,57 +115,57 @@ Public Class BibleGetDocInject
                 Return "Work was cancelled"
             End If
             worker.ReportProgress(workerProgress)
-            currentbook = currentJson.SelectToken("book").Value(Of String)()
-            currentbookabbrev = currentJson.SelectToken("bookabbrev").Value(Of String)()
-            currentbookUnivIdx = currentJson.SelectToken("univbooknum").Value(Of Integer)()
-            currentchapter = currentJson.SelectToken("chapter").Value(Of Integer)()
-            currentverse = currentJson.SelectToken("verse").Value(Of String)()
-            currentversion = currentJson.SelectToken("version").Value(Of String)()
-            originalquery = currentJson.SelectToken("originalquery").Value(Of String)()
+            currentBook = currentJson.SelectToken("book").Value(Of String)()
+            currentBookAbbrev = currentJson.SelectToken("bookabbrev").Value(Of String)()
+            currentBookUnivIdx = currentJson.SelectToken("univbooknum").Value(Of Integer)()
+            currentChapter = currentJson.SelectToken("chapter").Value(Of Integer)()
+            currentVerse = currentJson.SelectToken("verse").Value(Of String)()
+            currentVersion = currentJson.SelectToken("version").Value(Of String)()
+            originalQuery = currentJson.SelectToken("originalquery").Value(Of String)()
 
-            If Not currentverse = prevverse Then
-                newverse = True
-                prevverse = currentverse
+            If Not currentVerse = prevVerse Then
+                newVerse = True
+                prevVerse = currentVerse
             Else
-                newverse = False
+                newVerse = False
             End If
 
-            If Not currentchapter = prevchapter Then
-                newchapter = True
-                newverse = True
-                prevchapter = currentchapter
+            If Not currentChapter = prevChapter Then
+                newChapter = True
+                newVerse = True
+                prevChapter = currentChapter
             Else
-                newchapter = False
+                newChapter = False
             End If
 
-            If Not currentbook = prevbook Then
-                newbook = True
-                newchapter = True
-                newverse = True
-                prevbook = currentbook
+            If Not currentBook = prevBook Then
+                newBook = True
+                newChapter = True
+                newVerse = True
+                prevBook = currentBook
             Else
-                newbook = False
+                newBook = False
             End If
 
-            If Not currentversion = prevversion Then
-                newversion = True
-                newbook = True
-                newchapter = True
-                newverse = True
-                prevversion = currentversion
+            If Not currentVersion = prevVersion Then
+                newVersion = True
+                newBook = True
+                newChapter = True
+                newVerse = True
+                prevVersion = currentVersion
             Else
-                newversion = False
+                newVersion = False
             End If
 
-            If newversion Then
+            If newVersion Then
                 firstVerse = True
                 'firstChapter = True
 
                 Select Case My.Settings.BibleVersionWrap
                     Case WRAP.PARENTHESES
-                        currentversion = "(" & currentversion & ")"
+                        currentVersion = "(" & currentVersion & ")"
                     Case WRAP.BRACKETS
-                        currentversion = "[" & currentversion & "]"
+                        currentVersion = "[" & currentVersion & "]"
                 End Select
 
 
@@ -191,7 +191,7 @@ Public Class BibleGetDocInject
                     End If
                     Select Case My.Settings.BibleVersionPosition
                         Case POS.BOTTOM
-                            BibleVersionStack.Add(currentversion)
+                            BibleVersionStack.Add(currentVersion)
                             If BibleVersionStack.Count > 1 Then
                                 CreateNewPar(currentSelection)                   'create a new paragraph
                                 setParagraphStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
@@ -200,37 +200,37 @@ Public Class BibleGetDocInject
                                 BibleVersionStack.RemoveAt(0)
                             End If
                         Case POS.TOP
-                            If firstversion = False Then
+                            If firstVersion = False Then
                                 CreateNewPar(currentSelection)
                             Else
-                                firstversion = False
+                                firstVersion = False
                             End If
                             setParagraphStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
                             setTextStyles(currentSelection, PARAGRAPHTYPE.BIBLEVERSION)
-                            TypeText(currentSelection, currentversion)
+                            TypeText(currentSelection, currentVersion)
                     End Select
                 End If
             End If
 
-            If newbook Or newchapter Then
+            If newBook Or newChapter Then
                 '//System.out.println(currentbook+" "+currentchapter);
                 Dim bkChStr As String = ""
                 Select Case My.Settings.BookChapterFormat
                     Case FORMAT.BIBLELANG
-                        bkChStr = currentbook + " " + currentchapter.ToString(CultureInfo.InvariantCulture)
+                        bkChStr = currentBook + " " + currentChapter.ToString(CultureInfo.InvariantCulture)
                     Case FORMAT.BIBLELANGABBREV
-                        bkChStr = currentbookabbrev + " " + currentchapter.ToString(CultureInfo.InvariantCulture)
+                        bkChStr = currentBookAbbrev + " " + currentChapter.ToString(CultureInfo.InvariantCulture)
                     Case FORMAT.USERLANG
-                        bkChStr = L10NBookNames.GetBookByIndex(currentbookUnivIdx - 1).Fullname + " " + currentchapter.ToString(CultureInfo.InvariantCulture)
+                        bkChStr = L10NBookNames.GetBookByIndex(currentBookUnivIdx - 1).Fullname + " " + currentChapter.ToString(CultureInfo.InvariantCulture)
                     Case FORMAT.USERLANGABBREV
-                        bkChStr = L10NBookNames.GetBookByIndex(currentbookUnivIdx - 1).Abbrev + " " + currentchapter.ToString(CultureInfo.InvariantCulture)
+                        bkChStr = L10NBookNames.GetBookByIndex(currentBookUnivIdx - 1).Abbrev + " " + currentChapter.ToString(CultureInfo.InvariantCulture)
                 End Select
                 If My.Settings.BookChapterFullReference Then
                     'retrieve the original query from originalquery property in the json response received
-                    If Regex.IsMatch(originalquery, "^[1-3]{0,1}((\p{L}\p{M}*)+)[1-9][0-9]{0,2}", RegexOptions.Singleline) Then
-                        bkChStr &= Regex.Replace(originalquery, "^[1-3]{0,1}((\p{L}\p{M}*)+)[1-9][0-9]{0,2}", "")
+                    If Regex.IsMatch(originalQuery, "^[1-3]{0,1}((\p{L}\p{M}*)+)[1-9][0-9]{0,2}", RegexOptions.Singleline) Then
+                        bkChStr &= Regex.Replace(originalQuery, "^[1-3]{0,1}((\p{L}\p{M}*)+)[1-9][0-9]{0,2}", "")
                     Else
-                        bkChStr &= Regex.Replace(originalquery, "^[1-9][0-9]{0,2}", "")
+                        bkChStr &= Regex.Replace(originalQuery, "^[1-9][0-9]{0,2}", "")
                     End If
                 End If
 
@@ -278,7 +278,7 @@ Public Class BibleGetDocInject
                 End Select
             End If
 
-            If newverse Then
+            If newVerse Then
                 normalText = False
                 '//System.out.print("\n"+currentverse);
                 If firstVerse Then
@@ -288,7 +288,7 @@ Public Class BibleGetDocInject
                 End If
                 If My.Settings.VerseNumberVisibility = VISIBILITY.SHOW Then
                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSENUMBER)
-                    TypeText(currentSelection, " " + currentverse)
+                    TypeText(currentSelection, " " + currentVerse)
                 Else
                     TypeText(currentSelection, " ")
                 End If
@@ -402,7 +402,7 @@ Public Class BibleGetDocInject
                                     If firstVerse = False And normalText = True Then CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200)+600);
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = pofIndent
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = poiIndent
                                     currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                                 End If
                                 If nestedTag Then
@@ -468,7 +468,7 @@ Public Class BibleGetDocInject
                                     CreateNewPar(currentSelection)
                                     'xPropertySet.setPropertyValue("ParaLeftMargin", (paragraphLeftIndent*200));
                                     setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
-                                    currentSelection.Range.ParagraphFormat.LeftIndent = poiIndent
+                                    currentSelection.Range.ParagraphFormat.LeftIndent = pofIndent
                                 End If
                                 normalText = False
                             Case "poil"
@@ -785,8 +785,7 @@ Public Class BibleGetDocInject
             Case "poi"
                 'If firstVerse = False And normalText = True Then CreateNewPar(currentSelection) ???
                 CreateNewPar(currentSelection)
-                'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 1.0F)
+                currentSelection.Range.ParagraphFormat.LeftIndent = poiIndent
                 currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                 setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                 TypeText(currentSelection, nestedTagObj.Contents)
@@ -795,8 +794,7 @@ Public Class BibleGetDocInject
             Case "po"
                 'If firstVerse = False And normalText = True Then CreateNewPar(currentSelection) ???
                 CreateNewPar(currentSelection)
-                'TODO: fix CentimetersToPoints to whichever unit is actually being used
-                currentSelection.Range.ParagraphFormat.LeftIndent = Application.CentimetersToPoints(My.Settings.LeftIndent + 0.5F)
+                currentSelection.Range.ParagraphFormat.LeftIndent = pofIndent
                 currentSelection.Range.ParagraphFormat.SpaceAfter = 0F
                 setTextStyles(currentSelection, PARAGRAPHTYPE.VERSETEXT)
                 TypeText(currentSelection, nestedTagObj.Contents)

@@ -41,6 +41,8 @@ Public Class QuoteFromSelectProgressBar
             y = 10
             worker.ReportProgress(y)
             Dim queryString As String = x.QueryString
+            ServicePointManager.Expect100Continue = True
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls Or SecurityProtocolType.Tls11 Or SecurityProtocolType.Tls12
             Dim request As WebRequest = WebRequest.Create(queryString)
             Try
                 Dim response As WebResponse = request.GetResponse()
@@ -179,7 +181,7 @@ Public Class QuoteFromSelectProgressBar
             If integrityResult Then
                 queryString = Uri.EscapeDataString(queryString)
                 Dim queryVersions As String = Uri.EscapeDataString(String.Join(",", PreferredVersions))
-                Dim serverRequestString As String = BibleGetAddIn.BGET_ENDPOINT & "?query=" & queryString & "&version=" & queryVersions & "&return=json&appid=msword&pluginversion=" & My.Application.Info.Version.ToString
+                Dim serverRequestString As String = BibleGetAddIn.BGET_ENDPOINT & "?query=" & queryString & "&version=" & queryVersions & "&preferorigin=" & [Enum].GetName(GetType(PREFERORIGIN), My.Settings.PreferOrigin) & "&return=json&appid=msword&pluginversion=" & My.Application.Info.Version.ToString
 
                 Dim x As BibleGetWorker = New BibleGetWorker("SENDQUERY", serverRequestString)
                 BackgroundWorker1.RunWorkerAsync(x)
