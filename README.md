@@ -35,6 +35,11 @@ Credits for the icon images used for the buttons are to be given to https://dryi
 
 # Changelog
 
+## Version 3.0.1.9 (February 20, 2021)
+* Fixes the SSL/TLS channel error that started showing up recently
+* Adds the `preferorigin` user preference, toggle switch, and query parameter
+* Uses the BibleGet API v3 endpoint which introduces the `preferorigin` parameter
+
 ## Version 3.0.1.8 (October 4, 2020)
 * Highlight plain ascii matches other than diacritic matches against search term
 
