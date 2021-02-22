@@ -162,7 +162,7 @@ Partial Class AboutBibleGet
         'ListView1
         '
         Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ListView1.FullRowSelect = True
+        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.Location = New System.Drawing.Point(0, 49)
         Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"

@@ -337,7 +337,6 @@ Public NotInheritable Class AboutBibleGet
                         ListView1.Columns.Add(colHeader)
                         ListView1.HeaderStyle = ColumnHeaderStyle.None
                         ListView1.Columns(0).Width = ListView1.Width - 4 - SystemInformation.VerticalScrollBarWidth
-                        ListView1.Enabled = False
 
                         Dim langsObj As JArray = JArray.Parse(langsSupported)
                         booksLangs = langsObj.Count
@@ -486,6 +485,10 @@ Public NotInheritable Class AboutBibleGet
             MessageBox.Show("Plugin installer did not complete. Plugin was not updated.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
+    End Sub
+
+    Private Sub ListView1_ItemSelectionChanged(sender As Object, e As ListViewItemSelectionChangedEventArgs) Handles ListView1.ItemSelectionChanged
+        e.Item.Selected = False
     End Sub
 
 End Class
