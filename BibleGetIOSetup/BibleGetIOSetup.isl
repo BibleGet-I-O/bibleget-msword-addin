@@ -3969,6 +3969,7 @@
 		<row><td>ID_STRING6</td><td>1033</td><td>https://www.bibleget.io/download/bibleget-addin-for-microsoft-word/</td><td>0</td><td/><td>1898213387</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td/><td>0</td><td/><td>832847875</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td>Contact:  plugin author at bibleget.io@gmail.com</td><td>0</td><td/><td>-618091887</td></row>
+		<row><td>ID_STRING9</td><td>1033</td><td>Remove the BibleGet add-in from MSWord</td><td>0</td><td/><td>-1591128527</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>681889967</td></row>
 	</table>
 
@@ -4768,7 +4769,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleg_1_bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {1F069262-E051-4C13-9CF2-C8AD39AE36AE}</td><td/><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleg_1_bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {93CC6C9B-F0A8-49FC-979B-60A2B3E29B00}</td><td>##ID_STRING9##</td><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">

@@ -458,8 +458,7 @@ a.button:hover { background-color: #EEF; }
                 versetext = result.SelectToken("text").Value(Of String)()
                 Dim matchpattern As String = "<(?:[^>=]|='[^']*'|=""[^""]*""|=[^'""][^\s>]*)*>"
                 versetext = Regex.Replace(versetext, matchpattern, "")
-                versetext = AddMark(versetext, searchTerm)
-                versetext = AddMark(versetext, stripDiacritics(searchTerm))
+                versetext = AddMark(versetext, {searchTerm, stripDiacritics(searchTerm)})
                 resultJsonStr = JsonConvert.SerializeObject(result, Formatting.None)
                 searchResultsDT.Rows.Add(New Object() {resultCounter, book, chapter, versenumber, versetext, searchTerm, resultJsonStr})
                 'Debug.Print(resultJsonStr)
@@ -502,9 +501,9 @@ a.button:hover { background-color: #EEF; }
     End Function
 
 
-    Private Function AddMark(verseText As String, searchTerm As String)
-        Dim pattern As String = "(.*)(\b.*?)(" & searchTerm & ")(.*?\b)(.*)"
-        Dim replacement As String = "$1<a class=""submark"">$2</a><a class=""mark"">$3</a><a class=""submark"">$4</a>$5"
+    Private Function AddMark(verseText As String, searchTerm() As String)
+        Dim pattern As String = "\b(\w*?)(" & Join(searchTerm, "|") & ")(\w*?)\b"
+        Dim replacement As String = "<a class=""submark"">$1</a><a class=""mark"">$2</a><a class=""submark"">$3</a>"
         Return Regex.Replace(verseText, pattern, replacement, RegexOptions.IgnoreCase)
         'Return Replace(verseText, searchTerm, "<a class=""mark"">" & searchTerm & "</a>", 1, -1, CompareMethod.Text)
     End Function
@@ -556,11 +555,13 @@ a.button:hover { background-color: #EEF; }
             Dim searchTerm As String = row("SEARCHTERM")
             Dim rowIdx As Integer = row("IDX")
             Dim resultJsonStr As String = row("JSONSTR")
-            versetext = AddMark(versetext, searchTerm)
-            versetext = AddMark(versetext, stripDiacritics(searchTerm))
+            Dim searchArray() As String = {searchTerm, stripDiacritics(searchTerm)}
             If filterTerm IsNot String.Empty Then
-                versetext = AddMark(versetext, filterTerm)
+                'versetext = AddMark(versetext, {filterTerm})
+                Array.Resize(searchArray, searchArray.Length + 1)
+                searchArray(searchArray.Length - 1) = filterTerm
             End If
+            versetext = AddMark(versetext, searchArray)
             rowsSearchResultsTable &= "<tr><td><a href=""#"" class=""button"" id=""row" & rowIdx & """>" & __("Select") & "</a></td><td>" & localizedBook.Fullname & " " & chapter & ":" & versenumber & "</td><td>" & versetext & "</td></tr>"
         Next
         previewDocument = previewDocumentHead & previewDocumentBodyOpen & rowsSearchResultsTable & previewDocumentBodyClose
