@@ -1,4 +1,5 @@
-﻿Imports System.Globalization
+﻿Imports System.Diagnostics
+Imports System.Globalization
 Imports System.IO
 Imports System.Management
 
@@ -39,6 +40,8 @@ Public Class BibleGetAddIn
     End Function
 
     Private Shared Sub BibleGetAddIn_Startup() Handles Me.Startup
+        Console.WriteLine("BibleGet Add-in is starting up!")
+        Debug.WriteLine("BibleGet Add-in is starting up!")
         Dim DEBUG_MODE As Boolean = My.Settings.DEBUG_MODE
         Dim Application As Word.Application = Globals.BibleGetAddIn.Application
         Dim lang As Office.MsoLanguageID = Application.LanguageSettings.LanguageID(Office.MsoAppLanguageID.msoLanguageIDUI)
@@ -385,14 +388,26 @@ Public Class BibleGetAddIn
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("ThisAddIn.vb" & vbTab & "lastUpdateCheck = " & My.Settings.UpdateCheck.ToString)
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("ThisAddIn.vb" & vbTab & "lastUpdateCheck + 7 days = " & lastUpdateCheck.ToString)
         If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("ThisAddIn.vb" & vbTab & "now = " & nowDateTime.ToString)
+        Console.WriteLine("lastUpdateCheck = " & My.Settings.UpdateCheck.ToString)
+        Console.WriteLine("lastUpdateCheck + 7 days = " & lastUpdateCheck.ToString)
+        Console.WriteLine("now = " & nowDateTime.ToString)
+        Debug.WriteLine("lastUpdateCheck = " & My.Settings.UpdateCheck.ToString)
+        Debug.WriteLine("lastUpdateCheck + 7 days = " & lastUpdateCheck.ToString)
+        Debug.WriteLine("now = " & nowDateTime.ToString)
 
         Dim lastUpdateFromNow As Int16 = DateTime.Compare(nowDateTime, lastUpdateCheck)
         If lastUpdateFromNow > 0 Then
             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("ThisAddIn.vb" & vbTab & "It has been more than 7 days since last update check")
+            Console.WriteLine("it has been more than 7 days since the last update check")
+            Debug.WriteLine("it has been more than 7 days since the last update check")
             BibleGetAddIn.checkForUpdate()
         ElseIf lastUpdateFromNow = 0 Then
+            Console.WriteLine("it has been exactly 7 days since the last update check")
+            Debug.WriteLine("it has been exactly 7 days since the last update check")
             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("ThisAddIn.vb" & vbTab & "It has been exactly 7 days since last update check")
         Else
+            Console.WriteLine("it has been less than 7 days since the last update check")
+            Debug.WriteLine("it has been less than 7 days since the last update check")
             If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("ThisAddIn.vb" & vbTab & "It has been less than 7 days since last update check")
         End If
 
@@ -424,8 +439,14 @@ Public Class BibleGetAddIn
         Dim onlineVersion As Version = HTTPCaller.GetCurrentVersion
         My.Settings.NewVersion = onlineVersion.ToString
         If Version.op_GreaterThan(onlineVersion, My.Application.Info.Version) Then
+            Console.WriteLine("Detected online version is greater than current version")
+            Debug.WriteLine("Detected online version is greater than current version")
             My.Settings.NewVersionExists = True
+        ElseIf Version.op_LessThan(onlineVersion, My.Application.Info.Version) Then
+            Debug.WriteLine("Detected online version is less than current version, it seems you are using an unreleased beta version?")
+            My.Settings.NewVersionExists = False
         Else
+            Debug.WriteLine("Detected online version is the same as the current version")
             My.Settings.NewVersionExists = False
         End If
         My.Settings.UpdateCheck = DateTime.Now

@@ -46,6 +46,7 @@ Partial Class AboutBibleGet
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.OKButton = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel.SuspendLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -66,6 +67,7 @@ Partial Class AboutBibleGet
         Me.TableLayoutPanel.Controls.Add(Me.Panel1, 0, 5)
         Me.TableLayoutPanel.Controls.Add(Me.Panel2, 0, 6)
         Me.TableLayoutPanel.Controls.Add(Me.Panel3, 0, 7)
+        Me.TableLayoutPanel.Controls.Add(Me.Button2, 1, 3)
         Me.TableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel.Location = New System.Drawing.Point(12, 11)
         Me.TableLayoutPanel.Margin = New System.Windows.Forms.Padding(4)
@@ -265,6 +267,16 @@ Partial Class AboutBibleGet
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button2.Location = New System.Drawing.Point(207, 78)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(609, 19)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Check for Updates"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'AboutBibleGet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -303,5 +315,5 @@ Partial Class AboutBibleGet
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents OKButton As System.Windows.Forms.Button
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
-
+    Friend WithEvents Button2 As Windows.Forms.Button
 End Class

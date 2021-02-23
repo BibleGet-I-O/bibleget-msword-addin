@@ -92,6 +92,8 @@ Public NotInheritable Class AboutBibleGet
         CurrentInfo.Text = String.Format(__("The BibleGet database currently supports {0} versions of the Bible in {1} different languages:"), versionCount, versionLangs)
         ServerDataLangsCount.Text = String.Format(__("The BibleGet engine currently understands the names of the books of the Bible in {0} different languages:"), booksLangs)
         ServerDataLangs.Text = String.Join(", ", langsLocalized)
+
+        Button2.Text = "Check for Updates (last check was " & My.Settings.UpdateCheck.ToLongDateString & " at " & My.Settings.UpdateCheck.ToLongTimeString & ")"
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -491,4 +493,7 @@ Public NotInheritable Class AboutBibleGet
         e.Item.Selected = False
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        BibleGetAddIn.checkForUpdate()
+    End Sub
 End Class
