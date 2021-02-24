@@ -427,6 +427,8 @@ Public NotInheritable Class AboutBibleGet
 
     Private Sub UpdateProgressBar(ByVal e As ProgressChangedEventArgs)
         ProgressBar1.Value = e.ProgressPercentage
+        'Dim message As String = CType(e.UserState, String)
+        'Debug.WriteLine(message)
     End Sub
 
     Private Sub DoDownloadCompleted(ByVal e As AsyncCompletedEventArgs)
@@ -488,28 +490,25 @@ Public NotInheritable Class AboutBibleGet
     End Sub
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        Debug.WriteLine("Starting background work...")
         Dim worker As BackgroundWorker = CType(sender, BackgroundWorker)
-        worker.ReportProgress(10)
-        Debug.WriteLine("now doing online check...")
+        worker.ReportProgress(10, "Starting background work and online check...")
         Dim onlineVersion As Version = HTTPCaller.GetCurrentVersion
-        worker.ReportProgress(50)
+        worker.ReportProgress(50, "result of online check: online version = " & onlineVersion.ToString)
         My.Settings.NewVersion = onlineVersion.ToString
-        Debug.WriteLine("result of online check: online version = " & onlineVersion.ToString)
         If Version.op_GreaterThan(onlineVersion, My.Application.Info.Version) Then
             'Console.WriteLine("Detected online version is greater than current version")
-            Debug.WriteLine("Detected online version is greater than current version")
+            worker.ReportProgress(75, "Detected online version is greater than current version")
             My.Settings.NewVersionExists = True
         ElseIf Version.op_LessThan(onlineVersion, My.Application.Info.Version) Then
-            Debug.WriteLine("Detected online version is less than current version, it seems you are using an unreleased beta version?")
+            worker.ReportProgress(75, "Detected online version is less than current version, it seems you are using an unreleased beta version?")
             My.Settings.NewVersionExists = False
         Else
-            Debug.WriteLine("Detected online version is the same as the current version")
+            worker.ReportProgress(75, "Detected online version is the same as the current version")
             My.Settings.NewVersionExists = False
         End If
         My.Settings.UpdateCheck = DateTime.Now
         My.Settings.Save()
-        worker.ReportProgress(100)
+        worker.ReportProgress(100, "All checks complete, settings saved")
     End Sub
 
     Private Sub BackgroundWorker1_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
@@ -561,7 +560,7 @@ Public NotInheritable Class AboutBibleGet
                         'nothing to do here
                 End Select
             Else
-                MessageBox.Show("You have the latest version of the BibleGet add-on for Microsoft Word.")
+                MessageBox.Show("You have the latest version of the BibleGet add-on for Microsoft Word.", "Result of update check", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
             ProgressBar1.Visible = False
             Cursor = Cursors.Default
