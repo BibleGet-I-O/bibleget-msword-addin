@@ -4601,9 +4601,9 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{93CC6C9B-F0A8-49FC-979B-60A2B3E29B00}</td><td/></row>
+		<row><td>ProductCode</td><td>{411AC7BA-C235-47C2-86EC-F32E3F8F9EED}</td><td/></row>
 		<row><td>ProductName</td><td>BibleGet IO for MSWord</td><td/></row>
-		<row><td>ProductVersion</td><td>3.0.1.9</td><td/></row>
+		<row><td>ProductVersion</td><td>3.0.2.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4769,7 +4769,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleg_1_bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {93CC6C9B-F0A8-49FC-979B-60A2B3E29B00}</td><td>##ID_STRING9##</td><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UNINST_Uninstall_BibleGet_IO_for_MSWord</td><td>bibleg_1_bibleget_io_for_msword</td><td>UNINST|Uninstall BibleGet IO for MSWord</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {411AC7BA-C235-47C2-86EC-F32E3F8F9EED}</td><td>##ID_STRING9##</td><td/><td>UNINST_Uninstall_B_83E25F77BFD74A0CBBDBF5CA51164631.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
