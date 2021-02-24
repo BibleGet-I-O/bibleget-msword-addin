@@ -103,6 +103,8 @@ body { border: 1px solid Black; }
 
 a.mark { background-color: yellow; font-weight: bold; padding: 2px 4px; }
 a.submark { background-color: lightyellow; padding: 2px 0px; }
+a.bmark { background-color: pink; font-weight: bold; padding: 2px 4px; }
+a.bsubmark { background-color: #ffe1e6; padding: 2px 0px; }
 a.button { padding: 6px; color: DarkBlue; font-weight: bold; background-color: LightBlue; border: 2px outset Blue; border-radius: 3px; display: inline-block; box-shadow: 2px 2px 4px 4px DarkBlue; cursor: pointer; text-decoration: none; }
 a.button:hover { background-color: #EEF; }
 "
@@ -458,8 +460,7 @@ a.button:hover { background-color: #EEF; }
                 versetext = result.SelectToken("text").Value(Of String)()
                 Dim matchpattern As String = "<(?:[^>=]|='[^']*'|=""[^""]*""|=[^'""][^\s>]*)*>"
                 versetext = Regex.Replace(versetext, matchpattern, "")
-                versetext = AddMark(versetext, searchTerm)
-                versetext = AddMark(versetext, stripDiacritics(searchTerm))
+                versetext = AddMark(versetext, {searchTerm, stripDiacritics(searchTerm)})
                 resultJsonStr = JsonConvert.SerializeObject(result, Formatting.None)
                 searchResultsDT.Rows.Add(New Object() {resultCounter, book, chapter, versenumber, versetext, searchTerm, resultJsonStr})
                 'Debug.Print(resultJsonStr)
@@ -501,12 +502,19 @@ a.button:hover { background-color: #EEF; }
         Return "Ok! All done."
     End Function
 
-
-    Private Function AddMark(verseText As String, searchTerm As String)
-        Dim pattern As String = "(.*)(\b.*?)(" & searchTerm & ")(.*?\b)(.*)"
-        Dim replacement As String = "$1<a class=""submark"">$2</a><a class=""mark"">$3</a><a class=""submark"">$4</a>$5"
-        Return Regex.Replace(verseText, pattern, replacement, RegexOptions.IgnoreCase)
+    Private Function AddMark(verseText As String, searchTerm() As String)
+        Dim pattern As String = "\b(\w*?)(" & Join(searchTerm, "|") & ")(\w*?)\b"
+        Dim replacement As String = "<a class=""submark"">$1</a><a class=""mark"">$2</a><a class=""submark"">$3</a>"
+        Return AddBMark(Regex.Replace(verseText, pattern, replacement, RegexOptions.IgnoreCase), searchTerm)
         'Return Replace(verseText, searchTerm, "<a class=""mark"">" & searchTerm & "</a>", 1, -1, CompareMethod.Text)
+    End Function
+
+    Private Function AddBMark(verseText As String, searchTerm() As String)
+        Dim upgradedTerm() As String = searchTerm.Select(Function(x) addDiacritics(x)).ToArray()
+        'searchTerm = Array.ConvertAll(searchTerm, Function(x) addDiacritics(x))
+        Dim pattern As String = "\b(\w*?)(?:(?!" & Join(searchTerm, "|") & "))(" & Join(upgradedTerm, "|") & ")(\w*?)\b"
+        Dim replacement As String = "<a class=""bsubmark"">$1</a><a class=""bmark"">$2</a><a class=""bsubmark"">$3</a>"
+        Return Regex.Replace(verseText, pattern, replacement, RegexOptions.IgnoreCase)
     End Function
 
     Private Function stripDiacritics(inText As String)
@@ -521,6 +529,66 @@ a.button:hover { background-color: #EEF; }
         Next
 
         Return StringBuilder.ToString().Normalize(NormalizationForm.FormC)
+    End Function
+
+    Private Function UpgradeDiacritics(ByVal c As Match) As String
+        Select Case c.ToString
+            Case "a", "A"
+                Return "[aA\xC0-\xC5\xE0-\xE5\u0100-\u0105\u01CD\u01CE\u01DE-\u01E1\u01FA\u01FB\u0200-\u0203\u0226\u0227\u023A\u0250-\u0252]"
+            Case "e", "E"
+                Return "[eE\xC8-\xCB\xE8-\xEB\x12-\x1B\u0204-\u0207\u0228\u0229\u0400\u0401]"
+            Case "i", "I"
+                Return "[iI\xcc-\xCF\xEC-\xEF\u0128-\u0131\u0196\u0197\u0208-\u020B\u0406\u0407]"
+            Case "o", "O"
+                Return "[oO\xD2-\xD6\xD8\xF0\xF2-\xF6\xF8\u014C-\u0151\u01A0\u01A1\u01D1\u01D2\u01EA-\u01ED\u01FE\u01FF\u01EA-\u01ED\u01FE\u01FF\u020C-\u020F\u022A-\u0231]"
+            Case "u", "U"
+                Return "[uU\xD9-\xDC\xF9-\xFC\u0168-\u0173\u01AF-\u01B0\u01D3-\u01DC\u0214-\u0217]"
+            Case "y", "Y"
+                Return "[yY\xDD\xFD\xFF\u0176-\u0178\u01B3\u01B4\u0232\u0233]"
+            Case "c", "C"
+                Return "[cC\xC7\xE7\u0106-\u010D\u0187\u0188\u023B\u023C]"
+            Case "n", "N"
+                Return "[nN\xD1\xF1\u0143-\u014B\u019D\u019E\u01F8\u01F9\u0235]"
+            Case "d", "D"
+                Return "[dD\xD0\u010E-\u0111\u0189\u0190\u0221]"
+            Case "g", "G"
+                Return "[gG\u011C-\u0123\u0193-\u0194\u01E4-\u01E7\u01F4\u01F5]"
+            Case "h", "H"
+                Return "[hH\u0124-\u0127\u021E\u021F]"
+            Case "j", "J"
+                Return "[jJ\u0134\u0135]"
+            Case "k", "K"
+                Return "[kk\u0136-\u0138\u0198\u0199\u01E8\u01E9]"
+            Case "l", "L"
+                Return "[lL\u0139-\u0142\u019A\u019B\u0234\u023D]"
+            Case "r", "R"
+                Return "[rR\u0154-\u0159\u0210-\u0213]"
+            Case "s", "S"
+                Return "[sS\u015A-\u0161\u017F\u0218\u0219\u023F]"
+            Case "t", "T"
+                Return "[tT\u0162-\u0167\u01AB-\u01AE\u021A\u021B\u0236\u023E]"
+            Case "w", "W"
+                Return "[wW\u0174-\u0175]"
+            Case "z", "Z"
+                Return "[zZ\u0179-\u017E\u01B5\u01B6\u0224\u0225]"
+            Case "b", "B"
+                Return "[bB\u0180-\u0183]"
+            Case "f", "F"
+                Return "[fF\u0191-\u0192]"
+            Case "m", "M"
+                Return "[mM\u019C]"
+            Case "p", "P"
+                Return "[\u01A4-\u01A5]"
+            Case Else
+                Return c.ToString
+        End Select
+    End Function
+
+    Private Function addDiacritics(term As String) As String
+        Dim pattern As String = "."
+        Dim r As Regex = New Regex(pattern)
+        Dim replacement As MatchEvaluator = New MatchEvaluator(AddressOf UpgradeDiacritics)
+        Return r.Replace(term, replacement)
     End Function
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -556,11 +624,13 @@ a.button:hover { background-color: #EEF; }
             Dim searchTerm As String = row("SEARCHTERM")
             Dim rowIdx As Integer = row("IDX")
             Dim resultJsonStr As String = row("JSONSTR")
-            versetext = AddMark(versetext, searchTerm)
-            versetext = AddMark(versetext, stripDiacritics(searchTerm))
+            Dim searchArray() As String = {searchTerm, stripDiacritics(searchTerm)}
             If filterTerm IsNot String.Empty Then
-                versetext = AddMark(versetext, filterTerm)
+                'versetext = AddMark(versetext, {filterTerm})
+                Array.Resize(searchArray, searchArray.Length + 1)
+                searchArray(searchArray.Length - 1) = filterTerm
             End If
+            versetext = AddMark(versetext, searchArray)
             rowsSearchResultsTable &= "<tr><td><a href=""#"" class=""button"" id=""row" & rowIdx & """>" & __("Select") & "</a></td><td>" & localizedBook.Fullname & " " & chapter & ":" & versenumber & "</td><td>" & versetext & "</td></tr>"
         Next
         previewDocument = previewDocumentHead & previewDocumentBodyOpen & rowsSearchResultsTable & previewDocumentBodyClose

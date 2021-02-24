@@ -1,6 +1,7 @@
 ﻿Imports System.Net
 Imports System.IO
 Imports Newtonsoft.Json.Linq
+Imports System.Diagnostics
 
 Public NotInheritable Class HTTPCaller
 
@@ -25,6 +26,7 @@ Public NotInheritable Class HTTPCaller
         Dim response As HttpWebResponse
         Try
             request = CType(WebRequest.Create(uri), HttpWebRequest)
+            request.UserAgent = "Windows NT .Net Client"
             response = CType(request.GetResponse(), HttpWebResponse)
             If response IsNot Nothing And response.StatusCode = HttpStatusCode.OK Then
                 Dim dataStream As Stream = response.GetResponseStream()
@@ -67,10 +69,14 @@ Public NotInheritable Class HTTPCaller
         Dim url As String = "https://sourceforge.net/projects/bibleget/best_release.json"
         Dim response As String = GetResponse(New Uri(url))
         If response IsNot Nothing Then
+            'Debug.WriteLine(response)
             Dim BestRelease As JObject = JObject.Parse(response)
-            Dim release As JObject = BestRelease.SelectToken("release")
-            Dim fileName As String = release.SelectToken("filename").Value(Of String)()
+            Dim fileName As String = BestRelease.SelectToken("$.platform_releases.windows.filename").Value(Of String)()
+            'Console.WriteLine("Filename of current best version from sourceforge = " & fileName)
+            'Debug.WriteLine("Filename of current best version from sourceforge = " & fileName)
             Dim detectedVersion As String = fileName.Substring(2, 7) 'skip /v and get the version info such as 3.0.1.2 (7 characters)
+            'Console.WriteLine("Version detected from filename = " & detectedVersion)
+            'Debug.WriteLine("Version detected from filename = " & detectedVersion)
             If My.Settings.DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug("HTTPCaller.vb" & vbTab & "onlineVersion = " & detectedVersion)
             retVersion = New Version(detectedVersion)
         End If

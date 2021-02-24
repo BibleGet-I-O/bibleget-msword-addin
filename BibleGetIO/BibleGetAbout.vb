@@ -92,6 +92,8 @@ Public NotInheritable Class AboutBibleGet
         CurrentInfo.Text = String.Format(__("The BibleGet database currently supports {0} versions of the Bible in {1} different languages:"), versionCount, versionLangs)
         ServerDataLangsCount.Text = String.Format(__("The BibleGet engine currently understands the names of the books of the Bible in {0} different languages:"), booksLangs)
         ServerDataLangs.Text = String.Join(", ", langsLocalized)
+
+        UpdateCheckBtn.Text = "Check for Updates (last check was " & My.Settings.UpdateCheck.ToLongDateString & " at " & My.Settings.UpdateCheck.ToLongTimeString & ")"
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -337,7 +339,6 @@ Public NotInheritable Class AboutBibleGet
                         ListView1.Columns.Add(colHeader)
                         ListView1.HeaderStyle = ColumnHeaderStyle.None
                         ListView1.Columns(0).Width = ListView1.Width - 4 - SystemInformation.VerticalScrollBarWidth
-                        ListView1.Enabled = False
 
                         Dim langsObj As JArray = JArray.Parse(langsSupported)
                         booksLangs = langsObj.Count
@@ -386,26 +387,7 @@ Public NotInheritable Class AboutBibleGet
 
     Private Sub LabelVersion_Click(sender As Object, e As EventArgs) Handles LabelVersion.Click
         If My.Settings.NewVersionExists Then
-
-            Dim remoteUri As New Uri("https://sourceforge.net/projects/bibleget/files/latest/download")
-            localFile = Path.GetTempPath & "BibleGetIOMSWordAddInSetup_" & My.Settings.NewVersion.Replace(".", "") & ".exe"
-            If File.Exists(localFile) Then
-                Try
-                    updateProcess.StartInfo.FileName = localFile
-                    updateProcess.EnableRaisingEvents = True
-                    updateProcess.Start()
-                Catch ex As Exception
-                    If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & ex.Message)
-                    MessageBox.Show("Plugin installer was interrupted. Plugin was not updated.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
-            Else
-                LabelVersion.Cursor = Cursors.WaitCursor
-                ProgressBar1.Visible = True
-                Dim webClient As New WebClient
-                AddHandler webClient.DownloadProgressChanged, AddressOf UpdateDownloadProgress
-                AddHandler webClient.DownloadFileCompleted, AddressOf OnDownloadComplete
-                webClient.DownloadFileAsync(remoteUri, localFile)
-            End If
+            DoVersionUpdate()
         End If
     End Sub
 
@@ -441,6 +423,12 @@ Public NotInheritable Class AboutBibleGet
 
     Private Sub UpdateProgressBar(ByVal e As DownloadProgressChangedEventArgs)
         ProgressBar1.Value = e.ProgressPercentage
+    End Sub
+
+    Private Sub UpdateProgressBar(ByVal e As ProgressChangedEventArgs)
+        ProgressBar1.Value = e.ProgressPercentage
+        'Dim message As String = CType(e.UserState, String)
+        'Debug.WriteLine(message)
     End Sub
 
     Private Sub DoDownloadCompleted(ByVal e As AsyncCompletedEventArgs)
@@ -488,4 +476,94 @@ Public NotInheritable Class AboutBibleGet
 
     End Sub
 
+    Private Sub ListView1_ItemSelectionChanged(sender As Object, e As ListViewItemSelectionChangedEventArgs) Handles ListView1.ItemSelectionChanged
+        e.Item.Selected = False
+    End Sub
+
+    Private Sub UpdateCheckBtn_Click(sender As Object, e As EventArgs) Handles UpdateCheckBtn.Click
+        Cursor = Cursors.WaitCursor
+        If BackgroundWorker1.IsBusy <> True Then
+            ' Start the asynchronous operation.
+            ProgressBar1.Visible = True
+            BackgroundWorker1.RunWorkerAsync()
+        End If
+    End Sub
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        Dim worker As BackgroundWorker = CType(sender, BackgroundWorker)
+        worker.ReportProgress(10, "Starting background work and online check...")
+        Dim onlineVersion As Version = HTTPCaller.GetCurrentVersion
+        worker.ReportProgress(50, "result of online check: online version = " & onlineVersion.ToString)
+        My.Settings.NewVersion = onlineVersion.ToString
+        If Version.op_GreaterThan(onlineVersion, My.Application.Info.Version) Then
+            'Console.WriteLine("Detected online version is greater than current version")
+            worker.ReportProgress(75, "Detected online version is greater than current version")
+            My.Settings.NewVersionExists = True
+        ElseIf Version.op_LessThan(onlineVersion, My.Application.Info.Version) Then
+            worker.ReportProgress(75, "Detected online version is less than current version, it seems you are using an unreleased beta version?")
+            My.Settings.NewVersionExists = False
+        Else
+            worker.ReportProgress(75, "Detected online version is the same as the current version")
+            My.Settings.NewVersionExists = False
+        End If
+        My.Settings.UpdateCheck = DateTime.Now
+        My.Settings.Save()
+        worker.ReportProgress(100, "All checks complete, settings saved")
+    End Sub
+
+    Private Sub BackgroundWorker1_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles BackgroundWorker1.ProgressChanged
+        If InvokeRequired Then
+            BeginInvoke(New Action(Of ProgressChangedEventArgs)(AddressOf UpdateProgressBar), e)
+        Else
+            UpdateProgressBar(e)
+        End If
+    End Sub
+
+    Private Sub BackgroundWorker1_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BackgroundWorker1.RunWorkerCompleted
+        If InvokeRequired Then
+            BeginInvoke(New Action(Of AsyncCompletedEventArgs)(AddressOf DoUpdateCheckCompleted), e)
+        Else
+            DoUpdateCheckCompleted(e)
+        End If
+    End Sub
+
+    Private Sub DoVersionUpdate()
+        Dim remoteUri As New Uri("https://sourceforge.net/projects/bibleget/files/latest/download")
+        localFile = Path.GetTempPath & "BibleGetIOMSWordAddInSetup_" & My.Settings.NewVersion.Replace(".", "") & ".exe"
+        If File.Exists(localFile) Then
+            Try
+                updateProcess.StartInfo.FileName = localFile
+                updateProcess.EnableRaisingEvents = True
+                updateProcess.Start()
+            Catch ex As Exception
+                If DEBUG_MODE Then BibleGetAddIn.LogInfoToDebug([GetType]().FullName & vbTab & ex.Message)
+                MessageBox.Show("Plugin installer was interrupted. Plugin was not updated.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Else
+            LabelVersion.Cursor = Cursors.WaitCursor
+            ProgressBar1.Visible = True
+            Dim webClient As New WebClient
+            AddHandler webClient.DownloadProgressChanged, AddressOf UpdateDownloadProgress
+            AddHandler webClient.DownloadFileCompleted, AddressOf OnDownloadComplete
+            webClient.DownloadFileAsync(remoteUri, localFile)
+        End If
+    End Sub
+
+    Private Sub DoUpdateCheckCompleted(ByVal e As AsyncCompletedEventArgs)
+        If Not e.Cancelled AndAlso e.Error Is Nothing Then
+            If My.Settings.NewVersionExists Then
+                Dim updateChoice As DialogResult = MessageBox.Show("Version " & My.Settings.NewVersion & " is available online. Would you like to update to the new version now?", "Update available", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                Select Case updateChoice
+                    Case DialogResult.Yes
+
+                    Case DialogResult.No
+                        'nothing to do here
+                End Select
+            Else
+                MessageBox.Show("You have the latest version of the BibleGet add-on for Microsoft Word.", "Result of update check", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+            ProgressBar1.Visible = False
+            Cursor = Cursors.Default
+        End If
+    End Sub
 End Class

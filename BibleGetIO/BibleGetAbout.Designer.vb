@@ -34,6 +34,7 @@ Partial Class AboutBibleGet
         Me.LabelProductName = New System.Windows.Forms.Label()
         Me.LabelVersion = New System.Windows.Forms.Label()
         Me.LabelCopyright = New System.Windows.Forms.Label()
+        Me.UpdateCheckBtn = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -46,6 +47,7 @@ Partial Class AboutBibleGet
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.OKButton = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.TableLayoutPanel.SuspendLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -62,6 +64,7 @@ Partial Class AboutBibleGet
         Me.TableLayoutPanel.Controls.Add(Me.LabelProductName, 1, 0)
         Me.TableLayoutPanel.Controls.Add(Me.LabelVersion, 1, 1)
         Me.TableLayoutPanel.Controls.Add(Me.LabelCopyright, 1, 2)
+        Me.TableLayoutPanel.Controls.Add(Me.UpdateCheckBtn, 1, 3)
         Me.TableLayoutPanel.Controls.Add(Me.WebBrowser1, 1, 4)
         Me.TableLayoutPanel.Controls.Add(Me.Panel1, 0, 5)
         Me.TableLayoutPanel.Controls.Add(Me.Panel2, 0, 6)
@@ -79,6 +82,7 @@ Partial Class AboutBibleGet
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92.0!))
         Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.0!))
+        Me.TableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel.Size = New System.Drawing.Size(819, 726)
         Me.TableLayoutPanel.TabIndex = 0
         '
@@ -134,6 +138,16 @@ Partial Class AboutBibleGet
         Me.LabelCopyright.Text = "© 2015 John Romano D'Orazio"
         Me.LabelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'UpdateCheckBtn
+        '
+        Me.UpdateCheckBtn.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.UpdateCheckBtn.Location = New System.Drawing.Point(207, 78)
+        Me.UpdateCheckBtn.Name = "UpdateCheckBtn"
+        Me.UpdateCheckBtn.Size = New System.Drawing.Size(609, 19)
+        Me.UpdateCheckBtn.TabIndex = 5
+        Me.UpdateCheckBtn.Text = "Check for Updates"
+        Me.UpdateCheckBtn.UseVisualStyleBackColor = True
+        '
         'WebBrowser1
         '
         Me.WebBrowser1.AllowNavigation = False
@@ -162,7 +176,7 @@ Partial Class AboutBibleGet
         'ListView1
         '
         Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ListView1.FullRowSelect = True
+        Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView1.Location = New System.Drawing.Point(0, 49)
         Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
         Me.ListView1.Name = "ListView1"
@@ -265,6 +279,11 @@ Partial Class AboutBibleGet
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'BackgroundWorker1
+        '
+        Me.BackgroundWorker1.WorkerReportsProgress = True
+        Me.BackgroundWorker1.WorkerSupportsCancellation = True
+        '
         'AboutBibleGet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -303,5 +322,6 @@ Partial Class AboutBibleGet
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents OKButton As System.Windows.Forms.Button
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
-
+    Friend WithEvents UpdateCheckBtn As Windows.Forms.Button
+    Friend WithEvents BackgroundWorker1 As ComponentModel.BackgroundWorker
 End Class
